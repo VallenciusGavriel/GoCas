@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('address_detail');
             $table->string('province', 25);
             $table->string('operational_hours', 25);
-            $table->string('longitude', 15);
-            $table->string('latitude', 15);
+            $table->string('longitude', 25);
+            $table->string('latitude', 25);
             $table->string('status', 20);
             $table->timestamps();
         });
