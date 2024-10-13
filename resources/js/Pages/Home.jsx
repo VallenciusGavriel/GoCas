@@ -21,6 +21,9 @@ const Home = () => {
                   <Center mt={"40px"}>
                     <Heading>PT Makmur Tech Indonesia</Heading>
                   </Center>
+                  <Center mt={"40px"}>
+                    <Heading size={"3xl"}>Under Maintenance</Heading>
+                  </Center>
                 </Flex>
               </Center>
             <Footer />
