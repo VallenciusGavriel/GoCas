@@ -1,9 +1,12 @@
 import React from "react";
+import HeaderText from "../Text/HeaderText";
 
 const Home3 = () => {
     return (
         <>
-            <div>INI HOME SECTION 3</div>
+            <HeaderText size="normal" withIcon={true} iconColor="green">
+                Jalinan Kerjasama GoCas
+            </HeaderText>
         </>
     );
 };

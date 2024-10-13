@@ -24,6 +24,7 @@
         "@emotion/react": "^11.13.3",
         "@emotion/styled": "^11.13.0",
         "framer-motion": "^11.9.0",
-        "lucide-react": "^0.446.0"
+        "lucide-react": "^0.446.0",
+        "react-router-dom": "^6.27.0"
     }
 }

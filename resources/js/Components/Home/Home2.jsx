@@ -5,17 +5,8 @@ import HeaderText from "../Text/HeaderText";
 const Home2 = () => {
     return (
         <>
-            <HeaderText size="large" withIcon={true} iconColor="green">
-                Hidupkan Perangkatmu dengan GoCas
-            </HeaderText>
-            <HeaderText size="normal" withIcon={true} iconColor="black">
-                Explore in Black
-            </HeaderText>
-            <HeaderText size="large" withIcon={false} iconColor="green">
-                Hidupkan Perangkatmu dengan GoCas
-            </HeaderText>
-            <HeaderText size="normal" withIcon={false} iconColor="black">
-                Explore in Black
+            <HeaderText size="normal" withIcon={true} iconColor="green">
+                Siapa Kami?
             </HeaderText>
         </>
     );

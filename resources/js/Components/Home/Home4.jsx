@@ -1,9 +1,12 @@
 import React from "react";
+import HeaderText from "../Text/HeaderText";
 
 const Home4 = () => {
     return (
         <>
-            <div>INI HOME SECTION 4</div>
+            <HeaderText size="normal" withIcon={true} iconColor="green">
+                Kenapa Harus Pakai Layanan Kami?
+            </HeaderText>
         </>
     );
 };
