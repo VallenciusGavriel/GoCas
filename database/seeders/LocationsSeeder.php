@@ -27,8 +27,8 @@ class LocationsSeeder extends Seeder
             'address_detail' => 'Jalan Boulevard Gading Serpong, Pakulonan Barat, Kelapa Dua, Kabupaten Tangerang, Banten 15810',
             'province' => 'Banten',
             'operational_hours' => '10:00 - 22:00 WIB',
-            'latitude' => '-6.2426173',
-            'longitude' => '106.6258199',
+            'latitude' => '-6.240722084396005',
+            'longitude' => '106.62889629846687',
             'status' => 'ONLINE',
         ]);
 
@@ -37,8 +37,8 @@ class LocationsSeeder extends Seeder
             'address_detail' => 'Jalan Gading Serpong Boulevard, Pakulonan Barat, Kelapa Dua, Kabupaten Tangerang, Banten 15810',
             'province' => 'Banten',
             'operational_hours' => '07:00 - 17:00 WIB',
-            'latitude' => '-6.2433361',
-            'longitude' => '106.6280314',
+            'latitude' => '-6.259938811536098',
+            'longitude' => '106.61837692698464',
             'status' => 'ONLINE',
         ]);
 
@@ -47,8 +47,8 @@ class LocationsSeeder extends Seeder
             'address_detail' => 'Jalan Scientia Boulevard, Gading Serpong, Kelapa Dua, Kabupaten Tangerang, Banten 15810',
             'province' => 'Banten',
             'operational_hours' => '10:00 - 22:00 WIB',
-            'latitude' => '-6.256937',
-            'longitude' => '106.618735',
+            'latitude' => '-6.256688254839604',
+            'longitude' => '106.61644832360032',
             'status' => 'ONLINE',
         ]);
     }
