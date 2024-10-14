@@ -1,6 +1,6 @@
 import React from 'react';
-import {Box, Grid, Text, Heading, Link, Icon, VStack, Flex, Center} from '@chakra-ui/react';
-import {MapPin} from "lucide-react";
+import { Box, Grid, Text, Link, Icon, VStack, Flex, Center } from '@chakra-ui/react';
+import { MapPin } from "lucide-react";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 
 const LocationCard = ({ title, address, detailLink }) => (
@@ -15,13 +15,10 @@ const LocationCard = ({ title, address, detailLink }) => (
     w="100%"
   >
     <Flex>
-      <Center
-        w="20%"
-        pr={4}
-      >
-        <MapPin fill={"green"} color={"white"} size={65} strokeWidth={2}/>
+      <Center w="20%" pr={4}>
+        <Icon as={MapPin} fill={"green"} color={"white"} boxSize={10} />
       </Center>
-      <VStack align="start" spacing={2}>
+      <VStack align="start" spacing={2} w="80%">
         <HeaderText
           size="small"
           withIcon={false}
@@ -38,17 +35,16 @@ const LocationCard = ({ title, address, detailLink }) => (
   </Box>
 );
 
-const LocationsGrid = ({locations}) => {
+const LocationsGrid = ({ locations }) => {
   return (
     <Box w="100%">
-      {/* Grid of location cards */}
       <Grid w="100%" templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6}>
         {locations.map((location, index) => (
           <LocationCard
             key={location.id}
             title={location.name}
             address={location.address_detail}
-            detailLink={location.detailLink} // Assuming each location has a detail link
+            detailLink={location.detailLink}
           />
         ))}
       </Grid>

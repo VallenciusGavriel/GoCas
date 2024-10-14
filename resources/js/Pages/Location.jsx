@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import {Center, Flex, Box, IconButton, Input} from "@chakra-ui/react";
+import { Center, Flex, Box, IconButton, Input } from "@chakra-ui/react";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
 import { Head } from "@inertiajs/react";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
-import {SearchIcon} from "lucide-react";
+import { SearchIcon } from "lucide-react";
 import Maps from "@/Components/Location/Maps.jsx";
 import LocationsGrid from "@/Components/Location/LocationsGrid.jsx";
 
-const Location = ({ locations }) => {
+const Location = ({ locations: initialLocations }) => {
   const [query, setQuery] = useState('');
   const [lat, setLat] = useState(null);
   const [long, setLong] = useState(null);
   const [error, setError] = useState(null);
+  const [locations, setLocations] = useState(initialLocations);
 
   const searchLocation = async () => {
     try {
@@ -25,6 +26,13 @@ const Location = ({ locations }) => {
         setLat(data[0].lat);
         setLong(data[0].lon);
         setError(null);
+
+        const locationResponse = await fetch(
+          `/location-search?lat=${data[0].lat}&long=${data[0].lon}`
+        );
+        const dataLocation = await locationResponse.json();
+
+        setLocations(dataLocation);
       } else {
         setError('Location not found.');
         setLat(null);
@@ -48,19 +56,16 @@ const Location = ({ locations }) => {
           hmin={"100vh"}
           position={"relative"}
         >
-          <HeaderText
-            size="normal"
-            withIcon={true}
-            iconColor="green"
-          >
+          <HeaderText size="normal" withIcon={true} iconColor="green">
             Lokasi GoCas
           </HeaderText>
 
           <Flex align="center" maxW="md" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4}>
-            <Input placeholder="Cari Lokasi"
-                   value={query}
-                   w="100%"
-                   onChange={(e) => setQuery(e.target.value)}
+            <Input
+              placeholder="Cari Lokasi"
+              value={query}
+              w="100%"
+              onChange={(e) => setQuery(e.target.value)}
             />
             <IconButton
               aria-label="Search location"
@@ -73,21 +78,17 @@ const Location = ({ locations }) => {
           </Flex>
 
           <Flex align="center" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4}>
-            <Maps locations={locations} point={[lat, long]}/>
+            <Maps locations={locations} point={[lat, long]} />
           </Flex>
 
           <Flex align="center" px={2} py={1} w="100%" mt={4}>
-            <HeaderText
-              size="normal"
-              withIcon={true}
-              iconColor="green"
-            >
+            <HeaderText size="normal" withIcon={true} iconColor="green">
               Lokasi Terdekat
             </HeaderText>
           </Flex>
 
           <Flex align="center" px={2} py={1} w="100%" mt={4}>
-            <LocationsGrid locations={locations}/>
+            <LocationsGrid locations={locations} />
           </Flex>
         </Box>
       </Center>

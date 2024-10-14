@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/location', [MainController::class, 'location']);
+Route::get('/location-search', [MainController::class, 'locationSearch']);
 
 Route::fallback(function () {
     return redirect('/');
