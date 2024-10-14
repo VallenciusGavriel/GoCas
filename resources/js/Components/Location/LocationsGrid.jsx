@@ -3,7 +3,7 @@ import { Box, Grid, Text, Link, Icon, VStack, Flex, Center } from '@chakra-ui/re
 import { MapPin } from "lucide-react";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 
-const LocationCard = ({ title, address, detailLink }) => (
+const LocationCard = ({ title, address, detailLink, distance }) => (
   <Box
     border="1px"
     borderColor="gray.200"
@@ -27,6 +27,10 @@ const LocationCard = ({ title, address, detailLink }) => (
           {title}
         </HeaderText>
         <Text>{address}</Text>
+        { distance !== 0
+          ? <Text>{distance} km</Text>
+          : <Text></Text>
+        }
         <Link color="green.600" href={detailLink} fontWeight="bold">
           Lihat Detail
         </Link>
@@ -45,6 +49,7 @@ const LocationsGrid = ({ locations }) => {
             title={location.name}
             address={location.address_detail}
             detailLink={location.detailLink}
+            distance={location.distance ?? 0}
           />
         ))}
       </Grid>

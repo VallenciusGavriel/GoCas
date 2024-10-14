@@ -26,11 +26,19 @@ class MainController extends Controller
         $lat = (float)$data['lat'];
         $long = (float)$data['long'];
 
-        $locations = Location::where(DB::raw('CAST(latitude AS DECIMAL(10, 6))'), '>=', $lat - 0.05)
+        $locations = Location::selectRaw(
+                "*, ROUND(( 6371 * acos( cos( radians(?) ) * cos( radians( CAST(latitude AS DECIMAL(10, 6)) ) ) 
+                * cos( radians( CAST(longitude AS DECIMAL(10, 6)) ) - radians(?) ) + sin( radians(?) ) 
+                * sin( radians( CAST(latitude AS DECIMAL(10, 6)) ) ) ) ), 2) AS distance",
+                [$lat, $long, $lat]
+            )
+            ->where(DB::raw('CAST(latitude AS DECIMAL(10, 6))'), '>=', $lat - 0.05)
             ->where(DB::raw('CAST(latitude AS DECIMAL(10, 6))'), '<=', $lat + 0.05)
             ->where(DB::raw('CAST(longitude AS DECIMAL(10, 6))'), '>=', $long - 0.05)
             ->where(DB::raw('CAST(longitude AS DECIMAL(10, 6))'), '<=', $long + 0.05)
+            ->orderBy('distance')
             ->get();
+
 
         return response()->json($locations);
     }
