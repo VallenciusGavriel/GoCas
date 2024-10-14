@@ -4,19 +4,26 @@ import 'leaflet-defaulticon-compatibility';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
 import 'leaflet/dist/leaflet.css';
 
-const ChangeView = ({ center, locations }) => {
+const MapEventListener = ({ searchLocation }) => {
   const map = useMap();
 
   useEffect(() => {
-    if (center) {
-      map.setView(center, map.getZoom());
-    }
-  }, [center, locations, map]);
+    const handleMapDrag = () => {
+      const center = map.getCenter();
+      searchLocation(center.lat, center.lng);
+    };
+
+    map.on('moveend', handleMapDrag);
+
+    return () => {
+      map.off('moveend', handleMapDrag);
+    };
+  }, [map, searchLocation]);
 
   return null;
 };
 
-const Maps = ({ locations, point }) => {
+const Maps = ({ locations, point, searchLocation }) => {
   const center = point[0] ? point : [locations[0].latitude, locations[0].longitude];
 
   return (
@@ -30,7 +37,7 @@ const Maps = ({ locations, point }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      <ChangeView center={center} locations={locations} />
+      <MapEventListener searchLocation={searchLocation} />
 
       {locations.map((location, index) => (
         <Marker key={index} position={[location.latitude, location.longitude]}>

@@ -15,7 +15,7 @@ const Location = ({ locations: initialLocations }) => {
   const [error, setError] = useState(null);
   const [locations, setLocations] = useState(initialLocations);
 
-  const searchLocation = async () => {
+  const searchLocation = async (lat = null, lon = null) => {
     try {
       const response = await fetch(
         `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1&countrycodes=ID`
@@ -26,18 +26,14 @@ const Location = ({ locations: initialLocations }) => {
         setLat(data[0].lat);
         setLong(data[0].lon);
         setError(null);
-
-        const locationResponse = await fetch(
-          `/location-search?lat=${data[0].lat}&long=${data[0].lon}`
-        );
-        const dataLocation = await locationResponse.json();
-
-        setLocations(dataLocation);
       } else {
         setError('Location not found.');
         setLat(null);
         setLong(null);
+        return;
       }
+
+      await hitSearchLocation(lat, lon);
     } catch (err) {
       setError('An error occurred while searching for the location.');
       setLat(null);
@@ -45,6 +41,16 @@ const Location = ({ locations: initialLocations }) => {
     }
   };
 
+  const hitSearchLocation = async (lat = null, lon = null) => {
+    const locationResponse = await fetch(
+      `/location-search?lat=${lat}&long=${lon}`
+    );
+    const dataLocation = await locationResponse.json();
+
+    setLocations(dataLocation);
+    setLat(lat);
+    setLong(lon);
+  };
   return (
     <>
       <Head title="Location" />
@@ -70,7 +76,7 @@ const Location = ({ locations: initialLocations }) => {
             <IconButton
               aria-label="Search location"
               icon={<SearchIcon />}
-              onClick={searchLocation}
+              onClick={() => searchLocation()}
               colorScheme="green"
               borderRadius="md"
               ml={2}
@@ -78,7 +84,7 @@ const Location = ({ locations: initialLocations }) => {
           </Flex>
 
           <Flex align="center" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4}>
-            <Maps locations={locations} point={[lat, long]} />
+            <Maps locations={locations} point={[lat, long]} searchLocation={hitSearchLocation}/>
           </Flex>
 
           <Flex align="center" px={2} py={1} w="100%" mt={4}>
