@@ -41,10 +41,14 @@ const Location = ({ locations: initialLocations }) => {
     }
   };
 
-  const hitSearchLocation = async (lat = null, lon = null) => {
-    const locationResponse = await fetch(
-      `/location-search?lat=${lat}&long=${lon}`
-    );
+  const hitSearchLocation = async (lat = null, lon = null, northBorder = null, eastBorder = null, southBorder = null, westBorder = null) => {
+    let url = `/location-search?lat=${lat}&long=${lon}`;
+
+    if (northBorder && eastBorder && southBorder && westBorder) {
+      url += `&north=${northBorder}&east=${eastBorder}&south=${southBorder}&west=${westBorder}`
+    }
+
+    const locationResponse = await fetch(url);
     const dataLocation = await locationResponse.json();
 
     setLocations(dataLocation);

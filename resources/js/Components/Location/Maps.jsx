@@ -10,7 +10,9 @@ const MapEventListener = ({ searchLocation }) => {
   useEffect(() => {
     const handleMapDrag = () => {
       const center = map.getCenter();
-      searchLocation(center.lat, center.lng);
+      const bounds = map.getBounds();
+
+      searchLocation(center.lat, center.lng, bounds._northEast.lat, bounds._northEast.lng, bounds._southWest.lat, bounds._southWest.lng);
     };
 
     map.on('moveend', handleMapDrag);
