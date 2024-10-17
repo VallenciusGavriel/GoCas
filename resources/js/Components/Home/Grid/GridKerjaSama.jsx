@@ -1,17 +1,33 @@
 import React from "react";
-import { Grid, Image } from "@chakra-ui/react";
+import { Grid, Image, Box } from "@chakra-ui/react";
 
 const GridKerjaSama = ({ images }) => {
     return (
-        <Grid templateColumns="repeat(6, 1fr)" gap={2}>
+        <Grid
+            templateColumns={{
+                base: "repeat(2, 1fr)",
+                md: "repeat(4, 1fr)",
+                lg: "repeat(6, 1fr)",
+            }}
+            gap={1}
+        >
             {images.map((src, index) => (
-                <Image
+                <Box
                     key={index}
-                    src={src}
-                    alt={`Image ${index + 1}`}
-                    objectFit="cover"
-                    boxSize="50%"
-                />
+                    border="2px"
+                    borderColor="#28B67A"
+                    overflow="hidden"
+                    p="4"
+                    h="120px"
+                >
+                    <Image
+                        src={src}
+                        alt={`Image ${index + 1}`}
+                        objectFit="contain"
+                        w="100%"
+                        h="100%"
+                    />
+                </Box>
             ))}
         </Grid>
     );
