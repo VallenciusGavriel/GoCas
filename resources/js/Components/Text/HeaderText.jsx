@@ -5,12 +5,14 @@ const HeaderText = ({ children, size, withIcon = false, iconColor }) => {
     const fontSizeMapping = {
         large: "5xl",
         normal: "3xl",
+        small: "xl",
     };
     const fontSize = fontSizeMapping[size];
 
     const iconDimensions = {
         "5xl": { width: "20x", height: "40px" },
         "3xl": { width: "16px", height: "32px" },
+        "xl": { width: "16px", height: "32px" },
     };
     const { width, height } = iconDimensions[fontSize];
 

@@ -28,7 +28,7 @@ const Home = () => {
                 <Home8 />
             </Box>
 
-            {/* <Center
+            <Center
                 p={5}
                 w="100%"
                 h={"100vh"}
@@ -36,12 +36,15 @@ const Home = () => {
                 bg="#F2F2F3"
             >
                 <Flex direction={{ base: "column", md: "column" }}>
-                    <Image src="/images/logo.png" alt="GoCas" />
-                    <Center mt={"40px"}>
-                        <Heading>PT Makmur Tech Indonesia</Heading>
-                    </Center>
+                  <Image src='/images/logo.png' alt='GoCas' />
+                  <Center mt={"40px"}>
+                    <Heading>PT Makmur Tech Indonesia</Heading>
+                  </Center>
+                  <Center mt={"40px"}>
+                    <Heading size={"3xl"}>Under Maintenance</Heading>
+                  </Center>
                 </Flex>
-            </Center> */}
+            </Center>
             <Footer />
         </>
     );
