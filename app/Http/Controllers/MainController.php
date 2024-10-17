@@ -25,10 +25,10 @@ class MainController extends Controller
 
         $lat = (float)$data['lat'];
         $long = (float)$data['long'];
-        $north = (float)$data['north'] ?? null;
-        $east = (float)$data['east'] ?? null;
-        $south = (float)$data['south'] ?? null;
-        $west = (float)$data['west'] ?? null;
+        $north = isset($data['north']) ? (float)$data['north'] : null;
+        $east = isset($data['east']) ? (float)$data['east'] : null;
+        $south = isset($data['south']) ? (float)$data['south'] : null;
+        $west = isset($data['west']) ? (float)$data['west'] : null;
 
         $locations = Location::selectRaw(
                 "*, ROUND(( 6371 * acos( cos( radians(?) ) * cos( radians( CAST(latitude AS DECIMAL(10, 6)) ) ) 

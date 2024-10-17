@@ -33,7 +33,7 @@ const Location = ({ locations: initialLocations }) => {
         return;
       }
 
-      await hitSearchLocation(lat, lon);
+      await hitSearchLocation(data[0].lat, data[0].lon);
     } catch (err) {
       setError('An error occurred while searching for the location.');
       setLat(null);
