@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Box, Image, Button, Text } from "@chakra-ui/react";
 import { Link } from "@inertiajs/react";
+import GocasLogo from "../../../../public/images/navbar/gocas-logo.png"; // Make sure the path is correct
 
 const Navbar = () => {
     return (
@@ -14,9 +15,7 @@ const Navbar = () => {
                 boxShadow="sm"
             >
                 <Flex align="center">
-                    <Image src="/path/to/logo.png" alt="GoCas Logo" mr={4} />{" "}
-                    {/* Adjust the path as needed */}
-                    {/* Dropdown or language selector can go here if needed */}
+                    <Image src={GocasLogo} alt="GoCas Logo" mr={4} />
                 </Flex>
 
                 <Flex gap="4" align="center">

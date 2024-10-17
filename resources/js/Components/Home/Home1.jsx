@@ -28,7 +28,12 @@ const Home1 = () => {
                     Mulai Sekarang!
                 </Button>
             </Box>
-            <Box display="flex" justifyContent="flex-end" alignItems="center">
+            <Box
+                display="flex"
+                justifyContent="flex-end"
+                alignItems="center"
+                mt={28}
+            >
                 <Image
                     src={Listrik}
                     alt="Listrik"
