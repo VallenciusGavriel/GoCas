@@ -30,7 +30,13 @@ const Home1 = () => {
                     Solusi lengkap untukmu yang hidup dengan perangkat
                     kesayanganmu!
                 </Text>
-                <Button bg="#28B67A" textColor="white" mt={4}>
+                <Button
+                    bg="#28B67A"
+                    textColor="white"
+                    mt={4}
+                    borderRadius="0"
+                    fontWeight="bold"
+                >
                     Mulai Sekarang!
                 </Button>
             </Box>

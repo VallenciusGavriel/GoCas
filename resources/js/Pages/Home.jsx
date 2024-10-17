@@ -37,7 +37,7 @@ const Home = () => {
                     bgSize="cover"
                     bgPos="center"
                     p={10}
-                    borderRadius="lg"
+                    borderRadius="0"
                     position="relative"
                     overflow="hidden"
                 >

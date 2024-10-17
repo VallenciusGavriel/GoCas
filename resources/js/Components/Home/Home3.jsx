@@ -1,23 +1,23 @@
 // Home3.jsx
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Button, Flex } from "@chakra-ui/react";
 import HeaderText from "../Text/HeaderText";
 import GridKerjaSama from "./Grid/GridKerjaSama"; // Make sure the path is correct
 import * as kerjasamaImages from "./../../Assets/kerjasamaImages"; // Adjust the path as necessary
 
 const imageSources = [
-    kerjasamaImages.ashta,
-    kerjasamaImages.botani,
-    kerjasamaImages.cp,
-    kerjasamaImages.kai,
-    kerjasamaImages.lippo,
-    kerjasamaImages.mc,
+    kerjasamaImages.tj,
     kerjasamaImages.mrt,
+    kerjasamaImages.kai,
+    kerjasamaImages.puri,
     kerjasamaImages.pi,
     kerjasamaImages.pp,
-    kerjasamaImages.puri,
+    kerjasamaImages.mc,
     kerjasamaImages.pvj,
-    kerjasamaImages.tj,
+    kerjasamaImages.lippo,
+    kerjasamaImages.cp,
+    kerjasamaImages.botani,
+    kerjasamaImages.ashta,
 ];
 
 const Home3 = () => {
@@ -31,6 +31,16 @@ const Home3 = () => {
                 mendukung infrastruktur untuk pelanggan setia Kami.
             </Text>
             <GridKerjaSama images={imageSources} />
+            <Flex justifyContent="center" mt={4}>
+                <Button
+                    bg="#28B67A"
+                    textColor="white"
+                    borderRadius="0"
+                    fontWeight="bold"
+                >
+                    Temukan Kami
+                </Button>
+            </Flex>
         </>
     );
 };
