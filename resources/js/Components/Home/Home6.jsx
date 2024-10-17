@@ -36,28 +36,23 @@ const Home6 = () => {
     const backs = [
         {
             title: "1",
-            description: "Buka Halaman Utama dari Aplikasi Web GoCas.",
+            description: "Cari GoCas Station yang paling dekat dengan kamu.",
         },
         {
             title: "2",
-            description: "Daftar atau Masuk ke akun di Web GoCas.",
+            description: "Tap tombol Kembalikan di GoCas Station.",
         },
         {
             title: "3",
-            description: "Top up akun GoCas kamu sebelum melakukan peminjaman.",
+            description: "Masukan GoCas Powerbank ke slot mesin yang terbuka.",
         },
         {
             title: "4",
-            description:
-                "Tap menu 'Scan ReCharge' di aplikasi dan scan QR code pada mesin.",
+            description: "Tunggu status “Sewa” berubah menjadi “Kembali”",
         },
         {
             title: "5",
-            description: "Pilih kabel yang sesuai (iOs, Type-C, atau MicroUSB)",
-        },
-        {
-            title: "6",
-            description: "Ambil powerbank dari mesin dan gunakan.",
+            description: "GoCas Powerbank telah berhasil dikembalikan.",
         },
     ];
 

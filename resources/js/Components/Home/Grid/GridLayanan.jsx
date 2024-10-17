@@ -25,7 +25,9 @@ const GridLayanan = ({ services, columnsMd = 3 }) => {
                     <HeaderText size="small" iconColor="green" withIcon={false}>
                         {service.title}
                     </HeaderText>
-                    <Text mt={2}>{service.description}</Text>
+                    <Text mt={2} fontFamily="poppins">
+                        {service.description}
+                    </Text>
                 </Box>
             ))}
         </Grid>

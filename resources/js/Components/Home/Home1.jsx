@@ -26,7 +26,7 @@ const Home1 = () => {
                 <HeaderText size="large" withIcon={false} iconColor="green">
                     GoCas
                 </HeaderText>
-                <Text>
+                <Text fontFamily="poppins">
                     Solusi lengkap untukmu yang hidup dengan perangkat
                     kesayanganmu!
                 </Text>
@@ -36,6 +36,7 @@ const Home1 = () => {
                     mt={4}
                     borderRadius="0"
                     fontWeight="bold"
+                    fontFamily="poppins"
                 >
                     Mulai Sekarang!
                 </Button>

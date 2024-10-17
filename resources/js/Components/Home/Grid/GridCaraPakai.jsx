@@ -20,7 +20,9 @@ const GridCaraPakai = ({ steps, columnsMd = 3 }) => {
                     <HeaderText size="large" iconColor="green" withIcon={false}>
                         {step.title}
                     </HeaderText>
-                    <Text mt={2}>{step.description}</Text>
+                    <Text mt={2} fontFamily="poppins">
+                        {step.description}
+                    </Text>
                 </Box>
             ))}
         </Grid>

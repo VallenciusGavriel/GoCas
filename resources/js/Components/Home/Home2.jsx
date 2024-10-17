@@ -16,7 +16,13 @@ const Home2 = () => {
                     w="10%"
                     objectFit="cover"
                 />
-                <Text fontSize="lg" lineHeight="tall" flex="8" mx={8}>
+                <Text
+                    fontSize="lg"
+                    fontFamily="poppins"
+                    lineHeight="tall"
+                    flex="8"
+                    mx={8}
+                >
                     GoCas adalah perusahaan Internet of Things (IoT) yang hadir
                     dengan misi simpel, yaitu bikin hidup kamu lebih mudah lewat
                     teknologi keren berbasis internet! Kami menyediakan layanan

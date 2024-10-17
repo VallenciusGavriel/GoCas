@@ -24,7 +24,9 @@ const GridCaraBalik = ({ backs, columnsMd = 3 }) => {
                     >
                         {back.title}
                     </HeaderText>
-                    <Text mt={2}>{back.description}</Text>
+                    <Text mt={2} fontFamily="poppins">
+                        {back.description}
+                    </Text>
                 </Box>
             ))}
         </Grid>
