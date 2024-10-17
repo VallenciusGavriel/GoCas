@@ -1,8 +1,18 @@
 import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet-defaulticon-compatibility';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
 import 'leaflet/dist/leaflet.css';
+
+const customIcon = new L.Icon({
+  iconUrl: '/images/person-standing.svg',
+  iconSize: [50, 50],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+  shadowSize: [50, 50],
+});
 
 const MapEventListener = ({ searchLocation }) => {
   const map = useMap();
@@ -10,7 +20,9 @@ const MapEventListener = ({ searchLocation }) => {
   useEffect(() => {
     const handleMapDrag = () => {
       const center = map.getCenter();
-      searchLocation(center.lat, center.lng);
+      const bounds = map.getBounds();
+
+      searchLocation(center.lat, center.lng, bounds._northEast.lat, bounds._northEast.lng, bounds._southWest.lat, bounds._southWest.lng);
     };
 
     map.on('moveend', handleMapDrag);
@@ -44,6 +56,8 @@ const Maps = ({ locations, point, searchLocation }) => {
           <Popup>{location.name}</Popup>
         </Marker>
       ))}
+
+      <Marker position={center} icon={customIcon}></Marker>
     </MapContainer>
   );
 };
