@@ -1,0 +1,12 @@
+export const ashta = "/images/kerjasama/ashta.png";
+export const botani = "/images/kerjasama/botani.png";
+export const cp = "/images/kerjasama/cp.png";
+export const kai = "/images/kerjasama/kai.png";
+export const lippo = "/images/kerjasama/lippo.png";
+export const mc = "/images/kerjasama/mc.png";
+export const mrt = "/images/kerjasama/mrt.png";
+export const pi = "/images/kerjasama/pi.png";
+export const pp = "/images/kerjasama/pp.png";
+export const puri = "/images/kerjasama/puri.png";
+export const pvj = "/images/kerjasama/pvj.png";
+export const tj = "/images/kerjasama/tj.png";

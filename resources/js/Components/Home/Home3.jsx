@@ -1,7 +1,24 @@
+// Home3.jsx
 import React from "react";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import HeaderText from "../Text/HeaderText";
-import GuardImage from "./../../../../public/images/home/guard.png";
+import GridKerjaSama from "./Grid/GridKerjaSama"; // Make sure the path is correct
+import * as kerjasamaImages from "./../../Assets/kerjasamaImages"; // Adjust the path as necessary
+
+const imageSources = [
+    kerjasamaImages.ashta,
+    kerjasamaImages.botani,
+    kerjasamaImages.cp,
+    kerjasamaImages.kai,
+    kerjasamaImages.lippo,
+    kerjasamaImages.mc,
+    kerjasamaImages.mrt,
+    kerjasamaImages.pi,
+    kerjasamaImages.pp,
+    kerjasamaImages.puri,
+    kerjasamaImages.pvj,
+    kerjasamaImages.tj,
+];
 
 const Home3 = () => {
     return (
@@ -9,27 +26,11 @@ const Home3 = () => {
             <HeaderText size="normal" withIcon={true} iconColor="green">
                 Jalinan Kerjasama GoCas
             </HeaderText>
-            <Text fontSize="lg">
+            <Text fontSize="lg" mb={4}>
                 Kami menjalin kerjasama dengan banyak partner kerja yang
                 mendukung infrastruktur untuk pelanggan setia Kami.
             </Text>
-            <Flex alignItems="center" gap={2} mt={4}>
-                <Image
-                    src={GuardImage}
-                    alt="Guard Image"
-                    w="10%"
-                    objectFit="cover"
-                />
-                <Text fontSize="lg" lineHeight="tall" flex="8" mx={8}>
-                    GoCas adalah perusahaan Internet of Things (IoT) yang hadir
-                    dengan misi simpel, yaitu bikin hidup kamu lebih mudah lewat
-                    teknologi keren berbasis internet! Kami menyediakan layanan
-                    sewa powerbank yang super gampang diakses dan ramah di
-                    kantong, jadi kamu bisa bebas dari panik saat baterai
-                    perangkatmu mulai habis. Yuk, bersama GoCas, tetap aktif dan
-                    selalu terhubung tanpa khawatir!
-                </Text>
-            </Flex>
+            <GridKerjaSama images={imageSources} />
         </>
     );
 };
