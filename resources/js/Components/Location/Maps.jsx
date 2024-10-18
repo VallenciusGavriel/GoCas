@@ -6,7 +6,7 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import 'leaflet/dist/leaflet.css';
 
 const customIcon = new L.Icon({
-  iconUrl: '/images/person-standing.svg',
+  iconUrl: '/images/location/person-standing.svg',
   iconSize: [50, 50],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
