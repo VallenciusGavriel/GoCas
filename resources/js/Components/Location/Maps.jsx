@@ -38,7 +38,7 @@ const MapEventListener = ({ searchLocation }) => {
 const Maps = ({ locations, point, searchLocation }) => {
   const center = point[0] ? point : [locations[0].latitude, locations[0].longitude];
   const isLocationEnabled = import.meta.env.VITE_ENABLE_LOCATION ? import.meta.env.VITE_ENABLE_LOCATION === 'true' : true;
-console.log(isLocationEnabled);
+
   return (
     <MapContainer
       center={center}
