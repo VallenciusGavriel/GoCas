@@ -59,7 +59,7 @@ const Location = ({ locations: initialLocations }) => {
     <>
       <Head title="Location" />
       <Navbar />
-      <Center>
+      <Center mt="96px">
         <Box
           p={5}
           w={{ base: "100%", md: "80%" }}
