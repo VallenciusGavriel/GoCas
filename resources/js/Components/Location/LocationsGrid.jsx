@@ -40,9 +40,11 @@ const LocationCard = ({ title, address, detailLink, distance }) => (
 );
 
 const LocationsGrid = ({ locations }) => {
+  const isLocationEnabled = import.meta.env.VITE_ENABLE_LOCATION === true ?? true;
+
   return (
     <Box w="100%">
-      {locations &&
+      {(isLocationEnabled && (locations &&
         <Grid w="100%" templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6}>
           {locations.map((location, index) => (
             <LocationCard
@@ -53,9 +55,8 @@ const LocationsGrid = ({ locations }) => {
               distance={location.distance ?? 0}
             />
           ))}
-        </Grid>
-      }
-      { locations.length === 0 &&
+        </Grid>)
+      || (locations.length === 0 &&
         <Box
           border="1px"
           borderColor="gray.200"
@@ -85,8 +86,31 @@ const LocationsGrid = ({ locations }) => {
                 <Text>Coba cari di tempat lainnya ya...</Text>
               </b>
             </VStack>
-        </Center>
+          </Center>
         </Box>
+        ))
+        || (!isLocationEnabled &&
+          <Box
+            border="1px"
+            borderColor="gray.200"
+            borderRadius="md"
+            p={4}
+            backgroundColor="white"
+            boxShadow="md"
+            _hover={{ boxShadow: 'xl' }}
+            w="100%"
+          >
+              <Center w="100%" my={40} pr={4}>
+              <HeaderText
+                size="large"
+                withIcon={false}
+                iconColor="green"
+              >
+                Coming Soon
+              </HeaderText>
+            </Center>
+          </Box>
+        )
       }
     </Box>
   );
