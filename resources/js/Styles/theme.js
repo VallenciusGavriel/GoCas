@@ -9,7 +9,7 @@ const theme = extendTheme({
         },
     },
     fonts: {
-        heading: "Open Sans, sans-serif",
+        heading: "Poppins, Open Sans, sans-serif",
         body: "Raleway, sans-serif",
     },
 });
