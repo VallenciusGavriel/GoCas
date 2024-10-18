@@ -1,11 +1,10 @@
 import React from "react";
 import { Box, Text, Flex, Image, Icon, Link } from "@chakra-ui/react";
 import {
-    FaTelegram,
-    FaSpotify,
-    FaXing,
     FaWhatsapp,
     FaInstagram,
+    FaTiktok,
+    FaTwitter,
 } from "react-icons/fa";
 import GoCasLogo from "./../../../../public/images/navbar/gocas-logo.png";
 
@@ -31,11 +30,26 @@ const Footer = () => {
                         Cengkareng, Jakarta Barat
                     </Text>
                     <Flex gap={4}>
-                        <Icon as={FaTelegram} w={8} h={8} />
-                        <Icon as={FaSpotify} w={8} h={8} />
-                        <Icon as={FaXing} w={8} h={8} />
-                        <Icon as={FaWhatsapp} w={8} h={8} />
-                        <Icon as={FaInstagram} w={8} h={8} />
+                        <Link
+                          href={"https://www.instagram.com/gocasindonesia"}
+                        >
+                            <Icon as={FaInstagram} w={8} h={8} />
+                        </Link>
+                        <Link
+                          href={"https://www.tiktok.com/@gocasindonesia?_t=8qdW7ChFe3r&_r=1"}
+                        >
+                            <Icon as={FaTiktok} w={8} h={8} />
+                        </Link>
+                        <Link
+                          href={"https://x.com/gocasindonesia?t=Bf5ybbiFLpMNoDciaBXiVw&s=09"}
+                        >
+                            <Icon as={FaTwitter} w={8} h={8} />
+                        </Link>
+                        <Link
+                          href={"https://wa.me/6282188886665"}
+                        >
+                            <Icon as={FaWhatsapp} w={8} h={8} />
+                        </Link>
                     </Flex>
                 </Box>
                 <Box textAlign="right">
