@@ -144,7 +144,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
 
 const LocationsGrid = ({ locations }) => {
   const isLocationEnabled = import.meta.env.VITE_ENABLE_LOCATION ? import.meta.env.VITE_ENABLE_LOCATION === 'true' : true;
-console.log(locations);
+
   return (
     <>
       <Box w="100%">

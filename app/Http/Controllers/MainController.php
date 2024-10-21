@@ -13,9 +13,12 @@ class MainController extends Controller
     public function location(Request $request): Response
     {
         $locations = Location::all();
+        $ip = $request->ip();
+        $currentUserInfo = \Stevebauman\Location\Facades\Location::get($ip);
 
         return Inertia::render('Location', [
-            'locations' => $locations
+            'locations' => $locations,
+            'center' => $currentUserInfo ? [$currentUserInfo->latitude, $currentUserInfo->longitude] : ['-6.194920724627336', '106.8230702014363'],
         ]);
     }
 

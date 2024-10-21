@@ -8,10 +8,10 @@ import { SearchIcon } from "lucide-react";
 import Maps from "@/Components/Location/Maps.jsx";
 import LocationsGrid from "@/Components/Location/LocationsGrid.jsx";
 
-const Location = ({ locations: initialLocations }) => {
+const Location = ({ locations: initialLocations, center }) => {
   const [query, setQuery] = useState('');
-  const [lat, setLat] = useState(null);
-  const [long, setLong] = useState(null);
+  const [lat, setLat] = useState(center[0]);
+  const [long, setLong] = useState(center[1]);
   const [error, setError] = useState(null);
   const [locations, setLocations] = useState(initialLocations);
 
