@@ -16,7 +16,7 @@ import {
 import { MapPin } from "lucide-react";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 
-const LocationCard = ({ title, address, operational_hours, status, distance }) => {
+const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b, status, distance }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return(
@@ -68,7 +68,7 @@ const LocationCard = ({ title, address, operational_hours, status, distance }) =
               >
               <VStack alignItems={"left"}>
                   <Text fontSize={"3xl"} color={"green"}>Apple</Text>
-                  <HeaderText size={"large"} withIcon={false} iconColor={"black"}>30</HeaderText>
+                  <HeaderText size={"large"} withIcon={false} iconColor={"black"}>{apple}</HeaderText>
                 </VStack>
               </Box>
               <Box
@@ -80,7 +80,7 @@ const LocationCard = ({ title, address, operational_hours, status, distance }) =
               >
               <VStack alignItems={"left"}>
                   <Text fontSize={"3xl"} color={"green"}>Type C</Text>
-                  <HeaderText size={"large"} withIcon={false} iconColor={"black"}>30</HeaderText>
+                  <HeaderText size={"large"} withIcon={false} iconColor={"black"}>{type_c}</HeaderText>
                 </VStack>
               </Box>
               <Box
@@ -92,7 +92,7 @@ const LocationCard = ({ title, address, operational_hours, status, distance }) =
               >
               <VStack alignItems={"left"}>
                   <Text fontSize={"3xl"} color={"green"}>Type B</Text>
-                  <HeaderText size={"large"} withIcon={false} iconColor={"black"}>30</HeaderText>
+                  <HeaderText size={"large"} withIcon={false} iconColor={"black"}>{type_b}</HeaderText>
                 </VStack>
               </Box>
             </Flex>
@@ -156,6 +156,9 @@ console.log(locations);
                 title={location.name}
                 address={location.address_detail}
                 operational_hours={location.operational_hours}
+                apple={location.apple}
+                type_c={location.type_c}
+                type_b={location.type_b}
                 status={location.status}
                 distance={location.distance ?? 0}
               />
