@@ -148,7 +148,7 @@ const LocationsGrid = ({ locations }) => {
   return (
     <>
       <Box w="100%">
-        {(isLocationEnabled && (locations &&
+        {(isLocationEnabled && (locations.length !== 0 &&
           <Grid w="100%" templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6}>
             {locations.map((location, index) => (
               <LocationCard
