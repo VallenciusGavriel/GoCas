@@ -70,22 +70,24 @@ const Location = ({ locations: initialLocations, center }) => {
             Lokasi GoCas
           </HeaderText>
 
-          <Flex align="center" maxW="md" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4}>
-            <Input
-              placeholder="Cari Lokasi"
-              value={query}
-              w="100%"
-              onChange={(e) => setQuery(e.target.value)}
-            />
-            <IconButton
-              aria-label="Search location"
-              icon={<SearchIcon />}
-              onClick={() => searchLocation()}
-              colorScheme="green"
-              borderRadius="md"
-              ml={2}
-            />
-          </Flex>
+          <Center>
+            <Flex align="center" maxW="md" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4}>
+              <Input
+                placeholder="Cari Lokasi"
+                value={query}
+                w="100%"
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              <IconButton
+                aria-label="Search location"
+                icon={<SearchIcon />}
+                onClick={() => searchLocation()}
+                colorScheme="green"
+                borderRadius="md"
+                ml={2}
+              />
+            </Flex>
+          </Center>
 
           <Flex align="center" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4}>
             <Maps locations={locations} point={[lat, long]} searchLocation={hitSearchLocation}/>
