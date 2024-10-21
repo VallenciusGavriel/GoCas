@@ -8,10 +8,10 @@ import { SearchIcon } from "lucide-react";
 import Maps from "@/Components/Location/Maps.jsx";
 import LocationsGrid from "@/Components/Location/LocationsGrid.jsx";
 
-const Location = ({ locations: initialLocations }) => {
+const Location = ({ locations: initialLocations, center }) => {
   const [query, setQuery] = useState('');
-  const [lat, setLat] = useState(null);
-  const [long, setLong] = useState(null);
+  const [lat, setLat] = useState(center[0]);
+  const [long, setLong] = useState(center[1]);
   const [error, setError] = useState(null);
   const [locations, setLocations] = useState(initialLocations);
 
@@ -59,7 +59,24 @@ const Location = ({ locations: initialLocations }) => {
     <>
       <Head title="Location" />
       <Navbar />
-      <Center>
+      <Flex
+        bgImage={`url('/images/home/background-1.png')`}
+        bgSize="cover"
+        bgRepeat="no-repeat"
+        bgPos="top left" // Position image at top left
+        borderRadius="0"
+        position="absolute"
+        zIndex={0}
+        h={'50vh'}
+        w={'full'}
+      >
+
+      </Flex>
+      <Center
+        mt="96px"
+        w="full"
+        bgGradient='linear(to-b, white 50%, green.300)'
+      >
         <Box
           p={5}
           w={{ base: "100%", md: "80%" }}
@@ -70,29 +87,43 @@ const Location = ({ locations: initialLocations }) => {
             Lokasi GoCas
           </HeaderText>
 
-          <Flex align="center" maxW="md" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4}>
-            <Input
-              placeholder="Cari Lokasi"
-              value={query}
-              w="100%"
-              onChange={(e) => setQuery(e.target.value)}
-            />
-            <IconButton
-              aria-label="Search location"
-              icon={<SearchIcon />}
-              onClick={() => searchLocation()}
-              colorScheme="green"
-              borderRadius="md"
-              ml={2}
-            />
-          </Flex>
+          <Center>
+            <Flex align="center" maxW="md" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4} backgroundColor={'white'}>
+              <Input
+                placeholder="Cari Lokasi"
+                value={query}
+                w="100%"
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              <IconButton
+                aria-label="Search location"
+                icon={<SearchIcon />}
+                onClick={() => searchLocation()}
+                colorScheme="green"
+                borderRadius="md"
+                ml={2}
+              />
+            </Flex>
+          </Center>
 
-          <Flex align="center" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4}>
+          <Flex align="center" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4} backgroundColor={'white'}>
             <Maps locations={locations} point={[lat, long]} searchLocation={hitSearchLocation}/>
           </Flex>
+        </Box>
+      </Center>
+      <Center
+        w="full"
+        bgGradient='linear(to-b, green.300, green.400 40%)'
+      >
+        <Box
+          p={5}
+          w={{ base: "100%", md: "80%" }}
+          hmin={"100vh"}
+          position={"relative"}
+        >
 
           <Flex align="center" px={2} py={1} w="100%" mt={4}>
-            <HeaderText size="normal" withIcon={true} iconColor="green">
+            <HeaderText size="normal" withIcon={true} iconColor="white">
               Lokasi Terdekat
             </HeaderText>
           </Flex>

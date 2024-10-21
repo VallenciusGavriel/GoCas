@@ -6,13 +6,15 @@ const HeaderText = ({ children, size, withIcon = false, iconColor }) => {
         large: "5xl",
         normal: "3xl",
         small: "xl",
+        tiny: "base",
     };
     const fontSize = fontSizeMapping[size];
 
     const iconDimensions = {
         "5xl": { width: "20x", height: "40px" },
         "3xl": { width: "16px", height: "32px" },
-        xl: { width: "16px", height: "32px" },
+        "xl": { width: "16px", height: "32px" },
+        "base": { width: "10px", height: "18px" },
     };
     const { width, height } = iconDimensions[fontSize];
 
@@ -23,6 +25,7 @@ const HeaderText = ({ children, size, withIcon = false, iconColor }) => {
         green: "#28B67A",
         black: "black",
         white: "white",
+        red: "#FF0000",
         yellow: "#E7BE0B",
     };
     const textColor = colorMapping[iconColor] || "black";

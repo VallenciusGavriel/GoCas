@@ -6,7 +6,7 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import 'leaflet/dist/leaflet.css';
 
 const customIcon = new L.Icon({
-  iconUrl: '/images/person-standing.svg',
+  iconUrl: '/images/location/person-standing.svg',
   iconSize: [50, 50],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -37,6 +37,7 @@ const MapEventListener = ({ searchLocation }) => {
 
 const Maps = ({ locations, point, searchLocation }) => {
   const center = point[0] ? point : [locations[0].latitude, locations[0].longitude];
+  const isLocationEnabled = import.meta.env.VITE_ENABLE_LOCATION ? import.meta.env.VITE_ENABLE_LOCATION === 'true' : true;
 
   return (
     <MapContainer
@@ -51,13 +52,15 @@ const Maps = ({ locations, point, searchLocation }) => {
 
       <MapEventListener searchLocation={searchLocation} />
 
-      {locations.map((location, index) => (
+      {isLocationEnabled && locations.map((location, index) => (
         <Marker key={index} position={[location.latitude, location.longitude]}>
           <Popup>{location.name}</Popup>
         </Marker>
       ))}
 
-      <Marker position={center} icon={customIcon}></Marker>
+      {isLocationEnabled &&
+        <Marker position={center} icon={customIcon}></Marker>
+      }
     </MapContainer>
   );
 };
