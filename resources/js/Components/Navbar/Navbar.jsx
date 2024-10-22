@@ -40,7 +40,7 @@ const Navbar = () => {
 
     // Update these links to reflect your application's pages
     const menuLinks = [
-        { name: "Lokasi", href: "/" },
+        { name: "Lokasi", href: "/location" },
         { name: "Produk", href: "/products" },
         { name: "Pengguna", href: "/users" },
         { name: "Partner", href: "/partners" },
@@ -76,13 +76,15 @@ const Navbar = () => {
             >
                 {/* Logo Section */}
                 <Flex align="center" justify="flex-start">
-                    <Image
-                        src={GocasLogo}
-                        alt="GoCas Logo"
-                        boxSize="80px"
-                        mr={4}
-                        objectFit="contain"
-                    />
+                    <Link key={'home'} href={'/'}>
+                        <Image
+                            src={GocasLogo}
+                            alt="GoCas Logo"
+                            boxSize="80px"
+                            mr={4}
+                            objectFit="contain"
+                        />
+                    </Link>
 
                     {/* Language Dropdown */}
                     <Box
