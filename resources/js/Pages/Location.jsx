@@ -75,7 +75,7 @@ const Location = ({ locations: initialLocations, center }) => {
       <Center
         mt="96px"
         w="full"
-        bgGradient='linear(to-b, white 50%, green.300)'
+        bgGradient='linear(to-b, white 50%, yellow.300)'
       >
         <Box
           p={5}
@@ -83,7 +83,7 @@ const Location = ({ locations: initialLocations, center }) => {
           hmin={"100vh"}
           position={"relative"}
         >
-          <HeaderText size="normal" withIcon={true} iconColor="green">
+          <HeaderText size="normal" withIcon={true} iconColor="yellow">
             Lokasi GoCas
           </HeaderText>
 
@@ -99,7 +99,7 @@ const Location = ({ locations: initialLocations, center }) => {
                 aria-label="Search location"
                 icon={<SearchIcon />}
                 onClick={() => searchLocation()}
-                colorScheme="green"
+                colorScheme="yellow"
                 borderRadius="md"
                 ml={2}
               />
@@ -113,7 +113,7 @@ const Location = ({ locations: initialLocations, center }) => {
       </Center>
       <Center
         w="full"
-        bgGradient='linear(to-b, green.300, green.400 40%)'
+        bgGradient='linear(to-b, yellow.300, yellow.400 40%)'
       >
         <Box
           p={5}

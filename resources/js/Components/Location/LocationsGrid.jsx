@@ -31,7 +31,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
                 <Icon as={MapPin} fill={"green"} color={"white"} boxSize={24} />
               </Center>
               <VStack alignItems={"left"}>
-                <HeaderText size={"normal"} withIcon={false} iconColor={"green"}>{title}</HeaderText>
+                <HeaderText size={"normal"} withIcon={false} iconColor={"yellow"}>{title}</HeaderText>
                 <Text>{address}</Text>
               </VStack>
             </Flex>
@@ -99,7 +99,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='green' mr={3} onClick={onClose}>
+            <Button colorScheme='yellow' mr={3} onClick={onClose}>
               Close
             </Button>
           </ModalFooter>
@@ -123,7 +123,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
             <HeaderText
               size="small"
               withIcon={false}
-              iconColor="green"
+              iconColor="yellow"
             >
               {title}
             </HeaderText>
@@ -132,7 +132,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
               ? <Text>{distance} km</Text>
               : <Text></Text>
             }
-            <Link color="green.600" onClick={onOpen} fontWeight="bold">
+            <Link color="yellow.600" onClick={onOpen} fontWeight="bold">
               Lihat Detail
             </Link>
           </VStack>
@@ -212,7 +212,7 @@ const LocationsGrid = ({ locations }) => {
                 <HeaderText
                   size="large"
                   withIcon={false}
-                  iconColor="green"
+                  iconColor="yellow"
                 >
                   Coming Soon
                 </HeaderText>
