@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             PartnerCategoriesSeeder::class,
             PartnersSeeder::class,
             ProductsSeeder::class,
+            UsersSeeder::class,
         ]);
     }
 }
