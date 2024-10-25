@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Flex, Image, Icon, Link } from "@chakra-ui/react";
+import {Box, Text, Flex, Image, Icon, Link, Grid} from "@chakra-ui/react";
 import {
     FaWhatsapp,
     FaInstagram,
@@ -7,12 +7,26 @@ import {
     FaTwitter,
 } from "react-icons/fa";
 import GoCasLogo from "./../../../../public/images/navbar/gocas-logo.png";
+import AppStore from "./../../../../public/images/navbar/appstore.png";
+import GPlay from "./../../../../public/images/navbar/gplay.png";
+import FB from "./../../../../public/images/navbar/fb.png";
+import IG from "./../../../../public/images/navbar/ig.png";
+import LinkedIn from "./../../../../public/images/navbar/linkedin.png";
+import Tiktok from "./../../../../public/images/navbar/tiktok.png";
+import X from "./../../../../public/images/navbar/x.png";
 
 const Footer = () => {
     return (
-        <Box px={8} py={4} bgColor="white" color="gray.700">
-            <Flex justifyContent="space-between" alignItems="center">
-                <Box>
+        <Box px={8} py={4} bgGradient='linear(to-b, #1c964a, #73bf51)' color="gray.700">
+            <Flex
+                justifyContent="space-between"
+                alignItems="center"
+                mb={6}
+                px={2}
+            >
+                <Box
+                    color={"white"}
+                >
                     <Image
                         src={GoCasLogo}
                         alt="GoCas logo"
@@ -20,61 +34,120 @@ const Footer = () => {
                         boxSize="120px"
                         objectFit="contain"
                     />
-                    <Text mb={0} fontFamily="poppins">
+                    <Text mb={0} fontFamily="poppins" fontWeight={"extrabold"}>
                         PT Makmur Tech Indonesia
                     </Text>
                     <Text mb={0} fontFamily="poppins">
                         Rukan Sedayu Square Blok N No 06,
                     </Text>
-                    <Text mb={4} fontFamily="poppins">
+                    <Text mb={0} fontFamily="poppins">
                         Cengkareng, Jakarta Barat
                     </Text>
-                    <Flex gap={4}>
-                        <Link
-                          href={"https://www.instagram.com/gocasindonesia"}
-                        >
-                            <Icon as={FaInstagram} w={8} h={8} />
-                        </Link>
-                        <Link
-                          href={"https://www.tiktok.com/@gocasindonesia?_t=8qdW7ChFe3r&_r=1"}
-                        >
-                            <Icon as={FaTiktok} w={8} h={8} />
-                        </Link>
-                        <Link
-                          href={"https://x.com/gocasindonesia?t=Bf5ybbiFLpMNoDciaBXiVw&s=09"}
-                        >
-                            <Icon as={FaTwitter} w={8} h={8} />
-                        </Link>
-                        <Link
-                          href={"https://wa.me/6282188886665"}
-                        >
-                            <Icon as={FaWhatsapp} w={8} h={8} />
-                        </Link>
-                    </Flex>
+                    <Text mb={4} fontFamily="poppins">
+                        support@gocas.id
+                    </Text>
                 </Box>
-                <Box textAlign="right">
-                    <ul>
-                        <li>
-                            <Link>Lokasi</Link>
-                        </li>
-                        <li>
-                            <Link>Produk</Link>
-                        </li>
-                        <li>
-                            <Link>Pengguna</Link>
-                        </li>
-                        <li>
-                            <Link>Partner</Link>
-                        </li>
-                        <li>
-                            <Link>Tentang Kami</Link>
-                        </li>
-                    </ul>
+                <Box
+                  color={"white"}
+                  fontWeight={"extrabold"}
+                  w={"50%"}
+                >
+                    <Grid
+                      templateColumns={{ base: "1fr", md: `repeat(2, 1fr)` }}
+                      gap={6}
+                    >
+                        <Link>Tentang Kami</Link>
+                        <Link>Lokasi</Link>
+                        <Link>Produk</Link>
+
+                        <Link>Pengguna</Link>
+                        <Link>Partnership</Link>
+                        <Link>FAQ</Link>
+                    </Grid>
+                </Box>
+                <Box
+                  color={"white"}
+                  fontWeight={"extrabold"}
+                >
+                    <Text mb={3}>
+                        Download sekarang di
+                    </Text>
+                    <Link href={"https://play.google.com"}>
+                        <Image
+                          src={GPlay}
+                          alt="Google Play"
+                          mb={2}
+                          w={"200px"}
+                          objectFit="contain"
+                        />
+                    </Link>
+                    <Link href={"https://www.apple.com/id/app-store/"}>
+                        <Image
+                          src={AppStore}
+                          alt="Apple Store"
+                          w={"200px"}
+                          objectFit="contain"
+                        />
+                    </Link>
                 </Box>
             </Flex>
-            <Text textAlign="center" mt={8} fontFamily="poppins">
-                Hak Cipta © 2024 oleh GoCas
-            </Text>
+            <Flex
+              align={"center"}
+              justify={"space-between"}
+              color={"white"}
+              borderTop={"1px"}
+              py={8}
+              px={2}
+            >
+                <Text textAlign="center" fontFamily="poppins" fontWeight={"bold"}>
+                    Copyrights ©2024 GoCas. All Rights Reserved
+                </Text>
+                <Flex
+                  gap={4}
+                    textAlign={"center"}
+                    align={"center"}
+                >
+                    <Text>Ikuti Kami</Text>
+                    <Link
+                      href={"https://www.instagram.com/gocasindonesia"}
+                    >
+                        <Image
+                          src={IG}
+                          alt="Instagram"
+                          w={8}
+                          h={8}
+                          objectFit="contain"
+                        />
+                    </Link>
+                    <Link
+                      href={"https://www.tiktok.com/@gocasindonesia?_t=8qdW7ChFe3r&_r=1"}
+                    >
+                        <Image
+                          src={Tiktok}
+                          alt="Tiktok"
+                          w={8}
+                          h={8}
+                          objectFit="contain"
+                        />
+                    </Link>
+                    <Link
+                      href={"https://x.com/gocasindonesia?t=Bf5ybbiFLpMNoDciaBXiVw&s=09"}
+                    >
+                        <Image
+                          src={X}
+                          alt="X"
+                          w={8}
+                          h={8}
+                          objectFit="contain"
+                        />
+                    </Link>
+                    <Link
+                      href={"https://wa.me/6282188886665"}
+                    >
+                        <Icon as={FaWhatsapp} w={8} h={8} />
+                    </Link>
+                </Flex>
+            </Flex>
         </Box>
     );
 };
