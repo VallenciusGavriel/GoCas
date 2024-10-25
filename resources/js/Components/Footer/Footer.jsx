@@ -2,9 +2,6 @@ import React from "react";
 import {Box, Text, Flex, Image, Icon, Link, Grid} from "@chakra-ui/react";
 import {
     FaWhatsapp,
-    FaInstagram,
-    FaTiktok,
-    FaTwitter,
 } from "react-icons/fa";
 import GoCasLogo from "./../../../../public/images/navbar/gocas-logo.png";
 import AppStore from "./../../../../public/images/navbar/appstore.png";
@@ -19,8 +16,10 @@ const Footer = () => {
     return (
         <Box px={8} py={4} bgGradient='linear(to-b, #1c964a, #73bf51)' color="gray.700">
             <Flex
-                justifyContent="space-between"
-                alignItems="center"
+                direction={{base:"column", md: "row"}}
+                justifyContent={{base:"left", md: "space-between"}}
+                alignItems={{base:"left", md: "center"}}
+                gap={10}
                 mb={6}
                 px={2}
             >
@@ -54,15 +53,16 @@ const Footer = () => {
                 >
                     <Grid
                       templateColumns={{ base: "1fr", md: `repeat(2, 1fr)` }}
-                      gap={6}
+                      gap={{ base: 2, md: 6 }}
                     >
-                        <Link>Tentang Kami</Link>
-                        <Link>Lokasi</Link>
-                        <Link>Produk</Link>
+                        <Link href={"/about"}>Tentang Kami</Link>
+                        <Link href={"/users"}>Pengguna</Link>
 
-                        <Link>Pengguna</Link>
-                        <Link>Partnership</Link>
-                        <Link>FAQ</Link>
+                        <Link href={"/location"}>Lokasi</Link>
+                        <Link href={"/partnership"}>Partnership</Link>
+
+                        <Link href={"/products"}>Produk</Link>
+                        <Link href={"/faq"}>FAQ</Link>
                     </Grid>
                 </Box>
                 <Box
@@ -92,10 +92,12 @@ const Footer = () => {
                 </Box>
             </Flex>
             <Flex
+              direction={{base:"column-reverse", md: "row"}}
               align={"center"}
               justify={"space-between"}
               color={"white"}
               borderTop={"1px"}
+              gap={10}
               py={8}
               px={2}
             >

@@ -18,6 +18,7 @@ import {
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import GocasLogo from "../../../../public/images/navbar/gocas-logo.png"; // Ensure correct path
+import GocasWhite from "../../../../public/images/navbar/logo-white.png"; // Ensure correct path
 
 // Import images
 import IDFlag from "../../../../public/images/navbar/IDFlag.png";
@@ -73,7 +74,7 @@ const Navbar = () => {
                 {/* Logo Section */}
                 <Flex align="center" justify="flex-start">
                     <Image
-                        src={GocasLogo}
+                        src={GocasWhite}
                         alt="GoCas Logo"
                         boxSize="80px"
                         mr={4}
@@ -117,6 +118,8 @@ const Navbar = () => {
                             variant={button.variant}
                             mr={4}
                             color={"white"}
+                            _hover={{ bg: "green" }}
+                            _active={{ bg: "green" }}
                             bg={"#6fb475"}
                             borderRadius="xl"
                         >
