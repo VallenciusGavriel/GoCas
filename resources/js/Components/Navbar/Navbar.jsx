@@ -202,7 +202,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <Collapse in={isOpen}>
                 <Box
-                    display={{ base: "block", lg: "none" }}
+                    display={{ base: "block", xl: "none" }}
                     p={4}
                     bg="white"
                     borderBottom="1px"
@@ -210,7 +210,16 @@ const Navbar = () => {
                 >
                     <Flex direction="column" align="center">
                         {menuLinks.map((link) => (
-                            <Link key={link.name} href={link.href}>
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                px={4}
+                                py={2}
+                                borderRadius={"xl"}
+                                color={"black"}
+                                _hover={{ bg: "green.100" }}
+                                _active={{ bg: "green.100" }}
+                            >
                                 <Text
                                     my={2}
                                     fontFamily="poppins"
