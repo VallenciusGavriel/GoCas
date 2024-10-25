@@ -18,6 +18,7 @@ import {
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import GocasLogo from "../../../../public/images/navbar/gocas-logo.png"; // Ensure correct path
+import GocasWhite from "../../../../public/images/navbar/logo-white.png"; // Ensure correct path
 
 // Import images
 import IDFlag from "../../../../public/images/navbar/IDFlag.png";
@@ -40,33 +41,29 @@ const Navbar = () => {
 
     // Update these links to reflect your application's pages
     const menuLinks = [
-        { name: "Lokasi", href: "/" },
-        { name: "Produk", href: "/products" },
-        { name: "Pengguna", href: "/users" },
-        { name: "Partner", href: "/partners" },
         { name: "Tentang Kami", href: "/about" },
+        { name: "Lokasi", href: "/location" },
+        { name: "Produk", href: "/products" },
+        { name: "Partnership", href: "/partnership" },
     ];
 
     // Update these buttons if needed
     const buttons = [
-        { label: "Masuk", variant: "solid", id: "signInButton" },
-        { label: "Daftar", variant: "outline", id: "registerButton" },
+        { label: "Help Center", variant: "solid", id: "helpButton" },
+        { label: "Daftar", variant: "solid", id: "registerButton" },
     ];
 
     return (
         <MotionBox
             p={2}
-            bg="white"
-            shadow="md"
-            borderBottom="1px"
-            borderColor="gray.200"
+            bg="#09a04b"
+            color={"white"}
             position="fixed"
             top={0}
             left={0}
             right={0}
             width="100%"
             zIndex="20"
-            borderRadius="xl"
         >
             <Flex
                 align="center"
@@ -77,74 +74,12 @@ const Navbar = () => {
                 {/* Logo Section */}
                 <Flex align="center" justify="flex-start">
                     <Image
-                        src={GocasLogo}
+                        src={GocasWhite}
                         alt="GoCas Logo"
                         boxSize="80px"
                         mr={4}
                         objectFit="contain"
                     />
-
-                    {/* Language Dropdown */}
-                    <Box
-                        ml={10}
-                        borderWidth="1px"
-                        borderRadius="md"
-                        px={2}
-                        display="flex"
-                        alignItems="center"
-                        borderColor="black"
-                    >
-                        <Flex align="center">
-                            <Image
-                                src={
-                                    selectedLanguage === "ID" ? IDFlag : ENFlag
-                                }
-                                alt={
-                                    selectedLanguage === "ID"
-                                        ? "Indonesian Flag"
-                                        : "English Flag"
-                                }
-                                boxSize="16px"
-                                mr={2}
-                            />
-                            <Text fontWeight="bold">{selectedLanguage}</Text>
-                        </Flex>
-                        <Menu>
-                            <MenuButton
-                                as={IconButton}
-                                icon={<ChevronDownIcon />}
-                                ml={2}
-                                aria-label="Select Language"
-                                bg="transparent"
-                                _hover={{ bg: "transparent" }}
-                                _active={{ bg: "transparent" }}
-                            />
-                            <MenuList>
-                                <MenuItem
-                                    onClick={() => handleLanguageChange("ID")}
-                                >
-                                    <Image
-                                        src={IDFlag}
-                                        alt="Indonesian Flag"
-                                        boxSize="20px"
-                                        mr={2}
-                                    />
-                                    <Text>Bahasa Indonesia (ID)</Text>
-                                </MenuItem>
-                                <MenuItem
-                                    onClick={() => handleLanguageChange("EN")}
-                                >
-                                    <Image
-                                        src={ENFlag}
-                                        alt="English Flag"
-                                        boxSize="20px"
-                                        mr={2}
-                                    />
-                                    <Text>English (EN)</Text>
-                                </MenuItem>
-                            </MenuList>
-                        </Menu>
-                    </Box>
                 </Flex>
 
                 {/* Hamburger Icon for Mobile */}
@@ -156,7 +91,7 @@ const Navbar = () => {
                 />
 
                 {/* Desktop Menu */}
-                <Flex align="center" ml={10} spacing={8} display={display}>
+                <Flex align="center" justify={"space-evenly"} w={"80%"} ml={10} spacing={8} display={display}>
                     {menuLinks.map((link) => (
                         <Link key={link.name} href={link.href}>
                             <MotionText
@@ -166,7 +101,7 @@ const Navbar = () => {
                                 fontWeight={
                                     isActive(link.href) ? "bold" : "normal"
                                 }
-                                color="black"
+                                color="white"
                                 transition={{ duration: 0.3 }}
                             >
                                 {link.name}
@@ -182,18 +117,92 @@ const Navbar = () => {
                             key={button.id}
                             variant={button.variant}
                             mr={4}
+                            color={"white"}
+                            _hover={{ bg: "green" }}
+                            _active={{ bg: "green" }}
+                            bg={"#6fb475"}
                             borderRadius="xl"
                         >
                             {button.label}
                         </ChakraButton>
                     ))}
+
+                    {/* Language Dropdown */}
+                    <Box
+                      borderLeft={"1px"}
+                      px={5}
+                      display="flex"
+                      alignItems="center"
+                    >
+                        <Flex align="center">
+                            <Image
+                              src={
+                                  selectedLanguage === "ID" ? IDFlag : ENFlag
+                              }
+                              alt={
+                                  selectedLanguage === "ID"
+                                    ? "Indonesian Flag"
+                                    : "English Flag"
+                              }
+                              boxSize="16px"
+                              mr={2}
+                            />
+                            <Text fontWeight="bold">{selectedLanguage}</Text>
+                        </Flex>
+                        <Menu>
+                            <MenuButton
+                              as={IconButton}
+                              icon={<ChevronDownIcon />}
+                              ml={4}
+                              color={"white"}
+                              aria-label="Select Language"
+                              bg="transparent"
+                              _hover={{ bg: "green" }}
+                              _active={{ bg: "green" }}
+                            />
+                            <MenuList
+                              bg={"#6fb475"}
+                              px={2}
+                              op
+                            >
+                                <MenuItem
+                                  bg={"transparent"}
+                                  _hover={{ bg: "green" }}
+                                  _active={{ bg: "green" }}
+                                  onClick={() => handleLanguageChange("ID")}
+                                >
+                                    <Image
+                                      src={IDFlag}
+                                      alt="Indonesian Flag"
+                                      boxSize="20px"
+                                      mr={2}
+                                    />
+                                    <Text>Bahasa Indonesia (ID)</Text>
+                                </MenuItem>
+                                <MenuItem
+                                  bg={"transparent"}
+                                  _hover={{ bg: "green" }}
+                                  _active={{ bg: "green" }}
+                                  onClick={() => handleLanguageChange("EN")}
+                                >
+                                    <Image
+                                      src={ENFlag}
+                                      alt="English Flag"
+                                      boxSize="20px"
+                                      mr={2}
+                                    />
+                                    <Text>English (EN)</Text>
+                                </MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </Box>
                 </Flex>
             </Flex>
 
             {/* Mobile Menu */}
             <Collapse in={isOpen}>
                 <Box
-                    display={{ base: "block", lg: "none" }}
+                    display={{ base: "block", xl: "none" }}
                     p={4}
                     bg="white"
                     borderBottom="1px"
@@ -201,7 +210,16 @@ const Navbar = () => {
                 >
                     <Flex direction="column" align="center">
                         {menuLinks.map((link) => (
-                            <Link key={link.name} href={link.href}>
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                px={4}
+                                py={2}
+                                borderRadius={"xl"}
+                                color={"black"}
+                                _hover={{ bg: "green.100" }}
+                                _active={{ bg: "green.100" }}
+                            >
                                 <Text
                                     my={2}
                                     fontFamily="poppins"
