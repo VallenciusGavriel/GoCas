@@ -8,6 +8,7 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
+Route::get('/about', [MainController::class, 'about']);
 Route::get('/location', [MainController::class, 'location']);
 Route::get('/location-search', [MainController::class, 'locationSearch']);
 

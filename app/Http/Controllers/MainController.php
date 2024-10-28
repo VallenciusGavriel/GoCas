@@ -64,4 +64,9 @@ class MainController extends Controller
 
         return response()->json($locations);
     }
+
+    public function about()
+    {
+        return Inertia::render('About');
+    }
 }

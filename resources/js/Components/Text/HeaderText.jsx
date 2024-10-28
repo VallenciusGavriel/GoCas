@@ -27,6 +27,7 @@ const HeaderText = ({ children, size, withIcon = false, iconColor }) => {
         white: "white",
         red: "#FF0000",
         yellow: "#E7BE0B",
+        brown: "#7a523d",
     };
     const textColor = colorMapping[iconColor] || "black";
 
