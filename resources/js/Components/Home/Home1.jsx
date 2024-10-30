@@ -20,10 +20,10 @@ const Home1 = () => {
                 height="100%"
                 zIndex="10"
             >
-                <HeaderText size="normal" withIcon={false} iconColor="green">
+                <HeaderText size="normal" withIcon={false} iconColor="yellow">
                     Hidupkan Perangkatmu dengan
                 </HeaderText>
-                <HeaderText size="large" withIcon={false} iconColor="green">
+                <HeaderText size="large" withIcon={false} iconColor="yellow">
                     GoCas
                 </HeaderText>
                 <Text fontFamily="poppins">
@@ -31,7 +31,7 @@ const Home1 = () => {
                     kesayanganmu!
                 </Text>
                 <Button
-                    bg="#28B67A"
+                    bg="yellow.500"
                     textColor="white"
                     mt={4}
                     borderRadius="0"

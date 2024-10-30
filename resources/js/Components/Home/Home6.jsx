@@ -21,7 +21,7 @@ const Home6 = () => {
         {
             title: "4",
             description:
-                "Tap menu 'Scan ReCharge' di aplikasi dan scan QR code pada mesin.",
+                "Tap menu 'Scan GoCas' di aplikasi dan scan QR code pada mesin.",
         },
         {
             title: "5",

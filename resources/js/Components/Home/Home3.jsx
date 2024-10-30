@@ -6,24 +6,36 @@ import GridKerjaSama from "./Grid/GridKerjaSama";
 import * as kerjasamaImages from "./../../Assets/kerjasamaImages";
 
 const imageSources = [
-    kerjasamaImages.tj,
-    kerjasamaImages.mrt,
-    kerjasamaImages.kai,
-    kerjasamaImages.puri,
-    kerjasamaImages.pi,
-    kerjasamaImages.pp,
-    kerjasamaImages.mc,
-    kerjasamaImages.pvj,
-    kerjasamaImages.lippo,
-    kerjasamaImages.cp,
-    kerjasamaImages.botani,
-    kerjasamaImages.ashta,
+    // kerjasamaImages.tj,
+    // kerjasamaImages.mrt,
+    // kerjasamaImages.kai,
+    // kerjasamaImages.puri,
+    // kerjasamaImages.pi,
+    // kerjasamaImages.pp,
+    // kerjasamaImages.mc,
+    // kerjasamaImages.pvj,
+    // kerjasamaImages.lippo,
+    // kerjasamaImages.cp,
+    // kerjasamaImages.botani,
+    // kerjasamaImages.ashta,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon,
+  kerjasamaImages.comingsoon
 ];
 
 const Home3 = () => {
     return (
         <>
-            <HeaderText size="normal" withIcon={true} iconColor="green">
+            <HeaderText size="normal" withIcon={true} iconColor="yellow">
                 Jalinan Kerjasama GoCas
             </HeaderText>
             <Text fontSize="lg" fontFamily="poppins" mb={4}>
@@ -33,7 +45,7 @@ const Home3 = () => {
             <GridKerjaSama images={imageSources} />
             <Flex justifyContent="center" mt={4}>
                 <Button
-                    bg="#28B67A"
+                    bg="yellow.500"
                     textColor="white"
                     borderRadius="0"
                     fontWeight="bold"

@@ -144,6 +144,28 @@ const Footer = () => {
                         />
                     </Link>
                     <Link
+                      href={"https://www.linkedin.com/company/gocasindonesia/"}
+                    >
+                        <Image
+                          src={LinkedIn}
+                          alt="LinkedIn"
+                          w={8}
+                          h={8}
+                          objectFit="contain"
+                        />
+                    </Link>
+                    <Link
+                      href={"https://www.facebook.com/profile.php?id=61567799393691&mibextid=ZbWKwL"}
+                    >
+                        <Image
+                          src={FB}
+                          alt="FB"
+                          w={8}
+                          h={8}
+                          objectFit="contain"
+                        />
+                    </Link>
+                    <Link
                       href={"https://wa.me/6282188886665"}
                     >
                         <Icon as={FaWhatsapp} w={8} h={8} />
