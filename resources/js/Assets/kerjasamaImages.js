@@ -10,3 +10,4 @@ export const lippo = "/images/kerjasama/lippo.png";
 export const cp = "/images/kerjasama/cp.png";
 export const botani = "/images/kerjasama/botani.png";
 export const ashta = "/images/kerjasama/ashta.png";
+export const comingsoon = "/images/coming-soon.jpg";

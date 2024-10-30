@@ -28,10 +28,10 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
           <ModalBody>
             <Flex mt={4} gap={8} w={"100%"} justifyContent={"space-between"}>
               <Center w="20%" pl={2}>
-                <Icon as={MapPin} fill={"green"} color={"white"} boxSize={24} />
+                <Icon as={MapPin} fill={"yellow.600"} color={"white"} boxSize={24} />
               </Center>
               <VStack alignItems={"left"}>
-                <HeaderText size={"normal"} withIcon={false} iconColor={"green"}>{title}</HeaderText>
+                <HeaderText size={"normal"} withIcon={false} iconColor={"yellow"}>{title}</HeaderText>
                 <Text>{address}</Text>
               </VStack>
             </Flex>
@@ -61,37 +61,37 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
             <Flex mt={4} gap={2}>
               <Box
                 border="2px"
-                borderColor="green.200"
+                borderColor="yellow.500"
                 p={4}
                 backgroundColor="white"
                 w="100%"
               >
               <VStack alignItems={"left"}>
-                  <Text fontSize={"3xl"} color={"green"}>Apple</Text>
+                  <Text fontSize={"3xl"} color={"yellow.500"}>Apple</Text>
                   <HeaderText size={"large"} withIcon={false} iconColor={"black"}>{apple}</HeaderText>
                 </VStack>
               </Box>
               <Box
                 border="2px"
-                borderColor="green.200"
+                borderColor="yellow.500"
                 p={4}
                 backgroundColor="white"
                 w="100%"
               >
               <VStack alignItems={"left"}>
-                  <Text fontSize={"3xl"} color={"green"}>Type C</Text>
+                  <Text fontSize={"3xl"} color={"yellow.500"}>Type C</Text>
                   <HeaderText size={"large"} withIcon={false} iconColor={"black"}>{type_c}</HeaderText>
                 </VStack>
               </Box>
               <Box
                 border="2px"
-                borderColor="green.200"
+                borderColor="yellow.500"
                 p={4}
                 backgroundColor="white"
                 w="100%"
               >
               <VStack alignItems={"left"}>
-                  <Text fontSize={"3xl"} color={"green"}>Type B</Text>
+                  <Text fontSize={"3xl"} color={"yellow.500"}>Type B</Text>
                   <HeaderText size={"large"} withIcon={false} iconColor={"black"}>{type_b}</HeaderText>
                 </VStack>
               </Box>
@@ -99,7 +99,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='green' mr={3} onClick={onClose}>
+            <Button colorScheme='yellow' mr={3} onClick={onClose}>
               Close
             </Button>
           </ModalFooter>
@@ -117,13 +117,13 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
       >
         <Flex>
           <Center w="20%" pr={4}>
-            <Icon as={MapPin} fill={"green"} color={"white"} boxSize={10} />
+            <Icon as={MapPin} fill={"yellow.500"} color={"white"} boxSize={10} />
           </Center>
           <VStack align="start" spacing={2} w="80%">
             <HeaderText
               size="small"
               withIcon={false}
-              iconColor="green"
+              iconColor="yellow"
             >
               {title}
             </HeaderText>
@@ -132,7 +132,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
               ? <Text>{distance} km</Text>
               : <Text></Text>
             }
-            <Link color="green.600" onClick={onOpen} fontWeight="bold">
+            <Link color="yellow.600" onClick={onOpen} fontWeight="bold">
               Lihat Detail
             </Link>
           </VStack>
@@ -212,7 +212,7 @@ const LocationsGrid = ({ locations }) => {
                 <HeaderText
                   size="large"
                   withIcon={false}
-                  iconColor="green"
+                  iconColor="yellow"
                 >
                   Coming Soon
                 </HeaderText>

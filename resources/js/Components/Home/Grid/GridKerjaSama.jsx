@@ -15,7 +15,7 @@ const GridKerjaSama = ({ images }) => {
                 <Box
                     key={index}
                     border="2px"
-                    borderColor="#28B67A"
+                    borderColor="yellow.400"
                     overflow="hidden"
                     p="4"
                     h="120px"

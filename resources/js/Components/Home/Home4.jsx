@@ -8,21 +8,21 @@ const Home4 = () => {
     const services = [
         {
             imgSrc: layananImages.cart,
-            title: "Mudah dan Cepat Banget",
+            title: "Praktis",
             description:
-                "Layanan Kami sangat mudah untuk ditemui di mana saja dan kapan saja serta cepat dalam proses penggunaannya.",
+                "Dengan GoCas, Anda bisa menyewa Power bank dengan beberapa kali klik di aplikasi. Kami menyediakan instruksi yang mudah diikuti, membuat proses sewa lebih cepat dan praktis.",
         },
         {
             imgSrc: layananImages.dollar,
-            title: "Murah Pakai Banget",
+            title: "Terjangkau",
             description:
-                "Layanan Kami memiliki harga yang murah pakai banget dibandingkan dengan kompetitor kami yang lain.",
+                "Kami menawarkan harga sewa yang transparan dan terjangkau, dengan berbagai metode pembayaran yang memudahkan Anda, termasuk e-wallet dan kartu kredit. Nikmati kebebasan memilih opsi pembayaran yang sesuai dengan Anda.",
         },
         {
             imgSrc: layananImages.safe,
-            title: "Penyelamat Hidup",
+            title: "Dana Dikembalikan",
             description:
-                "Layanan Kami memiliki tujuan untuk menyelamatkan hidupmu untuk menggunakan perangkat secara terus menerus.",
+                "Jika ada situasi di mana powerbank tidak digunakan sepenuhnya atau terjadi kesalahan teknis, pengguna dapat mengajukan pengembalian dengan mudah. Proses ini meningkatkan rasa percaya diri dalam menggunakan aplikasi GoCas, karena pengguna tahu bahwa mereka tidak akan dirugikan.",
         },
     ];
     return (

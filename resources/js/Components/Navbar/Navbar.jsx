@@ -73,13 +73,15 @@ const Navbar = () => {
             >
                 {/* Logo Section */}
                 <Flex align="center" justify="flex-start">
-                    <Image
-                        src={GocasWhite}
-                        alt="GoCas Logo"
-                        boxSize="80px"
-                        mr={4}
-                        objectFit="contain"
-                    />
+                    <Link href={"/"}>
+                        <Image
+                          src={GocasWhite}
+                          alt="GoCas Logo"
+                          boxSize="80px"
+                          mr={4}
+                          objectFit="contain"
+                        />
+                    </Link>
                 </Flex>
 
                 {/* Hamburger Icon for Mobile */}
