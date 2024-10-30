@@ -32,7 +32,8 @@ const About = () => {
             justifyContent={"end"}
             borderRadius={"3xl"}
             px={"10%"}
-            py={"48px"}
+            pt={"48px"}
+            pb={"10%"}
           >
             <Box
               w={{base: "full", xl: "50%"}}
