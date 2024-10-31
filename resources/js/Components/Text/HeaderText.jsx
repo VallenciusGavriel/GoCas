@@ -33,7 +33,7 @@ const HeaderText = ({
     const lineHeight =
         {
             large: "1.2",
-            normal: "1.4",
+            normal: "1.1",
             small: "1.5",
             tiny: "1.6",
         }[size] || "normal";
