@@ -16,7 +16,7 @@ const About = () => {
   });
 
     return (
-      <>
+      <div className={"overflow-x-hidden"}>
         <Navbar />
         <Head title="Tentang Kami" />
         <Box h={"100vh"}>
@@ -27,7 +27,7 @@ const About = () => {
             h={size.height}
             w={size.width}
             bgSize="cover"
-            bgPos="left"
+            bgPos="center"
             alignItems={"start"}
             justifyContent={"end"}
             borderRadius={"3xl"}
@@ -36,12 +36,12 @@ const About = () => {
             pb={"10%"}
           >
             <Box
-              w={{base: "full", xl: "50%"}}
+              w={{base: "full", lg: "50%"}}
             >
-              <HeaderText iconColor={"brown"} size={"large"} withIcon={false}>
+              <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
                 Aktifitas tanpa batas dengan GoCas
               </HeaderText>
-              <Text fontFamily="poppins" mt={"24px"}>
+              <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
                 Hai! Kami GoCas Indonesia, solusi sewa powerbank berbasis IoT untuk kamu yang aktif dan nggak mau ribet. Dengan teknologi canggih, GoCas memastikan gadget kamu selalu terisi kapan saja dan di mana saja. Sejak diluncurkan, kami telah menyediakan layanan sewa powerbank fleksibel dan praktis.
                 <br/>
                 <br/>
@@ -52,31 +52,33 @@ const About = () => {
         </Box>
         <VStack
           alignItems={"start"}
+          justifyContent={"center"}
           px={"10%"}
           py={"48px"}
+          minH={"50vh"}
         >
-          <HeaderText iconColor={"green"} size={"large"} withIcon={false}>Komitmen Kami pada Masyarakat</HeaderText>
-          <Flex mt={"48px"} gap={8}>
-            <VStack alignItems={"start"} justifyContent={"start"} w={"50%"}>
+          <HeaderText iconColor={"green"} size={"large"} inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"} withIcon={false}>Komitmen Kami pada Masyarakat</HeaderText>
+          <Flex mt={"48px"} gap={8} direction={{md: "row", base: "column"}}>
+            <VStack alignItems={"start"} justifyContent={"start"} w={{base: "100%", md: "50%"}}>
               <Image
                 src={EcoFriendly}
                 alt="Eco Friendly"
                 w="100px"
                 objectFit="contain"
               />
-              <HeaderText  iconColor={"black"} size={"normal"} withIcon={false}>Powerbank Ramah Lingkungan</HeaderText>
+              <HeaderText  iconColor={"black"} size={"normal"} inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"} withIcon={false}>Powerbank Ramah Lingkungan</HeaderText>
               <Text fontFamily="poppins">
                 GOCAS menggunakan powerbank berkualitas tinggi yang didesain tahan lama serta ramah lingkungan, untuk mendukung gaya hidup yang lebih berkelanjutan.
               </Text>
             </VStack>
-            <VStack alignItems={"start"} justifyContent={"start"} w={"50%"}>
+            <VStack alignItems={"start"} justifyContent={"start"} w={{base: "100%", md: "50%"}}>
               <Image
                 src={Community}
                 alt="Community"
                 w="100px"
                 objectFit="contain"
               />
-              <HeaderText  iconColor={"black"} size={"normal"} withIcon={false}>Masyarakat terbebas dari low baterai</HeaderText>
+              <HeaderText  iconColor={"black"} size={"normal"} inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"} withIcon={false}>Masyarakat terbebas dari low baterai</HeaderText>
               <Text fontFamily="poppins">
                 Kami berkomitmen untuk memastikan Anda tetap terhubung tanpa gangguan. Dengan GOCAS, low baterai bukan lagi masalah!
               </Text>
@@ -89,7 +91,7 @@ const About = () => {
           px={"10%"}
           py={"48px"}
         >
-          <HeaderText iconColor={"black"} size={"large"} withIcon={false}>
+          <HeaderText iconColor={"black"} size={"large"} inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"} withIcon={false}>
             Layanan kami
           </HeaderText>
           <Box
@@ -102,7 +104,7 @@ const About = () => {
             boxShadow="xl"
             w="full"
           >
-            <Flex gap={8}>
+            <Flex gap={8} direction={{md: "row", base: "column"}}>
               <Image
                 src={PBShare}
                 alt="Powerbank Share"
@@ -110,7 +112,7 @@ const About = () => {
                 objectFit="contain"
               />
               <VStack alignItems={"start"} justifyContent={"start"}>
-                <HeaderText iconColor={"black"} size={"normal"} withIcon={false}>Power bank sharing</HeaderText>
+                <HeaderText iconColor={"black"} size={"normal"} withIcon={false} inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"}>Power bank sharing</HeaderText>
                 <Text fontFamily="poppins">
                   Powerbank GoCas adalah solusi terbaik untuk menjaga smartphone, kamera, atau perangkat seluler Anda agar tetap terisi daya saat bepergian. Dengan teknologi canggih dan sistem powerbank sharing, anda bisa dengan mudah menyewa powerbank kapan saja dan di mana saja melalui GoCas Station terdekat!
                 </Text>
@@ -119,7 +121,7 @@ const About = () => {
           </Box>
         </VStack>
         <Footer />
-      </>
+      </div>
     );
 };
 
