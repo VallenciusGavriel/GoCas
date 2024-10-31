@@ -1,7 +1,7 @@
 import React from "react";
 import { Text as ChakraText, Image, Box } from "@chakra-ui/react";
 
-const HeaderText = ({ children, size, withIcon = false, iconColor }) => {
+const HeaderText = ({ children, size, withIcon = false, iconColor, inputclass }) => {
     const fontSizeMapping = {
         large: "5xl",
         normal: "3xl",
@@ -53,6 +53,7 @@ const HeaderText = ({ children, size, withIcon = false, iconColor }) => {
                 fontSize={fontSize}
                 letterSpacing={letterSpacing}
                 mt={marginTop}
+                className={inputclass}
             >
                 {children}
             </ChakraText>
