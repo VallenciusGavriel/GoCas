@@ -1,34 +1,56 @@
 import React from "react";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Text, Link } from "@chakra-ui/react";
 import HeaderText from "../Text/HeaderText";
-import GuardImage from "./../../../../public/images/home/guard.png";
-import GocasLogo from "../../../../public/images/navbar/gocas-logo.png";
 
 const Home2 = () => {
     return (
-        <>
-            <HeaderText size="normal" withIcon={true} iconColor="yellow">
-                Siapa Kami?
-            </HeaderText>
-            <Flex alignItems="center" gap={2} mt={4}>
-                <Image
-                    src={GocasLogo}
-                    alt="Guard Image"
-                    w="10%"
-                    objectFit="cover"
-                />
-                <Text
-                    fontSize="lg"
-                    fontFamily="poppins"
-                    lineHeight="tall"
-                    flex="8"
-                    mx={8}
-                >
-                  <b>GoCas Indonesia</b> adalah brand penyewaan Power bank inovatif yang hadir untuk memberikan solusi pengisian daya bagi para pengguna yang aktif dan dinamis. Berdiri dengan misi untuk menghubungkan energi dengan mobilitas, GoCas menghadirkan layanan praktis, cepat, dan dapat diandalkan dalam menyediakan Power bank kapan pun dan di mana pun Anda membutuhkan.
-                  Kami berkomitmen untuk memastikan agar Anda tidak lagi kehabisan daya di tengah aktivitas sehari-hari.
-                </Text>
-            </Flex>
-        </>
+        <Box p={4} color="white">
+            <Box
+                maxWidth="1200px"
+                mx="32px"
+                display="flex"
+                flexDirection={["column", "row"]}
+                alignItems="center"
+                justifyContent="space-between"
+                height="full"
+                gap={{ base: 0, md: 8 }}
+                my={14}
+            >
+                <Box flex="1" pr={{ base: 0, md: 4 }}>
+                    <HeaderText iconColor="green" size="normal">
+                        HIDUPKAN PERANGKATMU DENGAN
+                    </HeaderText>
+                    <HeaderText iconColor="brown" size="normal" topMargin={10}>
+                        #GOCASinSekarang
+                    </HeaderText>
+                </Box>
+                <Box flex="1" pl={{ base: 0, md: 4 }}>
+                    <HeaderText iconColor="black" size="small" mt={4}>
+                        SALAM KENAL, Sobat GOCAS!
+                    </HeaderText>
+                    <Text
+                        fontSize="md"
+                        color="black"
+                        fontFamily="poppins"
+                        mb={6}
+                    >
+                        Hai! Kami GoCas Indonesia, solusi cerdas buat kamu yang
+                        aktif dan nggak mau ribet. Dengan teknologi berbasis
+                        Internet of Things (IoT), GoCas hadir untuk memastikan
+                        gadget kamu tetap terisi penuh kapan pun dan di mana pun
+                        kamu butuh...
+                    </Text>
+                    <Link
+                        color="black"
+                        href="/about"
+                        fontFamily="poppins"
+                        fontWeight="bold"
+                    >
+                        Baca selengkapnya
+                    </Link>
+                </Box>
+            </Box>
+        </Box>
     );
 };
 

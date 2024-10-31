@@ -24,7 +24,7 @@ const Home = () => {
                             index + 1
                         }.png')`}
                         bgSize="cover"
-                        bgPos="center"
+                        bgPos="top"
                         p={10}
                         borderRadius="0"
                         position="relative"
