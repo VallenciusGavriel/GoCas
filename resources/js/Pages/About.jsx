@@ -12,28 +12,29 @@ import HeaderText from "@/Components/Text/HeaderText.jsx";
 const About = () => {
   const size = useBreakpointValue({
     base: { height: "100vh", width: "auto" },
-    xl: { width: "full", height: "full" },
+    xl: { width: "full", height: "auto" },
   });
 
     return (
       <div className={"overflow-x-hidden"}>
         <Navbar />
         <Head title="Tentang Kami" />
-        <Box h={"100vh"}>
+        <Box minH={"100vh"} mt={"90px"}>
           <VStack
             spacing={0}
             bgImage={Background}
             mb={2}
+            minH={"100vh"}
             h={size.height}
             w={size.width}
             bgSize="cover"
             bgPos="center"
             alignItems={"start"}
             justifyContent={"end"}
-            borderRadius={"3xl"}
             px={"10%"}
             pt={"48px"}
             pb={"10%"}
+            className={"rounded-b-3xl"}
           >
             <Box
               w={{base: "full", lg: "50%"}}
