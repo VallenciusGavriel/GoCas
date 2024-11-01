@@ -63,7 +63,7 @@ const Navbar = () => {
             left={0}
             right={0}
             width="100%"
-            zIndex="30"
+            zIndex="20"
         >
             <Flex
                 align="center"
