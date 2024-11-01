@@ -9,11 +9,9 @@ import {
     VStack,
     HStack,
 } from "@chakra-ui/react";
-import Listrik from "./../../../../public/images/home/listrik.png";
 import Downloads from "./../../../../public/images/home/downloads.png";
 import QRCode from "./../../../../public/images/home/qr-code.png";
 import HeaderText from "./../Text/HeaderText";
-import { QrCode } from "lucide-react";
 
 const Home1 = () => {
     return (
@@ -77,6 +75,7 @@ const Home1 = () => {
                     }}
                     borderRadius="full"
                     fontSize="lg"
+                    fontFamily="poppins"
                     fontWeight="bold"
                     px={8}
                     py={6}

@@ -2,27 +2,37 @@ import React from "react";
 import { Box, Text, Flex, Heading } from "@chakra-ui/react";
 import StepList from "./StepList";
 import HeaderText from "../Text/HeaderText";
-
-const stepsBorrow = [
-    "Buka Halaman Utama dari Aplikasi GoCas.",
-    "Daftar atau Masuk ke akun di aplikasi GoCas.",
-    "Top up akun GoCas kamu sebelum melakukan peminjaman.",
-    "Tap menu 'Scan GoCas' di aplikasi dan scan QR code pada mesin.",
-    "Pilih kabel yang sesuai (iOS, Type-C, atau MicroUSB).",
-    "Ambil powerbank dari mesin dan gunakan.",
-];
-
-const stepsReturn = [
-    "Cari GoCas Station yang paling dekat dengan kamu.",
-    "Tap tombol Kembalikan di GoCas Station.",
-    "Masukan GoCas Powerbank ke slot mesin yang terbuka.",
-    "Tunggu status “Sewa” berubah menjadi “Kembali”",
-    "GoCas Powerbank telah berhasil dikembalikan.",
-];
+import FeatureCard from "./FeatureCard";
+import { stepsBorrow, stepsReturn, features } from "./homeData";
 
 const Home3 = () => {
     return (
         <Box p={6}>
+            <HeaderText
+                iconColor="black"
+                size="normal"
+                textAlign="center"
+                mx="auto"
+                topMargin={2}
+            >
+                Kenapa memilih GoCas?
+            </HeaderText>
+            <Flex
+                wrap="wrap"
+                justifyContent="space-around"
+                align="center"
+                p={5}
+                gap={8}
+            >
+                {features.map((feature, index) => (
+                    <FeatureCard
+                        key={index}
+                        icon={feature.icon}
+                        title={feature.title}
+                        description={feature.description}
+                    />
+                ))}
+            </Flex>
             <Flex
                 direction={["column", "row"]}
                 gap={6}
@@ -30,10 +40,11 @@ const Home3 = () => {
                 align="start"
                 maxW="1500px"
                 mx="auto"
+                mt={20}
             >
                 <Box flex="1" textAlign="center">
                     <HeaderText
-                        iconColor="brown"
+                        iconColor="black"
                         size="normal"
                         textAlign="center"
                         mx="auto"
@@ -41,7 +52,7 @@ const Home3 = () => {
                         Cara meminjam
                     </HeaderText>
                     <Box
-                        bg="rgba(239, 200, 43, 0.5)"
+                        bg="rgba(239, 200, 43, 0.85)"
                         p={10}
                         borderRadius="xl"
                         shadow="md"
@@ -57,7 +68,7 @@ const Home3 = () => {
 
                 <Box flex="1" textAlign="center">
                     <HeaderText
-                        iconColor="brown"
+                        iconColor="black"
                         size="normal"
                         textAlign="center"
                         mx="auto"
@@ -65,7 +76,7 @@ const Home3 = () => {
                         Cara pengembalian
                     </HeaderText>
                     <Box
-                        bg="rgba(236, 229, 187, 0.5)"
+                        bg="rgba(236, 229, 187, 0.85)"
                         p={10}
                         borderRadius="xl"
                         shadow="md"
