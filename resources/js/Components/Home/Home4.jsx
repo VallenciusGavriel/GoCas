@@ -1,38 +1,80 @@
 import React from "react";
-import HeaderText from "../Text/HeaderText";
-import { Text } from "@chakra-ui/react";
-import GridLayanan from "./Grid/GridLayanan";
-import * as layananImages from "./../../Assets/layananImages";
+import {
+    Box,
+    Heading,
+    Accordion,
+    AccordionIcon,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    Text,
+    VStack,
+    useColorModeValue,
+    IconButton,
+} from "@chakra-ui/react";
+import { ChatIcon } from "@chakra-ui/icons";
 
-const Home4 = () => {
-    const services = [
-        {
-            imgSrc: layananImages.cart,
-            title: "Praktis",
-            description:
-                "Dengan GoCas, Anda bisa menyewa Power bank dengan beberapa kali klik di aplikasi. Kami menyediakan instruksi yang mudah diikuti, membuat proses sewa lebih cepat dan praktis.",
-        },
-        {
-            imgSrc: layananImages.dollar,
-            title: "Terjangkau",
-            description:
-                "Kami menawarkan harga sewa yang transparan dan terjangkau, dengan berbagai metode pembayaran yang memudahkan Anda, termasuk e-wallet dan kartu kredit. Nikmati kebebasan memilih opsi pembayaran yang sesuai dengan Anda.",
-        },
-        {
-            imgSrc: layananImages.safe,
-            title: "Dana Dikembalikan",
-            description:
-                "Jika ada situasi di mana powerbank tidak digunakan sepenuhnya atau terjadi kesalahan teknis, pengguna dapat mengajukan pengembalian dengan mudah. Proses ini meningkatkan rasa percaya diri dalam menggunakan aplikasi GoCas, karena pengguna tahu bahwa mereka tidak akan dirugikan.",
-        },
-    ];
+const faqData = [
+    {
+        question: "Apa itu GoCas?",
+        answer: "GoCas adalah layanan penyewaan powerbank. Anda cukup membuka aplikasi GoCas, mencari GoCas Station terdekat, dan menyewa/mengembalikan powerbank hanya dengan beberapa ketukan.",
+    },
+    {
+        question: "Bagaimana cara menyewa/mengembalikan powerbank?",
+        answer: "Sangat mudah! Cukup buka aplikasi GoCas, cari lokasi GoCas Station terdekat, dan sewa/kembalikan powerbank hanya dengan beberapa ketukan.",
+    },
+    {
+        question: "Bagaimana cara menemukan stasiun penyewaan GO CAS?",
+        answer: "Buka aplikasi GoCas dan gunakan fitur pencarian untuk menemukan stasiun penyewaan GoCas terdekat dari lokasi Anda.",
+    },
+    {
+        question: "Berapa lama saya bisa menyewa powerbank?",
+        answer: "Anda bisa menyewa powerbank selama yang Anda butuhkan, selama itu dikembalikan pada waktu yang ditentukan dalam ketentuan penyewaan.",
+    },
+    {
+        question: "Apa yang harus dilakukan jika powerbank tidak berfungsi?",
+        answer: "Jika powerbank yang Anda sewa tidak berfungsi, segera kembalikan ke stasiun GoCas dan lapor melalui aplikasi untuk mendapatkan bantuan lebih lanjut.",
+    },
+];
+
+const FAQPage = () => {
+    const bg = useColorModeValue("white", "gray.800");
+
     return (
-        <>
-            <HeaderText size="normal" withIcon={true} iconColor="green">
-                Kenapa Harus Pakai Layanan Kami?
-            </HeaderText>
-            <GridLayanan services={services} columnsMd={3} />
-        </>
+        <Box bg={bg} p={6}>
+            <VStack spacing={4} align="stretch">
+                <Heading as="h1" size="xl" textAlign="center">
+                    Pertanyaan yang Sering Diajukan (FAQ)
+                </Heading>
+                {faqData.map((faq, index) => (
+                    <Accordion allowToggle key={index}>
+                        <AccordionItem border="none">
+                            <h2>
+                                <AccordionButton _expanded={{ bg: "gray.100" }}>
+                                    <Box flex="1" textAlign="left">
+                                        {faq.question}
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                            </h2>
+                            <AccordionPanel pb={4}>{faq.answer}</AccordionPanel>
+                        </AccordionItem>
+                    </Accordion>
+                ))}
+                <Box pt={10} textAlign="center">
+                    <Text mb={2}>Tidak dapat menemukan yang Anda cari?</Text>
+                    <Text>Kami ingin berbicara dengan Anda</Text>
+                    <IconButton
+                        aria-label="Chat with us"
+                        icon={<ChatIcon />}
+                        size="lg"
+                        isRound
+                        colorScheme="blue"
+                    />
+                </Box>
+            </VStack>
+        </Box>
     );
 };
 
-export default Home4;
+export default FAQPage;

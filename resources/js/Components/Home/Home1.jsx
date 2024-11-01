@@ -4,7 +4,6 @@ import {
     Box,
     Image,
     Text,
-    Spacer,
     Button,
     VStack,
     HStack,
@@ -16,7 +15,7 @@ import HeaderText from "./../Text/HeaderText";
 const Home1 = () => {
     return (
         <Grid
-            templateColumns="repeat(2, 1fr)"
+            templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
             height="80%"
             width="full"
             zIndex="10"
@@ -25,7 +24,8 @@ const Home1 = () => {
                 display="flex"
                 flexDirection="column"
                 justifyContent="flex-end"
-                alignItems="flex-start"
+                alignItems={{ base: "center", md: "flex-start" }}
+                textAlign={{ base: "center", md: "left" }}
                 p="4"
                 height="100%"
                 zIndex="10"
@@ -80,25 +80,34 @@ const Home1 = () => {
                     px={8}
                     py={6}
                     mt={6}
-                    mb={28}
+                    mb={{ base: 10, md: 28 }}
                     boxShadow="md"
                 >
                     Temukan GoCas terdekat
                 </Button>
             </Box>
-            <Box position="absolute" right="0" bottom="0" p="28">
-                <HStack justifyContent="flex-end" spacing={4}>
+            <Box
+                position={{ base: "relative", md: "absolute" }}
+                right={{ md: "0" }}
+                bottom={{ md: "0" }}
+                p={{ base: "4", md: "28" }}
+                width={{ base: "100%", md: "auto" }}
+            >
+                <HStack
+                    justifyContent={{ base: "space-evenly", md: "flex-end" }}
+                    spacing={4}
+                >
                     <Image
                         src={Downloads}
                         alt="Download on the App Store and Google Play"
-                        w="25%"
+                        w={{ base: "40%", md: "25%" }}
                         h="auto"
                         objectFit="contain"
                     />
                     <Image
                         src={QRCode}
                         alt="QR Code"
-                        boxSize="150px"
+                        boxSize={{ base: "100px", md: "150px" }}
                         objectFit="contain"
                     />
                 </HStack>

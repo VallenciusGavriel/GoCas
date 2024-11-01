@@ -4,36 +4,55 @@ import HeaderText from "../Text/HeaderText";
 
 const Home2 = () => {
     return (
-        <Box p={4} color="white">
+        <Box p={{ base: 2, md: 4 }} color="white">
             <Box
                 maxWidth="1500px"
                 mx="auto"
                 display="flex"
-                flexDirection={["column", "row"]}
+                flexDirection={{ base: "column", lg: "row" }}
                 alignItems="center"
                 justifyContent="space-between"
-                height="full"
-                gap={{ base: 0, md: 8 }}
-                my={28}
+                gap={{ base: 2, md: 4, lg: 8 }}
+                my={{ base: 5, md: 10, lg: 14 }}
             >
-                <Box flex="1" pr={{ base: 0, md: 4 }}>
-                    <HeaderText iconColor="green" size="normal">
+                <Box
+                    flex={{ base: "auto", md: 1 }}
+                    pr={{ base: 0, md: 4, lg: 6 }}
+                >
+                    <HeaderText
+                        iconColor="green"
+                        size="normal"
+                        inputclass={"xl:!text-5xl md:!text-5xl !text-3xl"}
+                    >
                         HIDUPKAN PERANGKATMU DENGAN
                     </HeaderText>
-                    <HeaderText iconColor="brown" size="normal" topMargin={10}>
+                    <HeaderText
+                        iconColor="brown"
+                        size="normal"
+                        topMargin={10}
+                        inputclass={"xl:!text-5xl md:!text-3xl !text-lg"}
+                    >
                         #GOCASinSekarang
                     </HeaderText>
                 </Box>
-                <Box flex="1" pl={{ base: 0, md: 4 }}>
-                    <HeaderText iconColor="black" size="small" mt={4}>
+                <Box
+                    flex={{ base: "auto", md: 1 }}
+                    pl={{ base: 0, md: 4, lg: 6 }}
+                >
+                    <HeaderText
+                        iconColor="black"
+                        size="small"
+                        topMargin={{ base: 20, md: 10, lg: 0 }}
+                        textStyle={{ base: "headline", md: "subheadline" }}
+                    >
                         SALAM KENAL, Sobat GOCAS!
                     </HeaderText>
                     <Text
-                        fontSize="md"
-                        color="black"
+                        fontSize={{ base: "sm", md: "md" }}
                         fontFamily="poppins"
                         textAlign="justify"
-                        pr={24}
+                        color="black"
+                        pr={{ base: 0, md: 4, lg: 24 }}
                         mb={6}
                     >
                         Hai! Kami GoCas Indonesia, solusi cerdas buat kamu yang
