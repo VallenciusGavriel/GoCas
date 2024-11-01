@@ -7,10 +7,10 @@ const FeatureCard = ({ icon, title, description }) => {
             bg="#31933E"
             p={4}
             borderRadius="xl"
-            boxShadow="xl"
+            boxShadow="8px 8px 16px rgba(0, 0, 0, 0.5)"
             width="300px"
             height="300px"
-            mt={10}
+            mt={8}
             display="flex"
             flexDirection="column"
             justifyContent="top"
