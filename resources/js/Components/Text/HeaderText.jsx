@@ -8,6 +8,8 @@ const HeaderText = ({
     iconColor,
     inputclass,
     topMargin = 0,
+    textAlign = "start",
+    mx = 0,
 }) => {
     const fontSizeMapping = {
         large: "7xl",
@@ -72,6 +74,8 @@ const HeaderText = ({
                 mt={marginTop}
                 lineHeight={lineHeight}
                 className={inputclass}
+                textAlign={textAlign}
+                mx={mx}
             >
                 {children}
             </ChakraText>

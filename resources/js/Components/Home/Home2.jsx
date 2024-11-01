@@ -6,15 +6,15 @@ const Home2 = () => {
     return (
         <Box p={4} color="white">
             <Box
-                maxWidth="1200px"
-                mx="32px"
+                maxWidth="1500px"
+                mx="auto"
                 display="flex"
                 flexDirection={["column", "row"]}
                 alignItems="center"
                 justifyContent="space-between"
                 height="full"
                 gap={{ base: 0, md: 8 }}
-                my={14}
+                my={28}
             >
                 <Box flex="1" pr={{ base: 0, md: 4 }}>
                     <HeaderText iconColor="green" size="normal">
@@ -32,6 +32,8 @@ const Home2 = () => {
                         fontSize="md"
                         color="black"
                         fontFamily="poppins"
+                        textAlign="justify"
+                        pr={24}
                         mb={6}
                     >
                         Hai! Kami GoCas Indonesia, solusi cerdas buat kamu yang
