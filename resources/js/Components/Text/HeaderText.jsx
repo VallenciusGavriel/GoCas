@@ -1,7 +1,7 @@
 import React from "react";
 import { Text as ChakraText, Image, Box } from "@chakra-ui/react";
 
-const HeaderText = ({ children, size, withIcon = false, iconColor, inputclass }) => {
+const HeaderText = ({ children, size, withIcon = false, iconColor, inputclass, className }) => {
     const fontSizeMapping = {
         large: "5xl",
         normal: "3xl",
@@ -37,7 +37,7 @@ const HeaderText = ({ children, size, withIcon = false, iconColor, inputclass })
             : null;
 
     return (
-        <Box display="flex" alignItems="center">
+        <Box display="flex" alignItems="center" className={className}>
             {withIcon && iconSrc && (
                 <Image
                     src={iconSrc}

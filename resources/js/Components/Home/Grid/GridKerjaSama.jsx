@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Image, Box } from "@chakra-ui/react";
 
-const GridKerjaSama = ({ images }) => {
+const GridKerjaSama = ({ images, className }) => {
     return (
         <Grid
             templateColumns={{
@@ -10,6 +10,7 @@ const GridKerjaSama = ({ images }) => {
                 lg: "repeat(6, 1fr)",
             }}
             gap={1}
+            className={className}
         >
             {images.map((src, index) => (
                 <Box
