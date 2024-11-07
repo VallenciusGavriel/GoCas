@@ -14,7 +14,7 @@ import X from "./../../../../public/images/navbar/x.png";
 
 const Footer = () => {
     return (
-        <Box px={8} py={4} bgGradient='linear(to-b, #1c964a, #73bf51)' color="gray.700">
+        <Box px={8} py={4} bgGradient='linear(to-b, #e8a72f, #ee7425)' color="gray.700">
             <Flex
                 direction={{base:"column", md: "row"}}
                 justifyContent={{base:"left", md: "space-between"}}
