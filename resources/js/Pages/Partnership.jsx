@@ -204,12 +204,12 @@ const About = () => {
                 px={"10%"}
                 pt={"48px"}
                 pb={"10%"}
-                className={"rounded-t-3xl"}
+                className={"rounded-3xl"}
             >
                 <Flex
                     direction={"column"}
                     my={"auto"}
-                    w={{base: "full", lg: "50%"}}
+                    w={"full"}
                     minH={"100vh"}
                     alignItems={"center"}
                     justifyContent={"center"}
@@ -218,7 +218,7 @@ const About = () => {
                         TESTIMONI
                     </HeaderText>
                     <Testimoni/>
-                    <Text fontFamily="poppins" mt={"24px"} className={"md:text-2xl text-sm text-center"}>
+                    <Text fontFamily="poppins" mt={"24px"} className={"md:text-2xl text-sm text-center"} w={{base: "full", lg: "50%"}}>
                         Ga perlu susah-susah menyediakan stop kontak, dapatkan hasil tambahan, dan jangkau pengunjungmu lebih luas dengan #MITRAGOCAS
                     </Text>
                 </Flex>
@@ -234,9 +234,6 @@ const About = () => {
                         GABUNG SEKARANG!
                     </HeaderText>
                     <Form/>
-                    <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
-                        Ga perlu susah-susah menyediakan stop kontak, dapatkan hasil tambahan, dan jangkau pengunjungmu lebih luas dengan #MITRAGOCAS
-                    </Text>
                 </Flex>
             </VStack>
             <VStack
@@ -252,7 +249,6 @@ const About = () => {
                 px={"10%"}
                 pt={"48px"}
                 pb={"10%"}
-                className={"rounded-t-3xl"}
             >
                 <Box
                     w={{base: "full", lg: "50%"}}
