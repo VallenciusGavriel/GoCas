@@ -56,13 +56,14 @@ const Navbar = () => {
     return (
         <MotionBox
             p={2}
-            bg="#09a04b"
+            bg="#653719"
             color={"white"}
             position="fixed"
             top={0}
             left={0}
             right={0}
             width="100%"
+            px={"20px"}
             zIndex="20"
         >
             <Flex
@@ -75,7 +76,7 @@ const Navbar = () => {
                 <Flex align="center" justify="flex-start">
                     <Link href={"/"}>
                         <Image
-                            src={GocasWhite}
+                            src={GocasLogo}
                             alt="GoCas Logo"
                             boxSize="80px"
                             mr={4}
@@ -129,7 +130,7 @@ const Navbar = () => {
                             color={"white"}
                             _hover={{ bg: "green" }}
                             _active={{ bg: "green" }}
-                            bg={"#6fb475"}
+                            bg={"#855c3c"}
                             borderRadius="xl"
                         >
                             {button.label}
