@@ -65,12 +65,12 @@ const Testimoni = () => {
                         shadow="md"
                         textAlign="center"
                     >
-                        <Text fontSize="xl" mb={4} color="yellow.700">
+                        <Text fontSize={{base: "sm", xl: "xl"}} mb={4} color="yellow.700">
                             "{testimonial.text}"
                         </Text>
                         <Avatar src={testimonial.image} name={testimonial.name} mb={2} mx="auto" />
-                        <Text fontWeight="bold" fontSize={"xl"} color="yellow.800">{testimonial.name}</Text>
-                        <Text fontSize="lg" color="yellow.600">{testimonial.position}</Text>
+                        <Text fontWeight="bold" fontSize={{base: "md", xl: "xl"}} color="yellow.800">{testimonial.name}</Text>
+                        <Text fontSize={{base: "sm", xl: "lg"}} color="yellow.600">{testimonial.position}</Text>
                     </Box>
                 ))}
             </Slider>

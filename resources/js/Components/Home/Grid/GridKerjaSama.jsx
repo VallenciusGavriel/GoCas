@@ -5,7 +5,7 @@ const GridKerjaSama = ({ images, className, color }) => {
     return (
         <Grid
             templateColumns={{
-                base: "repeat(2, 1fr)",
+                base: "repeat(3, 1fr)",
                 md: "repeat(4, 1fr)",
                 lg: "repeat(6, 1fr)",
             }}
@@ -19,7 +19,7 @@ const GridKerjaSama = ({ images, className, color }) => {
                     borderColor={color ?? "yellow.400"}
                     overflow="hidden"
                     p="4"
-                    h="120px"
+                    h={{base: "80px", xl: "120px"}}
                 >
                     <Image
                         src={src}

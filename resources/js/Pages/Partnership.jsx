@@ -14,11 +14,6 @@ import Testimoni from "@/Components/Partnership/Testimoni.jsx";
 import Form from "@/Components/Partnership/Form.jsx";
 
 const About = () => {
-  const size = useBreakpointValue({
-    base: { height: "100vh", width: "auto" },
-    xl: { width: "full", height: "auto" },
-  });
-
     const imageSources = [
         // kerjasamaImages.tj,
         // kerjasamaImages.mrt,
@@ -62,13 +57,11 @@ const About = () => {
       <div className={"overflow-x-hidden"}>
         <Navbar />
         <Head title="Partnership" />
-        <Box minH={"100vh"} mt={"90px"}>
+        <Box mt={"90px"}>
           <VStack
             spacing={0}
             bgImage={Background}
             minH={"100vh"}
-            h={size.height}
-            w={size.width}
             bgSize="cover"
             bgPos="center"
             alignItems={"start"}
@@ -79,18 +72,19 @@ const About = () => {
             className={"rounded-b-3xl"}
           >
             <Box
+                h={"full"}
               w={{base: "full", lg: "60%"}}
               rounded={"xl"}
-              mt={"64px"}
-              px={"64px"}
-              py={"32px"}
+              mt={{base: "24px", xl: "64px"}}
+              px={{base: "32px", xl: "64px"}}
+              py={{base: "24px", xl: "32px"}}
               shadow={"2xl"}
               bgGradient='linear(to-b, yellow.300 60%, green.200)'
             >
-              <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+              <HeaderText iconColor={"brown"} size={"large"} withIcon={false} className={"xl:mt-0 mt-2"} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
                 KOLABORASI HEBAT DENGAN GOCAS!
               </HeaderText>
-              <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"} color={"black"}>
+              <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-xs"} color={"black"}>
                 Ingin membawa solusi sewa power bank ke bisnis atau event kamu? GOCAS membuka peluang kolaborasi bagi partner yang ingin memperluas jaringan dan memberikan layanan lebih bagi pelanggan. Mari bersama-sama ciptakan pengalaman yang lebih praktis dan modern!
               </Text>
             </Box>
@@ -100,23 +94,21 @@ const About = () => {
                   justifyContent={"center"}
                   rounded={"xl"}
                   mt={"64px"}
-                  px={"64px"}
-                  py={"32px"}
+                  px={{base: "32px", xl: "64px"}}
+                  py={{base: "24px", xl: "32px"}}
                   shadow={"2xl"}
                   bgGradient='linear(to-b, orange.300 20%, orange.400)'
               >
-                  <HeaderText size="large" withIcon={true} iconColor="white" className={"text-center mt-4"}>
+                  <HeaderText size="large" withIcon={true} iconColor="white" className={"text-center mt-4 "} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
                       OUR PARTNER
                   </HeaderText>
-                  <GridKerjaSama className={"mt-12"} color={"white"} images={imageSources} />
+                  <GridKerjaSama className={"mt-8 xl:mt-12"} color={"white"} images={imageSources} />
               </Box>
           </VStack>
             <VStack
                 spacing={0}
                 bgImage={Background2}
                 minH={"100vh"}
-                h={size.height}
-                w={size.width}
                 bgSize="cover"
                 bgPos="center"
                 alignItems={"end"}
@@ -130,18 +122,18 @@ const About = () => {
                     alignItems={"center"}
                     justifyContent={"center"}
                     rounded={"xl"}
-                    mt={"64px"}
-                    px={"64px"}
-                    py={"48px"}
+                    mt={{base: "30px", xl: "64px"}}
+                    px={{base: "32px", xl: "64px"}}
+                    py={{base: "36px", xl: "48px"}}
                     shadow={"2xl"}
                     bgGradient='linear(to-b, yellow.300 20%, yellow.400)'
                 >
-                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl mb-8"}>
+                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl xl:mb-8 mb-4"}>
                         Mengapa Bermitra dengan GOCAS?
                     </HeaderText>
-                    <ul className={"list-disc list-outside text-3xl font-bold"}>
+                    <ul className={"list-disc list-outside md:text-3xl text-lg font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
+                            <Text fontFamily="poppins" mt={{base: "4px", xl: "24px"}} className={"md:text-3xl text-lg"}>
                                 Tingkatkan Layanan
                             </Text>
                         </li>
@@ -149,9 +141,9 @@ const About = () => {
                     <Text fontFamily="poppins" mt={"8px"} className={"md:text-xl text-sm"}>
                         Hadirkan layanan sewa power bank di lokasi bisnis atau event Anda dan berikan solusi charging yang mudah dan cepat kepada pelanggan.
                     </Text>
-                    <ul className={"list-disc list-outside text-3xl font-bold"}>
+                    <ul className={"list-disc list-outside md:text-3xl text-lg font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
+                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-lg"}>
                                 Dukungan Teknologi Terdepan
                             </Text>
                         </li>
@@ -159,9 +151,9 @@ const About = () => {
                     <Text fontFamily="poppins" mt={"8px"} className={"md:text-xl text-sm"}>
                         GOCAS dilengkapi dengan mesin sewa power bank modern yang mudah diakses melalui aplikasi. Proses pengembalian pun sangat simpel.
                     </Text>
-                    <ul className={"list-disc list-outside text-3xl font-bold"}>
+                    <ul className={"list-disc list-outside md:text-3xl text-lg font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
+                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-lg"}>
                                 Memperluas Jangkauan Bisnis
                             </Text>
                         </li>
@@ -169,9 +161,9 @@ const About = () => {
                     <Text fontFamily="poppins" mt={"8px"} className={"md:text-xl text-sm"}>
                         Dengan bermitra, lokasi bisnis Anda akan ditampilkan dalam aplikasi GOCAS, memperbesar potensi kunjungan dan engagement dari pengguna baru.
                     </Text>
-                    <ul className={"list-disc list-outside text-3xl font-bold"}>
+                    <ul className={"list-disc list-outside md:text-3xl text-lg font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
+                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-lg"}>
                                 Dukungan & Pemeliharaan
                             </Text>
                         </li>
@@ -179,9 +171,9 @@ const About = () => {
                     <Text fontFamily="poppins" mt={"8px"} className={"md:text-xl text-sm"}>
                         Tim kami akan memberikan dukungan penuh, mulai dari pemasangan mesin hingga pemeliharaan berkala.
                     </Text>
-                    <ul className={"list-disc list-outside text-3xl font-bold"}>
+                    <ul className={"list-disc list-outside md:text-3xl text-lg font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
+                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-lg"}>
                                 Revenue Sharing
                             </Text>
                         </li>
@@ -195,8 +187,6 @@ const About = () => {
                 spacing={0}
                 bgImage={Background3}
                 minH={"100vh"}
-                h={size.height}
-                w={size.width}
                 bgSize="cover"
                 bgPos="center"
                 alignItems={"center"}
@@ -224,7 +214,7 @@ const About = () => {
                 </Flex>
                 <Flex
                     direction={"column"}
-                    my={"auto"}
+                    my={{base: "48px", xl:"auto"}}
                     w={{base: "full", lg: "50%"}}
                     minH={"100vh"}
                     alignItems={"center"}
@@ -239,16 +229,12 @@ const About = () => {
             <VStack
                 spacing={0}
                 bgImage={Background4}
-                minH={"100vh"}
-                h={size.height}
-                w={size.width}
+                minH={"60vh"}
                 bgSize="cover"
                 bgPos="center"
                 alignItems={"start"}
                 justifyContent={"center"}
                 px={"10%"}
-                pt={"48px"}
-                pb={"10%"}
             >
                 <Box
                     w={{base: "full", lg: "50%"}}
