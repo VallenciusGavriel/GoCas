@@ -13,6 +13,7 @@ import {
     IconButton,
 } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
+import FAQItem from "./FAQItem";
 
 const faqData = [
     {
@@ -37,33 +38,34 @@ const faqData = [
     },
 ];
 
-const FAQPage = () => {
-    const bg = useColorModeValue("white", "gray.800");
-
+const Home4 = () => {
     return (
-        <Box bg={bg} p={6}>
+        <Box p={6} rounded="xl" bg="white" boxShadow="base">
             <VStack spacing={4} align="stretch">
-                <Heading as="h1" size="xl" textAlign="center">
+                <Heading
+                    as="h1"
+                    size="xl"
+                    textAlign="center"
+                    fontFamily="Poppins"
+                >
                     Pertanyaan yang Sering Diajukan (FAQ)
                 </Heading>
-                {faqData.map((faq, index) => (
-                    <Accordion allowToggle key={index}>
-                        <AccordionItem border="none">
-                            <h2>
-                                <AccordionButton _expanded={{ bg: "gray.100" }}>
-                                    <Box flex="1" textAlign="left">
-                                        {faq.question}
-                                    </Box>
-                                    <AccordionIcon />
-                                </AccordionButton>
-                            </h2>
-                            <AccordionPanel pb={4}>{faq.answer}</AccordionPanel>
-                        </AccordionItem>
-                    </Accordion>
-                ))}
+                <Accordion allowToggle>
+                    {faqData.map((faq, index) => (
+                        <FAQItem
+                            key={index}
+                            question={faq.question}
+                            answer={faq.answer}
+                        />
+                    ))}
+                </Accordion>
                 <Box pt={10} textAlign="center">
-                    <Text mb={2}>Tidak dapat menemukan yang Anda cari?</Text>
-                    <Text>Kami ingin berbicara dengan Anda</Text>
+                    <Text mb={2} fontFamily="Poppins">
+                        Tidak dapat menemukan yang Anda cari?
+                    </Text>
+                    <Text fontFamily="Poppins">
+                        Kami ingin berbicara dengan Anda
+                    </Text>
                     <IconButton
                         aria-label="Chat with us"
                         icon={<ChatIcon />}
@@ -78,4 +80,4 @@ const FAQPage = () => {
     );
 };
 
-export default FAQPage;
+export default Home4;
