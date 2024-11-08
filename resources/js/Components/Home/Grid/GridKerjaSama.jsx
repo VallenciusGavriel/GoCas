@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Image, Box } from "@chakra-ui/react";
 
-const GridKerjaSama = ({ images, className }) => {
+const GridKerjaSama = ({ images, className, color }) => {
     return (
         <Grid
             templateColumns={{
@@ -16,7 +16,7 @@ const GridKerjaSama = ({ images, className }) => {
                 <Box
                     key={index}
                     border="2px"
-                    borderColor="yellow.400"
+                    borderColor={color ?? "yellow.400"}
                     overflow="hidden"
                     p="4"
                     h="120px"

@@ -6,6 +6,7 @@ import { Head } from "@inertiajs/react";
 import Background from "../../../public/images/partnership/bg1.png";
 import Background2 from "../../../public/images/partnership/bg2.png";
 import Background3 from "../../../public/images/partnership/bg3.png";
+import Background4 from "../../../public/images/partnership/bg4.png";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 import GridKerjaSama from "@/Components/Home/Grid/GridKerjaSama.jsx";
 import * as kerjasamaImages from "@/Assets/kerjasamaImages.js";
@@ -102,12 +103,12 @@ const About = () => {
                   px={"64px"}
                   py={"32px"}
                   shadow={"2xl"}
-                  bgGradient='linear(to-b, orange.300 20%, orange.200)'
+                  bgGradient='linear(to-b, orange.300 20%, orange.400)'
               >
-                  <HeaderText size="large" withIcon={true} iconColor="brown" className={"text-center mt-4"}>
+                  <HeaderText size="large" withIcon={true} iconColor="white" className={"text-center mt-4"}>
                       OUR PARTNER
                   </HeaderText>
-                  <GridKerjaSama className={"mt-12"} images={imageSources} />
+                  <GridKerjaSama className={"mt-12"} color={"white"} images={imageSources} />
               </Box>
           </VStack>
             <VStack
@@ -125,14 +126,22 @@ const About = () => {
                 pb={"10%"}
             >
                 <Box
-                    w={{base: "full", lg: "50%"}}
+                    w={{base: "full", lg: "60%"}}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    rounded={"xl"}
+                    mt={"64px"}
+                    px={"64px"}
+                    py={"48px"}
+                    shadow={"2xl"}
+                    bgGradient='linear(to-b, yellow.300 20%, yellow.400)'
                 >
-                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl mb-8"}>
                         Mengapa Bermitra dengan GOCAS?
                     </HeaderText>
-                    <ul className={"list-disc list-outside"}>
+                    <ul className={"list-disc list-outside text-3xl font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
+                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
                                 Tingkatkan Layanan
                             </Text>
                         </li>
@@ -140,45 +149,45 @@ const About = () => {
                     <Text fontFamily="poppins" mt={"8px"} className={"md:text-xl text-sm"}>
                         Hadirkan layanan sewa power bank di lokasi bisnis atau event Anda dan berikan solusi charging yang mudah dan cepat kepada pelanggan.
                     </Text>
-                    <ul className={"list-disc list-outside"}>
+                    <ul className={"list-disc list-outside text-3xl font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
-                                Tingkatkan Layanan
+                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
+                                Dukungan Teknologi Terdepan
                             </Text>
                         </li>
                     </ul>
                     <Text fontFamily="poppins" mt={"8px"} className={"md:text-xl text-sm"}>
-                        Hadirkan layanan sewa power bank di lokasi bisnis atau event Anda dan berikan solusi charging yang mudah dan cepat kepada pelanggan.
+                        GOCAS dilengkapi dengan mesin sewa power bank modern yang mudah diakses melalui aplikasi. Proses pengembalian pun sangat simpel.
                     </Text>
-                    <ul className={"list-disc list-outside"}>
+                    <ul className={"list-disc list-outside text-3xl font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
-                                Tingkatkan Layanan
+                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
+                                Memperluas Jangkauan Bisnis
                             </Text>
                         </li>
                     </ul>
                     <Text fontFamily="poppins" mt={"8px"} className={"md:text-xl text-sm"}>
-                        Hadirkan layanan sewa power bank di lokasi bisnis atau event Anda dan berikan solusi charging yang mudah dan cepat kepada pelanggan.
+                        Dengan bermitra, lokasi bisnis Anda akan ditampilkan dalam aplikasi GOCAS, memperbesar potensi kunjungan dan engagement dari pengguna baru.
                     </Text>
-                    <ul className={"list-disc list-outside"}>
+                    <ul className={"list-disc list-outside text-3xl font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
-                                Tingkatkan Layanan
+                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
+                                Dukungan & Pemeliharaan
                             </Text>
                         </li>
                     </ul>
                     <Text fontFamily="poppins" mt={"8px"} className={"md:text-xl text-sm"}>
-                        Hadirkan layanan sewa power bank di lokasi bisnis atau event Anda dan berikan solusi charging yang mudah dan cepat kepada pelanggan.
+                        Tim kami akan memberikan dukungan penuh, mulai dari pemasangan mesin hingga pemeliharaan berkala.
                     </Text>
-                    <ul className={"list-disc list-outside"}>
+                    <ul className={"list-disc list-outside text-3xl font-bold"}>
                         <li>
-                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
-                                Tingkatkan Layanan
+                            <Text fontFamily="poppins" mt={"24px"} className={"md:text-3xl text-xl"}>
+                                Revenue Sharing
                             </Text>
                         </li>
                     </ul>
                     <Text fontFamily="poppins" mt={"8px"} className={"md:text-xl text-sm"}>
-                        Hadirkan layanan sewa power bank di lokasi bisnis atau event Anda dan berikan solusi charging yang mudah dan cepat kepada pelanggan.
+                        Dapatkan tambahan pendapatan dengan sistem bagi hasil yang menarik.
                     </Text>
                 </Box>
             </VStack>
@@ -190,8 +199,56 @@ const About = () => {
                 w={size.width}
                 bgSize="cover"
                 bgPos="center"
+                alignItems={"center"}
+                justifyContent={"center"}
+                px={"10%"}
+                pt={"48px"}
+                pb={"10%"}
+                className={"rounded-t-3xl"}
+            >
+                <Flex
+                    direction={"column"}
+                    my={"auto"}
+                    w={{base: "full", lg: "50%"}}
+                    minH={"100vh"}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                >
+                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                        TESTIMONI
+                    </HeaderText>
+                    <Testimoni/>
+                    <Text fontFamily="poppins" mt={"24px"} className={"md:text-2xl text-sm text-center"}>
+                        Ga perlu susah-susah menyediakan stop kontak, dapatkan hasil tambahan, dan jangkau pengunjungmu lebih luas dengan #MITRAGOCAS
+                    </Text>
+                </Flex>
+                <Flex
+                    direction={"column"}
+                    my={"auto"}
+                    w={{base: "full", lg: "50%"}}
+                    minH={"100vh"}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                >
+                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                        GABUNG SEKARANG!
+                    </HeaderText>
+                    <Form/>
+                    <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
+                        Ga perlu susah-susah menyediakan stop kontak, dapatkan hasil tambahan, dan jangkau pengunjungmu lebih luas dengan #MITRAGOCAS
+                    </Text>
+                </Flex>
+            </VStack>
+            <VStack
+                spacing={0}
+                bgImage={Background4}
+                minH={"100vh"}
+                h={size.height}
+                w={size.width}
+                bgSize="cover"
+                bgPos="center"
                 alignItems={"start"}
-                justifyContent={"end"}
+                justifyContent={"center"}
                 px={"10%"}
                 pt={"48px"}
                 pb={"10%"}
@@ -201,31 +258,9 @@ const About = () => {
                     w={{base: "full", lg: "50%"}}
                 >
                     <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
-                        TESTIMONI
-                    </HeaderText>
-                    <Testimoni/>
-                    <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
-                        Ga perlu susah-susah menyediakan stop kontak, dapatkan hasil tambahan, dan jangkau pengunjungmu lebih luas dengan #MITRAGOCAS
-                    </Text>
-                </Box>
-                <Box
-                    w={{base: "full", lg: "50%"}}
-                >
-                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
-                        GABUNG SEKARANG!
-                    </HeaderText>
-                    <Form/>
-                    <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
-                        Ga perlu susah-susah menyediakan stop kontak, dapatkan hasil tambahan, dan jangkau pengunjungmu lebih luas dengan #MITRAGOCAS
-                    </Text>
-                </Box>
-                <Box
-                    w={{base: "full", lg: "50%"}}
-                >
-                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
                         GOCAS Help Center
                     </HeaderText>
-                    <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
+                    <Text fontFamily="poppins" mt={"36px"} className={"md:text-xl text-sm"}>
                         Email: support@gocas.id
                     </Text>
                     <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
