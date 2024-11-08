@@ -1,62 +1,132 @@
-import React from "react";
-import { Grid, Box, Image, Text, Spacer, Button } from "@chakra-ui/react";
-import Listrik from "./../../../../public/images/home/listrik.png";
-import HeaderText from "./../Text/HeaderText";
+import React, { useState } from 'react';
+import {
+    Box,
+    Button,
+    FormControl,
+    FormLabel,
+    Input,
+    Textarea,
+    Select,
+    VStack,
+    useToast,
+} from '@chakra-ui/react';
 
 const Form = () => {
+    const [formData, setFormData] = useState({
+        namaPerusahaan: '',
+        namaPengirim: '',
+        noHp: '',
+        email: '',
+        tipeBisnis: '',
+        pesan: '',
+    });
+    const toast = useToast();
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission (e.g., send data to a server or display it)
+        toast({
+            title: 'Form Submitted',
+            description: 'Your message has been sent successfully!',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        });
+    };
+
     return (
-        <Grid
-            templateColumns="repeat(2, 1fr)"
-            height="80%"
-            width="full"
-            zIndex="10"
-        >
-            <Box
-                display="flex"
-                flexDirection="column"
-                justifyContent="flex-end"
-                alignItems="flex-start"
-                p="4"
-                height="100%"
-                zIndex="10"
-            >
-                <HeaderText size="normal" withIcon={false} iconColor="yellow">
-                    Hidupkan Perangkatmu dengan
-                </HeaderText>
-                <HeaderText size="large" withIcon={false} iconColor="yellow">
-                    GoCas
-                </HeaderText>
-                <Text fontFamily="poppins">
-                    Solusi lengkap untukmu yang hidup dengan perangkat
-                    kesayanganmu!
-                </Text>
-                <Button
-                    bg="yellow.500"
-                    textColor="white"
-                    mt={4}
-                    borderRadius="0"
-                    fontWeight="bold"
-                    fontFamily="poppins"
-                >
-                    Mulai Sekarang!
-                </Button>
-            </Box>
-            <Box
-                display="flex"
-                justifyContent="flex-end"
-                alignItems="center"
-                mt={28}
-                zIndex="10"
-            >
-                <Image
-                    src={Listrik}
-                    alt="Listrik"
-                    w="20%"
-                    h="auto"
-                    objectFit="cover"
-                />
-            </Box>
-        </Grid>
+        <Box width="full" maxWidth="500px" mx="auto" p={6} boxShadow="md" rounded="md" bg="yellow.50">
+            <form onSubmit={handleSubmit}>
+                <VStack spacing={4}>
+                    <FormControl id="namaPerusahaan" isRequired>
+                        <FormLabel>Nama Perusahaan</FormLabel>
+                        <Input
+                            type="text"
+                            name="namaPerusahaan"
+                            value={formData.namaPerusahaan}
+                            onChange={handleChange}
+                            placeholder="Masukkan nama perusahaan"
+                            bg="white"
+                        />
+                    </FormControl>
+
+                    <FormControl id="namaPengirim" isRequired>
+                        <FormLabel>Nama Pengirim</FormLabel>
+                        <Input
+                            type="text"
+                            name="namaPengirim"
+                            value={formData.namaPengirim}
+                            onChange={handleChange}
+                            placeholder="Masukkan nama pengirim"
+                            bg="white"
+                        />
+                    </FormControl>
+
+                    <FormControl id="noHp" isRequired>
+                        <FormLabel>No. Hp</FormLabel>
+                        <Input
+                            type="tel"
+                            name="noHp"
+                            value={formData.noHp}
+                            onChange={handleChange}
+                            placeholder="Masukkan nomor HP"
+                            bg="white"
+                        />
+                    </FormControl>
+
+                    <FormControl id="email" isRequired>
+                        <FormLabel>Email</FormLabel>
+                        <Input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="Masukkan alamat email"
+                            bg="white"
+                        />
+                    </FormControl>
+
+                    <FormControl id="tipeBisnis" isRequired>
+                        <FormLabel>Tipe Bisnis</FormLabel>
+                        <Select
+                            name="tipeBisnis"
+                            value={formData.tipeBisnis}
+                            onChange={handleChange}
+                            placeholder="Pilih tipe bisnis"
+                            bg="white"
+                        >
+                            <option value="B2B">B2B</option>
+                            <option value="B2C">B2C</option>
+                            <option value="Non-profit">Non-profit</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </Select>
+                    </FormControl>
+
+                    <FormControl id="pesan">
+                        <FormLabel>Pesan</FormLabel>
+                        <Textarea
+                            name="pesan"
+                            value={formData.pesan}
+                            onChange={handleChange}
+                            placeholder="Tulis pesan Anda di sini"
+                            bg="white"
+                        />
+                    </FormControl>
+
+                    <Button type="submit" colorScheme="yellow" width="full">
+                        Kirim
+                    </Button>
+                </VStack>
+            </form>
+        </Box>
     );
 };
 

@@ -230,7 +230,7 @@ const About = () => {
                     alignItems={"center"}
                     justifyContent={"center"}
                 >
-                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl mb-8 text-center"}>
                         GABUNG SEKARANG!
                     </HeaderText>
                     <Form/>
