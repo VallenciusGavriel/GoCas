@@ -4,7 +4,7 @@ import { Box, Text, Image, VStack } from "@chakra-ui/react";
 const FeatureCard = ({ icon, title, description }) => {
     return (
         <Box
-            bg="#31933E"
+            bg="white"
             p={4}
             borderRadius="xl"
             boxShadow="8px 8px 16px rgba(0, 0, 0, 0.5)"
@@ -21,7 +21,7 @@ const FeatureCard = ({ icon, title, description }) => {
                 <Text
                     fontSize="lg"
                     fontWeight="bold"
-                    color="white"
+                    color="black"
                     textAlign="center"
                     fontFamily="poppins"
                 >
@@ -29,7 +29,7 @@ const FeatureCard = ({ icon, title, description }) => {
                 </Text>
                 <Text
                     fontSize="xs"
-                    color="white"
+                    color="black"
                     textAlign="center"
                     fontFamily="poppins"
                 >

@@ -70,6 +70,7 @@ const FAQPage = () => {
                         size="lg"
                         isRound
                         colorScheme="blue"
+                        mt={4}
                     />
                 </Box>
             </VStack>

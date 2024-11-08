@@ -61,8 +61,8 @@ const Home3 = () => {
                 ))}
             </Flex>
             <Flex
-                direction={["column", "row"]}
-                gap={6}
+                direction={{ base: "column", md: "row" }}
+                gap={{ base: 20, md: 6 }}
                 justify="center"
                 align="start"
                 maxW="1500px"
@@ -131,17 +131,17 @@ const Home3 = () => {
                 Temukan kami dengan mudah
             </HeaderText>
             <Flex
-                direction={["column", "row"]}
+                direction={{ base: "column", md: "row" }}
                 justify="center"
                 p={10}
-                px={20}
+                px={{ base: 4, md: 20 }}
                 mt={8}
                 maxW="1500px"
                 w="full"
                 gap={20}
             >
                 <Box
-                    width={["100%", "40%"]}
+                    width={{ base: "100%", md: "40%" }}
                     height="300px"
                     borderRadius="xl"
                     overflow="hidden"
@@ -150,7 +150,7 @@ const Home3 = () => {
                         <MapContainer
                             center={position}
                             zoom={15}
-                            style={{ height: "100%", width: "100%", zIndex: 0 }} // Set the z-index to 0 or any lower value as needed
+                            style={{ height: "100%", width: "100%", zIndex: 0 }}
                         >
                             <TileLayer
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -165,7 +165,7 @@ const Home3 = () => {
                     )}
                 </Box>
                 <Box
-                    width={["100%", "60%"]} // Text takes 2/3 of the width on larger screens
+                    width={{ base: "100%", md: "60%" }}
                     textAlign="start"
                     maxW="800px"
                     px={[4, 0]}
