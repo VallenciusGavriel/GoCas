@@ -10,6 +10,8 @@ import {
     VStack,
     useToast,
 } from '@chakra-ui/react';
+import emailjs from 'emailjs-com';
+
 
 const Form = () => {
     const [formData, setFormData] = useState({
@@ -32,13 +34,30 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission (e.g., send data to a server or display it)
+
+        const phone = '6282188886665';
+        const message = `\nNama Perusahaan: ${formData.namaPerusahaan}\nNama Pengirim: ${formData.namaPengirim}\nEmail: ${formData.email}\nTipe Bisnis: ${formData.tipeBisnis}\nPesan: ${formData.pesan}
+        `;
+        const encodedMessage = encodeURIComponent(message);
+        const waLink = `https://wa.me/${phone}?text=${encodedMessage}`;
+
+        window.open(waLink, '_blank');
+
         toast({
-            title: 'Form Submitted',
-            description: 'Your message has been sent successfully!',
+            title: 'Redirecting to WhatsApp',
+            description: 'You will be redirected to WhatsApp to send your message.',
             status: 'success',
             duration: 3000,
             isClosable: true,
+        });
+
+        setFormData({
+            namaPerusahaan: '',
+            namaPengirim: '',
+            noHp: '',
+            email: '',
+            tipeBisnis: '',
+            pesan: '',
         });
     };
 

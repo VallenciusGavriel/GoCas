@@ -53,7 +53,7 @@ const HeaderText = ({
 
     const iconSrc =
         withIcon && iconColor
-            ? `/images/home/listrik-mini-${iconColor}.png`
+            ? `/images/home/listrik-mini-${iconColor}.svg`
             : null;
 
     return (

@@ -79,7 +79,7 @@ const About = () => {
               px={{base: "32px", xl: "64px"}}
               py={{base: "24px", xl: "32px"}}
               shadow={"2xl"}
-              bgGradient='linear(to-b, yellow.300 60%, green.200)'
+              bgGradient='linear(to-b, yellow.300 60%, yellow.200)'
             >
               <HeaderText iconColor={"brown"} size={"large"} withIcon={false} className={"xl:mt-0 mt-2"} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
                 KOLABORASI HEBAT DENGAN GOCAS!
