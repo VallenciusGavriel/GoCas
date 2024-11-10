@@ -76,11 +76,11 @@ const Navbar = () => {
                 <Flex align="center" justify="flex-start">
                     <Link href={"/"}>
                         <Image
-                          src={GocasLogo}
-                          alt="GoCas Logo"
-                          boxSize="80px"
-                          mr={4}
-                          objectFit="contain"
+                            src={GocasLogo}
+                            alt="GoCas Logo"
+                            boxSize="80px"
+                            mr={4}
+                            objectFit="contain"
                         />
                     </Link>
                 </Flex>
@@ -94,7 +94,14 @@ const Navbar = () => {
                 />
 
                 {/* Desktop Menu */}
-                <Flex align="center" justify={"space-evenly"} w={"80%"} ml={10} spacing={8} display={display}>
+                <Flex
+                    align="center"
+                    justify={"space-evenly"}
+                    w={"80%"}
+                    ml={10}
+                    spacing={8}
+                    display={display}
+                >
                     {menuLinks.map((link) => (
                         <Link key={link.name} href={link.href}>
                             <MotionText
@@ -132,67 +139,63 @@ const Navbar = () => {
 
                     {/* Language Dropdown */}
                     <Box
-                      borderLeft={"1px"}
-                      px={5}
-                      display="flex"
-                      alignItems="center"
+                        borderLeft={"1px"}
+                        px={5}
+                        display="flex"
+                        alignItems="center"
                     >
                         <Flex align="center">
                             <Image
-                              src={
-                                  selectedLanguage === "ID" ? IDFlag : ENFlag
-                              }
-                              alt={
-                                  selectedLanguage === "ID"
-                                    ? "Indonesian Flag"
-                                    : "English Flag"
-                              }
-                              boxSize="16px"
-                              mr={2}
+                                src={
+                                    selectedLanguage === "ID" ? IDFlag : ENFlag
+                                }
+                                alt={
+                                    selectedLanguage === "ID"
+                                        ? "Indonesian Flag"
+                                        : "English Flag"
+                                }
+                                boxSize="16px"
+                                mr={2}
                             />
                             <Text fontWeight="bold">{selectedLanguage}</Text>
                         </Flex>
                         <Menu>
                             <MenuButton
-                              as={IconButton}
-                              icon={<ChevronDownIcon />}
-                              ml={4}
-                              color={"white"}
-                              aria-label="Select Language"
-                              bg="transparent"
-                              _hover={{ bg: "green" }}
-                              _active={{ bg: "green" }}
+                                as={IconButton}
+                                icon={<ChevronDownIcon />}
+                                ml={4}
+                                color={"white"}
+                                aria-label="Select Language"
+                                bg="transparent"
+                                _hover={{ bg: "green" }}
+                                _active={{ bg: "green" }}
                             />
-                            <MenuList
-                              bg={"#6fb475"}
-                              px={2}
-                              op
-                            >
+                            <MenuList bg={"#6fb475"} px={2} op>
                                 <MenuItem
-                                  bg={"transparent"}
-                                  _hover={{ bg: "green" }}
-                                  _active={{ bg: "green" }}
-                                  onClick={() => handleLanguageChange("ID")}
+                                    bg={"transparent"}
+                                    _hover={{ bg: "green" }}
+                                    _active={{ bg: "green" }}
+                                    onClick={() => handleLanguageChange("ID")}
                                 >
                                     <Image
-                                      src={IDFlag}
-                                      alt="Indonesian Flag"
-                                      boxSize="20px"
-                                      mr={2}
+                                        src={IDFlag}
+                                        alt="Indonesian Flag"
+                                        boxSize="20px"
+                                        mr={2}
                                     />
                                     <Text>Bahasa Indonesia (ID)</Text>
                                 </MenuItem>
                                 <MenuItem
-                                  bg={"transparent"}
-                                  _hover={{ bg: "green" }}
-                                  _active={{ bg: "green" }}
-                                  onClick={() => handleLanguageChange("EN")}
+                                    bg={"transparent"}
+                                    _hover={{ bg: "green" }}
+                                    _active={{ bg: "green" }}
+                                    onClick={() => handleLanguageChange("EN")}
                                 >
                                     <Image
-                                      src={ENFlag}
-                                      alt="English Flag"
-                                      boxSize="20px"
-                                      mr={2}
+                                        src={ENFlag}
+                                        alt="English Flag"
+                                        boxSize="20px"
+                                        mr={2}
                                     />
                                     <Text>English (EN)</Text>
                                 </MenuItem>

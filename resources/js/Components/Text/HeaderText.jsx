@@ -1,25 +1,45 @@
 import React from "react";
 import { Text as ChakraText, Image, Box } from "@chakra-ui/react";
 
-const HeaderText = ({ children, size, withIcon = false, iconColor, inputclass, className }) => {
+const HeaderText = ({
+    children,
+    size,
+    withIcon = false,
+    iconColor,
+    inputclass,
+    className,
+    topMargin = 0,
+    textAlign = "start",
+    mx = 0,
+}) => {
     const fontSizeMapping = {
-        large: "5xl",
-        normal: "3xl",
+        large: "7xl",
+        normal: "5xl",
         small: "xl",
         tiny: "base",
     };
     const fontSize = fontSizeMapping[size];
 
     const iconDimensions = {
-        "5xl": { width: "20x", height: "40px" },
-        "3xl": { width: "16px", height: "32px" },
-        "xl": { width: "16px", height: "32px" },
-        "base": { width: "10px", height: "18px" },
+        "7xl": { width: "44px", height: "44px" },
+        "5xl": { width: "40px", height: "40px" },
+        xl: { width: "32px", height: "32px" },
+        base: { width: "18px", height: "18px" },
     };
-    const { width, height } = iconDimensions[fontSize];
+    const { width, height } = iconDimensions[fontSize] || {
+        width: "18px",
+        height: "18px",
+    };
 
     const letterSpacing = size === "large" ? "wider" : "wide";
-    const marginTop = size === "large" ? "-4" : "0";
+    const marginTop = size === "large" ? "-4" : "-10";
+    const lineHeight =
+        {
+            large: "1.2",
+            normal: "1.1",
+            small: "1.5",
+            tiny: "1.6",
+        }[size] || "normal";
 
     const colorMapping = {
         green: "#28B67A",
@@ -27,7 +47,7 @@ const HeaderText = ({ children, size, withIcon = false, iconColor, inputclass, c
         white: "white",
         red: "#FF0000",
         yellow: "#E7BE0B",
-        brown: "#7a523d",
+        brown: "#63412A",
     };
     const textColor = colorMapping[iconColor] || "black";
 
@@ -37,7 +57,7 @@ const HeaderText = ({ children, size, withIcon = false, iconColor, inputclass, c
             : null;
 
     return (
-        <Box display="flex" alignItems="center" className={className}>
+        <Box mt={topMargin} display="flex" alignItems="center" className={className}>
             {withIcon && iconSrc && (
                 <Image
                     src={iconSrc}
@@ -53,7 +73,10 @@ const HeaderText = ({ children, size, withIcon = false, iconColor, inputclass, c
                 fontSize={fontSize}
                 letterSpacing={letterSpacing}
                 mt={marginTop}
+                lineHeight={lineHeight}
                 className={inputclass}
+                textAlign={textAlign}
+                mx={mx}
             >
                 {children}
             </ChakraText>

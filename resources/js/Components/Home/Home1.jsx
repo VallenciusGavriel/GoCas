@@ -1,12 +1,21 @@
 import React from "react";
-import { Grid, Box, Image, Text, Spacer, Button } from "@chakra-ui/react";
-import Listrik from "./../../../../public/images/home/listrik.png";
+import {
+    Grid,
+    Box,
+    Image,
+    Text,
+    Button,
+    VStack,
+    HStack,
+} from "@chakra-ui/react";
+import Downloads from "./../../../../public/images/home/downloads.png";
+import QRCode from "./../../../../public/images/home/qr-code.png";
 import HeaderText from "./../Text/HeaderText";
 
 const Home1 = () => {
     return (
         <Grid
-            templateColumns="repeat(2, 1fr)"
+            templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
             height="80%"
             width="full"
             zIndex="10"
@@ -15,46 +24,93 @@ const Home1 = () => {
                 display="flex"
                 flexDirection="column"
                 justifyContent="flex-end"
-                alignItems="flex-start"
+                alignItems={{ base: "center", md: "flex-start" }}
+                textAlign={{ base: "center", md: "left" }}
                 p="4"
                 height="100%"
                 zIndex="10"
             >
-                <HeaderText size="normal" withIcon={false} iconColor="yellow">
-                    Hidupkan Perangkatmu dengan
+                <HeaderText
+                    iconColor="brown"
+                    size="normal"
+                    withIcon={false}
+                    topMargin={40}
+                    inputclass={"xl:!text-5xl md:!text-3xl !text-lg"}
+                >
+                    Isi daya tanpa ribet
                 </HeaderText>
-                <HeaderText size="large" withIcon={false} iconColor="yellow">
-                    GoCas
+                <HeaderText
+                    iconColor="brown"
+                    size="large"
+                    withIcon={false}
+                    topMargin={6}
+                    inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
+                >
+                    kapanpun
                 </HeaderText>
-                <Text fontFamily="poppins">
-                    Solusi lengkap untukmu yang hidup dengan perangkat
-                    kesayanganmu!
+                <HeaderText
+                    iconColor="brown"
+                    size="large"
+                    withIcon={false}
+                    topMargin={6}
+                    inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
+                >
+                    dimanapun
+                </HeaderText>
+                <Text
+                    mt={6}
+                    fontSize="lg"
+                    fontFamily="poppins"
+                    fontWeight="bold"
+                >
+                    GoCas Indonesia adalah brand penyewaan Power bank inovatif
+                    yang hadir untuk memberikan solusi pengisian daya bagi para
+                    pengguna yang aktif dan dinamis.
                 </Text>
                 <Button
-                    bg="yellow.500"
-                    textColor="white"
-                    mt={4}
-                    borderRadius="0"
-                    fontWeight="bold"
+                    bgGradient="linear(to-r, #6EA93C, #25893C)"
+                    color="white"
+                    _hover={{
+                        bgGradient: "linear(to-r, green.500, teal.600)",
+                    }}
+                    borderRadius="full"
+                    fontSize="lg"
                     fontFamily="poppins"
+                    fontWeight="bold"
+                    px={8}
+                    py={6}
+                    mt={6}
+                    mb={{ base: 10, md: 28 }}
+                    boxShadow="md"
                 >
-                    Mulai Sekarang!
+                    Temukan GoCas terdekat
                 </Button>
             </Box>
             <Box
-                display="flex"
-                justifyContent="flex-end"
-                alignItems="center"
-                mt={28}
-                zIndex="10"
+                position={{ base: "relative", md: "absolute" }}
+                right={{ md: "0" }}
+                bottom={{ md: "0" }}
+                p={{ base: "4", md: "28" }}
+                width={{ base: "100%", md: "auto" }}
             >
-                <Image
-                    src={Listrik}
-                    alt="Listrik"
-                    w="20%"
-                    h="auto"
-                    objectFit="cover"
-                />
+                <HStack
+                    justifyContent={{ base: "space-evenly", md: "flex-end" }}
+                    spacing={4}
+                >
+                    <Image
+                        src={Downloads}
+                        alt="Download on the App Store and Google Play"
+                        w={{ base: "40%", md: "25%" }}
+                        h="auto"
+                        objectFit="contain"
+                    />
+                    <Image
+                        src={QRCode}
+                        alt="QR Code"
+                        boxSize={{ base: "100px", md: "150px" }}
+                        objectFit="contain"
+                    />
+                </HStack>
             </Box>
         </Grid>
     );

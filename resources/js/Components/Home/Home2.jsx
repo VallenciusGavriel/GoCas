@@ -1,34 +1,77 @@
 import React from "react";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Text, Link } from "@chakra-ui/react";
 import HeaderText from "../Text/HeaderText";
-import GuardImage from "./../../../../public/images/home/guard.png";
-import GocasLogo from "../../../../public/images/navbar/gocas-logo.png";
 
 const Home2 = () => {
     return (
-        <>
-            <HeaderText size="normal" withIcon={true} iconColor="yellow">
-                Siapa Kami?
-            </HeaderText>
-            <Flex alignItems="center" gap={2} mt={4}>
-                <Image
-                    src={GocasLogo}
-                    alt="Guard Image"
-                    w="10%"
-                    objectFit="cover"
-                />
-                <Text
-                    fontSize="lg"
-                    fontFamily="poppins"
-                    lineHeight="tall"
-                    flex="8"
-                    mx={8}
+        <Box p={{ base: 2, md: 4 }} color="white">
+            <Box
+                maxWidth="1500px"
+                mx="auto"
+                display="flex"
+                flexDirection={{ base: "column", lg: "row" }}
+                alignItems="center"
+                justifyContent="space-between"
+                gap={{ base: 2, md: 4, lg: 8 }}
+                my={{ base: 5, md: 10, lg: 14 }}
+            >
+                <Box
+                    flex={{ base: "auto", md: 1 }}
+                    pr={{ base: 0, md: 4, lg: 6 }}
                 >
-                  <b>GoCas Indonesia</b> adalah brand penyewaan Power bank inovatif yang hadir untuk memberikan solusi pengisian daya bagi para pengguna yang aktif dan dinamis. Berdiri dengan misi untuk menghubungkan energi dengan mobilitas, GoCas menghadirkan layanan praktis, cepat, dan dapat diandalkan dalam menyediakan Power bank kapan pun dan di mana pun Anda membutuhkan.
-                  Kami berkomitmen untuk memastikan agar Anda tidak lagi kehabisan daya di tengah aktivitas sehari-hari.
-                </Text>
-            </Flex>
-        </>
+                    <HeaderText
+                        iconColor="green"
+                        size="normal"
+                        inputclass={"xl:!text-5xl md:!text-5xl !text-3xl"}
+                    >
+                        HIDUPKAN PERANGKATMU DENGAN
+                    </HeaderText>
+                    <HeaderText
+                        iconColor="brown"
+                        size="normal"
+                        topMargin={10}
+                        inputclass={"xl:!text-5xl md:!text-3xl !text-lg"}
+                    >
+                        #GOCASinSekarang
+                    </HeaderText>
+                </Box>
+                <Box
+                    flex={{ base: "auto", md: 1 }}
+                    pl={{ base: 0, md: 4, lg: 6 }}
+                >
+                    <HeaderText
+                        iconColor="black"
+                        size="small"
+                        topMargin={{ base: 20, md: 10, lg: 0 }}
+                        textStyle={{ base: "headline", md: "subheadline" }}
+                    >
+                        SALAM KENAL, Sobat GOCAS!
+                    </HeaderText>
+                    <Text
+                        fontSize={{ base: "sm", md: "md" }}
+                        fontFamily="poppins"
+                        textAlign="justify"
+                        color="black"
+                        pr={{ base: 0, md: 4, lg: 24 }}
+                        mb={6}
+                    >
+                        Hai! Kami GoCas Indonesia, solusi cerdas buat kamu yang
+                        aktif dan nggak mau ribet. Dengan teknologi berbasis
+                        Internet of Things (IoT), GoCas hadir untuk memastikan
+                        gadget kamu tetap terisi penuh kapan pun dan di mana pun
+                        kamu butuh...
+                    </Text>
+                    <Link
+                        color="black"
+                        href="/about"
+                        fontFamily="poppins"
+                        fontWeight="bold"
+                    >
+                        Baca selengkapnya
+                    </Link>
+                </Box>
+            </Box>
+        </Box>
     );
 };
 
