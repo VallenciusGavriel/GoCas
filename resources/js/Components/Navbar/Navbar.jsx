@@ -49,8 +49,8 @@ const Navbar = () => {
 
     // Update these buttons if needed
     const buttons = [
-        { label: "Help Center", variant: "solid", id: "helpButton" },
-        { label: "Daftar", variant: "solid", id: "registerButton" },
+        { label: "Help Center", variant: "solid", id: "helpButton", href: "https://wa.me/6282188886665" },
+        // { label: "Daftar", variant: "solid", id: "registerButton" },
     ];
 
     return (
@@ -123,18 +123,20 @@ const Navbar = () => {
                 {/* Button Section */}
                 <Flex display={display}>
                     {buttons.map((button) => (
-                        <ChakraButton
-                            key={button.id}
-                            variant={button.variant}
-                            mr={4}
-                            color={"white"}
-                            _hover={{ bg: "green" }}
-                            _active={{ bg: "green" }}
-                            bg={"#855c3c"}
-                            borderRadius="xl"
-                        >
-                            {button.label}
-                        </ChakraButton>
+                        <Link href={button.href}>
+                            <ChakraButton
+                                key={button.id}
+                                variant={button.variant}
+                                mr={4}
+                                color={"white"}
+                                _hover={{ bg: "green" }}
+                                _active={{ bg: "green" }}
+                                bg={"#855c3c"}
+                                borderRadius="xl"
+                            >
+                                {button.label}
+                            </ChakraButton>
+                        </Link>
                     ))}
 
                     {/* Language Dropdown */}

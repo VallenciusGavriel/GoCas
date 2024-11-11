@@ -7,6 +7,7 @@ const HeaderText = ({
     withIcon = false,
     iconColor,
     inputclass,
+    className,
     topMargin = 0,
     textAlign = "start",
     mx = 0,
@@ -52,11 +53,11 @@ const HeaderText = ({
 
     const iconSrc =
         withIcon && iconColor
-            ? `/images/home/listrik-mini-${iconColor}.png`
+            ? `/images/home/listrik-mini-${iconColor}.svg`
             : null;
 
     return (
-        <Box mt={topMargin} display="flex" alignItems="center">
+        <Box mt={topMargin} display="flex" alignItems="center" className={className}>
             {withIcon && iconSrc && (
                 <Image
                     src={iconSrc}

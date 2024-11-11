@@ -19,8 +19,8 @@ class MainController extends Controller
         $long = $center[1];
 
         $locations = Location::selectRaw(
-            "*, ROUND(( 6371 * acos( cos( radians(?) ) * cos( radians( CAST(latitude AS DECIMAL(10, 6)) ) ) 
-                * cos( radians( CAST(longitude AS DECIMAL(10, 6)) ) - radians(?) ) + sin( radians(?) ) 
+            "*, ROUND(( 6371 * acos( cos( radians(?) ) * cos( radians( CAST(latitude AS DECIMAL(10, 6)) ) )
+                * cos( radians( CAST(longitude AS DECIMAL(10, 6)) ) - radians(?) ) + sin( radians(?) )
                 * sin( radians( CAST(latitude AS DECIMAL(10, 6)) ) ) ) ), 2) AS distance",
             [$lat, $long, $lat]
         )
@@ -49,8 +49,8 @@ class MainController extends Controller
         $west = isset($data['west']) ? (float)$data['west'] : null;
 
         $locations = Location::selectRaw(
-                "*, ROUND(( 6371 * acos( cos( radians(?) ) * cos( radians( CAST(latitude AS DECIMAL(10, 6)) ) ) 
-                * cos( radians( CAST(longitude AS DECIMAL(10, 6)) ) - radians(?) ) + sin( radians(?) ) 
+                "*, ROUND(( 6371 * acos( cos( radians(?) ) * cos( radians( CAST(latitude AS DECIMAL(10, 6)) ) )
+                * cos( radians( CAST(longitude AS DECIMAL(10, 6)) ) - radians(?) ) + sin( radians(?) )
                 * sin( radians( CAST(latitude AS DECIMAL(10, 6)) ) ) ) ), 2) AS distance",
                 [$lat, $long, $lat]
             )
@@ -68,5 +68,10 @@ class MainController extends Controller
     public function about()
     {
         return Inertia::render('About');
+    }
+
+    public function partnership()
+    {
+        return Inertia::render('Partnership');
     }
 }

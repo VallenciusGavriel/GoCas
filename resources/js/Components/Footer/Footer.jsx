@@ -56,7 +56,7 @@ const Footer = () => {
                       gap={{ base: 2, md: 6 }}
                     >
                         <Link href={"/about"}>Tentang Kami</Link>
-                        <Link href={"/users"}>Pengguna</Link>
+                        {/*<Link href={"/users"}>Pengguna</Link>*/}
 
                         <Link href={"/location"}>Lokasi</Link>
                         <Link href={"/partnership"}>Partnership</Link>
