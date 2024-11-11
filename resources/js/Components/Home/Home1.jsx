@@ -1,13 +1,4 @@
-import React from "react";
-import {
-    Grid,
-    Box,
-    Image,
-    Text,
-    Button,
-    VStack,
-    HStack,
-} from "@chakra-ui/react";
+import { Box, Button, Grid, HStack, Image, Text } from "@chakra-ui/react";
 import Downloads from "./../../../../public/images/home/downloads.png";
 import QRCode from "./../../../../public/images/home/qr-code.png";
 import HeaderText from "./../Text/HeaderText";

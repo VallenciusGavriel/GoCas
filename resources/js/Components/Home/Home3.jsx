@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Box, Text, Flex, Heading, Button } from "@chakra-ui/react";
-import StepList from "./StepList";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { useEffect, useState } from "react";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import HeaderText from "../Text/HeaderText";
 import FeatureCard from "./FeatureCard";
-import { stepsBorrow, stepsReturn, features } from "./homeData";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import { features, stepsBorrow, stepsReturn } from "./homeData";
+import StepList from "./StepList";
 
 const Home3 = () => {
     const [position, setPosition] = useState(null);
@@ -61,12 +61,13 @@ const Home3 = () => {
                 ))}
             </Flex>
             <Flex
-                direction={{ base: "column", md: "row" }}
+                direction={{ base: "column", xl: "row" }}
                 gap={{ base: 20, md: 6 }}
                 justify="center"
-                align="start"
+                align={{ base: "center", xl: "start" }}
                 maxW="1500px"
                 mx="auto"
+                my="auto"
                 mt={20}
                 mb={28}
             >
@@ -80,7 +81,8 @@ const Home3 = () => {
                         Cara meminjam
                     </HeaderText>
                     <Box
-                        bg="rgba(239, 200, 43, 0.85)"
+                        // bg="rgba(239, 200, 43, 0.85)"
+                        bg="white"
                         p={10}
                         pt={10}
                         pb={16}
@@ -107,7 +109,8 @@ const Home3 = () => {
                         Cara pengembalian
                     </HeaderText>
                     <Box
-                        bg="rgba(236, 229, 187, 0.85)"
+                        // bg="rgba(236, 229, 187, 0.85)"
+                        bg="white"
                         p={10}
                         pt={10}
                         pb={16}
@@ -117,6 +120,35 @@ const Home3 = () => {
                         w="full"
                         mt={10}
                         mx="auto"
+                        opacity="80%"
+                    >
+                        <StepList steps={stepsReturn} />
+                    </Box>
+                </Box>
+
+                <Box flex="1" textAlign="center">
+                    <HeaderText
+                        iconColor="black"
+                        size="normal"
+                        textAlign="center"
+                        mx="auto"
+                        inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
+                    >
+                        Cara pengembalian
+                    </HeaderText>
+                    <Box
+                        // bg="rgba(236, 229, 187, 0.85)"
+                        bg="white"
+                        p={10}
+                        pt={10}
+                        pb={16}
+                        borderRadius="xl"
+                        shadow="md"
+                        maxW="650px"
+                        w="full"
+                        mt={10}
+                        mx="auto"
+                        opacity="80%"
                     >
                         <StepList steps={stepsReturn} />
                     </Box>
