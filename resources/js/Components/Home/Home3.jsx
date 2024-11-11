@@ -102,6 +102,7 @@ const Home3 = () => {
                         size="normal"
                         textAlign="center"
                         mx="auto"
+                        inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
                     >
                         Cara pengembalian
                     </HeaderText>

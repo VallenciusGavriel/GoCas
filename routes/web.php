@@ -11,6 +11,7 @@ Route::get('/', function () {
 Route::get('/about', [MainController::class, 'about']);
 Route::get('/location', [MainController::class, 'location']);
 Route::get('/location-search', [MainController::class, 'locationSearch']);
+Route::get('/partnership', [MainController::class, 'partnership']);
 
 Route::fallback(function () {
     return redirect('/');
