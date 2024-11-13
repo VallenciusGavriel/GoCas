@@ -26,12 +26,12 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
         <ModalContent>
           <ModalCloseButton />
           <ModalBody>
-            <Flex mt={4} gap={8} w={"100%"} justifyContent={"space-between"}>
+            <Flex mt={4} gap={8} w={"100%"} justifyContent={"start"}>
               <Center w="20%" pl={2}>
                 <Icon as={MapPin} fill={"yellow.600"} color={"white"} boxSize={24} />
               </Center>
               <VStack alignItems={"left"}>
-                <HeaderText size={"normal"} withIcon={false} iconColor={"yellow"}>{title}</HeaderText>
+                <HeaderText topMargin={"12"} size={"normal"} withIcon={false} iconColor={"yellow"}>{title}</HeaderText>
                 <Text>{address}</Text>
               </VStack>
             </Flex>
@@ -68,7 +68,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
               >
               <VStack alignItems={"left"}>
                   <Text fontSize={"3xl"} color={"yellow.500"}>Apple</Text>
-                  <HeaderText size={"large"} withIcon={false} iconColor={"black"}>{apple}</HeaderText>
+                  <HeaderText topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{apple}</HeaderText>
                 </VStack>
               </Box>
               <Box
@@ -80,7 +80,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
               >
               <VStack alignItems={"left"}>
                   <Text fontSize={"3xl"} color={"yellow.500"}>Type C</Text>
-                  <HeaderText size={"large"} withIcon={false} iconColor={"black"}>{type_c}</HeaderText>
+                  <HeaderText topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{type_c}</HeaderText>
                 </VStack>
               </Box>
               <Box
@@ -92,7 +92,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
               >
               <VStack alignItems={"left"}>
                   <Text fontSize={"3xl"} color={"yellow.500"}>Type B</Text>
-                  <HeaderText size={"large"} withIcon={false} iconColor={"black"}>{type_b}</HeaderText>
+                  <HeaderText topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{type_b}</HeaderText>
                 </VStack>
               </Box>
             </Flex>
@@ -115,12 +115,13 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
         _hover={{ boxShadow: 'xl' }}
         w="100%"
       >
-        <Flex>
+        <Flex h={"full"}>
           <Center w="20%" pr={4}>
             <Icon as={MapPin} fill={"yellow.500"} color={"white"} boxSize={10} />
           </Center>
-          <VStack align="start" spacing={2} w="80%">
+          <VStack alignItems="start" justifyContent={"center"} spacing={2} w="80%">
             <HeaderText
+              topMargin={8}
               size="small"
               withIcon={false}
               iconColor="yellow"

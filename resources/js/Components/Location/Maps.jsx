@@ -43,7 +43,7 @@ const Maps = ({ locations, point, searchLocation }) => {
     <MapContainer
       center={center}
       zoom={14}
-      style={{ height: '500px', width: '100%' }}
+      style={{ height: '500px', width: '100%', zIndex: 0 }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

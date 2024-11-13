@@ -83,7 +83,7 @@ const Location = ({ locations: initialLocations, center }) => {
           hmin={"100vh"}
           position={"relative"}
         >
-          <HeaderText size="normal" withIcon={true} iconColor="yellow">
+          <HeaderText topMargin={12} size="normal" withIcon={true} iconColor="yellow">
             Lokasi GoCas
           </HeaderText>
 
