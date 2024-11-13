@@ -67,7 +67,7 @@ const About = () => {
                 w="100px"
                 objectFit="contain"
               />
-              <HeaderText  iconColor={"black"} size={"normal"} inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"} withIcon={false}>Powerbank Ramah Lingkungan</HeaderText>
+              <HeaderText topMargin={12} iconColor={"black"} size={"normal"} inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"} withIcon={false}>Powerbank Ramah Lingkungan</HeaderText>
               <Text fontFamily="poppins">
                 GOCAS menggunakan powerbank berkualitas tinggi yang didesain tahan lama serta ramah lingkungan, untuk mendukung gaya hidup yang lebih berkelanjutan.
               </Text>
@@ -79,7 +79,7 @@ const About = () => {
                 w="100px"
                 objectFit="contain"
               />
-              <HeaderText  iconColor={"black"} size={"normal"} inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"} withIcon={false}>Masyarakat terbebas dari low baterai</HeaderText>
+              <HeaderText topMargin={12} iconColor={"black"} size={"normal"} inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"} withIcon={false}>Masyarakat terbebas dari low baterai</HeaderText>
               <Text fontFamily="poppins">
                 Kami berkomitmen untuk memastikan Anda tetap terhubung tanpa gangguan. Dengan GOCAS, low baterai bukan lagi masalah!
               </Text>
@@ -113,7 +113,7 @@ const About = () => {
                 objectFit="contain"
               />
               <VStack alignItems={"start"} justifyContent={"start"}>
-                <HeaderText iconColor={"black"} size={"normal"} withIcon={false} inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"}>Power bank sharing</HeaderText>
+                <HeaderText topMargin={10} iconColor={"black"} size={"normal"} withIcon={false} inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"}>Power bank sharing</HeaderText>
                 <Text fontFamily="poppins">
                   Powerbank GoCas adalah solusi terbaik untuk menjaga smartphone, kamera, atau perangkat seluler Anda agar tetap terisi daya saat bepergian. Dengan teknologi canggih dan sistem powerbank sharing, anda bisa dengan mudah menyewa powerbank kapan saja dan di mana saja melalui GoCas Station terdekat!
                 </Text>
