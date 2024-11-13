@@ -74,4 +74,9 @@ class MainController extends Controller
     {
         return Inertia::render('Partnership');
     }
+
+    public function products()
+    {
+        return Inertia::render('Products');
+    }
 }
