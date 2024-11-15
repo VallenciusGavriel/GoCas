@@ -5,7 +5,12 @@ import { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import HeaderText from "../Text/HeaderText";
 import FeatureCard from "./FeatureCard";
-import { features, stepsBorrow, stepsReturn } from "./homeData";
+import {
+    features,
+    stepsBorrowGuest,
+    stepsBorrowPelanggan,
+    stepsReturn,
+} from "./homeData";
 import StepList from "./StepList";
 
 const Home3 = () => {
@@ -71,89 +76,69 @@ const Home3 = () => {
                 mt={20}
                 mb={28}
             >
-                <Box flex="1" textAlign="center">
-                    <HeaderText
-                        iconColor="black"
-                        size="normal"
-                        textAlign="center"
-                        mx="auto"
-                    >
-                        Cara meminjam
-                    </HeaderText>
+                {[
+                    {
+                        title: "Tata Cara Penyewaan Guest",
+                        steps: stepsBorrowGuest,
+                    },
+                    {
+                        title: "Tata Cara Penyewaan Pelanggan",
+                        steps: stepsBorrowPelanggan,
+                    },
+                    {
+                        title: "Tata Cara Pengembalian",
+                        steps: stepsReturn,
+                    },
+                ].map((item, index) => (
                     <Box
-                        // bg="rgba(239, 200, 43, 0.85)"
-                        bg="white"
-                        p={10}
-                        pt={10}
-                        pb={16}
-                        borderRadius="xl"
-                        shadow="md"
-                        maxW="650px"
-                        w="full"
-                        mt={10}
-                        mx="auto"
-                        opacity="80%"
-                    >
-                        <StepList steps={stepsBorrow} />
-                    </Box>
-                </Box>
-
-                <Box flex="1" textAlign="center">
-                    <HeaderText
-                        iconColor="black"
-                        size="normal"
+                        key={index}
+                        flex="1"
                         textAlign="center"
-                        mx="auto"
-                        inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
-                    >
-                        Cara pengembalian
-                    </HeaderText>
-                    <Box
-                        // bg="rgba(236, 229, 187, 0.85)"
-                        bg="white"
-                        p={10}
-                        pt={10}
-                        pb={16}
-                        borderRadius="xl"
-                        shadow="md"
-                        maxW="650px"
-                        w="full"
+                        display="flex"
+                        flexDirection="column"
+                        justifyContent="space-between"
+                        minHeight="100%"
                         mt={10}
-                        mx="auto"
-                        opacity="80%"
                     >
-                        <StepList steps={stepsReturn} />
+                        <div>
+                            <HeaderText
+                                iconColor="black"
+                                size="normal"
+                                textAlign="center"
+                                mx="auto"
+                                inputclass={
+                                    "xl:!text-5xl md:!text-4xl !text-3xl"
+                                }
+                            >
+                                {item.title === "Tata Cara Pengembalian" ? (
+                                    <>
+                                        <br />
+                                        Tata Cara Pengembalian
+                                        <br />
+                                    </>
+                                ) : (
+                                    item.title
+                                )}
+                            </HeaderText>
+                        </div>
+                        <Box
+                            bg="white"
+                            p={10}
+                            borderRadius="xl"
+                            shadow="md"
+                            maxW="650px"
+                            w="full"
+                            mt={10}
+                            mx="auto"
+                            opacity="80%"
+                            minHeight="500px"
+                        >
+                            <StepList steps={item.steps} />
+                        </Box>
                     </Box>
-                </Box>
-
-                <Box flex="1" textAlign="center">
-                    <HeaderText
-                        iconColor="black"
-                        size="normal"
-                        textAlign="center"
-                        mx="auto"
-                        inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
-                    >
-                        Cara pengembalian
-                    </HeaderText>
-                    <Box
-                        // bg="rgba(236, 229, 187, 0.85)"
-                        bg="white"
-                        p={10}
-                        pt={10}
-                        pb={16}
-                        borderRadius="xl"
-                        shadow="md"
-                        maxW="650px"
-                        w="full"
-                        mt={10}
-                        mx="auto"
-                        opacity="80%"
-                    >
-                        <StepList steps={stepsReturn} />
-                    </Box>
-                </Box>
+                ))}
             </Flex>
+
             <HeaderText
                 iconColor="black"
                 size="normal"
