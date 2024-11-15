@@ -1,5 +1,4 @@
-import React from "react";
-import { Text as ChakraText, Image, Box } from "@chakra-ui/react";
+import { Box, Text as ChakraText, Image } from "@chakra-ui/react";
 
 const HeaderText = ({
     children,
@@ -11,6 +10,7 @@ const HeaderText = ({
     topMargin = 0,
     textAlign = "start",
     mx = 0,
+    px = { base: 10, md: 10 },
 }) => {
     const fontSizeMapping = {
         large: "7xl",
@@ -57,7 +57,12 @@ const HeaderText = ({
             : null;
 
     return (
-        <Box mt={topMargin} display="flex" alignItems="center" className={className}>
+        <Box
+            mt={topMargin}
+            display="flex"
+            alignItems="center"
+            className={className}
+        >
             {withIcon && iconSrc && (
                 <Image
                     src={iconSrc}
@@ -77,6 +82,7 @@ const HeaderText = ({
                 className={inputclass}
                 textAlign={textAlign}
                 mx={mx}
+                px={px}
             >
                 {children}
             </ChakraText>
