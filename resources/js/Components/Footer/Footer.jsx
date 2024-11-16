@@ -51,6 +51,7 @@ const Footer = () => {
                         templateColumns={{ base: "1fr", md: `repeat(2, 1fr)` }}
                         gap={{ base: 2, md: 6 }}
                     >
+                        <Link href={"/"}>Home</Link>
                         <Link href={"/about"}>Tentang Kami</Link>
                         {/*<Link href={"/users"}>Pengguna</Link>*/}
 
@@ -58,7 +59,7 @@ const Footer = () => {
                         <Link href={"/partnership"}>Partnership</Link>
 
                         <Link href={"/products"}>Produk</Link>
-                        <Link href={"/faq"}>FAQ</Link>
+                        {/*<Link href={"/faq"}>FAQ</Link>*/}
                     </Grid>
                 </Box>
                 <Box color={"white"} fontWeight={"extrabold"}>
