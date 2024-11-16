@@ -50,6 +50,7 @@ const Products = ({products}) => {
                     iconColor="black"
                     withIcon={false}
                     inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
+                    px={0}
                 >
                     Powerbank & GoCas Station
                 </HeaderText>
@@ -77,7 +78,7 @@ const Products = ({products}) => {
                 px={"10%"}
                 py={24}
             >
-                <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                <HeaderText px={0} iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
                     SOLUSI MUDAH BERSAMA DENGAN GOCAS!
                 </HeaderText>
                 <Link href={"/partnership"}>
@@ -103,10 +104,10 @@ const Products = ({products}) => {
                         </Text>
                     </Button>
                 </Link>
-                <HeaderText topMargin={10} iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                <HeaderText px={0} topMargin={10} iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
                     Ada Pertanyaan Lain? Tolong Hubungi Kami
                 </HeaderText>
-                <HeaderText topMargin={24} iconColor={"brown"} withIcon={false} inputclass={"xl:!text-4xl md:!text-3xl !text-2xl"}>
+                <HeaderText px={0} topMargin={24} iconColor={"brown"} withIcon={false} inputclass={"xl:!text-4xl md:!text-3xl !text-2xl"}>
                     GOCAS Help Center
                 </HeaderText>
                 <Text fontFamily="poppins" mt={"36px"} className={"md:text-xl text-sm"}>

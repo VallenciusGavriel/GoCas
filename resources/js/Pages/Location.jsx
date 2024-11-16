@@ -83,7 +83,7 @@ const Location = ({ locations: initialLocations, center }) => {
           hmin={"100vh"}
           position={"relative"}
         >
-          <HeaderText topMargin={12} size="normal" withIcon={true} iconColor="yellow">
+          <HeaderText px={0} topMargin={20} size="normal" iconColor="yellow" inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}>
             Lokasi GoCas
           </HeaderText>
 
@@ -123,7 +123,7 @@ const Location = ({ locations: initialLocations, center }) => {
         >
 
           <Flex align="center" px={2} py={1} w="100%" mt={4}>
-            <HeaderText size="normal" withIcon={true} iconColor="white">
+            <HeaderText px={0} size="normal" topMargin={8} iconColor="white" inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}>
               Lokasi Terdekat
             </HeaderText>
           </Flex>

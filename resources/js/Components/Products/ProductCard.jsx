@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
                 <img src={"../../../images"+product.image_url} alt={product.name} className={"mx-auto w-4/5 md:w-1/2 px-0 mb-10"}/>
                 <VStack alignItems={"start"}
                         px={{base: 6, md: 12}}>
-                    <HeaderText iconColor={"brown"} size={"large"} inputclass={"xl:!text-5xl md:!text-4xl !text-2xl mb-4"}
+                    <HeaderText px={0} iconColor={"brown"} size={"large"} inputclass={"xl:!text-5xl md:!text-4xl !text-2xl mb-4"}
                                 withIcon={false}>
                         {product.name}
                     </HeaderText>

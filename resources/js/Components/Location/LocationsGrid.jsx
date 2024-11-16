@@ -31,7 +31,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
                 <Icon as={MapPin} fill={"yellow.600"} color={"white"} boxSize={24} />
               </Center>
               <VStack alignItems={"left"}>
-                <HeaderText topMargin={"12"} size={"normal"} withIcon={false} iconColor={"yellow"}>{title}</HeaderText>
+                <HeaderText px={0} topMargin={"12"} size={"normal"} withIcon={false} iconColor={"yellow"}>{title}</HeaderText>
                 <Text>{address}</Text>
               </VStack>
             </Flex>
@@ -68,7 +68,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
               >
               <VStack alignItems={"left"}>
                   <Text fontSize={"3xl"} color={"yellow.500"}>Apple</Text>
-                  <HeaderText topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{apple}</HeaderText>
+                  <HeaderText px={0} topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{apple}</HeaderText>
                 </VStack>
               </Box>
               <Box
@@ -80,7 +80,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
               >
               <VStack alignItems={"left"}>
                   <Text fontSize={"3xl"} color={"yellow.500"}>Type C</Text>
-                  <HeaderText topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{type_c}</HeaderText>
+                  <HeaderText px={0} topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{type_c}</HeaderText>
                 </VStack>
               </Box>
               <Box
@@ -92,7 +92,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
               >
               <VStack alignItems={"left"}>
                   <Text fontSize={"3xl"} color={"yellow.500"}>Type B</Text>
-                  <HeaderText topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{type_b}</HeaderText>
+                  <HeaderText px={0} topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{type_b}</HeaderText>
                 </VStack>
               </Box>
             </Flex>
@@ -125,6 +125,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
               size="small"
               withIcon={false}
               iconColor="yellow"
+              px={0}
             >
               {title}
             </HeaderText>
@@ -188,6 +189,7 @@ const LocationsGrid = ({ locations }) => {
                   size="tiny"
                   withIcon={false}
                   iconColor="red"
+                  px={0}
                 >
                   Lokasi Tidak Ditemukan :(
                 </HeaderText>
@@ -214,6 +216,7 @@ const LocationsGrid = ({ locations }) => {
                   size="large"
                   withIcon={false}
                   iconColor="yellow"
+                  px={0}
                 >
                   Coming Soon
                 </HeaderText>

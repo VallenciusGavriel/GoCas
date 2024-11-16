@@ -72,7 +72,7 @@ const About = () => {
             className={"rounded-b-3xl"}
           >
             <Box
-                h={"full"}
+              h={"full"}
               w={{base: "full", lg: "60%"}}
               rounded={"xl"}
               mt={{base: "24px", xl: "64px"}}
@@ -81,7 +81,7 @@ const About = () => {
               shadow={"2xl"}
               bgGradient='linear(to-b, yellow.300 60%, yellow.200)'
             >
-              <HeaderText iconColor={"brown"} size={"large"} withIcon={false} className={"xl:mt-0 mt-2"} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
+              <HeaderText px={0} iconColor={"brown"} size={"large"} withIcon={false} className={"xl:mt-0 mt-2"} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
                 KOLABORASI HEBAT DENGAN GOCAS!
               </HeaderText>
               <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-xs"} color={"black"}>
@@ -99,7 +99,7 @@ const About = () => {
                   shadow={"2xl"}
                   bgGradient='linear(to-b, orange.300 20%, orange.400)'
               >
-                  <HeaderText size="large" withIcon={true} iconColor="white" className={"text-center mt-4 "} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
+                  <HeaderText px={0} size="large" withIcon={true} iconColor="white" className={"text-center"} topMargin={4} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
                       OUR PARTNER
                   </HeaderText>
                   <GridKerjaSama className={"mt-8 xl:mt-12"} color={"white"} images={imageSources} />
@@ -128,7 +128,7 @@ const About = () => {
                     shadow={"2xl"}
                     bgGradient='linear(to-b, yellow.300 20%, yellow.400)'
                 >
-                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl xl:mb-8 mb-4"}>
+                    <HeaderText px={0} iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl xl:mb-8 mb-4"}>
                         Mengapa Bermitra dengan GOCAS?
                     </HeaderText>
                     <ul className={"list-disc list-outside md:text-3xl text-lg font-bold"}>
@@ -204,7 +204,7 @@ const About = () => {
                     alignItems={"center"}
                     justifyContent={"center"}
                 >
-                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                    <HeaderText px={0} iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
                         TESTIMONI
                     </HeaderText>
                     <Testimoni/>
@@ -220,7 +220,7 @@ const About = () => {
                     alignItems={"center"}
                     justifyContent={"center"}
                 >
-                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl mb-8 text-center"}>
+                    <HeaderText px={0} iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl mb-8 text-center"}>
                         GABUNG SEKARANG!
                     </HeaderText>
                     <Form/>
@@ -239,7 +239,7 @@ const About = () => {
                 <Box
                     w={{base: "full", lg: "50%"}}
                 >
-                    <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                    <HeaderText px={0} iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
                         GOCAS Help Center
                     </HeaderText>
                     <Text fontFamily="poppins" mt={"36px"} className={"md:text-xl text-sm"}>
