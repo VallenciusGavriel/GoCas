@@ -1,12 +1,11 @@
 import React from "react";
-import {Box, Button, Grid, Text, useBreakpointValue, VStack} from "@chakra-ui/react";
+import {Box, Button, Grid, Link, Text, useBreakpointValue, VStack} from "@chakra-ui/react";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
 import ProductCard from "@/Components/Products/ProductCard";
 import { Head } from "@inertiajs/react";
 import Background from "../../../public/images/products/bg2.jpg";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
-import Background4 from "../../../public/images/partnership/bg4.png";
 
 const Products = ({products}) => {
     const size = useBreakpointValue({
@@ -55,9 +54,9 @@ const Products = ({products}) => {
                     Powerbank & GoCas Station
                 </HeaderText>
                 <Grid
-                    mt={8}
+                    mt={10}
                     templateColumns={{ base: "1fr", md: `repeat(2, 1fr)` }}
-                    gap={6}
+                    gap={10}
                     py={2}
                 >
                     { products.map(function (product) {
@@ -76,32 +75,38 @@ const Products = ({products}) => {
                 alignItems={"start"}
                 justifyContent={"center"}
                 px={"10%"}
+                py={24}
             >
-                <Text fontFamily="poppins">
-                    SOLUSI MUDAH BERSAMA DENGAN GOCAS!
-                </Text>
-                <Button
-                    bgGradient="linear(to-r, #6EA93C, #25893C)"
-                    color="white"
-                    _hover={{
-                        bgGradient: "linear(to-r, brown.500, teal.600)",
-                    }}
-                    borderRadius="full"
-                    fontSize="lg"
-                    fontFamily="poppins"
-                    fontWeight="bold"
-                    px={8}
-                    py={6}
-                    mt={6}
-                    mb={{ base: 10, md: 28 }}
-                    boxShadow="md"
-                >
-                    KERJA SAMA DENGAN KAMI
-                </Button>
                 <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                    SOLUSI MUDAH BERSAMA DENGAN GOCAS!
+                </HeaderText>
+                <Link href={"/partnership"}>
+                    <Button
+                        bgGradient="linear(to-r, #6EA93C, #25893C)"
+                        color="white"
+                        _hover={{
+                            bgGradient: "linear(to-r, #25893C, #6EA93C)",
+                        }}
+                        borderRadius="full"
+                        fontSize="lg"
+                        fontFamily="poppins"
+                        fontWeight="bold"
+                        px={8}
+                        py={6}
+                        mt={{base: 6, md: 12}}
+                        mb={{ base: 10, md: 28 }}
+                        boxShadow="md"
+                        w={{base: 48, md: "full"}}
+                    >
+                        <Text fontFamily="poppins" className={"md:text-lg text-xs"}>
+                            KERJA SAMA DENGAN KAMI
+                        </Text>
+                    </Button>
+                </Link>
+                <HeaderText topMargin={10} iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
                     Ada Pertanyaan Lain? Tolong Hubungi Kami
                 </HeaderText>
-                <HeaderText iconColor={"brown"} size={"large"} withIcon={false} inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}>
+                <HeaderText topMargin={24} iconColor={"brown"} withIcon={false} inputclass={"xl:!text-4xl md:!text-3xl !text-2xl"}>
                     GOCAS Help Center
                 </HeaderText>
                 <Text fontFamily="poppins" mt={"36px"} className={"md:text-xl text-sm"}>
