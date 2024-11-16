@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
@@ -73,5 +74,12 @@ class MainController extends Controller
     public function partnership()
     {
         return Inertia::render('Partnership');
+    }
+
+    public function products()
+    {
+        $products = Product::all();
+
+        return Inertia::render('Products', compact('products'));
     }
 }

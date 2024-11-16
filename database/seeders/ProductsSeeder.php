@@ -13,43 +13,43 @@ class ProductsSeeder extends Seeder
     public function run(): void
     {
         Product::create([
-            'name' => 'Powerbank',
-            'image_url' => '/product/powerbank.jpg',
+            'name' => 'Powerbank 6.0',
+            'image_url' => '/products/powerbank60.png',
             'capacity' => '5000 MAh',
-            'compatibility' => 'Apple Lighning, Android Micro USB, USB Type C',
-            'feature' => 'Kemampuan Fast Charging hingga 2 kali pengisian penuh',
+            'compatibility' => '5V 2.4A',
+            'feature' => 'Type C & Lightning',
             'type' => 'Powerbank',
-            'dimensi' => 'L(76) x T(16) x P(135) mm, Berat 130 gr',
+            'dimensi' => 'L(68) x T(18) x P(135) mm',
         ]);
 
         Product::create([
-            'name' => 'Recharge Station Large',
-            'image_url' => '/product/recharge-station-large.jpg',
-            'capacity' => '30 slot powerbank',
-            'compatibility' => 'Terpasang adaptor pengisian daya Android dan IOS',
-            'feature' => '100W saat idle, 52W max, est. IDR 150K per month*',
+            'name' => 'Powerbank Station M6',
+            'image_url' => '/products/powerbank-station-m6.png',
+            'capacity' => '50w (6 Powerbank)',
+            'compatibility' => '2.44Kg',
+            'feature' => 'WiFi, 4G, Bluetooth, Audio',
             'type' => 'Machine',
-            'dimensi' => 'L(732) x T(2130) x P(500) mm dengan 43 inch Layar Sentuh',
+            'dimensi' => 'L(263) x T(183) x P(271) mm',
         ]);
 
         Product::create([
-            'name' => 'Recharge Station Medium',
-            'image_url' => '/product/recharge-station-medium.jpg',
-            'capacity' => '16 slot powerbank',
-            'compatibility' => 'Terpasang adaptor pengisian daya Android dan IOS',
-            'feature' => '30W saat idle, 230W max',
+            'name' => 'Powerbank Station M12',
+            'image_url' => '/products/powerbank-station-m12.png',
+            'capacity' => '150w (12 Powerbank)',
+            'compatibility' => '3.9Kg',
+            'feature' => 'WiFi, 4G, Bluetooth, Audio',
             'type' => 'Machine',
-            'dimensi' => 'L(360) x T(1940) x P(360) mm dengan 14.3 inch Layar Sentuh',
+            'dimensi' => 'L(270) x T(180) x P(372) mm',
         ]);
 
         Product::create([
-            'name' => 'Recharge Station Small',
-            'image_url' => '/product/recharge-station-small.jpg',
-            'capacity' => '8 slot powerbank',
-            'compatibility' => 'Terpasang adaptor pengisian daya Android dan IOS',
-            'feature' => '110W saat idle, 110W max',
+            'name' => 'Powerbank Station M30',
+            'image_url' => '/products/powerbank-station-m30.png',
+            'capacity' => '300w (30 Powerbank)',
+            'compatibility' => '22.5Kg',
+            'feature' => 'WiFi, 4G, Bluetooth, Audio',
             'type' => 'Machine',
-            'dimensi' => 'L(270) x T(286) x P(310) mm',
+            'dimensi' => 'L(360) x T(360) x P(1368) mm',
         ]);
     }
 }
