@@ -1,13 +1,5 @@
-import React from "react";
-import {
-    Grid,
-    Box,
-    Image,
-    Text,
-    Button,
-    VStack,
-    HStack,
-} from "@chakra-ui/react";
+import { Box, Button, Grid, HStack, Image, Text } from "@chakra-ui/react";
+import { Link } from "@inertiajs/react";
 import Downloads from "./../../../../public/images/home/downloads.png";
 import QRCode from "./../../../../public/images/home/qr-code.png";
 import HeaderText from "./../Text/HeaderText";
@@ -67,24 +59,26 @@ const Home1 = () => {
                     yang hadir untuk memberikan solusi pengisian daya bagi para
                     pengguna yang aktif dan dinamis.
                 </Text>
-                <Button
-                    bgGradient="linear(to-r, #6EA93C, #25893C)"
-                    color="white"
-                    _hover={{
-                        bgGradient: "linear(to-r, green.500, teal.600)",
-                    }}
-                    borderRadius="full"
-                    fontSize="lg"
-                    fontFamily="poppins"
-                    fontWeight="bold"
-                    px={8}
-                    py={6}
-                    mt={6}
-                    mb={{ base: 10, md: 28 }}
-                    boxShadow="md"
-                >
-                    Temukan GoCas terdekat
-                </Button>
+                <Link href="/location">
+                    <Button
+                        bgGradient="linear(to-r, #6EA93C, #25893C)"
+                        color="white"
+                        _hover={{
+                            bgGradient: "linear(to-r, green.500, teal.600)",
+                        }}
+                        borderRadius="full"
+                        fontSize="lg"
+                        fontFamily="poppins"
+                        fontWeight="bold"
+                        px={8}
+                        py={6}
+                        mt={6}
+                        mb={{ base: 10, md: 28 }}
+                        boxShadow="md"
+                    >
+                        Temukan GoCas terdekat
+                    </Button>
+                </Link>
             </Box>
             <Box
                 position={{ base: "relative", md: "absolute" }}

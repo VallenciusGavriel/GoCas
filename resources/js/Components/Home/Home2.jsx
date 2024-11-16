@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, Text, Link } from "@chakra-ui/react";
+import { Box, Link, Text } from "@chakra-ui/react";
 import HeaderText from "../Text/HeaderText";
 
 const Home2 = () => {

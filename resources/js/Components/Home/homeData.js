@@ -1,24 +1,29 @@
-import Friendly from "./../../../../public/images/home/friendly.png";
 import Flexibility from "./../../../../public/images/home/flexibility.png";
+import Friendly from "./../../../../public/images/home/friendly.png";
 import Refund from "./../../../../public/images/home/refund.png";
 import Responsif from "./../../../../public/images/home/responsif.png";
-import { Flex } from "@chakra-ui/react";
 
-export const stepsBorrow = [
-    "Buka Halaman Utama dari Aplikasi GoCas.",
-    "Daftar atau Masuk ke akun di aplikasi GoCas.",
-    "Top up akun GoCas kamu sebelum melakukan peminjaman.",
-    "Tap menu 'Scan GoCas' di aplikasi dan scan QR code pada mesin.",
+export const stepsBorrowGuest = [
+    "Scan Barcode Pada Stasiun GoCas. Pada Stasiun GoCas terdapat barcode untuk penyewaan, kamu tinggal scan saja!",
+    "Klik Sewa GoCas! ",
+    "Pilih Metode Pembayaran dan Bayar. Silahkan pilih metode pembayaran (QRIS, Shopeepay, dan juga Gopay). Klik Bayar!",
     "Pilih kabel yang sesuai (iOS, Type-C, atau MicroUSB).",
-    "Ambil powerbank dari mesin dan gunakan.",
+    "Ambil Power Bank dari Mesin dan Ready GoCas!",
+];
+
+export const stepsBorrowPelanggan = [
+    "Download Aplikasi GoCas pada Playstore untuk android dan Appstore untuk Ios, atau kamu bisa klik disini.",
+    "Daftar menggunakan nomor handphone kamu dan kode verifikasi.",
+    "Temukan stasiun GoCas terdekat dengan fitur “Temukan GoCas” pada Aplikasi.",
+    "Pilih menu ini dan scan QR code yang ada pada Stasiun GoCas dan Bayar.",
+    "Pilih kabel yang sesuai (iOS, Type-C, atau MicroUSB).",
+    "Ambil Power bank dari Mesin dan Ready GoCas!",
 ];
 
 export const stepsReturn = [
-    "Cari GoCas Station yang paling dekat dengan kamu.",
-    "Tap tombol Kembalikan di GoCas Station.",
-    "Masukan GoCas Powerbank ke slot mesin yang terbuka.",
-    "Tunggu status “Sewa” berubah menjadi “Kembali”",
-    "GoCas Powerbank telah berhasil dikembalikan.",
+    "Cari Stasiun GoCas terdekatmu, jika bingung kamu dapat menggunakan fitur lokasi di Website/Aplikasi.  ",
+    "Masukkan power bank ke dalam mesin dengan hati-hati. Pastikan power bank dalam kondisi baik.",
+    "Anda telah berhasil mengembalikan power bank dan sisa depositmu akan dikembalikan setelah dipotong biaya sewa. Terima kasih telah menggunakan GOCAS!",
 ];
 
 export const features = [
