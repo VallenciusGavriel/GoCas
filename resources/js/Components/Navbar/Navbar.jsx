@@ -30,6 +30,7 @@ const MotionText = motion(Text);
 const Navbar = () => {
     const { isOpen, onToggle } = useDisclosure();
     const display = useBreakpointValue({ base: "none", xl: "flex" });
+    const isVisible = useBreakpointValue({ base: true, xl: false });
 
     const isActive = (route) => window.location.pathname === route;
 
@@ -64,6 +65,8 @@ const Navbar = () => {
             right={0}
             width="100%"
             px={"20px"}
+            pb={{base: "24px", md: "16px"}}
+            roundedBottom={"xl"}
             zIndex="20"
         >
             <Flex
@@ -87,8 +90,8 @@ const Navbar = () => {
 
                 {/* Hamburger Icon for Mobile */}
                 <IconButton
-                    display={{ base: "flex", xl: "none" }}
-                    icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                    display={{base: "flex", xl: "none"}}
+                    icon={isOpen ? <CloseIcon/> : <HamburgerIcon/>}
                     onClick={onToggle}
                     aria-label="Toggle Navigation"
                 />
@@ -112,7 +115,7 @@ const Navbar = () => {
                                     isActive(link.href) ? "bold" : "normal"
                                 }
                                 color="white"
-                                transition={{ duration: 0.3 }}
+                                transition={{duration: 0.3}}
                             >
                                 {link.name}
                             </MotionText>
@@ -129,8 +132,8 @@ const Navbar = () => {
                                 variant={button.variant}
                                 mr={4}
                                 color={"white"}
-                                _hover={{ bg: "green" }}
-                                _active={{ bg: "green" }}
+                                _hover={{bg: "brown"}}
+                                _active={{bg: "brown"}}
                                 bg={"#855c3c"}
                                 borderRadius="xl"
                             >
@@ -146,61 +149,18 @@ const Navbar = () => {
                         display="flex"
                         alignItems="center"
                     >
-                        <Flex align="center">
-                            <Image
-                                src={
-                                    selectedLanguage === "ID" ? IDFlag : ENFlag
-                                }
-                                alt={
-                                    selectedLanguage === "ID"
-                                        ? "Indonesian Flag"
-                                        : "English Flag"
-                                }
-                                boxSize="16px"
-                                mr={2}
-                            />
-                            <Text fontWeight="bold">{selectedLanguage}</Text>
-                        </Flex>
                         <Menu>
                             <MenuButton
                                 as={IconButton}
-                                icon={<ChevronDownIcon />}
-                                ml={4}
-                                color={"white"}
+                                icon={<Text>Bahasa <ChevronDownIcon/></Text>}
+                                px={4}
+                                color={"brown"}
                                 aria-label="Select Language"
-                                bg="transparent"
-                                _hover={{ bg: "green" }}
-                                _active={{ bg: "green" }}
+                                _hover={{bg: "yellow.500"}}
+                                _active={{bg: "yellow.500"}}
                             />
-                            <MenuList bg={"#6fb475"} px={2} op>
-                                <MenuItem
-                                    bg={"transparent"}
-                                    _hover={{ bg: "green" }}
-                                    _active={{ bg: "green" }}
-                                    onClick={() => handleLanguageChange("ID")}
-                                >
-                                    <Image
-                                        src={IDFlag}
-                                        alt="Indonesian Flag"
-                                        boxSize="20px"
-                                        mr={2}
-                                    />
-                                    <Text>Bahasa Indonesia (ID)</Text>
-                                </MenuItem>
-                                <MenuItem
-                                    bg={"transparent"}
-                                    _hover={{ bg: "green" }}
-                                    _active={{ bg: "green" }}
-                                    onClick={() => handleLanguageChange("EN")}
-                                >
-                                    <Image
-                                        src={ENFlag}
-                                        alt="English Flag"
-                                        boxSize="20px"
-                                        mr={2}
-                                    />
-                                    <Text>English (EN)</Text>
-                                </MenuItem>
+                            <MenuList bg={"brown"} px={4}>
+                                {!isVisible ? <div id="google_translate_element" /> : null}
                             </MenuList>
                         </Menu>
                     </Box>
@@ -210,7 +170,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <Collapse in={isOpen}>
                 <Box
-                    display={{ base: "block", xl: "none" }}
+                    display={{base: "block", xl: "none"}}
                     p={4}
                     bg="white"
                     borderBottom="1px"
@@ -225,8 +185,8 @@ const Navbar = () => {
                                 py={2}
                                 borderRadius={"xl"}
                                 color={"black"}
-                                _hover={{ bg: "green.100" }}
-                                _active={{ bg: "green.100" }}
+                                _hover={{bg: "brown.100"}}
+                                _active={{bg: "brown.100"}}
                             >
                                 <Text
                                     my={2}
@@ -239,16 +199,43 @@ const Navbar = () => {
                         ))}
                         <Flex direction="column" mt={4}>
                             {buttons.map((button) => (
-                                <ChakraButton
-                                    key={button.id}
-                                    variant={button.variant}
-                                    mb={2}
-                                    borderRadius="xl"
-                                >
-                                    {button.label}
-                                </ChakraButton>
+                                <Link href={button.href}>
+                                    <ChakraButton
+                                        key={button.id}
+                                        variant={button.variant}
+                                        mb={2}
+                                        borderRadius="xl"
+                                    >
+                                        {button.label}
+                                    </ChakraButton>
+                                </Link>
                             ))}
                         </Flex>
+
+                        <Box
+                            borderLeft={"1px"}
+                            px={5}
+                            display="flex"
+                            alignItems="center"
+                        >
+                            <Menu>
+                                <Flex justifyContent={"center"} alignItems={"center"}>
+                                    <MenuButton
+                                        as={IconButton}
+                                        icon={<Text>Bahasa <ChevronDownIcon/></Text>}
+                                        px={4}
+                                        color={"white"}
+                                        aria-label="Select Language"
+                                        bg="brown"
+                                        _hover={{bg: "brown"}}
+                                        _active={{bg: "brown"}}
+                                    />
+                                </Flex>
+                                <MenuList bg={"brown"} px={4}>
+                                    {isVisible ? <div id="google_translate_element" /> : null}
+                                </MenuList>
+                            </Menu>
+                        </Box>
                     </Flex>
                 </Box>
             </Collapse>

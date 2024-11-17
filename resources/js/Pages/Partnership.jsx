@@ -57,7 +57,7 @@ const About = () => {
       <div className={"overflow-x-hidden"}>
         <Navbar />
         <Head title="Partnership" />
-        <Box mt={"90px"}>
+        <Box>
           <VStack
             spacing={0}
             bgImage={Background}
@@ -67,7 +67,7 @@ const About = () => {
             alignItems={"start"}
             justifyContent={"center"}
             px={"10%"}
-            pt={"48px"}
+            pt={"138px"}
             pb={"10%"}
             className={"rounded-b-3xl"}
           >

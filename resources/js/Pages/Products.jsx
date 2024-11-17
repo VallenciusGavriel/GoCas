@@ -17,7 +17,7 @@ const Products = ({products}) => {
       <div className={"overflow-x-hidden"}>
         <Navbar />
         <Head title="Produk" />
-        <Box minH={"100vh"} mt={"90px"}>
+        <Box minH={"100vh"}>
             <VStack
                 spacing={0}
                 bgImage={Background}
@@ -30,6 +30,7 @@ const Products = ({products}) => {
                 alignItems={"start"}
                 justifyContent={"end"}
                 className={"rounded-b-3xl"}
+                pt="64px"
             >
                 <img src={Background} className={"rounded-b-xl"}/>
             </VStack>
