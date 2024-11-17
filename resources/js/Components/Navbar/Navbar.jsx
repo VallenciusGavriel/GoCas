@@ -89,8 +89,8 @@ const Navbar = () => {
 
                 {/* Hamburger Icon for Mobile */}
                 <IconButton
-                    display={{ base: "flex", xl: "none" }}
-                    icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                    display={{base: "flex", xl: "none"}}
+                    icon={isOpen ? <CloseIcon/> : <HamburgerIcon/>}
                     onClick={onToggle}
                     aria-label="Toggle Navigation"
                 />
@@ -114,7 +114,7 @@ const Navbar = () => {
                                     isActive(link.href) ? "bold" : "normal"
                                 }
                                 color="white"
-                                transition={{ duration: 0.3 }}
+                                transition={{duration: 0.3}}
                             >
                                 {link.name}
                             </MotionText>
@@ -131,8 +131,8 @@ const Navbar = () => {
                                 variant={button.variant}
                                 mr={4}
                                 color={"white"}
-                                _hover={{ bg: "brown" }}
-                                _active={{ bg: "brown" }}
+                                _hover={{bg: "brown"}}
+                                _active={{bg: "brown"}}
                                 bg={"#855c3c"}
                                 borderRadius="xl"
                             >
@@ -166,42 +166,15 @@ const Navbar = () => {
                             </Flex>
                             <MenuButton
                                 as={IconButton}
-                                icon={<ChevronDownIcon />}
+                                icon={<ChevronDownIcon/>}
                                 ml={4}
                                 color={"brown"}
                                 aria-label="Select Language"
-                                _hover={{ bg: "yellow.500" }}
-                                _active={{ bg: "yellow.500" }}
+                                _hover={{bg: "yellow.500"}}
+                                _active={{bg: "yellow.500"}}
                             />
-                            <MenuList bg={"brown"} px={2} op>
-                                <MenuItem
-                                    bg={"brown"}
-                                    _hover={{ bg: "brown" }}
-                                    _active={{ bg: "brown" }}
-                                    onClick={() => handleLanguageChange("ID")}
-                                >
-                                    <Image
-                                        src={IDFlag}
-                                        alt="Indonesian Flag"
-                                        boxSize="20px"
-                                        mr={2}
-                                    />
-                                    <Text>Bahasa Indonesia (ID)</Text>
-                                </MenuItem>
-                                <MenuItem
-                                    bg={"brown"}
-                                    _hover={{ bg: "brown" }}
-                                    _active={{ bg: "brown" }}
-                                    onClick={() => handleLanguageChange("EN")}
-                                >
-                                    <Image
-                                        src={ENFlag}
-                                        alt="English Flag"
-                                        boxSize="20px"
-                                        mr={2}
-                                    />
-                                    <Text>English (EN)</Text>
-                                </MenuItem>
+                            <MenuList bg={"brown"} px={2}>
+                                <div id="google_translate_element"></div>
                             </MenuList>
                         </Menu>
                     </Box>
@@ -211,7 +184,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <Collapse in={isOpen}>
                 <Box
-                    display={{ base: "block", xl: "none" }}
+                    display={{base: "block", xl: "none"}}
                     p={4}
                     bg="white"
                     borderBottom="1px"
@@ -226,8 +199,8 @@ const Navbar = () => {
                                 py={2}
                                 borderRadius={"xl"}
                                 color={"black"}
-                                _hover={{ bg: "brown.100" }}
-                                _active={{ bg: "brown.100" }}
+                                _hover={{bg: "brown.100"}}
+                                _active={{bg: "brown.100"}}
                             >
                                 <Text
                                     my={2}
@@ -278,44 +251,17 @@ const Navbar = () => {
                                     </Flex>
                                     <MenuButton
                                         as={IconButton}
-                                        icon={<ChevronDownIcon />}
+                                        icon={<ChevronDownIcon/>}
                                         ml={4}
                                         color={"white"}
                                         aria-label="Select Language"
                                         bg="brown"
-                                        _hover={{ bg: "brown" }}
-                                        _active={{ bg: "brown" }}
+                                        _hover={{bg: "brown"}}
+                                        _active={{bg: "brown"}}
                                     />
                                 </Flex>
-                                <MenuList bg={"brown"} px={2} op>
-                                    <MenuItem
-                                        bg={"brown"}
-                                        _hover={{ bg: "brown" }}
-                                        _active={{ bg: "brown" }}
-                                        onClick={() => handleLanguageChange("ID")}
-                                    >
-                                        <Image
-                                            src={IDFlag}
-                                            alt="Indonesian Flag"
-                                            boxSize="20px"
-                                            mr={2}
-                                        />
-                                        <Text>Bahasa Indonesia (ID)</Text>
-                                    </MenuItem>
-                                    <MenuItem
-                                        bg={"brown"}
-                                        _hover={{ bg: "brown" }}
-                                        _active={{ bg: "brown" }}
-                                        onClick={() => handleLanguageChange("EN")}
-                                    >
-                                        <Image
-                                            src={ENFlag}
-                                            alt="English Flag"
-                                            boxSize="20px"
-                                            mr={2}
-                                        />
-                                        <Text>English (EN)</Text>
-                                    </MenuItem>
+                                <MenuList bg={"brown"} px={2}>
+                                    <div id="google_translate_element"></div>
                                 </MenuList>
                             </Menu>
                         </Box>
