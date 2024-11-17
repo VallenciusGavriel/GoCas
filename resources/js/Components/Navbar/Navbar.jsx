@@ -150,31 +150,16 @@ const Navbar = () => {
                         alignItems="center"
                     >
                         <Menu>
-                            <Flex align="center" bgColor={"saddlebrown"} pl={"4"} pr={"8"} py={"2"} rounded={"lg"}>
-                                <Image
-                                    src={
-                                        selectedLanguage === "ID" ? IDFlag : ENFlag
-                                    }
-                                    alt={
-                                        selectedLanguage === "ID"
-                                            ? "Indonesian Flag"
-                                            : "English Flag"
-                                    }
-                                    boxSize="16px"
-                                    mr={2}
-                                />
-                                <Text fontWeight="bold">{selectedLanguage}</Text>
-                            </Flex>
                             <MenuButton
                                 as={IconButton}
-                                icon={<ChevronDownIcon/>}
-                                ml={4}
+                                icon={<Text>Bahasa <ChevronDownIcon/></Text>}
+                                px={4}
                                 color={"brown"}
                                 aria-label="Select Language"
                                 _hover={{bg: "yellow.500"}}
                                 _active={{bg: "yellow.500"}}
                             />
-                            <MenuList bg={"brown"} px={2}>
+                            <MenuList bg={"brown"} px={4}>
                                 {!isVisible ? <div id="google_translate_element" /> : null}
                             </MenuList>
                         </Menu>
@@ -235,25 +220,10 @@ const Navbar = () => {
                         >
                             <Menu>
                                 <Flex justifyContent={"center"} alignItems={"center"}>
-                                    <Flex align="center" bgColor={"saddlebrown"} px={"4"} py={"2"} rounded={"lg"}>
-                                        <Image
-                                            src={
-                                                selectedLanguage === "ID" ? IDFlag : ENFlag
-                                            }
-                                            alt={
-                                                selectedLanguage === "ID"
-                                                    ? "Indonesian Flag"
-                                                    : "English Flag"
-                                            }
-                                            boxSize="16px"
-                                            mr={2}
-                                        />
-                                        <Text fontWeight="bold">{selectedLanguage}</Text>
-                                    </Flex>
                                     <MenuButton
                                         as={IconButton}
-                                        icon={<ChevronDownIcon/>}
-                                        ml={4}
+                                        icon={<Text>Bahasa <ChevronDownIcon/></Text>}
+                                        px={4}
                                         color={"white"}
                                         aria-label="Select Language"
                                         bg="brown"
@@ -261,7 +231,7 @@ const Navbar = () => {
                                         _active={{bg: "brown"}}
                                     />
                                 </Flex>
-                                <MenuList bg={"brown"} px={2}>
+                                <MenuList bg={"brown"} px={4}>
                                     {isVisible ? <div id="google_translate_element" /> : null}
                                 </MenuList>
                             </Menu>
