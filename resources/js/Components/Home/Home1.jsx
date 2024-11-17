@@ -75,11 +75,14 @@ const Home1 = () => {
                         fontWeight="bold"
                         px={8}
                         py={6}
-                        mt={6}
+                        mt={{base: 6, md: 12}}
                         mb={{ base: 10, md: 28 }}
                         boxShadow="md"
+                        w={{base: 60    , md: "full"}}
                     >
-                        Temukan GoCas terdekat
+                        <Text fontFamily="poppins" className={"md:text-lg text-xs"}>
+                            Temukan GoCas terdekat
+                        </Text>
                     </Button>
                 </Link>
             </Box>
