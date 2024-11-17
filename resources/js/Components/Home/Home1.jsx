@@ -15,7 +15,7 @@ const Home1 = () => {
             <Box
                 display="flex"
                 flexDirection="column"
-                justifyContent="flex-end"
+                justifyContent={{ base: "center", md: "flex-end" }}
                 alignItems={{ base: "center", md: "flex-start" }}
                 textAlign={{ base: "center", md: "left" }}
                 p="4"
@@ -28,6 +28,7 @@ const Home1 = () => {
                     withIcon={false}
                     topMargin={40}
                     inputclass={"xl:!text-5xl md:!text-3xl !text-lg"}
+                    px="0px"
                 >
                     Isi daya tanpa ribet
                 </HeaderText>
@@ -37,6 +38,7 @@ const Home1 = () => {
                     withIcon={false}
                     topMargin={6}
                     inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
+                    px="0px"
                 >
                     kapanpun
                 </HeaderText>
@@ -46,6 +48,7 @@ const Home1 = () => {
                     withIcon={false}
                     topMargin={6}
                     inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
+                    px="0px"
                 >
                     dimanapun
                 </HeaderText>
