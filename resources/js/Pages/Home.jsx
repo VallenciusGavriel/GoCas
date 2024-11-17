@@ -12,7 +12,7 @@ const Home = () => {
         <>
             <Navbar />
             <Head title="Home" />
-            <VStack spacing={0} mt="64px">
+            <VStack spacing={0}>
                 {" "}
                 {/* Adjust the margin-top to match the Navbar's height */}
                 {homeComponents.map((Component, index) => (
@@ -29,6 +29,7 @@ const Home = () => {
                         borderRadius="0"
                         position="relative"
                         overflow="hidden"
+                        pt="64px"
                     >
                         <Component />
                     </Box>

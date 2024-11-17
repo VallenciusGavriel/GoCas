@@ -73,7 +73,7 @@ const Location = ({ locations: initialLocations, center }) => {
 
       </Flex>
       <Center
-        mt="96px"
+        pt="96px"
         w="full"
         bgGradient='linear(to-b, white 50%, yellow.300)'
       >

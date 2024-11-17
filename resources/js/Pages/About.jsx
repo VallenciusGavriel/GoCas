@@ -19,7 +19,7 @@ const About = () => {
       <div className={"overflow-x-hidden"}>
         <Navbar />
         <Head title="Tentang Kami" />
-        <Box minH={"100vh"} mt={"90px"}>
+        <Box minH={"100vh"}>
           <VStack
             spacing={0}
             bgImage={Background}
@@ -32,7 +32,7 @@ const About = () => {
             alignItems={"start"}
             justifyContent={"end"}
             px={"10%"}
-            pt={"48px"}
+            pt={"138px"}
             pb={"10%"}
             className={"rounded-b-3xl"}
           >
