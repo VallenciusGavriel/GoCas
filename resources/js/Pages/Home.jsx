@@ -1,9 +1,8 @@
-import React from "react";
-import { Box, VStack } from "@chakra-ui/react";
 import Footer from "@/Components/Footer/Footer";
-import Navbar from "@/Components/Navbar/Navbar";
-import { Head } from "@inertiajs/react";
 import { Home1, Home2, Home3, Home4 } from "@/Components/Home";
+import Navbar from "@/Components/Navbar/Navbar";
+import { Box, VStack } from "@chakra-ui/react";
+import { Head } from "@inertiajs/react";
 
 const Home = () => {
     const homeComponents = [Home1, Home2, Home3, Home4];
@@ -25,7 +24,7 @@ const Home = () => {
                         }.png')`}
                         bgSize="cover"
                         bgPos="top"
-                        p={10}
+                        p={{ base: 0, md: 10 }}
                         borderRadius="0"
                         position="relative"
                         overflow="hidden"
