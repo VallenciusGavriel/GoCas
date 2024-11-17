@@ -10,7 +10,6 @@ import {
     VStack,
     useToast,
 } from '@chakra-ui/react';
-import emailjs from 'emailjs-com';
 
 
 const Form = () => {
