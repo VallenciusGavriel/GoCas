@@ -3,7 +3,7 @@ import HeaderText from "../Text/HeaderText";
 
 const Home2 = () => {
     return (
-        <Box p={{ base: 2, md: 4 }} color="white">
+        <Box p={{ base: 10, md: 4 }} color="white">
             <Box
                 maxWidth="1500px"
                 mx="auto"
@@ -22,6 +22,7 @@ const Home2 = () => {
                         iconColor="green"
                         size="normal"
                         inputclass={"xl:!text-5xl md:!text-5xl !text-3xl"}
+                        px="0px"
                     >
                         HIDUPKAN PERANGKATMU DENGAN
                     </HeaderText>
@@ -30,19 +31,24 @@ const Home2 = () => {
                         size="normal"
                         topMargin={10}
                         inputclass={"xl:!text-5xl md:!text-3xl !text-lg"}
+                        px="0px"
                     >
                         #GOCASinSekarang
                     </HeaderText>
                 </Box>
                 <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="start"
                     flex={{ base: "auto", md: 1 }}
-                    pl={{ base: 0, md: 4, lg: 6 }}
+                    pl={{ base: 0, lg: 6 }}
                 >
                     <HeaderText
                         iconColor="black"
                         size="small"
                         topMargin={{ base: 20, md: 10, lg: 0 }}
                         textStyle={{ base: "headline", md: "subheadline" }}
+                        px="0px"
                     >
                         SALAM KENAL, Sobat GOCAS!
                     </HeaderText>
@@ -65,6 +71,7 @@ const Home2 = () => {
                         href="/about"
                         fontFamily="poppins"
                         fontWeight="bold"
+                        _hover={{ textDecoration: "underline" }}
                     >
                         Baca selengkapnya
                     </Link>
