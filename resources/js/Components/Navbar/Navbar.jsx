@@ -30,6 +30,7 @@ const MotionText = motion(Text);
 const Navbar = () => {
     const { isOpen, onToggle } = useDisclosure();
     const display = useBreakpointValue({ base: "none", xl: "flex" });
+    const isVisible = useBreakpointValue({ base: true, xl: false });
 
     const isActive = (route) => window.location.pathname === route;
 
@@ -174,7 +175,7 @@ const Navbar = () => {
                                 _active={{bg: "yellow.500"}}
                             />
                             <MenuList bg={"brown"} px={2}>
-                                <div id="google_translate_element"></div>
+                                {!isVisible ? <div id="google_translate_element" /> : null}
                             </MenuList>
                         </Menu>
                     </Box>
@@ -261,7 +262,7 @@ const Navbar = () => {
                                     />
                                 </Flex>
                                 <MenuList bg={"brown"} px={2}>
-                                    <div id="google_translate_element"></div>
+                                    {isVisible ? <div id="google_translate_element" /> : null}
                                 </MenuList>
                             </Menu>
                         </Box>
