@@ -1,20 +1,13 @@
-import React from "react";
+import { ChatIcon } from "@chakra-ui/icons";
 import {
+    Accordion,
     Box,
     Heading,
-    Accordion,
-    AccordionIcon,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
+    IconButton,
     Text,
     VStack,
-    useColorModeValue,
-    IconButton,
 } from "@chakra-ui/react";
-import { ChatIcon } from "@chakra-ui/icons";
 import FAQItem from "./FAQItem";
-import {Link} from "@inertiajs/react";
 
 const faqData = [
     {
@@ -67,7 +60,11 @@ const Home4 = () => {
                     <Text fontFamily="Poppins">
                         Kami ingin berbicara dengan Anda
                     </Text>
-                    <Link href={"https://wa.me/6282188886665"}>
+                    <a
+                        href="https://wa.me/6282188886665"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <IconButton
                             aria-label="Chat with us"
                             icon={<ChatIcon />}
@@ -76,7 +73,7 @@ const Home4 = () => {
                             colorScheme="blue"
                             mt={4}
                         />
-                    </Link>
+                    </a>
                 </Box>
             </VStack>
         </Box>
