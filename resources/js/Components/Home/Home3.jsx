@@ -185,7 +185,7 @@ const Home3 = () => {
                 </Box>
                 <Box
                     width={{ base: "100%", md: "60%" }}
-                    textAlign="start"
+                    textAlign={{base: "center", md: "start"}}
                     maxW="800px"
                     px={[4, 0]}
                     mt={4}
@@ -195,6 +195,7 @@ const Home3 = () => {
                         fontSize="md"
                         fontFamily="Poppins"
                         mb={6}
+                        textAlign={{base: "center", md: "left"}}
                     >
                         Kemanapun kamu pergi, tidak perlu khawatir kehabisan
                         baterai! Kamu bisa temukan GoCas Station di

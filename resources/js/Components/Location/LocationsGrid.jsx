@@ -186,6 +186,7 @@ const LocationsGrid = ({ locations }) => {
                   mr={2}
                 />
                 <HeaderText
+                  topMargin={8}
                   size="tiny"
                   withIcon={false}
                   iconColor="red"
@@ -213,6 +214,7 @@ const LocationsGrid = ({ locations }) => {
             >
                 <Center w="100%" my={40} pr={4}>
                 <HeaderText
+                  topMargin={8}
                   size="large"
                   withIcon={false}
                   iconColor="yellow"
