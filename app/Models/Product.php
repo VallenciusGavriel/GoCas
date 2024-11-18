@@ -12,4 +12,11 @@ class Product extends Model
     protected $guarded = ['id'];
 
     protected $table = 'products';
+
+    public function getImageUrlAttribute($value)
+    {
+        return "/storage/{$value}";
+    }
+
+
 }
