@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Text } from "@chakra-ui/react";
 import { Link } from "@inertiajs/react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -41,32 +41,51 @@ const Home3 = () => {
 
     return (
         <Box p={6}>
-            <HeaderText
-                iconColor="black"
-                size="normal"
-                textAlign="center"
-                mx="auto"
-                topMargin={10}
-            >
-                Kenapa memilih GoCas?
-            </HeaderText>
+            <Box>
+                <HeaderText
+                    iconColor="black"
+                    size="normal"
+                    textAlign="center"
+                    mx="auto"
+                    topMargin={10}
+                >
+                    Kenapa memilih GoCas?
+                </HeaderText>
+                <Grid
+                    templateColumns={{
+                        base: "repeat(1, 1fr)",
+                        md: "repeat(2, 1fr)",
+                        xl: "repeat(4, 1fr)",
+                    }}
+                    justifyItems="center"
+                    alignItems="center"
+                    align="center"
+                    p={2}
+                    gap={{
+                        base: 4,
+                        "2xl": 8,
+                    }}
+                >
+                    {features.map((feature, index) => (
+                        <Box
+                            key={index}
+                            maxW="500px"
+                            justifyContent="center"
+                            justifyItems="center"
+                            alignItems="center"
+                            align="center"
+                        >
+                            <FeatureCard
+                                icon={feature.icon}
+                                title={feature.title}
+                                description={feature.description}
+                            />
+                        </Box>
+                    ))}
+                </Grid>
+            </Box>
             <Flex
                 wrap="wrap"
-                justifyContent="space-around"
-                align="center"
-                p={5}
-                gap={8}
-            >
-                {features.map((feature, index) => (
-                    <FeatureCard
-                        key={index}
-                        icon={feature.icon}
-                        title={feature.title}
-                        description={feature.description}
-                    />
-                ))}
-            </Flex>
-            <Flex
                 direction={{ base: "column", xl: "row" }}
                 gap={{ base: 20, md: 6 }}
                 justify="center"
@@ -108,7 +127,7 @@ const Home3 = () => {
                                 textAlign="center"
                                 mx="auto"
                                 inputclass={
-                                    "xl:!text-5xl md:!text-4xl !text-3xl"
+                                    "xl:!text-5xl md:!text-4xl !text-3xl max-w-[550px]"
                                 }
                             >
                                 {item.title === "Tata Cara Pengembalian" ? (
@@ -185,7 +204,7 @@ const Home3 = () => {
                 </Box>
                 <Box
                     width={{ base: "100%", md: "60%" }}
-                    textAlign={{base: "center", md: "start"}}
+                    textAlign={{ base: "center", md: "start" }}
                     maxW="800px"
                     px={[4, 0]}
                     mt={4}
@@ -195,7 +214,7 @@ const Home3 = () => {
                         fontSize="md"
                         fontFamily="Poppins"
                         mb={6}
-                        textAlign={{base: "center", md: "left"}}
+                        textAlign={{ base: "center", md: "left" }}
                     >
                         Kemanapun kamu pergi, tidak perlu khawatir kehabisan
                         baterai! Kamu bisa temukan GoCas Station di
