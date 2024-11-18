@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
 import FAQItem from "./FAQItem";
+import {Link} from "@inertiajs/react";
 
 const faqData = [
     {
@@ -66,14 +67,16 @@ const Home4 = () => {
                     <Text fontFamily="Poppins">
                         Kami ingin berbicara dengan Anda
                     </Text>
-                    <IconButton
-                        aria-label="Chat with us"
-                        icon={<ChatIcon />}
-                        size="lg"
-                        isRound
-                        colorScheme="blue"
-                        mt={4}
-                    />
+                    <Link href={"https://wa.me/6282188886665"}>
+                        <IconButton
+                            aria-label="Chat with us"
+                            icon={<ChatIcon />}
+                            size="lg"
+                            isRound
+                            colorScheme="blue"
+                            mt={4}
+                        />
+                    </Link>
                 </Box>
             </VStack>
         </Box>

@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { Link } from "@inertiajs/react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
@@ -200,16 +201,18 @@ const Home3 = () => {
                         tempat-tempat favorit mu. Kunjungi GoCas Station
                         terdekat dan mulai mengisi daya!
                     </Text>
-                    <Button
-                        colorScheme="yellow"
-                        bg="yellow.400"
-                        color="black"
-                        size="lg"
-                        fontWeight="bold"
-                        borderRadius="full"
-                    >
-                        Telusuri semua lokasi
-                    </Button>
+                    <Link href="/location">
+                        <Button
+                            colorScheme="yellow"
+                            bg="yellow.400"
+                            color="black"
+                            size="lg"
+                            fontWeight="bold"
+                            borderRadius="full"
+                        >
+                            Telusuri semua lokasi
+                        </Button>
+                    </Link>
                 </Box>
             </Flex>
         </Box>
