@@ -78,7 +78,7 @@ const Home1 = () => {
                         mt={{base: 6, md: 12}}
                         mb={{ base: 10, md: 28 }}
                         boxShadow="md"
-                        w={{base: 60    , md: "full"}}
+                        w={{base: 60, md: "full"}}
                     >
                         <Text fontFamily="poppins" className={"md:text-lg text-xs"}>
                             Temukan GoCas terdekat
