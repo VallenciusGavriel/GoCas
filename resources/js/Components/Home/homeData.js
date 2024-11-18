@@ -7,7 +7,6 @@ export const stepsBorrowGuest = [
     "Scan Barcode Pada Stasiun GoCas. Pada Stasiun GoCas terdapat barcode untuk penyewaan, kamu tinggal scan saja!",
     "Klik Sewa GoCas! ",
     "Pilih Metode Pembayaran dan Bayar. Silahkan pilih metode pembayaran (QRIS, Shopeepay, dan juga Gopay). Klik Bayar!",
-    "Pilih kabel yang sesuai (iOS, Type-C, atau MicroUSB).",
     "Ambil Power Bank dari Mesin dan Ready GoCas!",
 ];
 
@@ -16,7 +15,6 @@ export const stepsBorrowPelanggan = [
     "Daftar menggunakan nomor handphone kamu dan kode verifikasi.",
     "Temukan stasiun GoCas terdekat dengan fitur “Temukan GoCas” pada Aplikasi.",
     "Pilih menu ini dan scan QR code yang ada pada Stasiun GoCas dan Bayar.",
-    "Pilih kabel yang sesuai (iOS, Type-C, atau MicroUSB).",
     "Ambil Power bank dari Mesin dan Ready GoCas!",
 ];
 

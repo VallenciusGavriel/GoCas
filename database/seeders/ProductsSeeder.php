@@ -14,7 +14,7 @@ class ProductsSeeder extends Seeder
     {
         Product::create([
             'name' => 'Powerbank 6.0',
-            'image_url' => '/products/powerbank60.png',
+            'image_url' => 'images/products/powerbank60.png',
             'capacity' => '5000 MAh',
             'compatibility' => '5V 2.4A',
             'feature' => 'Type C & Lightning',
@@ -24,7 +24,7 @@ class ProductsSeeder extends Seeder
 
         Product::create([
             'name' => 'Powerbank Station M6',
-            'image_url' => '/products/powerbank-station-m6.png',
+            'image_url' => 'images/products/powerbank-station-m6.png',
             'capacity' => '50w (6 Powerbank)',
             'compatibility' => '2.44Kg',
             'feature' => 'WiFi, 4G, Bluetooth, Audio',
@@ -34,7 +34,7 @@ class ProductsSeeder extends Seeder
 
         Product::create([
             'name' => 'Powerbank Station M12',
-            'image_url' => '/products/powerbank-station-m12.png',
+            'image_url' => 'images/products/powerbank-station-m12.png',
             'capacity' => '150w (12 Powerbank)',
             'compatibility' => '3.9Kg',
             'feature' => 'WiFi, 4G, Bluetooth, Audio',
@@ -44,7 +44,7 @@ class ProductsSeeder extends Seeder
 
         Product::create([
             'name' => 'Powerbank Station M30',
-            'image_url' => '/products/powerbank-station-m30.png',
+            'image_url' => 'images/products/powerbank-station-m30.png',
             'capacity' => '300w (30 Powerbank)',
             'compatibility' => '22.5Kg',
             'feature' => 'WiFi, 4G, Bluetooth, Audio',
