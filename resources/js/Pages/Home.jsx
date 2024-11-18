@@ -24,7 +24,7 @@ const Home = () => {
                         }.png')`}
                         bgSize="cover"
                         bgPos="top"
-                        p={{ base: 0, md: 4 }}
+                        p={{ base: 0, md: 4, lg: 8 }}
                         borderRadius="0"
                         position="relative"
                         overflow="hidden"
