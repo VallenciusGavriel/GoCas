@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { MapPin } from "lucide-react";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
+import pin from "@/../../public/images/location/pin.png";
 
 const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b, status, distance }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -107,34 +108,44 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
       </Modal>
       <Box
         border="1px"
-        borderColor="gray.200"
+        borderColor="#7af555"
         borderRadius="md"
-        p={4}
+        px={8}
+        py={4}
         backgroundColor="white"
         boxShadow="md"
         _hover={{ boxShadow: 'xl' }}
         w="100%"
       >
-        <Flex h={"full"}>
-          <Center w="20%" pr={4}>
-            <Icon as={MapPin} fill={"yellow.500"} color={"white"} boxSize={10} />
-          </Center>
-          <VStack alignItems="start" justifyContent={"center"} spacing={2} w="80%">
-            <HeaderText
-              topMargin={8}
-              size="small"
-              withIcon={false}
-              iconColor="yellow"
-              px={0}
-            >
-              {title}
-            </HeaderText>
+        <Flex h={"full"} gap={4}>
+          <VStack alignItems="start" justifyContent={"center"} spacing={2} w="50%">
+            <Image src={pin} alt={"ASD"} w={8}/>
+              <HeaderText
+                  topMargin={10}
+                  size="small"
+                  withIcon={false}
+                  iconColor="black"
+                  px={0}
+              >
+                  {title}
+              </HeaderText>
+              { distance !== 0
+                  ? <Text>{distance} km</Text>
+                  : <Text></Text>
+              }
+          </VStack>
+          <VStack alignItems="start" justifyContent={"start"} mt={2} spacing={2} w="50%">
+              <HeaderText
+                  topMargin={8}
+                  size="small"
+                  withIcon={false}
+                  iconColor="black"
+                  px={0}
+              >
+                  Alamat
+              </HeaderText>
             <Text>{address}</Text>
-            { distance !== 0
-              ? <Text>{distance} km</Text>
-              : <Text></Text>
-            }
-            <Link color="yellow.600" onClick={onOpen} fontWeight="bold">
+            <Link color="#7af555" onClick={onOpen} fontWeight="bold">
               Lihat Detail
             </Link>
           </VStack>
@@ -169,7 +180,7 @@ const LocationsGrid = ({ locations }) => {
         || (locations.length === 0 &&
           <Box
             border="1px"
-            borderColor="gray.200"
+            borderColor="#7af555"
             borderRadius="md"
             p={4}
             backgroundColor="white"
@@ -204,7 +215,7 @@ const LocationsGrid = ({ locations }) => {
           || (!isLocationEnabled &&
             <Box
               border="1px"
-              borderColor="gray.200"
+              borderColor="#7af555"
               borderRadius="md"
               p={4}
               backgroundColor="white"
