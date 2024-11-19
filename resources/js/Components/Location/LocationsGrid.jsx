@@ -94,8 +94,8 @@ const LocationCard = ({ title, address, operational_hours, apple, lat, long, sta
         _hover={{ boxShadow: 'xl' }}
         w="100%"
       >
-        <Flex h={"full"} gap={4}>
-          <VStack alignItems="start" justifyContent={"center"} spacing={2} w="50%">
+        <Flex h={"full"} gap={4} direction={{base: "column", md: "row"}}>
+          <VStack alignItems="start" justifyContent={"center"} spacing={2} w={{base: "full", md: "50%"}}>
             <Image src={pin} alt={"ASD"} w={8}/>
               <HeaderText
                   topMargin={10}
@@ -111,7 +111,7 @@ const LocationCard = ({ title, address, operational_hours, apple, lat, long, sta
                   : <Text></Text>
               }
           </VStack>
-          <VStack alignItems="start" justifyContent={"start"} mt={2} spacing={2} w="50%">
+          <VStack alignItems="start" justifyContent={"start"} mt={2} spacing={2} w={{base: "full", md: "50%"}}>
               <HeaderText
                   topMargin={8}
                   size="small"

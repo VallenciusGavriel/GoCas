@@ -8,7 +8,7 @@ import { SearchIcon } from "lucide-react";
 import Maps from "@/Components/Location/Maps.jsx";
 import LocationsGrid from "@/Components/Location/LocationsGrid.jsx";
 
-const Location = ({ locations: initialLocations, center }) => {
+const Location = ({ locations: initialLocations, center, show_count, total_count, station_count }) => {
   const [query, setQuery] = useState('');
   const [lat, setLat] = useState(center[0]);
   const [long, setLong] = useState(center[1]);
@@ -67,7 +67,7 @@ const Location = ({ locations: initialLocations, center }) => {
           alignItems={"start"}
           position={"relative"}
         >
-          <HeaderText px={20} topMargin={20} size="normal" iconColor="black" inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}>
+          <HeaderText px={{base: 10, md: 20}} topMargin={20} size="normal" iconColor="black" inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}>
             Lokasi GoCas
           </HeaderText>
 
@@ -106,10 +106,10 @@ const Location = ({ locations: initialLocations, center }) => {
                         Lokasi Terdekat
                     </HeaderText>
                     <Box borderTop={"1px"} w={"100%"} borderColor={"#cccccc"}/>
-                    <Flex gap={4}>
-                        <Text>Lokasi Ditunjukkan:</Text>
-                        <Text>Total Lokasi:</Text>
-                        <Text>Total Stasiun:</Text>
+                    <Flex gap={8}>
+                        <Text>Lokasi Ditunjukkan: {show_count}</Text>
+                        <Text>Total Lokasi: {total_count}</Text>
+                        <Text>Total Stasiun: {station_count}</Text>
                     </Flex>
                 </VStack>
 
