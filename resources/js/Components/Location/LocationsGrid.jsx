@@ -17,7 +17,7 @@ import { MapPin } from "lucide-react";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 import pin from "@/../../public/images/location/pin.png";
 
-const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b, status, distance }) => {
+const LocationCard = ({ title, address, operational_hours, apple, lat, long, startLat, startLong, status, distance }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return(
@@ -50,16 +50,18 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
                 <Text>{address}</Text>
               </VStack>
               <Flex justifyContent={"end"} mt={2} mb={8}>
-                  <Button
-                      colorScheme="green"
-                      bg="#7cf656"
-                      color="white"
-                      size="lg"
-                      fontWeight="bold"
-                      borderRadius="full"
-                  >
-                      Petunjuk Arah
-                  </Button>
+                  <a href={"https://www.google.com/maps/dir/"+startLat+","+startLong+"/"+lat+","+long}>
+                      <Button
+                          colorScheme="green"
+                          bg="#7cf656"
+                          color="white"
+                          size="lg"
+                          fontWeight="bold"
+                          borderRadius="full"
+                      >
+                          Petunjuk Arah
+                      </Button>
+                  </a>
               </Flex>
 
             <Flex mt={4} gap={2} borderTop={"1px"} borderBottom={"1px"} borderColor={"#cccccc"} justifyContent={"space-around"} textAlign={"center"}>
@@ -130,7 +132,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
   );
 }
 
-const LocationsGrid = ({ locations }) => {
+const LocationsGrid = ({ locations, startLat, startLong }) => {
   const isLocationEnabled = import.meta.env.VITE_ENABLE_LOCATION ? import.meta.env.VITE_ENABLE_LOCATION === 'true' : true;
 
   return (
@@ -145,8 +147,10 @@ const LocationsGrid = ({ locations }) => {
                 address={location.address_detail}
                 operational_hours={location.operational_hours}
                 apple={location.apple}
-                type_c={location.type_c}
-                type_b={location.type_b}
+                lat={location.latitude}
+                long={location.longitude}
+                startLat={startLat}
+                startLong={startLong}
                 status={location.status}
                 distance={location.distance ?? 0}
               />

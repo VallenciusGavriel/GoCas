@@ -114,7 +114,7 @@ const Location = ({ locations: initialLocations, center }) => {
                 </VStack>
 
                 <Flex align="center" px={2} py={1} w="100%" mt={4}>
-                    <LocationsGrid locations={locations} />
+                    <LocationsGrid locations={locations} startLat={lat} startLong={long} />
                 </Flex>
             </Box>
         </Center>
