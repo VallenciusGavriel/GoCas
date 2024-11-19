@@ -20,9 +20,8 @@ return new class extends Migration
             $table->string('longitude', 25);
             $table->string('latitude', 25);
             $table->string('status', 20);
-            $table->integer('apple');
-            $table->integer('type_c');
-            $table->integer('type_b');
+            $table->integer('available');
+            $table->integer('total');
             $table->timestamps();
         });
     }

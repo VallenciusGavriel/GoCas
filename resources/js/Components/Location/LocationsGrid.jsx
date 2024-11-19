@@ -13,11 +13,10 @@ import {
   ModalOverlay,
   ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, useDisclosure
 } from '@chakra-ui/react';
-import { MapPin } from "lucide-react";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 import pin from "@/../../public/images/location/pin.png";
 
-const LocationCard = ({ title, address, operational_hours, apple, lat, long, startLat, startLong, status, distance }) => {
+const LocationCard = ({ title, address, operational_hours, available, total, lat, long, startLat, startLong, status, distance }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return(
@@ -67,7 +66,7 @@ const LocationCard = ({ title, address, operational_hours, apple, lat, long, sta
             <Flex mt={4} gap={2} borderTop={"1px"} borderBottom={"1px"} borderColor={"#cccccc"} justifyContent={"space-around"} textAlign={"center"}>
               <VStack alignItems={"left"}>
                   <Text fontSize={"large"} color={"black"}><b>Tersedia</b></Text>
-                  <Text px={0} topMargin={8} className={"xl:!text-4xl md:!text-3xl !text-lg"} withIcon={false} iconColor={"black"}>{apple}/12</Text>
+                  <Text px={0} topMargin={8} className={"xl:!text-4xl md:!text-3xl !text-lg"} withIcon={false} iconColor={"black"}>{available}/{total}</Text>
                 </VStack>
               <VStack alignItems={"left"} borderLeft={"1px"} borderColor={"#cccccc"}/>
               <VStack alignItems={"left"}>
@@ -146,7 +145,8 @@ const LocationsGrid = ({ locations, startLat, startLong }) => {
                 title={location.name}
                 address={location.address_detail}
                 operational_hours={location.operational_hours}
-                apple={location.apple}
+                available={location.available}
+                total={location.total}
                 lat={location.latitude}
                 long={location.longitude}
                 startLat={startLat}
