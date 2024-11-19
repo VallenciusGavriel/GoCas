@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Center, Flex, Box, IconButton, Input } from "@chakra-ui/react";
+import {Center, Flex, Box, IconButton, Input, VStack, Text} from "@chakra-ui/react";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
 import { Head } from "@inertiajs/react";
@@ -59,35 +59,19 @@ const Location = ({ locations: initialLocations, center }) => {
     <>
       <Head title="Location" />
       <Navbar />
-      <Flex
-        bgImage={`url('/images/home/background-1.png')`}
-        bgSize="cover"
-        bgRepeat="no-repeat"
-        bgPos="top left" // Position image at top left
-        borderRadius="0"
-        position="absolute"
-        zIndex={0}
-        h={'50vh'}
-        w={'full'}
-      >
-
-      </Flex>
-      <Center
-        pt="96px"
-        w="full"
-        bgGradient='linear(to-b, white 50%, yellow.300)'
-      >
-        <Box
-          p={5}
-          w={{ base: "100%", md: "80%" }}
+        <VStack
+          pt={"96px"}
+          pb={5}
+          w={"100%"}
           hmin={"100vh"}
+          alignItems={"start"}
           position={"relative"}
         >
-          <HeaderText px={0} topMargin={20} size="normal" iconColor="yellow" inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}>
+          <HeaderText px={20} topMargin={20} size="normal" iconColor="black" inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}>
             Lokasi GoCas
           </HeaderText>
 
-          <Center>
+          <Center mx={"auto"}>
             <Flex align="center" maxW="md" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4} backgroundColor={'white'}>
               <Input
                 placeholder="Cari Lokasi"
@@ -106,33 +90,34 @@ const Location = ({ locations: initialLocations, center }) => {
             </Flex>
           </Center>
 
-          <Flex align="center" borderWidth="1px" borderRadius="lg" px={2} py={1} w="100%" mt={4} backgroundColor={'white'}>
+          <Flex align="center" w="100%" mt={4} backgroundColor={'white'}>
             <Maps locations={locations} point={[lat, long]} searchLocation={hitSearchLocation}/>
           </Flex>
-        </Box>
-      </Center>
-      <Center
-        w="full"
-        bgGradient='linear(to-b, yellow.300, yellow.400 40%)'
-      >
-        <Box
-          p={5}
-          w={{ base: "100%", md: "80%" }}
-          hmin={"100vh"}
-          position={"relative"}
-        >
+        </VStack>
+        <Center>
+            <Box
+                p={5}
+                w={{ base: "100%", md: "80%" }}
+                hmin={"100vh"}
+                position={"relative"}
+            >
+                <VStack align="start" px={2} py={1} w="100%" mt={4}>
+                    <HeaderText px={0} size="normal" topMargin={8} iconColor="black" inputclass={"xl:!text-3xl md:!text-2xl !text-xl"}>
+                        Lokasi Terdekat
+                    </HeaderText>
+                    <Box borderTop={"1px"} w={"100%"} borderColor={"#cccccc"}/>
+                    <Flex gap={4}>
+                        <Text>Lokasi Ditunjukkan:</Text>
+                        <Text>Total Lokasi:</Text>
+                        <Text>Total Stasiun:</Text>
+                    </Flex>
+                </VStack>
 
-          <Flex align="center" px={2} py={1} w="100%" mt={4}>
-            <HeaderText px={0} size="normal" topMargin={8} iconColor="white" inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}>
-              Lokasi Terdekat
-            </HeaderText>
-          </Flex>
-
-          <Flex align="center" px={2} py={1} w="100%" mt={4}>
-            <LocationsGrid locations={locations} />
-          </Flex>
-        </Box>
-      </Center>
+                <Flex align="center" px={2} py={1} w="100%" mt={4}>
+                    <LocationsGrid locations={locations} />
+                </Flex>
+            </Box>
+        </Center>
       <Footer />
     </>
   );
