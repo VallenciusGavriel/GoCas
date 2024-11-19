@@ -13,10 +13,10 @@ import {
   ModalOverlay,
   ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, useDisclosure
 } from '@chakra-ui/react';
-import { MapPin } from "lucide-react";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
+import pin from "@/../../public/images/location/pin.png";
 
-const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b, status, distance }) => {
+const LocationCard = ({ title, address, operational_hours, available, total, lat, long, startLat, startLong, status, distance }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return(
@@ -25,116 +25,103 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <ModalBody>
+          <ModalBody mb={8}>
             <Flex mt={4} gap={8} w={"100%"} justifyContent={"start"}>
-              <Center w="20%" pl={2}>
-                <Icon as={MapPin} fill={"yellow.600"} color={"white"} boxSize={24} />
-              </Center>
               <VStack alignItems={"left"}>
-                <HeaderText px={0} topMargin={"12"} size={"normal"} withIcon={false} iconColor={"yellow"}>{title}</HeaderText>
-                <Text>{address}</Text>
+                <HeaderText px={0} topMargin={"12"} size={"normal"} withIcon={false} iconColor={"black"}>{title}</HeaderText>
               </VStack>
             </Flex>
-            <Flex mt={8} gap={8} w={"100%"} justifyContent={"space-around"}>
+            <Flex mt={8} gap={8} w={"100%"} justifyContent={"start"}>
               <VStack alignItems={"left"}>
-                <Text>Status</Text>
+                  <Text color={"#7af555"}><b>Status</b></Text>
                 <Flex color={"green"} gap={1} justifyContent={"center"} alignItems={"center"}>
                   <Image src='/images/location/status.png' w={"21px"} h={"21px"} alt='Status' />
                   <Text><b>{status}</b></Text>
                 </Flex>
               </VStack>
-              <VStack alignItems={"left"}>
-                <Text>Jarak Dari Kamu</Text>
-                <Flex gap={1} justifyContent={"left"} alignItems={"center"}>
-                  <Image src='/images/location/distance.png' w={"21px"} h={"21px"} alt='Distance' />
-                  <Text><b>{distance} KM</b></Text>
-                </Flex>
-              </VStack>
-              <VStack alignItems={"left"}>
-                <Text>Jam Operasional</Text>
-                <Flex gap={1} justifyContent={"left"} alignItems={"center"}>
-                  <Image src='/images/location/clock.png' w={"21px"} h={"21px"} alt='Clock' />
-                  <Text><b>{operational_hours}</b></Text>
-                </Flex>
-              </VStack>
+                <VStack alignItems={"left"}>
+                    <Text color={"#7af555"}><b>Jam Operasional</b></Text>
+                    <Text><b>{operational_hours}</b></Text>
+                </VStack>
             </Flex>
-            <Flex mt={4} gap={2}>
-              <Box
-                border="2px"
-                borderColor="yellow.500"
-                p={4}
-                backgroundColor="white"
-                w="100%"
-              >
+              <VStack alignItems={"left"} gap={0} mt={4}>
+                <Text color={"#7af555"}><b>Alamat</b></Text>
+                <Text>{address}</Text>
+              </VStack>
+              <Flex justifyContent={"end"} mt={2} mb={8}>
+                  <a href={"https://www.google.com/maps/dir/"+startLat+","+startLong+"/"+lat+","+long}>
+                      <Button
+                          colorScheme="green"
+                          bg="#7cf656"
+                          color="white"
+                          size="lg"
+                          fontWeight="bold"
+                          borderRadius="full"
+                      >
+                          Petunjuk Arah
+                      </Button>
+                  </a>
+              </Flex>
+
+            <Flex mt={4} gap={2} borderTop={"1px"} borderBottom={"1px"} borderColor={"#cccccc"} justifyContent={"space-around"} textAlign={"center"}>
               <VStack alignItems={"left"}>
-                  <Text fontSize={"3xl"} color={"yellow.500"}>Apple</Text>
-                  <HeaderText px={0} topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{apple}</HeaderText>
+                  <Text fontSize={"large"} color={"black"}><b>Tersedia</b></Text>
+                  <Text px={0} topMargin={8} className={"xl:!text-4xl md:!text-3xl !text-lg"} withIcon={false} iconColor={"black"}>{available}/{total}</Text>
                 </VStack>
-              </Box>
-              <Box
-                border="2px"
-                borderColor="yellow.500"
-                p={4}
-                backgroundColor="white"
-                w="100%"
-              >
+              <VStack alignItems={"left"} borderLeft={"1px"} borderColor={"#cccccc"}/>
               <VStack alignItems={"left"}>
-                  <Text fontSize={"3xl"} color={"yellow.500"}>Type C</Text>
-                  <HeaderText px={0} topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{type_c}</HeaderText>
+                  <Text fontSize={"large"} color={"black"}><b>Jenis Kabel</b></Text>
+                  <Text px={0} topMargin={8} size={"small"} withIcon={false} iconColor={"black"} className={"text-center"}>Type C, Lightning, Android</Text>
                 </VStack>
-              </Box>
-              <Box
-                border="2px"
-                borderColor="yellow.500"
-                p={4}
-                backgroundColor="white"
-                w="100%"
-              >
+              <VStack alignItems={"left"} borderLeft={"1px"} borderColor={"#cccccc"}/>
               <VStack alignItems={"left"}>
-                  <Text fontSize={"3xl"} color={"yellow.500"}>Type B</Text>
-                  <HeaderText px={0} topMargin={2} size={"large"} withIcon={false} iconColor={"black"}>{type_b}</HeaderText>
+                  <Text fontSize={"large"} color={"black"}><b>Jarak</b></Text>
+                  <Text px={0} topMargin={8} className={"xl:!text-4xl md:!text-3xl !text-lg"} withIcon={false} iconColor={"black"}>{distance} km</Text>
                 </VStack>
-              </Box>
             </Flex>
           </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme='yellow' mr={3} onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
       <Box
         border="1px"
-        borderColor="gray.200"
+        borderColor="#7af555"
         borderRadius="md"
-        p={4}
+        px={8}
+        py={4}
         backgroundColor="white"
         boxShadow="md"
         _hover={{ boxShadow: 'xl' }}
         w="100%"
       >
-        <Flex h={"full"}>
-          <Center w="20%" pr={4}>
-            <Icon as={MapPin} fill={"yellow.500"} color={"white"} boxSize={10} />
-          </Center>
-          <VStack alignItems="start" justifyContent={"center"} spacing={2} w="80%">
-            <HeaderText
-              topMargin={8}
-              size="small"
-              withIcon={false}
-              iconColor="yellow"
-              px={0}
-            >
-              {title}
-            </HeaderText>
+        <Flex h={"full"} gap={4} direction={{base: "column", md: "row"}}>
+          <VStack alignItems="start" justifyContent={"center"} spacing={2} w={{base: "full", md: "50%"}}>
+            <Image src={pin} alt={"ASD"} w={8}/>
+              <HeaderText
+                  topMargin={10}
+                  size="small"
+                  withIcon={false}
+                  iconColor="black"
+                  px={0}
+              >
+                  {title}
+              </HeaderText>
+              { distance !== 0
+                  ? <Text>{distance} km</Text>
+                  : <Text></Text>
+              }
+          </VStack>
+          <VStack alignItems="start" justifyContent={"start"} mt={2} spacing={2} w={{base: "full", md: "50%"}}>
+              <HeaderText
+                  topMargin={8}
+                  size="small"
+                  withIcon={false}
+                  iconColor="black"
+                  px={0}
+              >
+                  Alamat
+              </HeaderText>
             <Text>{address}</Text>
-            { distance !== 0
-              ? <Text>{distance} km</Text>
-              : <Text></Text>
-            }
-            <Link color="yellow.600" onClick={onOpen} fontWeight="bold">
+            <Link color="#7af555" onClick={onOpen} fontWeight="bold">
               Lihat Detail
             </Link>
           </VStack>
@@ -144,7 +131,7 @@ const LocationCard = ({ title, address, operational_hours, apple, type_c, type_b
   );
 }
 
-const LocationsGrid = ({ locations }) => {
+const LocationsGrid = ({ locations, startLat, startLong }) => {
   const isLocationEnabled = import.meta.env.VITE_ENABLE_LOCATION ? import.meta.env.VITE_ENABLE_LOCATION === 'true' : true;
 
   return (
@@ -158,9 +145,12 @@ const LocationsGrid = ({ locations }) => {
                 title={location.name}
                 address={location.address_detail}
                 operational_hours={location.operational_hours}
-                apple={location.apple}
-                type_c={location.type_c}
-                type_b={location.type_b}
+                available={location.available}
+                total={location.total}
+                lat={location.latitude}
+                long={location.longitude}
+                startLat={startLat}
+                startLong={startLong}
                 status={location.status}
                 distance={location.distance ?? 0}
               />
@@ -169,7 +159,7 @@ const LocationsGrid = ({ locations }) => {
         || (locations.length === 0 &&
           <Box
             border="1px"
-            borderColor="gray.200"
+            borderColor="#7af555"
             borderRadius="md"
             p={4}
             backgroundColor="white"
@@ -204,7 +194,7 @@ const LocationsGrid = ({ locations }) => {
           || (!isLocationEnabled &&
             <Box
               border="1px"
-              borderColor="gray.200"
+              borderColor="#7af555"
               borderRadius="md"
               p={4}
               backgroundColor="white"

@@ -3,6 +3,8 @@ import {Box, Flex, Image, Text, useBreakpointValue, VStack} from "@chakra-ui/rea
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
 import { Head } from "@inertiajs/react";
+import BackgroundHero from "../../../public/images/partnership/bg.png";
+import Hand from "../../../public/images/partnership/hand.png";
 import Background from "../../../public/images/partnership/bg1.png";
 import Background2 from "../../../public/images/partnership/bg2.png";
 import Background3 from "../../../public/images/partnership/bg3.png";
@@ -58,18 +60,18 @@ const About = () => {
         <Navbar />
         <Head title="Partnership" />
         <Box>
-          <VStack
+          <Flex
             spacing={0}
-            bgImage={Background}
+            bgImage={BackgroundHero}
             minH={"100vh"}
             bgSize="cover"
             bgPos="center"
-            alignItems={"start"}
-            justifyContent={"center"}
+            justifyContent={"start"}
+            alignItems={"end"}
             px={"10%"}
-            pt={"138px"}
+            mt={"60px"}
+            pt={"78px"}
             pb={"10%"}
-            className={"rounded-b-3xl"}
           >
             <Box
               h={"full"}
@@ -78,8 +80,6 @@ const About = () => {
               mt={{base: "24px", xl: "64px"}}
               px={{base: "32px", xl: "64px"}}
               py={{base: "24px", xl: "32px"}}
-              shadow={"2xl"}
-              bgGradient='linear(to-b, yellow.300 60%, yellow.200)'
             >
               <HeaderText px={0} iconColor={"brown"} size={"large"} withIcon={false} className={"xl:mt-0 mt-2"} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
                 KOLABORASI HEBAT DENGAN GOCAS!
@@ -88,6 +88,21 @@ const About = () => {
                 Ingin membawa solusi sewa power bank ke bisnis atau event kamu? GOCAS membuka peluang kolaborasi bagi partner yang ingin memperluas jaringan dan memberikan layanan lebih bagi pelanggan. Mari bersama-sama ciptakan pengalaman yang lebih praktis dan modern!
               </Text>
             </Box>
+              <img src={Hand}/>
+          </Flex>
+              <VStack
+                  spacing={0}
+                  bgImage={Background}
+                  minH={"100vh"}
+                  bgSize="cover"
+                  bgPos="center"
+                  alignItems={"start"}
+                  justifyContent={"center"}
+                  px={"10%"}
+                  pt={"138px"}
+                  pb={"10%"}
+                  className={"rounded-b-3xl"}
+              >
               <Box
                   w={"full"}
                   alignItems={"center"}

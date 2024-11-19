@@ -20,9 +20,8 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.256727537620611',
             'longitude' => '106.61830320641677',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
@@ -33,9 +32,8 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.240722084396005',
             'longitude' => '106.62889629846687',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
@@ -46,9 +44,8 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.259938811536098',
             'longitude' => '106.61837692698464',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
@@ -59,22 +56,20 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.256688254839604',
             'longitude' => '106.61644832360032',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
             'name' => 'Sarinah',
-            'address_detail' => 'Jalan MH Thamrin No. 11, RT.8/RW.4, Gondangdia, Menteng, Jakarta Pusat, DKI Jakarta 10350',
+            'address_detail' => 'Jalan MH Thamrin No. 11, RT.8/RW.10, Gondangdia, Menteng, Jakarta Pusat, DKI Jakarta 10350',
             'province' => 'DKI Jakarta',
             'operational_hours' => '10:00 - 22:00 WIB',
             'latitude' => '-6.191548',
             'longitude' => '106.823377',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
@@ -85,9 +80,8 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.218483',
             'longitude' => '106.799674',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
@@ -98,9 +92,8 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.175392',
             'longitude' => '106.827153',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
@@ -111,9 +104,8 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.195083',
             'longitude' => '106.822782',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
@@ -124,9 +116,8 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.178306',
             'longitude' => '106.790248',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
@@ -137,9 +128,8 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.244177',
             'longitude' => '106.799019',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
 
         Location::create([
@@ -150,9 +140,8 @@ class LocationsSeeder extends Seeder
             'latitude' => '-6.135200',
             'longitude' => '106.813301',
             'status' => 'ONLINE',
-            'apple' => 6,
-            'type_c' => 4,
-            'type_b' => 4,
+            'available' => 6,
+            'total' => 10,
         ]);
     }
 }

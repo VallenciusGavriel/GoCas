@@ -35,6 +35,9 @@ class MainController extends Controller
         return Inertia::render('Location', [
             'locations' => $locations,
             'center' => $center,
+            'show_count' => $locations->count(),
+            'total_count' => Location::all()->count(),
+            'station_count' => Location::all()->sum('total'),
         ]);
     }
 
