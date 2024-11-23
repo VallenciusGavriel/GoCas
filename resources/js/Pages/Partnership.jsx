@@ -68,6 +68,7 @@ const About = () => {
             bgPos="center"
             justifyContent={"start"}
             alignItems={"end"}
+            direction={{base: "column-reverse", md: "row"}}
             px={"10%"}
             mt={"60px"}
             pt={"78px"}
@@ -88,7 +89,7 @@ const About = () => {
                 Ingin membawa solusi sewa power bank ke bisnis atau event kamu? GOCAS membuka peluang kolaborasi bagi partner yang ingin memperluas jaringan dan memberikan layanan lebih bagi pelanggan. Mari bersama-sama ciptakan pengalaman yang lebih praktis dan modern!
               </Text>
             </Box>
-              <img src={Hand}/>
+            <img src={Hand}/>
           </Flex>
               <VStack
                   spacing={0}
