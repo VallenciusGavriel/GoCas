@@ -77,7 +77,7 @@ const ProductCard = ({ product }) => {
                             >
                                 {product.type === "Powerbank"
                                     ? "Mendukung Kabel: "
-                                    : "Fitur: "}
+                                    : "Kapasitas Slot: "}
                             </Text>
                             <Text fontFamily="poppins" fontSize={"lg"}>
                                 {product.feature}

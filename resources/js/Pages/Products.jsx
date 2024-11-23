@@ -30,6 +30,7 @@ const Products = ({products}) => {
                 alignItems={"start"}
                 justifyContent={"end"}
                 className={"rounded-b-3xl"}
+                mt={"30px"}
                 pt="64px"
             >
                 <img src={Background} className={"rounded-b-xl"}/>

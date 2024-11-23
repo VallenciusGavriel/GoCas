@@ -68,6 +68,7 @@ const About = () => {
             bgPos="center"
             justifyContent={"start"}
             alignItems={"end"}
+            direction={{base: "column-reverse", md: "row"}}
             px={"10%"}
             mt={"60px"}
             pt={"78px"}
@@ -88,7 +89,7 @@ const About = () => {
                 Ingin membawa solusi sewa power bank ke bisnis atau event kamu? GOCAS membuka peluang kolaborasi bagi partner yang ingin memperluas jaringan dan memberikan layanan lebih bagi pelanggan. Mari bersama-sama ciptakan pengalaman yang lebih praktis dan modern!
               </Text>
             </Box>
-              <img src={Hand}/>
+            <img src={Hand}/>
           </Flex>
               <VStack
                   spacing={0}
@@ -99,7 +100,7 @@ const About = () => {
                   alignItems={"start"}
                   justifyContent={"center"}
                   px={"10%"}
-                  pt={"138px"}
+                  pt={{base: "30px", xl: "90px"}}
                   pb={"10%"}
                   className={"rounded-b-3xl"}
               >
@@ -108,7 +109,7 @@ const About = () => {
                   alignItems={"center"}
                   justifyContent={"center"}
                   rounded={"xl"}
-                  mt={"64px"}
+                  mt={{base: "8px", xl: "64px"}}
                   px={{base: "32px", xl: "64px"}}
                   py={{base: "24px", xl: "32px"}}
                   shadow={"2xl"}
