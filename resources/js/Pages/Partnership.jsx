@@ -100,7 +100,7 @@ const About = () => {
                   alignItems={"start"}
                   justifyContent={"center"}
                   px={"10%"}
-                  pt={"138px"}
+                  pt={{base: "30px", xl: "90px"}}
                   pb={"10%"}
                   className={"rounded-b-3xl"}
               >
@@ -109,7 +109,7 @@ const About = () => {
                   alignItems={"center"}
                   justifyContent={"center"}
                   rounded={"xl"}
-                  mt={"64px"}
+                  mt={{base: "8px", xl: "64px"}}
                   px={{base: "32px", xl: "64px"}}
                   py={{base: "24px", xl: "32px"}}
                   shadow={"2xl"}
