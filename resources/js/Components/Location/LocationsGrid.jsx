@@ -63,20 +63,20 @@ const LocationCard = ({ title, address, operational_hours, available, total, lat
                   </a>
               </Flex>
 
-            <Flex mt={4} gap={2} borderTop={"1px"} borderBottom={"1px"} borderColor={"#cccccc"} justifyContent={"space-around"} textAlign={"center"}>
-              <VStack alignItems={"left"}>
+            <Flex mt={4} gap={2} borderTop={"1px"} borderBottom={"1px"} borderColor={"#cccccc"} justifyContent={"space-evenly"} textAlign={"center"}>
+              <VStack py={8} alignItems={"left"}>
                   <Text fontSize={"large"} color={"black"}><b>Tersedia</b></Text>
-                  <Text px={0} topMargin={8} className={"xl:!text-4xl md:!text-3xl !text-lg"} withIcon={false} iconColor={"black"}>{available}/{total}</Text>
+                  <Text px={0} className={"xl:!text-4xl md:!text-3xl !text-lg"} withIcon={false} iconColor={"black"}>{available}/{total}</Text>
                 </VStack>
-              <VStack alignItems={"left"} borderLeft={"1px"} borderColor={"#cccccc"}/>
-              <VStack alignItems={"left"}>
+              <VStack alignItems={"left"} borderLeft={"1px"} py={8} borderColor={"#cccccc"}/>
+              <VStack alignItems={"left"} py={8}>
                   <Text fontSize={"large"} color={"black"}><b>Jenis Kabel</b></Text>
-                  <Text px={0} topMargin={8} size={"small"} withIcon={false} iconColor={"black"} className={"text-center"}>Type C, Lightning, Android</Text>
+                  <Text px={0} size={"small"} withIcon={false} iconColor={"black"} className={"text-center"}>Type C, Lightning, Android</Text>
                 </VStack>
-              <VStack alignItems={"left"} borderLeft={"1px"} borderColor={"#cccccc"}/>
-              <VStack alignItems={"left"}>
+              <VStack alignItems={"left"} borderLeft={"1px"} py={8} borderColor={"#cccccc"}/>
+              <VStack alignItems={"left"} py={8}>
                   <Text fontSize={"large"} color={"black"}><b>Jarak</b></Text>
-                  <Text px={0} topMargin={8} className={"xl:!text-4xl md:!text-3xl !text-lg"} withIcon={false} iconColor={"black"}>{distance} km</Text>
+                  <Text px={0} className={"xl:!text-4xl md:!text-3xl !text-lg"} withIcon={false} iconColor={"black"}>{distance} km</Text>
                 </VStack>
             </Flex>
           </ModalBody>
