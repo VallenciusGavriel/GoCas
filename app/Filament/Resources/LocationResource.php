@@ -37,13 +37,10 @@ class LocationResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('status')
                     ->required(),
-                Forms\Components\TextInput::make('apple')
+                Forms\Components\TextInput::make('available')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('type_c')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('type_b')
+                Forms\Components\TextInput::make('total')
                     ->required()
                     ->numeric(),
             ]);
@@ -60,6 +57,8 @@ class LocationResource extends Resource
                 Tables\Columns\TextColumn::make('latitude'),
                 Tables\Columns\TextColumn::make('longitude'),
                 Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('available'),
+                Tables\Columns\TextColumn::make('total'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
