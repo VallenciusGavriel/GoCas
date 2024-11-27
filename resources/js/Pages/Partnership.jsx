@@ -89,7 +89,7 @@ const About = () => {
                 Ingin membawa solusi sewa power bank ke bisnis atau event kamu? GOCAS membuka peluang kolaborasi bagi partner yang ingin memperluas jaringan dan memberikan layanan lebih bagi pelanggan. Mari bersama-sama ciptakan pengalaman yang lebih praktis dan modern!
               </Text>
             </Box>
-            <img src={Hand}/>
+            <img src={Hand} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"/>
           </Flex>
               <VStack
                   spacing={0}

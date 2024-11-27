@@ -7,7 +7,7 @@ import { Head } from "@inertiajs/react";
 import Background from "../../../public/images/products/bg2.jpg";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 
-const Products = ({products}) => {
+const Products = ({products, meta, schema}) => {
     const size = useBreakpointValue({
         base: { height: "100vh", width: "auto" },
         xl: { width: "100vw", height: "auto" },
@@ -16,12 +16,16 @@ const Products = ({products}) => {
     return (
       <div className={"overflow-x-hidden"}>
         <Navbar />
-        <Head title="Produk" />
-        <Box minH={"100vh"}>
-            <VStack
-                spacing={0}
-                bgImage={Background}
-                mb={2}
+          <Head title="Produk">
+              <script type="application/ld+json">
+                  {JSON.stringify(schema)}
+              </script>
+          </Head>
+          <Box minH={"100vh"}>
+              <VStack
+                  spacing={0}
+                  bgImage={Background}
+                  mb={2}
                 h={"full"}
                 w={"100vw"}
                 bgSize="cover"
@@ -33,7 +37,7 @@ const Products = ({products}) => {
                 mt={"30px"}
                 pt="64px"
             >
-                <img src={Background} className={"rounded-b-xl"}/>
+                <img src={Background} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" className={"rounded-b-xl"}/>
             </VStack>
             <VStack
                 spacing={4}

@@ -95,7 +95,7 @@ const LocationCard = ({ title, address, operational_hours, available, total, lat
       >
         <Flex h={"full"} gap={4} direction={{base: "column", md: "row"}}>
           <VStack alignItems="start" justifyContent={"center"} spacing={2} w={{base: "full", md: "50%"}}>
-            <Image src={pin} alt={"ASD"} w={8}/>
+            <Image src={pin} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" w={8}/>
               <HeaderText
                   topMargin={10}
                   size="small"
@@ -171,6 +171,7 @@ const LocationsGrid = ({ locations, startLat, startLong }) => {
               <VStack>
                 <Image
                   src={'images/location/location-not-found.png'}
+                  alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                   width={50}
                   height={50}
                   mr={2}

@@ -19,7 +19,7 @@ const GridLayanan = ({ services, columnsMd = 3 }) => {
                 >
                     <Image
                         src={service.imgSrc}
-                        alt={service.title}
+                        alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                         borderRadius="md"
                     />
                     <HeaderText size="small" iconColor="green" withIcon={false}>

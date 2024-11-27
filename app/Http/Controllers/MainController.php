@@ -38,6 +38,10 @@ class MainController extends Controller
             'show_count' => $locations->count(),
             'total_count' => Location::all()->count(),
             'station_count' => Location::all()->sum('total'),
+            'meta' => [
+                'title' => 'GoCas - Sewa Powerbank Terbaik',
+                'description' => 'Lihat semua lokasi GoCas, menawarkan layanan sewa powerbank terbaik dengan pengiriman cepat dan harga terjangkau.',
+            ],
         ]);
     }
 
@@ -71,18 +75,52 @@ class MainController extends Controller
 
     public function about()
     {
-        return Inertia::render('About');
+        return Inertia::render('About', [
+            'meta' => [
+                'title' => 'GoCas - Sewa Powerbank Terbaik',
+                'description' => 'Tentang kami. GoCas menawarkan layanan sewa powerbank terbaik dengan pengiriman cepat dan harga terjangkau.',
+            ],
+        ]);
     }
 
     public function partnership()
     {
-        return Inertia::render('Partnership');
+        return Inertia::render('Partnership', [
+            'meta' => [
+                'title' => 'GoCas - Sewa Powerbank Terbaik',
+                'description' => 'Bekerja sama dengan GoCas, menawarkan layanan sewa powerbank terbaik dengan pengiriman cepat dan harga terjangkau.',
+            ],
+        ]);
     }
 
     public function products()
     {
         $products = Product::all();
 
-        return Inertia::render('Products', compact('products'));
+        $meta = [
+            'title' => 'GoCas - Sewa Powerbank dan Produk Lainnya',
+            'description' => 'Temukan berbagai pilihan powerbank untuk disewa di GoCas. Produk berkualitas dengan harga terjangkau.',
+        ];
+
+        $schema = [
+            "@context" => "https://schema.org",
+            "@type" => "Product",
+            "name" => $products->first->name,
+            "image" => asset($products->first->image_url),
+            "description" => $products->first->capacity,
+            "brand" => [
+                "@type" => "Brand",
+                "name" => "GoCas"
+            ],
+            "offers" => [
+                "@type" => "Offer",
+                "price" => 5000,
+                "priceCurrency" => "IDR",
+                "availability" => "https://schema.org/InStock",
+                "url" => url('/products')
+            ]
+        ];
+
+        return Inertia::render('Products', compact('products', 'meta', 'schema'));
     }
 }

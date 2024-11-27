@@ -28,7 +28,7 @@ const Footer = () => {
                 <Box color={"white"}>
                     <Image
                         src={GoCasLogo}
-                        alt="GoCas logo"
+                        alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                         mb={2}
                         boxSize="120px"
                         objectFit="contain"
@@ -67,7 +67,7 @@ const Footer = () => {
                     <Link href={"https://play.google.com"}>
                         <Image
                             src={GPlay}
-                            alt="Google Play"
+                            alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                             mb={2}
                             w={"200px"}
                             objectFit="contain"
@@ -76,7 +76,7 @@ const Footer = () => {
                     <Link href={"https://www.apple.com/id/app-store/"}>
                         <Image
                             src={AppStore}
-                            alt="Apple Store"
+                            alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                             w={"200px"}
                             objectFit="contain"
                         />
@@ -111,7 +111,7 @@ const Footer = () => {
                         <Link href={"https://www.instagram.com/gocasindonesia"}>
                             <Image
                                 src={IG}
-                                alt="Instagram"
+                                alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                                 w={8}
                                 h={8}
                                 objectFit="contain"
@@ -124,7 +124,7 @@ const Footer = () => {
                         >
                             <Image
                                 src={Tiktok}
-                                alt="Tiktok"
+                                alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                                 w={8}
                                 h={8}
                                 objectFit="contain"
@@ -137,7 +137,7 @@ const Footer = () => {
                         >
                             <Image
                                 src={X}
-                                alt="X"
+                                alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                                 w={8}
                                 h={8}
                                 objectFit="contain"
@@ -150,7 +150,7 @@ const Footer = () => {
                         >
                             <Image
                                 src={LinkedIn}
-                                alt="LinkedIn"
+                                alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                                 w={8}
                                 h={8}
                                 objectFit="contain"
@@ -163,7 +163,7 @@ const Footer = () => {
                         >
                             <Image
                                 src={FB}
-                                alt="FB"
+                                alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                                 w={8}
                                 h={8}
                                 objectFit="contain"

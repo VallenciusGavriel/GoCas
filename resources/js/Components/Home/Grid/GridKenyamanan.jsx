@@ -19,7 +19,7 @@ const GridKenyamanan = ({ kenyamanans, columnsMd = 3 }) => {
                 >
                     <Image
                         src={kenyamanan.imgSrc}
-                        alt={kenyamanan.title}
+                        alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                         borderRadius="md"
                     />
                     <HeaderText
