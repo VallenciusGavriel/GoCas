@@ -27,6 +27,4 @@ Route::get('/products', [MainController::class, 'products']);
 Route::fallback(function () {
     return redirect('/');
 });
-
-require __DIR__.'/auth.php';
     
