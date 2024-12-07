@@ -52,7 +52,7 @@ const LocationCard = ({ title, address, operational_hours, available, total, lat
                   <a href={"https://www.google.com/maps/dir/"+startLat+","+startLong+"/"+lat+","+long}>
                       <Button
                           colorScheme="green"
-                          bg="#7cf656"
+                          bg="#09a759"
                           color="white"
                           size="lg"
                           fontWeight="bold"

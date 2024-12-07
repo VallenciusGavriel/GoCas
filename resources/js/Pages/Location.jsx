@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {Center, Flex, Box, IconButton, Input, VStack, Text} from "@chakra-ui/react";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
@@ -13,9 +13,18 @@ const Location = ({ locations: initialLocations, center, show_count, total_count
   const [lat, setLat] = useState(center[0]);
   const [long, setLong] = useState(center[1]);
   const [error, setError] = useState(null);
+  const [showCount, setShowCount] = useState(show_count);
   const [locations, setLocations] = useState(initialLocations);
 
-  const searchLocation = async (lat = null, lon = null) => {
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            setLat(position.coords.latitude);
+            setLong(position.coords.longitude);
+        });
+        hitSearchLocation(lat, long);
+    }, []);
+
+    const searchLocation = async (lat = null, lon = null) => {
     try {
       const response = await fetch(
         `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1&countrycodes=ID`
@@ -54,6 +63,7 @@ const Location = ({ locations: initialLocations, center, show_count, total_count
     setLocations(dataLocation);
     setLat(lat);
     setLong(lon);
+    setShowCount(dataLocation.length)
   };
   return (
     <>
@@ -90,7 +100,7 @@ const Location = ({ locations: initialLocations, center, show_count, total_count
             </Flex>
           </Center>
 
-          <Flex align="center" w="100%" mt={4} backgroundColor={'white'}>
+          <Flex align="center" borderWidth="1px" borderRadius="lg" px={2} py={1} w={{ base: "90%", md: "80%"}} mx={"auto"} mt={4} backgroundColor={'white'}>
             <Maps locations={locations} point={[lat, long]} searchLocation={hitSearchLocation}/>
           </Flex>
         </VStack>
@@ -107,7 +117,7 @@ const Location = ({ locations: initialLocations, center, show_count, total_count
                     </HeaderText>
                     <Box borderTop={"1px"} w={"100%"} borderColor={"#cccccc"}/>
                     <Flex gap={8}>
-                        <Text>Lokasi Ditunjukkan: {show_count}</Text>
+                        <Text>Lokasi Ditunjukkan: {showCount}</Text>
                         <Text>Total Lokasi: {total_count}</Text>
                         <Text>Total Stasiun: {station_count}</Text>
                     </Flex>

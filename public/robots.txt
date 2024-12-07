@@ -1,2 +1,9 @@
 User-agent: *
-Disallow:
+Disallow: /admin/*
+Disallow: //location-search/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /duplicate-content/
+Allow: /css/
+Allow: /js/
+Allow: /images/

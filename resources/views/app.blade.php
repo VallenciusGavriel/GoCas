@@ -16,21 +16,23 @@
 
         <!-- JSON-LD Structured Data -->
         <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "GoCas",
-                "url": "https://gocas.id",
-                "logo": "https://gocas.id/images/navbar/gocas-logo.png",
-                "sameAs": [
-                    "https://www.instagram.com/gocasindonesia",
-                    "https://www.tiktok.com/@gocasindonesia?_t=8qdW7ChFe3r&_r=1",
-                    "https://x.com/gocasindonesia?t=Bf5ybbiFLpMNoDciaBXiVw&s=09",
-                    "https://www.linkedin.com/company/gocasindonesia/",
-                    "https://www.facebook.com/profile.php?id=61567799393691&mibextid=ZbWKwL"
-                ],
-                "description": "GoCas menyediakan layanan sewa powerbank terbaik di Indonesia. Pilihan ideal untuk acara, perjalanan, dan kebutuhan lainnya."
-            }
+            {`
+                {
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    "name": "GoCas",
+                    "url": "https://gocas.id",
+                    "logo": "https://gocas.id/images/navbar/gocas-logo.png",
+                    "sameAs": [
+                        "https://www.instagram.com/gocasindonesia",
+                        "https://www.tiktok.com/@gocasindonesia?_t=8qdW7ChFe3r&_r=1",
+                        "https://x.com/gocasindonesia?t=Bf5ybbiFLpMNoDciaBXiVw&s=09",
+                        "https://www.linkedin.com/company/gocasindonesia/",
+                        "https://www.facebook.com/profile.php?id=61567799393691&mibextid=ZbWKwL"
+                    ],
+                    "description": "GoCas menyediakan layanan sewa powerbank terbaik di Indonesia. Pilihan ideal untuk acara, perjalanan, dan kebutuhan lainnya."
+                }
+            `}
         </script>
 
         <!-- Fonts -->

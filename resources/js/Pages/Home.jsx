@@ -3,6 +3,7 @@ import { Home1, Home2, Home3, Home4 } from "@/Components/Home";
 import Navbar from "@/Components/Navbar/Navbar";
 import { Box, VStack } from "@chakra-ui/react";
 import { Head } from "@inertiajs/react";
+import {Helmet} from "react-helmet";
 
 const Home = () => {
     const homeComponents = [Home1, Home2, Home3, Home4];
@@ -11,6 +12,11 @@ const Home = () => {
         <>
             <Navbar />
             <Head title="Home" />
+            <Helmet>
+                <title>Sewa Powerbank - Gocas</title>
+                <meta name="description" content="Sewa powerbank murah dan praktis untuk kebutuhan Anda." />
+                <meta name="keywords" content="sewa powerbank, rental powerbank, powerbank murah" />
+            </Helmet>
             <VStack spacing={0}>
                 {" "}
                 {/* Adjust the margin-top to match the Navbar's height */}
