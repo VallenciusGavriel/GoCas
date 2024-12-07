@@ -17,11 +17,21 @@ const Location = ({ locations: initialLocations, center, show_count, total_count
   const [locations, setLocations] = useState(initialLocations);
 
     useEffect(() => {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            setLat(position.coords.latitude);
-            setLong(position.coords.longitude);
-        });
-        hitSearchLocation(lat, long);
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                setLat(position.coords.latitude);
+                setLong(position.coords.longitude);
+                hitSearchLocation(position.coords.latitude, position.coords.longitude);
+            },
+            (err) => {
+                setError(err.message);
+            },
+            {
+                enableHighAccuracy: true, // Ensures accurate location (may take longer)
+                timeout: 10000, // Timeout after 10 seconds
+                maximumAge: 0, // Don't use cached location
+            }
+        );
     }, []);
 
     const searchLocation = async (lat = null, lon = null) => {
@@ -101,7 +111,12 @@ const Location = ({ locations: initialLocations, center, show_count, total_count
           </Center>
 
           <Flex align="center" borderWidth="1px" borderRadius="lg" px={2} py={1} w={{ base: "90%", md: "80%"}} mx={"auto"} mt={4} backgroundColor={'white'}>
-            <Maps locations={locations} point={[lat, long]} searchLocation={hitSearchLocation}/>
+            <Maps
+                key={`${lat}-${long}`}
+                locations={locations}
+                point={[lat, long]}
+                searchLocation={hitSearchLocation}
+            />
           </Flex>
         </VStack>
         <Center>
