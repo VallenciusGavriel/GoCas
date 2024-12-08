@@ -63,17 +63,19 @@ const Home3 = () => {
                     p={2}
                     gap={{
                         base: 4,
-                        "2xl": 8,
+                        xl: 20,
                     }}
                 >
                     {features.map((feature, index) => (
                         <Box
                             key={index}
-                            maxW="500px"
+                            maxW={{ base: "200px", xl: "500px" }}
+                            minW={{ base: "100px", xl: "200px" }}
                             justifyContent="center"
                             justifyItems="center"
                             alignItems="center"
                             align="center"
+                            gap={10}
                         >
                             <FeatureCard
                                 icon={feature.icon}
