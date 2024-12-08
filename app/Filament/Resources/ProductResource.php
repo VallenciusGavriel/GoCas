@@ -67,6 +67,9 @@ class ProductResource extends Resource
                 TextColumn::make('name')->searchable()->sortable(),
                 TextColumn::make('capacity'),
                 TextColumn::make('type')->sortable(),
+                TextColumn::make('feature')->sortable(),
+                TextColumn::make('compatibility'),
+                TextColumn::make('dimensi'),
                 TextColumn::make('created_at')
                     ->label('Created At')
                     ->dateTime(),
