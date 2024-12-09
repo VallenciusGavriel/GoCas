@@ -40,7 +40,7 @@ const Home3 = () => {
     });
 
     return (
-        <Box p={6}>
+        <Box p={{ base: 2, sm: 6 }}>
             <Box>
                 <HeaderText
                     iconColor="black"
@@ -91,7 +91,7 @@ const Home3 = () => {
                 direction={{ base: "column", xl: "row" }}
                 gap={{ base: 20, md: 6 }}
                 justify="center"
-                align={{ base: "center", xl: "start" }}
+                align="center"
                 maxW="1500px"
                 mx="auto"
                 my="auto"
@@ -114,13 +114,14 @@ const Home3 = () => {
                 ].map((item, index) => (
                     <Box
                         key={index}
-                        flex="1"
+                        flex={{ base: "1 1 100%", xl: "1 1 30%" }}
                         textAlign="center"
                         display="flex"
                         flexDirection="column"
                         justifyContent="space-between"
                         minHeight="100%"
                         mt={10}
+                        mx="auto"
                     >
                         <div>
                             <HeaderText
@@ -148,7 +149,7 @@ const Home3 = () => {
                             p={10}
                             borderRadius="xl"
                             shadow="md"
-                            maxW="650px"
+                            maxW={{ base: "300px", sm: "650px" }}
                             w="full"
                             mt={10}
                             mx="auto"
