@@ -64,7 +64,7 @@ const Footer = () => {
                 </Box>
                 <Box color={"white"} fontWeight={"extrabold"}>
                     <Text mb={3}>Download sekarang di</Text>
-                    <Link href={"https://play.google.com"}>
+                    <Link href={"https://play.google.com/store/apps/details?id=so.dian.gocasid"}>
                         <Image
                             src={GPlay}
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
@@ -73,7 +73,7 @@ const Footer = () => {
                             objectFit="contain"
                         />
                     </Link>
-                    <Link href={"https://www.apple.com/id/app-store/"}>
+                    <Link href={"https://apps.apple.com/id/app/gocas/id6738688391?l=id"}>
                         <Image
                             src={AppStore}
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"

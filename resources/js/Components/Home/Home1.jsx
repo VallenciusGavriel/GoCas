@@ -1,8 +1,10 @@
-import { Box, Button, Grid, HStack, Image, Text } from "@chakra-ui/react";
+import {Box, Button, Grid, HStack, Image, Text, VStack} from "@chakra-ui/react";
 import { Link } from "@inertiajs/react";
 import Downloads from "./../../../../public/images/home/downloads.png";
 import QRCode from "./../../../../public/images/home/qr-code.png";
 import HeaderText from "./../Text/HeaderText";
+import GPlay from "../../../../public/images/navbar/gplay.png";
+import AppStore from "../../../../public/images/navbar/appstore.png";
 
 const Home1 = () => {
     return (
@@ -97,13 +99,25 @@ const Home1 = () => {
                     justifyContent={{ base: "space-evenly", md: "flex-end" }}
                     spacing={4}
                 >
-                    <Image
-                        src={Downloads}
-                        alt="Download on the App Store and Google Play"
-                        w={{ base: "40%", md: "25%" }}
-                        h="auto"
-                        objectFit="contain"
-                    />
+                    <VStack>
+                        <Link href={"https://play.google.com/store/apps/details?id=so.dian.gocasid"}>
+                            <Image
+                                src={GPlay}
+                                alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
+                                mb={2}
+                                w={"200px"}
+                                objectFit="contain"
+                            />
+                        </Link>
+                        <Link href={"https://apps.apple.com/id/app/gocas/id6738688391?l=id"}>
+                            <Image
+                                src={AppStore}
+                                alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
+                                w={"200px"}
+                                objectFit="contain"
+                            />
+                        </Link>
+                    </VStack>
                     <Image
                         src={QRCode}
                         alt="QR Code"

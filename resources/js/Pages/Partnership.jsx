@@ -262,7 +262,7 @@ const About = () => {
                         Email: support@gocas.id
                     </Text>
                     <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
-                        Contact Person: +628773999913
+                        Contact Person: +6282188886665
                     </Text>
                     <Text fontFamily="poppins" mt={"24px"} className={"md:text-xl text-sm"}>
                         Social Media: @gocasindonesia
