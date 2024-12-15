@@ -3,11 +3,11 @@
 import "../css/app.css";
 import "./bootstrap";
 
-import React from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { createInertiaApp } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { createRoot } from "react-dom/client";
-import { ChakraProvider } from "@chakra-ui/react";
+import { LanguageProvider } from "./Context/LanguageContext";
 import theme from "./Styles/theme";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
@@ -24,7 +24,9 @@ createInertiaApp({
 
         root.render(
             <ChakraProvider theme={theme}>
-                <App {...props} />
+                <LanguageProvider>
+                    <App {...props} />
+                </LanguageProvider>
             </ChakraProvider>
         );
     },
