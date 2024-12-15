@@ -1,0 +1,40 @@
+{
+    "EN": {
+        "about": "About Us",
+        "location": "Location",
+        "products": "Products",
+        "partnership": "Partnership",
+        "help": "Help Center",
+        "language": "Language",
+        "select_language": "Select Language",
+        "headline_1": "Charge without hassle",
+        "headline_2": "Anytime",
+        "headline_3": "Anywhere",
+        "description": "GoCas Indonesia is an innovative power bank rental brand that provides charging solutions for active and dynamic users.",
+        "button_text": "Find the nearest GoCas",
+        "header_1": "TURN ON YOUR DEVICE WITH",
+        "header_2": "#GOCASinNow",
+        "greeting": "Hello, GoCas friends!",
+        "intro_text": "Hi! We are GoCas Indonesia, a smart solution for active people who don’t want the hassle. With Internet of Things (IoT) technology, GoCas ensures that your gadgets are always charged whenever and wherever you need them...",
+        "read_more": "Read more"
+    },
+    "ID": {
+        "about": "Tentang Kami",
+        "location": "Lokasi",
+        "products": "Produk",
+        "partnership": "Kemitraan",
+        "help": "Pusat Bantuan",
+        "language": "Bahasa",
+        "select_language": "Pilih Bahasa",
+        "headline_1": "Isi daya tanpa ribet",
+        "headline_2": "kapanpun",
+        "headline_3": "dimanapun",
+        "description": "GoCas Indonesia adalah brand penyewaan Power bank inovatif yang hadir untuk memberikan solusi pengisian daya bagi para pengguna yang aktif dan dinamis.",
+        "button_text": "Temukan GoCas terdekat",
+        "header_1": "HIDUPKAN PERANGKATMU DENGAN",
+        "header_2": "#GOCASinSekarang",
+        "greeting": "SALAM KENAL, Sobat GOCAS!",
+        "intro_text": "Hai! Kami GoCas Indonesia, solusi cerdas buat kamu yang aktif dan nggak mau ribet. Dengan teknologi berbasis Internet of Things (IoT), GoCas hadir untuk memastikan gadget kamu tetap terisi penuh kapan pun dan di mana pun kamu butuh...",
+        "read_more": "Baca Selengkapnya"
+    }
+}

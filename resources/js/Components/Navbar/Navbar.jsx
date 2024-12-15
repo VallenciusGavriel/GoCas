@@ -9,16 +9,16 @@ import {
     Link,
     Menu,
     MenuButton,
+    MenuItem,
     MenuList,
     Text,
     useBreakpointValue,
     useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import GocasLogo from "../../../../public/images/navbar/gocas-logo.png"; // Ensure correct path
-import GoogleTranslate from "./GoogleTranslate";
-
+import languages from "../../../../public/i18n/languages.json";
+import GocasLogo from "../../../../public/images/navbar/gocas-logo.png";
+import { useLanguage } from "../../Context/LanguageContext";
 // Import images
 
 const MotionBox = motion(Box);
@@ -31,18 +31,20 @@ const Navbar = () => {
 
     const isActive = (route) => window.location.pathname === route;
 
-    const [selectedLanguage, setSelectedLanguage] = useState("EN");
+    // const [selectedLanguage, setSelectedLanguage] = useState("EN");
 
-    const handleLanguageChange = (language) => {
-        setSelectedLanguage(language);
+    const { language, setLanguage } = useLanguage();
+
+    const handleLanguageChange = (lang) => {
+        setLanguage(lang);
     };
 
     // Update these links to reflect your application's pages
     const menuLinks = [
-        { name: "Tentang Kami", href: "/about" },
-        { name: "Lokasi", href: "/location" },
-        { name: "Produk", href: "/products" },
-        { name: "Partnership", href: "/partnership" },
+        { name: "about", href: "/about" },
+        { name: "location", href: "/location" },
+        { name: "products", href: "/products" },
+        { name: "partnership", href: "/partnership" },
     ];
 
     // Update these buttons if needed
@@ -119,7 +121,7 @@ const Navbar = () => {
                                 color="white"
                                 transition={{ duration: 0.3 }}
                             >
-                                {link.name}
+                                {languages[language][link.name]}
                             </MotionText>
                         </Link>
                     ))}
@@ -156,7 +158,8 @@ const Navbar = () => {
                                 as={IconButton}
                                 icon={
                                     <Text>
-                                        Select Language <ChevronDownIcon />
+                                        {languages[language]["select_language"]}{" "}
+                                        <ChevronDownIcon />
                                     </Text>
                                 }
                                 px={4}
@@ -166,7 +169,20 @@ const Navbar = () => {
                                 _active={{ bg: "yellow.500" }}
                             />
                             <MenuList bg={"brown"} px={4}>
-                                <GoogleTranslate />
+                                <MenuItem
+                                    onClick={() => handleLanguageChange("EN")}
+                                >
+                                    <Text color="black" textAlign="center">
+                                        English
+                                    </Text>
+                                </MenuItem>
+                                <MenuItem
+                                    onClick={() => handleLanguageChange("ID")}
+                                >
+                                    <Text color="black" textAlign="center">
+                                        Indonesia
+                                    </Text>
+                                </MenuItem>
                             </MenuList>
                         </Menu>
                     </Box>
@@ -199,7 +215,7 @@ const Navbar = () => {
                                     fontFamily="poppins"
                                     cursor="pointer"
                                 >
-                                    {link.name}
+                                    {languages[language][link.name]}
                                 </Text>
                             </Link>
                         ))}
@@ -233,19 +249,40 @@ const Navbar = () => {
                                         as={IconButton}
                                         icon={
                                             <Text>
-                                                Bahasa <ChevronDownIcon />
+                                                {
+                                                    languages[language][
+                                                        "select_language"
+                                                    ]
+                                                }
+                                                <ChevronDownIcon />
                                             </Text>
                                         }
                                         px={4}
-                                        color={"white"}
+                                        color={"brown"}
                                         aria-label="Select Language"
-                                        bg="brown"
-                                        _hover={{ bg: "brown" }}
-                                        _active={{ bg: "brown" }}
+                                        _hover={{ bg: "yellow.500" }}
+                                        _active={{ bg: "yellow.500" }}
                                     />
                                 </Flex>
                                 <MenuList bg={"brown"} px={4}>
-                                    <GoogleTranslate />
+                                    <MenuItem
+                                        onClick={() =>
+                                            handleLanguageChange("EN")
+                                        }
+                                    >
+                                        <Text color="black" textAlign="center">
+                                            English
+                                        </Text>
+                                    </MenuItem>
+                                    <MenuItem
+                                        onClick={() =>
+                                            handleLanguageChange("ID")
+                                        }
+                                    >
+                                        <Text color="black" textAlign="center">
+                                            Indonesia
+                                        </Text>
+                                    </MenuItem>
                                 </MenuList>
                             </Menu>
                         </Box>

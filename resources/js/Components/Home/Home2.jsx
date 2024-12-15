@@ -1,6 +1,8 @@
 import { Box, Link, Text } from "@chakra-ui/react";
-import HeaderText from "../Text/HeaderText";
 import { motion } from "framer-motion";
+import languages from "../../../../public/i18n/languages.json";
+import { useLanguage } from "../../Context/LanguageContext";
+import HeaderText from "../Text/HeaderText";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -24,6 +26,7 @@ const fadeInRight = {
 };
 
 const Home2 = () => {
+    const { language } = useLanguage();
     return (
         <MotionBox
             p={{ base: 10, md: 4 }}
@@ -61,7 +64,8 @@ const Home2 = () => {
                         inputclass={"xl:!text-5xl md:!text-5xl !text-3xl"}
                         px="0px"
                     >
-                        HIDUPKAN PERANGKATMU DENGAN
+                        {languages[language]["header_1"]}{" "}
+                        {/* HIDUPKAN PERANGKATMU DENGAN */}
                     </HeaderText>
                     <HeaderText
                         iconColor="brown"
@@ -70,7 +74,8 @@ const Home2 = () => {
                         inputclass={"xl:!text-5xl md:!text-3xl !text-lg"}
                         px="0px"
                     >
-                        #GOCASinSekarang
+                        {languages[language]["header_2"]}{" "}
+                        {/* #GOCASinSekarang */}
                     </HeaderText>
                 </MotionBox>
 
@@ -91,7 +96,8 @@ const Home2 = () => {
                         textStyle={{ base: "headline", md: "subheadline" }}
                         px="0px"
                     >
-                        SALAM KENAL, Sobat GOCAS!
+                        {languages[language]["greeting"]}{" "}
+                        {/* SALAM KENAL, Sobat GOCAS! */}
                     </HeaderText>
                     <MotionText
                         fontSize={{ base: "sm", md: "md" }}
@@ -103,11 +109,8 @@ const Home2 = () => {
                         variants={fadeInUp}
                         transition={{ duration: 1, delay: 0.6 }}
                     >
-                        Hai! Kami GoCas Indonesia, solusi cerdas buat kamu yang
-                        aktif dan nggak mau ribet. Dengan teknologi berbasis
-                        Internet of Things (IoT), GoCas hadir untuk memastikan
-                        gadget kamu tetap terisi penuh kapan pun dan di mana pun
-                        kamu butuh...
+                        {languages[language]["intro_text"]}{" "}
+                        {/* Hai! Kami GoCas Indonesia... */}
                     </MotionText>
                     <MotionLink
                         color="black"
@@ -118,7 +121,8 @@ const Home2 = () => {
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                     >
-                        Baca selengkapnya
+                        {languages[language]["read_more"]}{" "}
+                        {/* Baca selengkapnya */}
                     </MotionLink>
                 </MotionBox>
             </MotionBox>

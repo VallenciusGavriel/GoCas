@@ -7,8 +7,9 @@ import {
     Text,
     VStack,
 } from "@chakra-ui/react";
-import FAQItem from "./FAQItem";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../Context/LanguageContext";
+import FAQItem from "./FAQItem";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -22,30 +23,57 @@ const fadeInUp = {
     visible: { opacity: 1, y: 0 },
 };
 
-const faqData = [
-    {
-        question: "Apa itu GoCas?",
-        answer: "GoCas adalah layanan penyewaan powerbank. Anda cukup membuka aplikasi GoCas, mencari GoCas Station terdekat, dan menyewa/mengembalikan powerbank hanya dengan beberapa ketukan.",
-    },
-    {
-        question: "Bagaimana cara menyewa/mengembalikan powerbank?",
-        answer: "Sangat mudah! Cukup buka aplikasi GoCas, cari lokasi GoCas Station terdekat, dan sewa/kembalikan powerbank hanya dengan beberapa ketukan.",
-    },
-    {
-        question: "Bagaimana cara menemukan stasiun penyewaan GO CAS?",
-        answer: "Buka aplikasi GoCas dan gunakan fitur pencarian untuk menemukan stasiun penyewaan GoCas terdekat dari lokasi Anda.",
-    },
-    {
-        question: "Berapa lama saya bisa menyewa powerbank?",
-        answer: "Anda bisa menyewa powerbank selama yang Anda butuhkan, selama itu dikembalikan pada waktu yang ditentukan dalam ketentuan penyewaan.",
-    },
-    {
-        question: "Apa yang harus dilakukan jika powerbank tidak berfungsi?",
-        answer: "Jika powerbank yang Anda sewa tidak berfungsi, segera kembalikan ke stasiun GoCas dan lapor melalui aplikasi untuk mendapatkan bantuan lebih lanjut.",
-    },
-];
+const faqData = {
+    EN: [
+        {
+            question: "What is GoCas?",
+            answer: "GoCas is a power bank rental service. Simply open the GoCas app, find the nearest GoCas Station, and rent/return a power bank with just a few taps.",
+        },
+        {
+            question: "How do I rent/return a power bank?",
+            answer: "It's simple! Just open the GoCas app, find the nearest GoCas Station, and rent/return a power bank with just a few taps.",
+        },
+        {
+            question: "How do I find a GoCas rental station?",
+            answer: "Open the GoCas app and use the search feature to find the nearest GoCas Station from your location.",
+        },
+        {
+            question: "How long can I rent a power bank?",
+            answer: "You can rent a power bank for as long as you need, as long as it is returned within the time specified in the rental terms.",
+        },
+        {
+            question: "What should I do if the power bank doesn't work?",
+            answer: "If the power bank you rented is not working, immediately return it to the GoCas station and report it through the app for further assistance.",
+        },
+    ],
+    ID: [
+        {
+            question: "Apa itu GoCas?",
+            answer: "GoCas adalah layanan penyewaan powerbank. Anda cukup membuka aplikasi GoCas, mencari GoCas Station terdekat, dan menyewa/mengembalikan powerbank hanya dengan beberapa ketukan.",
+        },
+        {
+            question: "Bagaimana cara menyewa/mengembalikan powerbank?",
+            answer: "Sangat mudah! Cukup buka aplikasi GoCas, cari lokasi GoCas Station terdekat, dan sewa/kembalikan powerbank hanya dengan beberapa ketukan.",
+        },
+        {
+            question: "Bagaimana cara menemukan stasiun penyewaan GO CAS?",
+            answer: "Buka aplikasi GoCas dan gunakan fitur pencarian untuk menemukan stasiun penyewaan GoCas terdekat dari lokasi Anda.",
+        },
+        {
+            question: "Berapa lama saya bisa menyewa powerbank?",
+            answer: "Anda bisa menyewa powerbank selama yang Anda butuhkan, selama itu dikembalikan pada waktu yang ditentukan dalam ketentuan penyewaan.",
+        },
+        {
+            question:
+                "Apa yang harus dilakukan jika powerbank tidak berfungsi?",
+            answer: "Jika powerbank yang Anda sewa tidak berfungsi, segera kembalikan ke stasiun GoCas dan lapor melalui aplikasi untuk mendapatkan bantuan lebih lanjut.",
+        },
+    ],
+};
 
 const Home4 = () => {
+    const { language } = useLanguage();
+
     return (
         <MotionBox
             p={6}
@@ -78,12 +106,14 @@ const Home4 = () => {
                     variants={fadeInUp}
                     transition={{ duration: 1, delay: 0.3 }}
                 >
-                    Pertanyaan yang Sering Diajukan (FAQ)
+                    {language === "EN"
+                        ? "Frequently Asked Questions (FAQ)"
+                        : "Pertanyaan yang Sering Diajukan (FAQ)"}
                 </MotionHeading>
 
                 {/* FAQ Accordion */}
                 <Accordion allowToggle>
-                    {faqData.map((faq, index) => (
+                    {faqData[language].map((faq, index) => (
                         <FAQItem
                             key={index}
                             question={faq.question}
@@ -102,9 +132,15 @@ const Home4 = () => {
                     transition={{ duration: 1, delay: 0.6 }}
                 >
                     <Text mb={2} fontFamily="Poppins">
-                        Tidak dapat menemukan yang Anda cari?
+                        {language === "EN"
+                            ? "Can't find what you're looking for?"
+                            : "Tidak dapat menemukan yang Anda cari?"}
                     </Text>
-                    <Text fontFamily="Poppins">Kami ingin berbicara dengan Anda</Text>
+                    <Text fontFamily="Poppins">
+                        {language === "EN"
+                            ? "We'd love to talk to you"
+                            : "Kami ingin berbicara dengan Anda"}
+                    </Text>
                     <a
                         href="https://wa.me/6282188886665"
                         target="_blank"
