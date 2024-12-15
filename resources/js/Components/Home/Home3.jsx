@@ -1,19 +1,14 @@
 import { Box, Button, Flex, Grid, Text } from "@chakra-ui/react";
 import { Link } from "@inertiajs/react";
+import { motion } from "framer-motion";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import HeaderText from "../Text/HeaderText";
 import FeatureCard from "./FeatureCard";
-import {
-    features,
-    stepsBorrowGuest,
-    stepsBorrowPelanggan,
-    stepsReturn,
-} from "./homeData";
+import { features, stepsBorrowPelanggan, stepsReturn } from "./homeData";
 import StepList from "./StepList";
-import { motion } from "framer-motion";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -103,7 +98,7 @@ const Home3 = () => {
                     {features.map((feature, index) => (
                         <MotionBox
                             key={index}
-                            maxW={{ base: "200px", xl: "500px" }}
+                            maxW={{ base: "300px", xl: "500px" }}
                             minW={{ base: "100px", xl: "200px" }}
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.3 }}
@@ -124,7 +119,7 @@ const Home3 = () => {
                 direction={{ base: "column", xl: "row" }}
                 gap={{ base: 20, md: 6 }}
                 justify="center"
-                align="center"
+                align="end"
                 maxW="1500px"
                 mx="auto"
                 my="auto"
@@ -137,10 +132,10 @@ const Home3 = () => {
                 transition={{ duration: 1 }}
             >
                 {[
-                    {
-                        title: "Tata Cara Penyewaan Guest",
-                        steps: stepsBorrowGuest,
-                    },
+                    // {
+                    //     title: "Tata Cara Penyewaan Guest",
+                    //     steps: stepsBorrowGuest,
+                    // },
                     {
                         title: "Tata Cara Penyewaan Pelanggan",
                         steps: stepsBorrowPelanggan,
@@ -157,6 +152,7 @@ const Home3 = () => {
                         display="flex"
                         flexDirection="column"
                         justifyContent="space-between"
+                        alignItems="stretch"
                         minHeight="100%"
                         mt={10}
                         mx="auto"
@@ -231,7 +227,11 @@ const Home3 = () => {
                             <MapContainer
                                 center={position}
                                 zoom={15}
-                                style={{ height: "100%", width: "100%", zIndex: 0 }}
+                                style={{
+                                    height: "100%",
+                                    width: "100%",
+                                    zIndex: 0,
+                                }}
                             >
                                 <TileLayer
                                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -261,9 +261,10 @@ const Home3 = () => {
                             mb={6}
                             textAlign={{ base: "center", md: "left" }}
                         >
-                            Kemanapun kamu pergi, tidak perlu khawatir kehabisan baterai! Kamu
-                            bisa temukan GoCas Station di tempat-tempat favorit mu. Kunjungi
-                            GoCas Station terdekat dan mulai mengisi daya!
+                            Kemanapun kamu pergi, tidak perlu khawatir kehabisan
+                            baterai! Kamu bisa temukan GoCas Station di
+                            tempat-tempat favorit mu. Kunjungi GoCas Station
+                            terdekat dan mulai mengisi daya!
                         </Text>
                         <Link href="/location">
                             <Button
