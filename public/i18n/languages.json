@@ -6,7 +6,12 @@
         "partnership": "Partnership",
         "help": "Help Center",
         "language": "Language",
-        "select_language": "Select Language"
+        "select_language": "Select Language",
+        "headline_1": "Charge without hassle",
+        "headline_2": "Anytime",
+        "headline_3": "Anywhere",
+        "description": "GoCas Indonesia is an innovative power bank rental brand that provides charging solutions for active and dynamic users.",
+        "button_text": "Find the nearest GoCas"
     },
     "ID": {
         "about": "Tentang Kami",
@@ -15,6 +20,11 @@
         "partnership": "Kemitraan",
         "help": "Pusat Bantuan",
         "language": "Bahasa",
-        "select_language": "Pilih Bahasa"
+        "select_language": "Pilih Bahasa",
+        "headline_1": "Isi daya tanpa ribet",
+        "headline_2": "kapanpun",
+        "headline_3": "dimanapun",
+        "description": "GoCas Indonesia adalah brand penyewaan Power bank inovatif yang hadir untuk memberikan solusi pengisian daya bagi para pengguna yang aktif dan dinamis.",
+        "button_text": "Temukan GoCas terdekat"
     }
 }

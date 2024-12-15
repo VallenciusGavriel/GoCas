@@ -1,4 +1,3 @@
-import React from "react";
 import {
     Box,
     Button,
@@ -10,11 +9,12 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
-import Downloads from "./../../../../public/images/home/downloads.png";
+import languages from "../../../../public/i18n/languages.json";
+import AppStore from "../../../../public/images/navbar/appstore.png";
+import GPlay from "../../../../public/images/navbar/gplay.png";
+import { useLanguage } from "../../Context/LanguageContext";
 import QRCode from "./../../../../public/images/home/qr-code.png";
 import HeaderText from "./../Text/HeaderText";
-import GPlay from "../../../../public/images/navbar/gplay.png";
-import AppStore from "../../../../public/images/navbar/appstore.png";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -38,6 +38,7 @@ const fadeInRight = {
 };
 
 const Home1 = () => {
+    const { language } = useLanguage();
     return (
         <Grid
             templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
@@ -68,7 +69,8 @@ const Home1 = () => {
                     inputclass={"xl:!text-5xl md:!text-3xl !text-lg"}
                     px="0px"
                 >
-                    Isi daya tanpa ribet
+                    {languages[language]["headline_1"]}{" "}
+                    {/* Isi daya tanpa ribet */}
                 </HeaderText>
                 <HeaderText
                     iconColor="brown"
@@ -78,7 +80,7 @@ const Home1 = () => {
                     inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
                     px="0px"
                 >
-                    kapanpun
+                    {languages[language]["headline_2"]} {/* kapanpun */}
                 </HeaderText>
                 <HeaderText
                     iconColor="brown"
@@ -88,12 +90,16 @@ const Home1 = () => {
                     inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
                     px="0px"
                 >
-                    dimanapun
+                    {languages[language]["headline_3"]} {/* dimanapun */}
                 </HeaderText>
-                <Text mt={6} fontSize="lg" fontFamily="poppins" fontWeight="bold">
-                    GoCas Indonesia adalah brand penyewaan Power bank inovatif yang hadir
-                    untuk memberikan solusi pengisian daya bagi para pengguna yang aktif
-                    dan dinamis.
+                <Text
+                    mt={6}
+                    fontSize="lg"
+                    fontFamily="poppins"
+                    fontWeight="bold"
+                >
+                    {languages[language]["description"]}{" "}
+                    {/* GoCas Indonesia adalah brand penyewaan... */}
                 </Text>
                 <Link href="/location">
                     <MotionButton
@@ -115,8 +121,12 @@ const Home1 = () => {
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <Text fontFamily="poppins" className={"md:text-lg text-xs"}>
-                            Temukan GoCas terdekat
+                        <Text
+                            fontFamily="poppins"
+                            className={"md:text-lg text-xs"}
+                        >
+                            {languages[language]["button_text"]}{" "}
+                            {/* Temukan GoCas terdekat */}
                         </Text>
                     </MotionButton>
                 </Link>
@@ -139,7 +149,11 @@ const Home1 = () => {
                     spacing={4}
                 >
                     <VStack>
-                        <Link href={"https://play.google.com/store/apps/details?id=so.dian.gocasid"}>
+                        <Link
+                            href={
+                                "https://play.google.com/store/apps/details?id=so.dian.gocasid"
+                            }
+                        >
                             <MotionImage
                                 src={GPlay}
                                 alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
@@ -150,7 +164,11 @@ const Home1 = () => {
                                 transition={{ duration: 0.3 }}
                             />
                         </Link>
-                        <Link href={"https://apps.apple.com/id/app/gocas/id6738688391?l=id"}>
+                        <Link
+                            href={
+                                "https://apps.apple.com/id/app/gocas/id6738688391?l=id"
+                            }
+                        >
                             <MotionImage
                                 src={AppStore}
                                 alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
