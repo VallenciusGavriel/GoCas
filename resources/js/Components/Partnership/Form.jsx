@@ -61,7 +61,7 @@ const Form = () => {
     };
 
     return (
-        <Box width="full" maxWidth="500px" mx="auto" p={6} boxShadow="md" rounded="md" bg="yellow.50">
+        <Box width="full" maxWidth="750px" mx="auto">
             <form onSubmit={handleSubmit}>
                 <VStack spacing={4}>
                     <FormControl id="namaPerusahaan" isRequired>
@@ -139,8 +139,8 @@ const Form = () => {
                         />
                     </FormControl>
 
-                    <Button type="submit" colorScheme="yellow" width="full">
-                        Kirim
+                    <Button type="submit" colorScheme="green" rounded={"full"} mr={"auto"} px={"40px"}>
+                        Submit
                     </Button>
                 </VStack>
             </form>
