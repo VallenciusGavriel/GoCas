@@ -1,10 +1,41 @@
-import {Box, Button, Grid, HStack, Image, Text, VStack} from "@chakra-ui/react";
+import React from "react";
+import {
+    Box,
+    Button,
+    Grid,
+    HStack,
+    Image,
+    Text,
+    VStack,
+} from "@chakra-ui/react";
 import { Link } from "@inertiajs/react";
+import { motion } from "framer-motion";
 import Downloads from "./../../../../public/images/home/downloads.png";
 import QRCode from "./../../../../public/images/home/qr-code.png";
 import HeaderText from "./../Text/HeaderText";
 import GPlay from "../../../../public/images/navbar/gplay.png";
 import AppStore from "../../../../public/images/navbar/appstore.png";
+
+// Framer Motion Wrappers
+const MotionBox = motion(Box);
+const MotionButton = motion(Button);
+const MotionImage = motion(Image);
+
+// Animation Variants
+const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+};
+
+const fadeInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+};
+
+const fadeInRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0 },
+};
 
 const Home1 = () => {
     return (
@@ -14,7 +45,8 @@ const Home1 = () => {
             width="full"
             zIndex="10"
         >
-            <Box
+            {/* Left Section */}
+            <MotionBox
                 display="flex"
                 flexDirection="column"
                 justifyContent={{ base: "center", md: "flex-end" }}
@@ -23,6 +55,10 @@ const Home1 = () => {
                 p="4"
                 height="100%"
                 zIndex="10"
+                initial="hidden"
+                animate="visible"
+                variants={fadeInLeft}
+                transition={{ duration: 1 }}
             >
                 <HeaderText
                     iconColor="brown"
@@ -54,18 +90,13 @@ const Home1 = () => {
                 >
                     dimanapun
                 </HeaderText>
-                <Text
-                    mt={6}
-                    fontSize="lg"
-                    fontFamily="poppins"
-                    fontWeight="bold"
-                >
-                    GoCas Indonesia adalah brand penyewaan Power bank inovatif
-                    yang hadir untuk memberikan solusi pengisian daya bagi para
-                    pengguna yang aktif dan dinamis.
+                <Text mt={6} fontSize="lg" fontFamily="poppins" fontWeight="bold">
+                    GoCas Indonesia adalah brand penyewaan Power bank inovatif yang hadir
+                    untuk memberikan solusi pengisian daya bagi para pengguna yang aktif
+                    dan dinamis.
                 </Text>
                 <Link href="/location">
-                    <Button
+                    <MotionButton
                         bgGradient="linear(to-r, #6EA93C, #25893C)"
                         color="white"
                         _hover={{
@@ -77,23 +108,31 @@ const Home1 = () => {
                         fontWeight="bold"
                         px={8}
                         py={6}
-                        mt={{base: 6, md: 12}}
+                        mt={{ base: 6, md: 12 }}
                         mb={{ base: 10, md: 28 }}
                         boxShadow="md"
-                        w={{base: 60, md: "full"}}
+                        w={{ base: 60, md: "full" }}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
                     >
                         <Text fontFamily="poppins" className={"md:text-lg text-xs"}>
                             Temukan GoCas terdekat
                         </Text>
-                    </Button>
+                    </MotionButton>
                 </Link>
-            </Box>
-            <Box
+            </MotionBox>
+
+            {/* Right Section */}
+            <MotionBox
                 position={{ base: "relative", md: "absolute" }}
                 right={{ md: "0" }}
                 bottom={{ md: "0" }}
                 p={{ base: "4", md: "28" }}
                 width={{ base: "100%", md: "auto" }}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInRight}
+                transition={{ duration: 1 }}
             >
                 <HStack
                     justifyContent={{ base: "space-evenly", md: "flex-end" }}
@@ -101,31 +140,37 @@ const Home1 = () => {
                 >
                     <VStack>
                         <Link href={"https://play.google.com/store/apps/details?id=so.dian.gocasid"}>
-                            <Image
+                            <MotionImage
                                 src={GPlay}
                                 alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                                 mb={2}
                                 w={"200px"}
                                 objectFit="contain"
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.3 }}
                             />
                         </Link>
                         <Link href={"https://apps.apple.com/id/app/gocas/id6738688391?l=id"}>
-                            <Image
+                            <MotionImage
                                 src={AppStore}
                                 alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                                 w={"200px"}
                                 objectFit="contain"
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.3 }}
                             />
                         </Link>
                     </VStack>
-                    <Image
+                    <MotionImage
                         src={QRCode}
                         alt="QR Code"
                         boxSize={{ base: "100px", md: "150px" }}
                         objectFit="contain"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
                     />
                 </HStack>
-            </Box>
+            </MotionBox>
         </Grid>
     );
 };

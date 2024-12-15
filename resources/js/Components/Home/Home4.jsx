@@ -8,6 +8,19 @@ import {
     VStack,
 } from "@chakra-ui/react";
 import FAQItem from "./FAQItem";
+import { motion } from "framer-motion";
+
+// Framer Motion Wrappers
+const MotionBox = motion(Box);
+const MotionHeading = motion(Heading);
+const MotionVStack = motion(VStack);
+const MotionIconButton = motion(IconButton);
+
+// Animation Variants
+const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+};
 
 const faqData = [
     {
@@ -34,16 +47,41 @@ const faqData = [
 
 const Home4 = () => {
     return (
-        <Box p={6} rounded="xl" bg="white" boxShadow="base">
-            <VStack spacing={4} align="stretch">
-                <Heading
+        <MotionBox
+            p={6}
+            rounded="xl"
+            bg="white"
+            boxShadow="base"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 1 }}
+        >
+            <MotionVStack
+                spacing={4}
+                align="stretch"
+                initial="hidden"
+                animate="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                transition={{ duration: 1 }}
+            >
+                {/* Animated Heading */}
+                <MotionHeading
                     as="h1"
                     size="xl"
                     textAlign="center"
                     fontFamily="Poppins"
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInUp}
+                    transition={{ duration: 1, delay: 0.3 }}
                 >
                     Pertanyaan yang Sering Diajukan (FAQ)
-                </Heading>
+                </MotionHeading>
+
+                {/* FAQ Accordion */}
                 <Accordion allowToggle>
                     {faqData.map((faq, index) => (
                         <FAQItem
@@ -53,30 +91,39 @@ const Home4 = () => {
                         />
                     ))}
                 </Accordion>
-                <Box pt={10} textAlign="center">
+
+                {/* Chat Section */}
+                <MotionBox
+                    pt={10}
+                    textAlign="center"
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInUp}
+                    transition={{ duration: 1, delay: 0.6 }}
+                >
                     <Text mb={2} fontFamily="Poppins">
                         Tidak dapat menemukan yang Anda cari?
                     </Text>
-                    <Text fontFamily="Poppins">
-                        Kami ingin berbicara dengan Anda
-                    </Text>
+                    <Text fontFamily="Poppins">Kami ingin berbicara dengan Anda</Text>
                     <a
                         href="https://wa.me/6282188886665"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <IconButton
+                        <MotionIconButton
                             aria-label="Chat with us"
                             icon={<ChatIcon />}
                             size="lg"
                             isRound
                             colorScheme="blue"
                             mt={4}
+                            whileHover={{ scale: 1.2 }}
+                            transition={{ duration: 0.3 }}
                         />
                     </a>
-                </Box>
-            </VStack>
-        </Box>
+                </MotionBox>
+            </MotionVStack>
+        </MotionBox>
     );
 };
 
