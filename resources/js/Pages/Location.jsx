@@ -13,6 +13,7 @@ const Location = ({ locations: initialLocations, center, show_count, total_count
   const [lat, setLat] = useState(center[0]);
   const [long, setLong] = useState(center[1]);
   const [error, setError] = useState(null);
+  const [ver, setVer] = useState(0);
   const [showCount, setShowCount] = useState(show_count);
   const [locations, setLocations] = useState(initialLocations);
 
@@ -22,6 +23,7 @@ const Location = ({ locations: initialLocations, center, show_count, total_count
                 setLat(position.coords.latitude);
                 setLong(position.coords.longitude);
                 hitSearchLocation(position.coords.latitude, position.coords.longitude);
+                setVer(1);
             },
             (err) => {
                 setError(err.message);
@@ -112,7 +114,7 @@ const Location = ({ locations: initialLocations, center, show_count, total_count
 
           <Flex align="center" borderWidth="1px" borderRadius="lg" px={2} py={1} w={{ base: "90%", md: "80%"}} mx={"auto"} mt={4} backgroundColor={'white'}>
             <Maps
-                key={`${lat}-${long}`}
+                key={`${ver}`}
                 locations={locations}
                 point={[lat, long]}
                 searchLocation={hitSearchLocation}
