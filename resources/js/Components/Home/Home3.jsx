@@ -5,6 +5,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { useLanguage } from "../../Context/LanguageContext";
 import HeaderText from "../Text/HeaderText";
 import FeatureCard from "./FeatureCard";
 import { features, stepsBorrowPelanggan, stepsReturn } from "./homeData";
@@ -33,6 +34,7 @@ const fadeInRight = {
 
 const Home3 = () => {
     const [position, setPosition] = useState(null);
+    const { language } = useLanguage();
 
     // Get the user's current location
     useEffect(() => {
@@ -56,6 +58,28 @@ const Home3 = () => {
         iconSize: [38, 38],
     });
 
+    // Translation Data
+    const translations = {
+        EN: {
+            whyChoose: "Why Choose GoCas?",
+            findUs: "Find us easily",
+            exploreLocations: "Explore all locations",
+            howToRentCustomer: "How to Rent for Customers",
+            howToReturn: "How to Return",
+            introText:
+                "Wherever you go, don't worry about running out of battery! You can find GoCas Stations in your favorite spots. Visit the nearest GoCas Station and start charging!",
+        },
+        ID: {
+            whyChoose: "Kenapa memilih GoCas?",
+            findUs: "Temukan kami dengan mudah",
+            exploreLocations: "Telusuri semua lokasi",
+            howToRentCustomer: "Tata Cara Penyewaan Pelanggan",
+            howToReturn: "Tata Cara Pengembalian",
+            introText:
+                "Kemanapun kamu pergi, tidak perlu khawatir kehabisan baterai! Kamu bisa temukan GoCas Station di tempat-tempat favorit mu. Kunjungi GoCas Station terdekat dan mulai mengisi daya!",
+        },
+    };
+
     return (
         <Box p={{ base: 2, sm: 6 }}>
             {/* Features Section */}
@@ -73,7 +97,8 @@ const Home3 = () => {
                     mx="auto"
                     topMargin={10}
                 >
-                    Kenapa memilih GoCas?
+                    {translations[language].whyChoose}{" "}
+                    {/* Use the translation */}
                 </HeaderText>
                 <MotionGrid
                     templateColumns={{
@@ -105,8 +130,16 @@ const Home3 = () => {
                         >
                             <FeatureCard
                                 icon={feature.icon}
-                                title={feature.title}
-                                description={feature.description}
+                                title={
+                                    language === "EN"
+                                        ? feature.title.EN
+                                        : feature.title.ID
+                                }
+                                description={
+                                    language === "EN"
+                                        ? feature.description.EN
+                                        : feature.description.ID
+                                }
                             />
                         </MotionBox>
                     ))}
@@ -132,17 +165,23 @@ const Home3 = () => {
                 transition={{ duration: 1 }}
             >
                 {[
+                    {
+                        title:
+                            language === "EN"
+                                ? "How to Rent for Customers"
+                                : "Tata Cara Penyewaan Pelanggan",
+                        steps: stepsBorrowPelanggan[language],
+                    },
                     // {
-                    //     title: "Tata Cara Penyewaan Guest",
-                    //     steps: stepsBorrowGuest,
+                    //     title: language === "EN" ? "How to Rent as a Guest" : "Tata Cara Penyewaan Guest",
+                    //     steps: stepsBorrowGuest[language],
                     // },
                     {
-                        title: "Tata Cara Penyewaan Pelanggan",
-                        steps: stepsBorrowPelanggan,
-                    },
-                    {
-                        title: "Tata Cara Pengembalian",
-                        steps: stepsReturn,
+                        title:
+                            language === "EN"
+                                ? "How to Return the Power Bank"
+                                : "Tata Cara Pengembalian Powerbank",
+                        steps: stepsReturn[language],
                     },
                 ].map((item, index) => (
                     <MotionBox
@@ -168,7 +207,7 @@ const Home3 = () => {
                                 "xl:!text-5xl md:!text-4xl !text-3xl max-w-[550px]"
                             }
                         >
-                            {item.title}
+                            {item.title} {/* Use the translated title */}
                         </HeaderText>
                         <Box
                             bg="white"
@@ -203,7 +242,8 @@ const Home3 = () => {
                     mx="auto"
                     topMargin={32}
                 >
-                    Temukan kami dengan mudah
+                    {translations[language].findUs}{" "}
+                    {/* Use the translated text */}
                 </HeaderText>
                 <Flex
                     direction={{ base: "column", md: "row" }}
@@ -261,10 +301,8 @@ const Home3 = () => {
                             mb={6}
                             textAlign={{ base: "center", md: "left" }}
                         >
-                            Kemanapun kamu pergi, tidak perlu khawatir kehabisan
-                            baterai! Kamu bisa temukan GoCas Station di
-                            tempat-tempat favorit mu. Kunjungi GoCas Station
-                            terdekat dan mulai mengisi daya!
+                            {translations[language].introText}{" "}
+                            {/* Use translated intro text */}
                         </Text>
                         <Link href="/location">
                             <Button
@@ -275,7 +313,8 @@ const Home3 = () => {
                                 fontWeight="bold"
                                 borderRadius="full"
                             >
-                                Telusuri semua lokasi
+                                {translations[language].exploreLocations}{" "}
+                                {/* Use translated button text */}
                             </Button>
                         </Link>
                     </MotionBox>
