@@ -96,13 +96,13 @@ const About = () => {
               alignItems={"start"}
               justifyContent={"start"}
               px={"10%"}
-              pt={"30px"}
+              py={"30px"}
               className={"rounded-b-3xl"}
           >
               <HeaderText px={0} size="large" withIcon={false} iconColor="black" className={"text-center"} topMargin={4} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
                   Partner Kami
               </HeaderText>
-              <Flex bgColor={"#F0F0F0"} w={"full"} mt={"16px"} py={"40px"} alignItems={"center"} flexDirection={"column"}>
+              <Flex bgColor={"#F0F0F0"} w={"full"} mt={"24px"} py={"40px"} alignItems={"center"} flexDirection={"column"}>
                   <HeaderText px={0} size="large" withIcon={false} iconColor="black" className={"text-center"} topMargin={4} inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}>
                       Coming Soon
                   </HeaderText>
@@ -117,8 +117,7 @@ const About = () => {
                 alignItems={"start"}
                 justifyContent={"start"}
                 px={"10%"}
-                pt={"64px"}
-                pb={"64px"}
+                py={"64px"}
             >
                 <HeaderText px={0} size="small" withIcon={false} iconColor="black" className={"text-center"} topMargin={4} inputclass={"xl:!text-4xl md:!text-2xl !text-xl"}>
                     Manfaat Kerjasama
@@ -133,6 +132,7 @@ const About = () => {
                 justifyContent={"start"}
                 px={"10%"}
                 className={"rounded-3xl"}
+                py={"64px"}
             >
                 <HeaderText px={0} iconColor={"black"} size={"large"} withIcon={false} inputclass={"xl:!text-4xl md:!text-2xl !text-xl"}>
                     Testimoni Partner
@@ -161,8 +161,7 @@ const About = () => {
                     direction={"column"}
                     my={"48px"}
                     py={"40px"}
-                    ps={{base: "16px", xl: "40px"}}
-                    pe={{base: "16px", xl: "0px"}}
+                    px={{base: "16px", xl: "40px"}}
                     w={"full"}
                     alignItems={"start"}
                     justifyContent={"center"}
