@@ -56,7 +56,7 @@ const About = () => {
                     h={size.height}
                     w={size.width}
                     bgSize="cover"
-                    bgPos="center"
+                    bgPos={{base: "left", md: "center"}}
                     alignItems={"start"}
                     justifyContent={"end"}
                     px={"10%"}

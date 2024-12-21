@@ -47,9 +47,8 @@ const Partnership = () => {
             <MotionFlex
                 spacing={0}
                 bgImage={BackgroundHero}
-                minH={"100vh"}
                 bgSize="cover"
-                bgPos="center"
+                bgPos="left"
                 justifyContent={"end"}
                 alignItems={"end"}
                 direction={{ base: "column-reverse", md: "row" }}
@@ -75,7 +74,7 @@ const Partnership = () => {
                         iconColor={"brown"}
                         size={"large"}
                         withIcon={false}
-                        className={"xl:mt-0 mt-2"}
+                        className={"xl:mt-0 mt-2 md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent pl-2 pb-2 pt-4"}
                         inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
                     >
                         KOLABORASI HEBAT DENGAN GOCAS!
@@ -83,7 +82,7 @@ const Partnership = () => {
                     <Text
                         fontFamily="poppins"
                         mt={"24px"}
-                        className={"md:text-xl text-xs"}
+                        className={"md:text-xl text-xs md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent pl-2 py-1"}
                         color={"black"}
                     >
                         Ingin membawa solusi sewa power bank ke bisnis atau event kamu?
