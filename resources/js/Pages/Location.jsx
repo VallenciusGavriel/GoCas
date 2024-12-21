@@ -6,7 +6,7 @@ import {
     IconButton,
     Input,
     VStack,
-    Text,
+    Text, Button,
 } from "@chakra-ui/react";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
@@ -54,12 +54,16 @@ const Location = ({
     const [locations, setLocations] = useState(initialLocations);
 
     useEffect(() => {
+        getFELocation();
+    }, []);
+
+    const getFELocation = () => {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 setLat(position.coords.latitude);
                 setLong(position.coords.longitude);
                 hitSearchLocation(position.coords.latitude, position.coords.longitude);
-                setVer(1);
+                setVer(ver + 1);
             },
             (err) => {
                 setError(err.message);
@@ -70,7 +74,7 @@ const Location = ({
                 maximumAge: 0,
             }
         );
-    }, []);
+    }
 
     const searchLocation = async (lat = null, lon = null) => {
         try {
@@ -131,7 +135,6 @@ const Location = ({
                 pt={"96px"}
                 pb={5}
                 w={"100%"}
-                minH={"100vh"}
                 alignItems={"start"}
                 position={"relative"}
                 initial="hidden"
@@ -180,6 +183,17 @@ const Location = ({
                             borderRadius="md"
                             ml={2}
                         />
+                    </MotionFlex>
+                    <MotionFlex
+                        align="center"
+                        justify={"center"}
+                        px={2}
+                        py={1}
+                        mt={4}
+                    >
+                        <Button m={"auto"} onClick={() => getFELocation()}>
+                            Re-Center
+                        </Button>
                     </MotionFlex>
                 </Center>
 
