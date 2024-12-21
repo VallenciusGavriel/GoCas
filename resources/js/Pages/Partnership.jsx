@@ -170,38 +170,38 @@ const Partnership = () => {
             </MotionVStack>
 
             {/* Testimonials Section */}
-            <MotionVStack
-                spacing={0}
-                alignItems={"start"}
-                justifyContent={"start"}
-                px={"10%"}
-                className={"rounded-3xl"}
-                py={"64px"}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                transition={{ duration: 1 }}
-            >
-                <HeaderText
-                    px={0}
-                    iconColor={"black"}
-                    size={"large"}
-                    withIcon={false}
-                    inputclass={"xl:!text-4xl md:!text-2xl !text-xl"}
-                >
-                    Testimoni Partner
-                </HeaderText>
-                <Flex
-                    direction={"column"}
-                    my={"auto"}
-                    w={"full"}
-                    alignItems={"center"}
-                    justifyContent={"center"}
-                >
-                    <Testimoni />
-                </Flex>
-            </MotionVStack>
+            {/*<MotionVStack*/}
+            {/*    spacing={0}*/}
+            {/*    alignItems={"start"}*/}
+            {/*    justifyContent={"start"}*/}
+            {/*    px={"10%"}*/}
+            {/*    className={"rounded-3xl"}*/}
+            {/*    py={"64px"}*/}
+            {/*    initial="hidden"*/}
+            {/*    whileInView="visible"*/}
+            {/*    viewport={{ once: true }}*/}
+            {/*    variants={fadeInUp}*/}
+            {/*    transition={{ duration: 1 }}*/}
+            {/*>*/}
+            {/*    <HeaderText*/}
+            {/*        px={0}*/}
+            {/*        iconColor={"black"}*/}
+            {/*        size={"large"}*/}
+            {/*        withIcon={false}*/}
+            {/*        inputclass={"xl:!text-4xl md:!text-2xl !text-xl"}*/}
+            {/*    >*/}
+            {/*        Testimoni Partner*/}
+            {/*    </HeaderText>*/}
+            {/*    <Flex*/}
+            {/*        direction={"column"}*/}
+            {/*        my={"auto"}*/}
+            {/*        w={"full"}*/}
+            {/*        alignItems={"center"}*/}
+            {/*        justifyContent={"center"}*/}
+            {/*    >*/}
+            {/*        <Testimoni />*/}
+            {/*    </Flex>*/}
+            {/*</MotionVStack>*/}
 
             {/* Partner Application Form Section */}
             <MotionFlex
