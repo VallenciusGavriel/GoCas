@@ -1,0 +1,47 @@
+export const productsTranslations = {
+    EN: {
+        heroTitle: "Powerbank & GoCas Station",
+        ctaTitle: "EASY SOLUTION WITH GOCAS!",
+        ctaButton: "WORK WITH US",
+        ctaSubtitle: "Any Other Questions? Please Contact Us",
+        helpCenter: "GOCAS Help Center",
+        email: "Email: support@gocas.id",
+        contactPerson: "Contact Person: +6282188886665",
+        socialMedia: "Social Media: @gocasindonesia",
+        product: {
+            name: "Product Name",
+            description: "Product Description",
+            price: "Price",
+        },
+    },
+    ID: {
+        heroTitle: "Powerbank & GoCas Station",
+        ctaTitle: "SOLUSI MUDAH BERSAMA DENGAN GOCAS!",
+        ctaButton: "KERJA SAMA DENGAN KAMI",
+        ctaSubtitle: "Ada Pertanyaan Lain? Tolong Hubungi Kami",
+        helpCenter: "GOCAS Help Center",
+        email: "Email: support@gocas.id",
+        contactPerson: "Contact Person: +6282188886665",
+        socialMedia: "Social Media: @gocasindonesia",
+        product: {
+            name: "Nama Produk",
+            description: "Deskripsi Produk",
+            price: "Harga",
+        },
+    },
+    CH: {
+        heroTitle: "移动电源与 GoCas 站点",
+        ctaTitle: "与 GOCAS 一起轻松解决方案！",
+        ctaButton: "与我们合作",
+        ctaSubtitle: "有其他问题吗？请联系我们",
+        helpCenter: "GOCAS 帮助中心",
+        email: "电子邮件: support@gocas.id",
+        contactPerson: "联系人: +6282188886665",
+        socialMedia: "社交媒体: @gocasindonesia",
+        product: {
+            name: "产品名称",
+            description: "产品描述",
+            price: "价格",
+        },
+    },
+};

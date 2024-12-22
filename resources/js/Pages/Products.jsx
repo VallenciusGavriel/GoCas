@@ -1,26 +1,18 @@
-import React from "react";
-import {
-    Box,
-    Button,
-    Grid,
-    Link,
-    Text,
-    VStack,
-} from "@chakra-ui/react";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
 import ProductCard from "@/Components/Products/ProductCard";
-import { Head } from "@inertiajs/react";
-import Background from "../../../public/images/products/bg2.jpg";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
+import { useLanguage } from "@/Context/LanguageContext";
+import { productsTranslations } from "@/Pages/productsTranslation";
+import { Box, Button, Grid, Link, Text, VStack } from "@chakra-ui/react";
+import { Head } from "@inertiajs/react";
 import { motion } from "framer-motion";
+import Background from "../../../public/images/products/bg2.jpg";
 
-// Framer Motion wrappers
 const MotionBox = motion(Box);
 const MotionVStack = motion(VStack);
 const MotionGrid = motion(Grid);
 
-// Animation variants
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -37,6 +29,9 @@ const fadeInRight = {
 };
 
 const Products = ({ products, meta, schema }) => {
+    const { language } = useLanguage();
+    const t = productsTranslations[language];
+
     return (
         <div className={"overflow-x-hidden"}>
             <Navbar />
@@ -98,7 +93,7 @@ const Products = ({ products, meta, schema }) => {
                         inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
                         px={0}
                     >
-                        Powerbank & GoCas Station
+                        {t.heroTitle}
                     </HeaderText>
                     <MotionGrid
                         mt={10}
@@ -147,15 +142,19 @@ const Products = ({ products, meta, schema }) => {
                         withIcon={false}
                         inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}
                     >
-                        SOLUSI MUDAH BERSAMA DENGAN GOCAS!
+                        {t.ctaTitle}
                     </HeaderText>
                     <Link href={"/partnership"}>
-                        <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.3 }}>
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                        >
                             <Button
                                 bgGradient="linear(to-r, #6EA93C, #25893C)"
                                 color="white"
                                 _hover={{
-                                    bgGradient: "linear(to-r, #25893C, #6EA93C)",
+                                    bgGradient:
+                                        "linear(to-r, #25893C, #6EA93C)",
                                 }}
                                 borderRadius="full"
                                 fontSize="lg"
@@ -172,7 +171,7 @@ const Products = ({ products, meta, schema }) => {
                                     fontFamily="poppins"
                                     className={"md:text-lg text-xs"}
                                 >
-                                    KERJA SAMA DENGAN KAMI
+                                    {t.ctaButton}
                                 </Text>
                             </Button>
                         </motion.div>
@@ -185,7 +184,7 @@ const Products = ({ products, meta, schema }) => {
                         withIcon={false}
                         inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}
                     >
-                        Ada Pertanyaan Lain? Tolong Hubungi Kami
+                        {t.ctaSubtitle}
                     </HeaderText>
                     <HeaderText
                         px={0}
@@ -194,28 +193,28 @@ const Products = ({ products, meta, schema }) => {
                         withIcon={false}
                         inputclass={"xl:!text-4xl md:!text-3xl !text-2xl"}
                     >
-                        GOCAS Help Center
+                        {t.helpCenter}
                     </HeaderText>
                     <Text
                         fontFamily="poppins"
                         mt={"36px"}
                         className={"md:text-xl text-sm"}
                     >
-                        Email: support@gocas.id
+                        {t.email}
                     </Text>
                     <Text
                         fontFamily="poppins"
                         mt={"24px"}
                         className={"md:text-xl text-sm"}
                     >
-                        Contact Person: +6282188886665
+                        {t.contactPerson}
                     </Text>
                     <Text
                         fontFamily="poppins"
                         mt={"24px"}
                         className={"md:text-xl text-sm"}
                     >
-                        Social Media: @gocasindonesia
+                        {t.socialMedia}
                     </Text>
                 </MotionVStack>
             </Box>
