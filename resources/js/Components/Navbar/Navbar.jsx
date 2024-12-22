@@ -156,19 +156,26 @@ const Navbar = () => {
                         <Menu>
                             <MenuButton
                                 as={IconButton}
-                                icon={
-                                    <Text>
-                                        {languages[language]["select_language"]}{" "}
-                                        <ChevronDownIcon />
-                                    </Text>
-                                }
                                 px={4}
-                                color={"brown"}
+                                color={"white"}
+                                bg={"#855c3c"}
+                                _hover={{ bg: "brown" }}
+                                _active={{ bg: "brown" }}
                                 aria-label="Select Language"
-                                _hover={{ bg: "yellow.500" }}
-                                _active={{ bg: "yellow.500" }}
-                            />
+                            >
+                                {language === "EN" && "English"}
+                                {language === "ID" && "Indonesia"}
+                                {language === "CH" && "Chinese"}{" "}
+                                <ChevronDownIcon />
+                            </MenuButton>
                             <MenuList bg={"brown"} px={4}>
+                                <MenuItem
+                                    onClick={() => handleLanguageChange("ID")}
+                                >
+                                    <Text color="black" textAlign="center">
+                                        Indonesia
+                                    </Text>
+                                </MenuItem>
                                 <MenuItem
                                     onClick={() => handleLanguageChange("EN")}
                                 >
@@ -177,10 +184,10 @@ const Navbar = () => {
                                     </Text>
                                 </MenuItem>
                                 <MenuItem
-                                    onClick={() => handleLanguageChange("ID")}
+                                    onClick={() => handleLanguageChange("CH")}
                                 >
                                     <Text color="black" textAlign="center">
-                                        Indonesia
+                                        Chinese
                                     </Text>
                                 </MenuItem>
                             </MenuList>
@@ -249,11 +256,10 @@ const Navbar = () => {
                                         as={IconButton}
                                         icon={
                                             <Text>
-                                                {
-                                                    languages[language][
-                                                        "select_language"
-                                                    ]
-                                                }
+                                                {language === "EN" && "English"}
+                                                {language === "ID" &&
+                                                    "Indonesia"}
+                                                {language === "CH" && "Chinese"}{" "}
                                                 <ChevronDownIcon />
                                             </Text>
                                         }
@@ -267,6 +273,15 @@ const Navbar = () => {
                                 <MenuList bg={"brown"} px={4}>
                                     <MenuItem
                                         onClick={() =>
+                                            handleLanguageChange("ID")
+                                        }
+                                    >
+                                        <Text color="black" textAlign="center">
+                                            Indonesia
+                                        </Text>
+                                    </MenuItem>
+                                    <MenuItem
+                                        onClick={() =>
                                             handleLanguageChange("EN")
                                         }
                                     >
@@ -276,11 +291,11 @@ const Navbar = () => {
                                     </MenuItem>
                                     <MenuItem
                                         onClick={() =>
-                                            handleLanguageChange("ID")
+                                            handleLanguageChange("CH")
                                         }
                                     >
                                         <Text color="black" textAlign="center">
-                                            Indonesia
+                                            Chinese
                                         </Text>
                                     </MenuItem>
                                 </MenuList>

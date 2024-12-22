@@ -78,6 +78,15 @@ const Home3 = () => {
             introText:
                 "Kemanapun kamu pergi, tidak perlu khawatir kehabisan baterai! Kamu bisa temukan GoCas Station di tempat-tempat favorit mu. Kunjungi GoCas Station terdekat dan mulai mengisi daya!",
         },
+        CH: {
+            whyChoose: "为什么选择 GoCas？",
+            findUs: "轻松找到我们",
+            exploreLocations: "探索所有位置",
+            howToRentCustomer: "客户租赁指南",
+            howToReturn: "归还指南",
+            introText:
+                "无论你走到哪里，都不必担心电量耗尽！你可以在你喜欢的地点找到 GoCas 站点。访问最近的 GoCas 站点并开始充电！",
+        },
     };
 
     return (

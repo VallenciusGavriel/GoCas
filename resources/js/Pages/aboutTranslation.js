@@ -49,4 +49,29 @@ export const aboutTranslations = {
                 "Powerbank GoCas adalah solusi terbaik untuk menjaga smartphone, kamera, atau perangkat seluler Anda agar tetap terisi daya saat bepergian. Dengan teknologi canggih dan sistem powerbank sharing, anda bisa dengan mudah menyewa powerbank kapan saja dan di mana saja melalui GoCas Station terdekat!",
         },
     },
+    CH: {
+        title: "关于我们",
+        header: "与 GoCas 一起无限活动",
+        description: `你好！我们是 GoCas Indonesia，为那些活跃且不想麻烦的用户提供基于物联网的充电宝租赁解决方案。通过先进的技术，GoCas 确保您的设备随时随地充满电。自推出以来，我们提供了灵活且实用的充电宝租赁服务。`,
+        commitmentTitle: "我们对社会的承诺",
+        commitmentDescription:
+            "我们致力于确保您始终保持联系不中断。使用 GoCas，低电量不再是问题！",
+        ecoFriendly: {
+            title: "环保充电宝",
+            description:
+                "GoCas 使用高质量、耐用且环保的充电宝，以支持更加可持续的生活方式。",
+            alt: "环保",
+        },
+        community: {
+            title: "让社区远离低电量",
+            description:
+                "我们致力于确保您始终保持联系不中断。使用 GoCas，低电量不再是问题！",
+            alt: "社区",
+        },
+        services: {
+            title: "我们的服务",
+            description:
+                "GoCas 充电宝是保持您的智能手机、相机或移动设备在旅途中充满电的最佳解决方案。通过先进的技术和充电宝共享系统，您可以随时随地在最近的 GoCas 站点轻松租用充电宝！",
+        },
+    },
 };

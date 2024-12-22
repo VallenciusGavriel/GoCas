@@ -69,6 +69,28 @@ const faqData = {
             answer: "Jika powerbank yang Anda sewa tidak berfungsi, segera kembalikan ke stasiun GoCas dan lapor melalui aplikasi untuk mendapatkan bantuan lebih lanjut.",
         },
     ],
+    CH: [
+        {
+            question: "什么是 GoCas？",
+            answer: "GoCas 是一个充电宝租赁服务。只需打开 GoCas 应用，找到最近的 GoCas 站点，几次点击即可租用/归还充电宝。",
+        },
+        {
+            question: "如何租用/归还充电宝？",
+            answer: "很简单！只需打开 GoCas 应用，找到最近的 GoCas 站点，几次点击即可完成充电宝的租用/归还。",
+        },
+        {
+            question: "如何找到 GoCas 租赁站？",
+            answer: "打开 GoCas 应用并使用搜索功能，从您所在的位置找到最近的 GoCas 站点。",
+        },
+        {
+            question: "充电宝可以租用多久？",
+            answer: "您可以根据需要租用充电宝，只需在租赁条款规定的时间内归还即可。",
+        },
+        {
+            question: "如果充电宝无法使用，我该怎么办？",
+            answer: "如果您租用的充电宝无法使用，请立即将其归还到 GoCas 站点，并通过应用程序报告以获得进一步的帮助。",
+        },
+    ],
 };
 
 const Home4 = () => {

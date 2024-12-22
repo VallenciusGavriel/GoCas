@@ -36,5 +36,24 @@
         "greeting": "SALAM KENAL, Sobat GOCAS!",
         "intro_text": "Hai! Kami GoCas Indonesia, solusi cerdas buat kamu yang aktif dan nggak mau ribet. Dengan teknologi berbasis Internet of Things (IoT), GoCas hadir untuk memastikan gadget kamu tetap terisi penuh kapan pun dan di mana pun kamu butuh...",
         "read_more": "Baca Selengkapnya"
+    },
+    "CH": {
+        "about": "关于我们",
+        "location": "位置",
+        "products": "产品",
+        "partnership": "合作伙伴",
+        "help": "帮助中心",
+        "language": "语言",
+        "select_language": "选择语言",
+        "headline_1": "轻松充电",
+        "headline_2": "随时",
+        "headline_3": "随地",
+        "description": "GoCas Indonesia 是一个创新的移动电源租赁品牌，为活跃和充满活力的用户提供充电解决方案。",
+        "button_text": "找到最近的 GoCas",
+        "header_1": "用以下方式为您的设备充电",
+        "header_2": "#立刻使用GOCAS",
+        "greeting": "你好，GoCas的朋友们！",
+        "intro_text": "嗨！我们是 GoCas Indonesia，为不喜欢麻烦的活跃人群提供智能解决方案。通过物联网 (IoT) 技术，GoCas 确保您的设备无论何时何地都能充满电...",
+        "read_more": "了解更多"
     }
 }
