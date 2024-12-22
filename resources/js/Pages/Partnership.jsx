@@ -1,20 +1,14 @@
-import React from "react";
-import {
-    Box,
-    Flex,
-    Image,
-    Text,
-    VStack,
-} from "@chakra-ui/react";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
-import { Head } from "@inertiajs/react";
-import BackgroundHero from "../../../public/images/partnership/bg.png";
-import HeaderText from "@/Components/Text/HeaderText.jsx";
-import ScrollableCards from "@/Components/Partnership/ScrollableCards.jsx";
-import Testimoni from "@/Components/Partnership/Testimoni.jsx";
 import Form from "@/Components/Partnership/Form.jsx";
+import ScrollableCards from "@/Components/Partnership/ScrollableCards.jsx";
+import HeaderText from "@/Components/Text/HeaderText.jsx";
+import { useLanguage } from "@/Context/LanguageContext";
+import { partnershipTranslations } from "@/Translates/partnershipTranslation";
+import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import { Head } from "@inertiajs/react";
 import { motion } from "framer-motion";
+import BackgroundHero from "../../../public/images/partnership/bg.png";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -38,6 +32,9 @@ const fadeInRight = {
 };
 
 const Partnership = () => {
+    const { language } = useLanguage();
+    const t = partnershipTranslations[language];
+
     return (
         <div className={"overflow-x-hidden"}>
             <Navbar />
@@ -74,21 +71,22 @@ const Partnership = () => {
                         iconColor={"brown"}
                         size={"large"}
                         withIcon={false}
-                        className={"xl:mt-0 mt-2 md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent pl-2 pb-2 pt-4"}
+                        className={
+                            "xl:mt-0 mt-2 md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent pl-2 pb-2 pt-4"
+                        }
                         inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
                     >
-                        KOLABORASI HEBAT DENGAN GOCAS!
+                        {t.heroTitle}
                     </HeaderText>
                     <Text
                         fontFamily="poppins"
                         mt={"24px"}
-                        className={"md:text-xl text-xs md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent pl-2 py-1"}
+                        className={
+                            "md:text-xl text-xs md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent pl-2 py-1"
+                        }
                         color={"black"}
                     >
-                        Ingin membawa solusi sewa power bank ke bisnis atau event kamu?
-                        GOCAS membuka peluang kolaborasi bagi partner yang ingin memperluas
-                        jaringan dan memberikan layanan lebih bagi pelanggan. Mari
-                        bersama-sama ciptakan pengalaman yang lebih praktis dan modern!
+                        {t.description}
                     </Text>
                 </Box>
             </MotionFlex>
@@ -116,7 +114,7 @@ const Partnership = () => {
                     topMargin={4}
                     inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
                 >
-                    Partner Kami
+                    {t.partnerTitle}
                 </HeaderText>
                 <Flex
                     bgColor={"#F0F0F0"}
@@ -135,9 +133,9 @@ const Partnership = () => {
                         topMargin={4}
                         inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
                     >
-                        Coming Soon
+                        {t.comingSoon}
                     </HeaderText>
-                    <Text mt={"24px"}>Any partner will be visible here</Text>
+                    <Text mt={"24px"}>{t.partnerVisible}</Text>
                 </Flex>
             </MotionVStack>
 
@@ -163,7 +161,7 @@ const Partnership = () => {
                     topMargin={4}
                     inputclass={"xl:!text-4xl md:!text-2xl !text-xl"}
                 >
-                    Manfaat Kerjasama
+                    {t.benefitsTitle}
                 </HeaderText>
                 <ScrollableCards />
             </MotionVStack>
@@ -236,14 +234,13 @@ const Partnership = () => {
                             iconColor={"black"}
                             size={"large"}
                             withIcon={false}
-                            inputclass={"xl:!text-4xl md:!text-2xl !text-xl mb-2"}
+                            inputclass={
+                                "xl:!text-4xl md:!text-2xl !text-xl mb-2"
+                            }
                         >
-                            Form Aplikasi Mitra
+                            {t.applicationFormTitle}
                         </HeaderText>
-                        <Text>
-                            Ga perlu susah-susah menyediakan stop kontak, dapatkan hasil
-                            tambahan, dan jangkau pengunjungmu lebih luas dengan #MITRAGOCAS
-                        </Text>
+                        <Text>{t.applicationFormDescription}</Text>
                     </Box>
                     <Form />
                 </Flex>
