@@ -18,7 +18,7 @@ import { motion } from "framer-motion";
 import { SearchIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../Context/LanguageContext";
-import { locationTranslations } from "../Pages/locationTranslation";
+import { locationTranslations } from "../Translates/locationTranslation";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);

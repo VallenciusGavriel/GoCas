@@ -2,17 +2,19 @@ import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
 import ProductCard from "@/Components/Products/ProductCard";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
-import { useLanguage } from "@/Context/LanguageContext";
-import { productsTranslations } from "@/Pages/productsTranslation";
+import { useLanguage } from "@/Context/LanguageContext"; // Importing the context hook
+import { productsTranslations } from "@/Translates/productsTranslation"; // Import translations
 import { Box, Button, Grid, Link, Text, VStack } from "@chakra-ui/react";
 import { Head } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import Background from "../../../public/images/products/bg2.jpg";
 
+// Framer Motion wrappers
 const MotionBox = motion(Box);
 const MotionVStack = motion(VStack);
 const MotionGrid = motion(Grid);
 
+// Animation variants
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },

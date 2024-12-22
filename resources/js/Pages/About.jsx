@@ -16,7 +16,7 @@ import Community from "../../../public/images/about/community.png";
 import EcoFriendly from "../../../public/images/about/ecofriendly.png";
 import PBShare from "../../../public/images/about/pbshare.png";
 import { useLanguage } from "../Context/LanguageContext";
-import { aboutTranslations } from "../Pages/aboutTranslation";
+import { aboutTranslations } from "../Translates/aboutTranslation";
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);

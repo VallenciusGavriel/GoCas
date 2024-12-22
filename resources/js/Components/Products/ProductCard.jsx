@@ -1,9 +1,14 @@
 import HeaderText from "@/Components/Text/HeaderText.jsx";
+import { useLanguage } from "@/Context/LanguageContext";
+import { productsTranslations } from "@/Translates/productsTranslation";
 import { Box, Flex, Grid, Text, VStack } from "@chakra-ui/react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 const ProductCard = ({ product }) => {
+    const { language } = useLanguage();
+    const t = productsTranslations[language].product;
+
     return (
         <Box
             width="full"
@@ -48,8 +53,8 @@ const ProductCard = ({ product }) => {
                                 fontWeight={"bold"}
                             >
                                 {product.type === "Powerbank"
-                                    ? "Kapasitas: "
-                                    : "Kekuatan Pengisian: "}
+                                    ? t.capacityLabel
+                                    : t.chargePowerLabel}
                             </Text>
                             <Text fontFamily="poppins" fontSize={"lg"}>
                                 {product.capacity}
@@ -62,8 +67,8 @@ const ProductCard = ({ product }) => {
                                 fontWeight={"bold"}
                             >
                                 {product.type === "Powerbank"
-                                    ? "Kekuatan Daya: "
-                                    : "Berat Bersih: "}
+                                    ? t.powerLabel
+                                    : t.netWeightLabel}
                             </Text>
                             <Text fontFamily="poppins" fontSize={"lg"}>
                                 {product.compatibility}
@@ -76,8 +81,8 @@ const ProductCard = ({ product }) => {
                                 fontWeight={"bold"}
                             >
                                 {product.type === "Powerbank"
-                                    ? "Mendukung Kabel: "
-                                    : "Kapasitas Slot: "}
+                                    ? t.supportCableLabel
+                                    : t.slotCapacityLabel}
                             </Text>
                             <Text fontFamily="poppins" fontSize={"lg"}>
                                 {product.feature}
@@ -89,7 +94,7 @@ const ProductCard = ({ product }) => {
                                 fontSize={"lg"}
                                 fontWeight={"bold"}
                             >
-                                Dimensi Ukuran:
+                                {t.sizeDimensionLabel}
                             </Text>
                             <Text fontFamily="poppins" fontSize={"lg"}>
                                 {product.dimensi}

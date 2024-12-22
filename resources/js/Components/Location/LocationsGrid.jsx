@@ -1,7 +1,7 @@
 import pin from "@/../../public/images/location/pin.png";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 import { useLanguage } from "@/Context/LanguageContext";
-import { locationTranslations } from "@/Pages/locationTranslation";
+import { locationTranslations } from "@/Translates/locationTranslation";
 import {
     Box,
     Button,
