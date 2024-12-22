@@ -1,21 +1,24 @@
-import React, { useEffect, useState } from "react";
+import Footer from "@/Components/Footer/Footer";
+import LocationsGrid from "@/Components/Location/LocationsGrid.jsx";
+import Maps from "@/Components/Location/Maps.jsx";
+import Navbar from "@/Components/Navbar/Navbar";
+import HeaderText from "@/Components/Text/HeaderText.jsx";
 import {
+    Box,
+    Button,
     Center,
     Flex,
-    Box,
     IconButton,
     Input,
+    Text,
     VStack,
-    Text, Button,
 } from "@chakra-ui/react";
-import Footer from "@/Components/Footer/Footer";
-import Navbar from "@/Components/Navbar/Navbar";
 import { Head } from "@inertiajs/react";
-import HeaderText from "@/Components/Text/HeaderText.jsx";
-import { SearchIcon } from "lucide-react";
-import Maps from "@/Components/Location/Maps.jsx";
-import LocationsGrid from "@/Components/Location/LocationsGrid.jsx";
 import { motion } from "framer-motion";
+import { SearchIcon } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useLanguage } from "../Context/LanguageContext";
+import { locationTranslations } from "../Pages/locationTranslation";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -39,12 +42,12 @@ const fadeInRight = {
 };
 
 const Location = ({
-                      locations: initialLocations,
-                      center,
-                      show_count,
-                      total_count,
-                      station_count,
-                  }) => {
+    locations: initialLocations,
+    center,
+    show_count,
+    total_count,
+    station_count,
+}) => {
     const [query, setQuery] = useState("");
     const [lat, setLat] = useState(center[0]);
     const [long, setLong] = useState(center[1]);
@@ -52,6 +55,10 @@ const Location = ({
     const [ver, setVer] = useState(0);
     const [showCount, setShowCount] = useState(show_count);
     const [locations, setLocations] = useState(initialLocations);
+
+    // Get current language from context
+    const { language, setLanguage } = useLanguage();
+    const t = locationTranslations[language]; // Get translations based on current language
 
     useEffect(() => {
         getFELocation();
@@ -62,7 +69,10 @@ const Location = ({
             (position) => {
                 setLat(position.coords.latitude);
                 setLong(position.coords.longitude);
-                hitSearchLocation(position.coords.latitude, position.coords.longitude);
+                hitSearchLocation(
+                    position.coords.latitude,
+                    position.coords.longitude
+                );
                 setVer(ver + 1);
             },
             (err) => {
@@ -74,9 +84,9 @@ const Location = ({
                 maximumAge: 0,
             }
         );
-    }
+    };
 
-    const searchLocation = async (lat = null, lon = null) => {
+    const searchLocation = async () => {
         try {
             const response = await fetch(
                 `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
@@ -90,7 +100,7 @@ const Location = ({
                 setLong(data[0].lon);
                 setError(null);
             } else {
-                setError("Location not found.");
+                setError(t.searchNotFound);
                 setLat(null);
                 setLong(null);
                 return;
@@ -98,7 +108,7 @@ const Location = ({
 
             await hitSearchLocation(data[0].lat, data[0].lon);
         } catch (err) {
-            setError("An error occurred while searching for the location.");
+            setError(t.searchError);
             setLat(null);
             setLong(null);
         }
@@ -129,7 +139,7 @@ const Location = ({
 
     return (
         <>
-            <Head title="Location" />
+            <Head title={t.title} />
             <Navbar />
             <MotionVStack
                 pt={"96px"}
@@ -149,7 +159,7 @@ const Location = ({
                     iconColor="black"
                     inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}
                 >
-                    Lokasi GoCas
+                    {t.header}
                 </HeaderText>
 
                 <Center mx={"auto"}>
@@ -170,15 +180,15 @@ const Location = ({
                         transition={{ duration: 1 }}
                     >
                         <Input
-                            placeholder="Cari Lokasi"
+                            placeholder={t.searchPlaceholder}
                             value={query}
                             w="100%"
                             onChange={(e) => setQuery(e.target.value)}
                         />
                         <IconButton
-                            aria-label="Search location"
+                            aria-label={t.searchPlaceholder}
                             icon={<SearchIcon />}
-                            onClick={() => searchLocation()}
+                            onClick={searchLocation}
                             colorScheme="yellow"
                             borderRadius="md"
                             ml={2}
@@ -191,8 +201,8 @@ const Location = ({
                         py={1}
                         mt={4}
                     >
-                        <Button m={"auto"} onClick={() => getFELocation()}>
-                            Re-Center
+                        <Button m={"auto"} onClick={getFELocation}>
+                            {t.reCenter}
                         </Button>
                     </MotionFlex>
                 </Center>
@@ -242,13 +252,23 @@ const Location = ({
                             iconColor="black"
                             inputclass={"xl:!text-3xl md:!text-2xl !text-xl"}
                         >
-                            Lokasi Terdekat
+                            {t.nearbyLocations}
                         </HeaderText>
-                        <Box borderTop={"1px"} w={"100%"} borderColor={"#cccccc"} />
+                        <Box
+                            borderTop={"1px"}
+                            w={"100%"}
+                            borderColor={"#cccccc"}
+                        />
                         <Flex gap={8}>
-                            <Text>Lokasi Ditunjukkan: {showCount}</Text>
-                            <Text>Total Lokasi: {total_count}</Text>
-                            <Text>Total Stasiun: {station_count}</Text>
+                            <Text>
+                                {t.locationsShown}: {showCount}
+                            </Text>
+                            <Text>
+                                {t.totalLocations}: {total_count}
+                            </Text>
+                            <Text>
+                                {t.totalStations}: {station_count}
+                            </Text>
                         </Flex>
                     </VStack>
 

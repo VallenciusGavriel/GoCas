@@ -1,0 +1,32 @@
+export const locationTranslations = {
+    EN: {
+        title: "Location",
+        header: "GoCas Location",
+        searchPlaceholder: "Search Location",
+        reCenter: "Re-Center",
+        nearbyLocations: "Nearby Locations",
+        locationsShown: "Locations Shown",
+        totalLocations: "Total Locations",
+        totalStations: "Total Stations",
+    },
+    ID: {
+        title: "Lokasi",
+        header: "Lokasi GoCas",
+        searchPlaceholder: "Cari Lokasi",
+        reCenter: "Pusatkan Kembali",
+        nearbyLocations: "Lokasi Terdekat",
+        locationsShown: "Lokasi Ditunjukkan",
+        totalLocations: "Total Lokasi",
+        totalStations: "Total Stasiun",
+    },
+    CH: {
+        title: "位置",
+        header: "GoCas 位置",
+        searchPlaceholder: "搜索位置",
+        reCenter: "重新定位",
+        nearbyLocations: "附近位置",
+        locationsShown: "显示位置",
+        totalLocations: "总位置",
+        totalStations: "总站点",
+    },
+};
