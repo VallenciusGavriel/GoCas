@@ -1,5 +1,6 @@
 {
     "EN": {
+        "help_center": "Help Center",
         "about": "About Us",
         "location": "Location",
         "products": "Products",
@@ -19,6 +20,7 @@
         "read_more": "Read more"
     },
     "ID": {
+        "help_center": "Pusat Bantuan",
         "about": "Tentang Kami",
         "location": "Lokasi",
         "products": "Produk",
@@ -38,6 +40,7 @@
         "read_more": "Baca Selengkapnya"
     },
     "CH": {
+        "help_center": "帮助中心",
         "about": "关于我们",
         "location": "位置",
         "products": "产品",

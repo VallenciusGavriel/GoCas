@@ -16,9 +16,9 @@ import {
     useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import languages from "../../../../public/i18n/languages.json";
 import GocasLogo from "../../../../public/images/navbar/gocas-logo.png";
 import { useLanguage } from "../../Context/LanguageContext";
+import languages from "../../Translates/languages.json";
 // Import images
 
 const MotionBox = motion(Box);
@@ -50,7 +50,7 @@ const Navbar = () => {
     // Update these buttons if needed
     const buttons = [
         {
-            label: "Help Center",
+            label: languages[language]["help_center"],
             variant: "solid",
             id: "helpButton",
             href: "https://wa.me/6282188886665",

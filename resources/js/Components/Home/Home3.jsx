@@ -142,11 +142,15 @@ const Home3 = () => {
                                 title={
                                     language === "EN"
                                         ? feature.title.EN
+                                        : language === "CH"
+                                        ? feature.title.CH
                                         : feature.title.ID
                                 }
                                 description={
                                     language === "EN"
                                         ? feature.description.EN
+                                        : language === "CH"
+                                        ? feature.description.CH
                                         : feature.description.ID
                                 }
                             />
@@ -178,6 +182,8 @@ const Home3 = () => {
                         title:
                             language === "EN"
                                 ? "How to Rent for Customers"
+                                : language === "CH"
+                                ? "如何租用给客户"
                                 : "Tata Cara Penyewaan Pelanggan",
                         steps: stepsBorrowPelanggan[language],
                     },
@@ -189,6 +195,8 @@ const Home3 = () => {
                         title:
                             language === "EN"
                                 ? "How to Return the Power Bank"
+                                : language === "CH"
+                                ? "如何归还充电宝"
                                 : "Tata Cara Pengembalian Powerbank",
                         steps: stepsReturn[language],
                     },

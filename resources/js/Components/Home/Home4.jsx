@@ -130,6 +130,8 @@ const Home4 = () => {
                 >
                     {language === "EN"
                         ? "Frequently Asked Questions (FAQ)"
+                        : language === "CH"
+                        ? "常见问题 (FAQ)"
                         : "Pertanyaan yang Sering Diajukan (FAQ)"}
                 </MotionHeading>
 
@@ -156,13 +158,18 @@ const Home4 = () => {
                     <Text mb={2} fontFamily="Poppins">
                         {language === "EN"
                             ? "Can't find what you're looking for?"
+                            : language === "CH"
+                            ? "找不到您想要的？"
                             : "Tidak dapat menemukan yang Anda cari?"}
                     </Text>
                     <Text fontFamily="Poppins">
                         {language === "EN"
                             ? "We'd love to talk to you"
+                            : language === "CH"
+                            ? "我们很乐意与您交谈"
                             : "Kami ingin berbicara dengan Anda"}
                     </Text>
+
                     <a
                         href="https://wa.me/6282188886665"
                         target="_blank"

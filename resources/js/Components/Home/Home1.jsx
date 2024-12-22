@@ -9,10 +9,10 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
-import languages from "../../../../public/i18n/languages.json";
 import AppStore from "../../../../public/images/navbar/appstore.png";
 import GPlay from "../../../../public/images/navbar/gplay.png";
 import { useLanguage } from "../../Context/LanguageContext";
+import languages from "../../Translates/languages.json";
 import QRCode from "./../../../../public/images/home/qr-code.png";
 import HeaderText from "./../Text/HeaderText";
 

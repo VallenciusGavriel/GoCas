@@ -1,7 +1,7 @@
 import { Box, Link, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import languages from "../../../../public/i18n/languages.json";
 import { useLanguage } from "../../Context/LanguageContext";
+import languages from "../../Translates/languages.json";
 import HeaderText from "../Text/HeaderText";
 
 // Framer Motion Wrappers

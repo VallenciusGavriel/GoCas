@@ -1,3 +1,4 @@
+import { useLanguage } from "@/Context/LanguageContext";
 import { Box, Flex, Grid, Icon, Image, Link, Text } from "@chakra-ui/react";
 import { FaWhatsapp } from "react-icons/fa";
 import AppStore from "./../../../../public/images/navbar/appstore.png";
@@ -10,6 +11,7 @@ import Tiktok from "./../../../../public/images/navbar/tiktok.png";
 import X from "./../../../../public/images/navbar/x.png";
 
 const Footer = () => {
+    const { language } = useLanguage();
     return (
         <Box
             px={8}
@@ -51,20 +53,58 @@ const Footer = () => {
                         templateColumns={{ base: "1fr", md: `repeat(2, 1fr)` }}
                         gap={{ base: 2, md: 6 }}
                     >
-                        <Link href={"/"}>Home</Link>
-                        <Link href={"/about"}>Tentang Kami</Link>
+                        <Link href={"/"}>
+                            {language === "EN"
+                                ? "Home"
+                                : language === "CH"
+                                ? "首页"
+                                : "Beranda"}
+                        </Link>
+                        <Link href={"/about"}>
+                            {language === "EN"
+                                ? "About Us"
+                                : language === "CH"
+                                ? "关于我们"
+                                : "Tentang Kami"}
+                        </Link>
                         {/*<Link href={"/users"}>Pengguna</Link>*/}
-
-                        <Link href={"/location"}>Lokasi</Link>
-                        <Link href={"/partnership"}>Partnership</Link>
-
-                        <Link href={"/products"}>Produk</Link>
+                        <Link href={"/location"}>
+                            {language === "EN"
+                                ? "Location"
+                                : language === "CH"
+                                ? "位置"
+                                : "Lokasi"}
+                        </Link>
+                        <Link href={"/partnership"}>
+                            {language === "EN"
+                                ? "Partnership"
+                                : language === "CH"
+                                ? "合作伙伴"
+                                : "Kemitraan"}
+                        </Link>
+                        <Link href={"/products"}>
+                            {language === "EN"
+                                ? "Products"
+                                : language === "CH"
+                                ? "产品"
+                                : "Produk"}
+                        </Link>
                         {/*<Link href={"/faq"}>FAQ</Link>*/}
                     </Grid>
                 </Box>
                 <Box color={"white"} fontWeight={"extrabold"}>
-                    <Text mb={3}>Download sekarang di</Text>
-                    <Link href={"https://play.google.com/store/apps/details?id=so.dian.gocasid"}>
+                    <Text mb={3}>
+                        {language === "EN"
+                            ? "Download now on"
+                            : language === "CH"
+                            ? "立即下载"
+                            : "Unduh sekarang di"}
+                    </Text>
+                    <Link
+                        href={
+                            "https://play.google.com/store/apps/details?id=so.dian.gocasid"
+                        }
+                    >
                         <Image
                             src={GPlay}
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
@@ -73,7 +113,11 @@ const Footer = () => {
                             objectFit="contain"
                         />
                     </Link>
-                    <Link href={"https://apps.apple.com/id/app/gocas/id6738688391?l=id"}>
+                    <Link
+                        href={
+                            "https://apps.apple.com/id/app/gocas/id6738688391?l=id"
+                        }
+                    >
                         <Image
                             src={AppStore}
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
@@ -106,7 +150,13 @@ const Footer = () => {
                     align={"center"}
                     direction={{ md: "row", base: "column" }}
                 >
-                    <Text>Ikuti Kami</Text>
+                    <Text>
+                        {language === "EN"
+                            ? "Follow Us"
+                            : language === "CH"
+                            ? "关注我们"
+                            : "Ikuti Kami"}
+                    </Text>
                     <Flex gap={4} textAlign={"center"} align={"center"}>
                         <Link href={"https://www.instagram.com/gocasindonesia"}>
                             <Image
