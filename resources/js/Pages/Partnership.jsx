@@ -63,7 +63,7 @@ const Partnership = () => {
                     w={{ base: "full", lg: "60%" }}
                     rounded={"xl"}
                     mt={{ base: "24px", xl: "64px" }}
-                    px={{ base: "32px", xl: "64px" }}
+                    px={{ base: "0px", xl: "64px" }}
                     py={{ base: "24px", xl: "32px" }}
                 >
                     <HeaderText
