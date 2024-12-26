@@ -12,6 +12,7 @@ import {
 import { Head } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import Background from "../../../public/images/about/bg1.png";
+import BackgroundPhone from "../../../public/images/about/bg2.png";
 import Community from "../../../public/images/about/community.png";
 import EcoFriendly from "../../../public/images/about/ecofriendly.png";
 import PBShare from "../../../public/images/about/pbshare.png";
@@ -50,13 +51,13 @@ const About = () => {
             >
                 <MotionVStack
                     spacing={0}
-                    bgImage={Background}
+                    bgImage={{base: BackgroundPhone, md: Background}}
                     mb={2}
                     minH={"100vh"}
                     h={size.height}
                     w={size.width}
                     bgSize="cover"
-                    bgPos={{ base: "left", md: "center" }}
+                    bgPos={"center"}
                     alignItems={"start"}
                     justifyContent={"end"}
                     px={"10%"}
