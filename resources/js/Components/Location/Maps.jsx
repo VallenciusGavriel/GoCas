@@ -47,7 +47,7 @@ const Maps = ({ locations, point, searchLocation }) => {
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url="https://tile.jawg.io/jawg-lagoon/{z}/{x}/{y}{r}.png?access-token=voBFXHak9EAswlGQ7NiNqS7OJ1gJHfhvgjhEJ5nCmQ81OdZDZFM20QIaKvMqfsn6"
       />
 
       <MapEventListener searchLocation={searchLocation} />
