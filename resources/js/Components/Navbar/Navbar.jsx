@@ -86,7 +86,7 @@ const Navbar = () => {
                         <Image
                             src={GocasLogo}
                             alt="GoCas Logo"
-                            boxSize={{ base: "70px", sm: "80px" }}
+                            boxSize={{ base: "60px", sm: "80px" }}
                             mr={4}
                             objectFit="contain"
                         />
