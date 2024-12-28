@@ -162,7 +162,10 @@ const Location = ({
                     {t.header}
                 </HeaderText>
 
-                <Center mx={"auto"}>
+                <Flex
+                    mx={"auto"}
+                    flexDir={{base: "column", sm: "row"}}
+                >
                     <MotionFlex
                         align="center"
                         maxW="md"
@@ -200,12 +203,17 @@ const Location = ({
                         px={2}
                         py={1}
                         mt={4}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={fadeInRight}
+                        transition={{ duration: 1 }}
                     >
                         <Button m={"auto"} onClick={getFELocation}>
                             {t.reCenter}
                         </Button>
                     </MotionFlex>
-                </Center>
+                </Flex>
 
                 <MotionFlex
                     align="center"
