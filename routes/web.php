@@ -15,14 +15,20 @@ Route::get('/partnership', [MainController::class, 'partnership']);
 Route::get('/products', [MainController::class, 'products']);
 
 // Jangan lupa dihide kalau uda dijalanin
-// Route::get('/storage-link', function () {
-//     try {
-//         Artisan::call('storage:link');
-//         return "Symlink for storage created successfully!";
-//     } catch (\Exception $e) {
-//         return "Failed to create symlink: " . $e->getMessage();
-//     }
-// });
+Route::get('/start-ssr', function () {
+    try {
+        Artisan::call('inertia:start-ssr');
+        return response()->json([
+            'message' => 'Inertia SSR server started successfully!',
+            'output' => Artisan::output(),
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'error' => 'Failed to start Inertia SSR server: ' . $e->getMessage(),
+        ]);
+    }
+});
+
 
 Route::fallback(function () {
     return redirect('/');

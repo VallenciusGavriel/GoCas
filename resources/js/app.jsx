@@ -20,15 +20,22 @@ createInertiaApp({
             import.meta.glob("./Pages/**/*.jsx")
         ),
     setup({ el, App, props }) {
-        const root = createRoot(el);
-
-        root.render(
+        if (import.meta.env.SSR) {
+            hydrateRoot(el,
             <ChakraProvider theme={theme}>
                 <LanguageProvider>
                     <App {...props} />
                 </LanguageProvider>
-            </ChakraProvider>
-        );
+            </ChakraProvider>);
+            return;
+        }
+
+        createRoot(el).render(
+            <ChakraProvider theme={theme}>
+                <LanguageProvider>
+                    <App {...props} />
+                </LanguageProvider>
+            </ChakraProvider>);
     },
     progress: {
         color: "#4B5563",
