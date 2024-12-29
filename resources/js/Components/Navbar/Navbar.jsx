@@ -68,6 +68,7 @@ const Navbar = () => {
             left={0}
             right={0}
             width="100%"
+            height={{ base: "10%", md: "auto" }}
             px={"20px"}
             pb={{ base: "24px", md: "16px" }}
             roundedBottom={"xl"}
@@ -85,7 +86,7 @@ const Navbar = () => {
                         <Image
                             src={GocasLogo}
                             alt="GoCas Logo"
-                            boxSize="80px"
+                            boxSize={{ base: "60px", sm: "80px" }}
                             mr={4}
                             objectFit="contain"
                         />
