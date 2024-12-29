@@ -72,18 +72,18 @@ const About = () => {
                 >
                     <Box w={{ base: "full", lg: "50%" }}>
                         <HeaderText
-                            px={0}
+                            px={2}
                             iconColor={"brown"}
                             size={"large"}
                             withIcon={false}
-                            inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}
+                            inputclass={"xl:!text-6xl md:!text-5xl !text-3xl md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent py-2"}
                         >
                             {t.header}
                         </HeaderText>
                         <Text
                             fontFamily="poppins"
                             mt={"24px"}
-                            className={"md:text-xl text-sm"}
+                            className={"md:text-xl text-sm md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent pl-2 py-2"}
                         >
                             {t.description}
                         </Text>
