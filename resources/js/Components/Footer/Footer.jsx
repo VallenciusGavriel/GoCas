@@ -158,7 +158,7 @@ const Footer = () => {
                             : "Ikuti Kami"}
                     </Text>
                     <Flex gap={4} textAlign={"center"} align={"center"}>
-                        <Link href={"https://www.instagram.com/gocasindonesia"}>
+                        <Link href={"https://www.instagram.com/gocas.indonesia"}>
                             <Image
                                 src={IG}
                                 alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"

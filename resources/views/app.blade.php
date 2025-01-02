@@ -24,7 +24,7 @@
                     "url": "https://gocas.id",
                     "logo": "https://gocas.id/images/navbar/gocas-logo.png",
                     "sameAs": [
-                        "https://www.instagram.com/gocasindonesia",
+                        "https://www.instagram.com/gocas.indonesia",
                         "https://www.tiktok.com/@gocasindonesia?_t=8qdW7ChFe3r&_r=1",
                         "https://x.com/gocasindonesia?t=Bf5ybbiFLpMNoDciaBXiVw&s=09",
                         "https://www.linkedin.com/company/gocasindonesia/",
