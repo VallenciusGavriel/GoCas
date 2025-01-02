@@ -22,6 +22,15 @@ const fadeInUp = {
     visible: { opacity: 1, y: 0 },
 };
 
+const customIcon = new L.Icon({
+    iconUrl: '/images/location/person-standing.svg',
+    iconSize: [50, 50],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    shadowSize: [50, 50],
+});
+
 const fadeInLeft = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 },
@@ -291,10 +300,10 @@ const Home3 = () => {
                                 }}
                             >
                                 <TileLayer
-                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                    url="https://tile.jawg.io/jawg-lagoon/{z}/{x}/{y}{r}.png?access-token=voBFXHak9EAswlGQ7NiNqS7OJ1gJHfhvgjhEJ5nCmQ81OdZDZFM20QIaKvMqfsn6"
                                     attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
                                 />
-                                <Marker position={position} icon={icon}>
+                                <Marker position={position} icon={customIcon}>
                                     <Popup>Your current location</Popup>
                                 </Marker>
                             </MapContainer>
