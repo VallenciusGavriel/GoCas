@@ -7,7 +7,7 @@ export const productsTranslations = {
         helpCenter: "GOCAS Help Center",
         email: "Email: support@gocas.id",
         contactPerson: "Contact Person: +6282188886665",
-        socialMedia: "Social Media: @gocasindonesia",
+        socialMedia: "Social Media: @gocas.indonesia",
         product: {
             capacityLabel: "Capacity",
             chargePowerLabel: "Charging Power",
@@ -26,7 +26,7 @@ export const productsTranslations = {
         helpCenter: "GOCAS Help Center",
         email: "Email: support@gocas.id",
         contactPerson: "Contact Person: +6282188886665",
-        socialMedia: "Social Media: @gocasindonesia",
+        socialMedia: "Social Media: @gocas.indonesia",
         product: {
             capacityLabel: "Kapasitas",
             chargePowerLabel: "Kekuatan Pengisian",
@@ -45,7 +45,7 @@ export const productsTranslations = {
         helpCenter: "GOCAS 帮助中心",
         email: "电子邮件: support@gocas.id",
         contactPerson: "联系人: +6282188886665",
-        socialMedia: "社交媒体: @gocasindonesia",
+        socialMedia: "社交媒体: @gocas.indonesia",
         product: {
             capacityLabel: "容量",
             chargePowerLabel: "充电功率",

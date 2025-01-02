@@ -178,19 +178,15 @@ const Products = ({ products, meta, schema }) => {
                             </Button>
                         </motion.div>
                     </Link>
-                    <HeaderText
-                        px={0}
-                        topMargin={10}
-                        iconColor={"brown"}
-                        size={"large"}
-                        withIcon={false}
-                        inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}
+                    <Text
+                        fontFamily="poppins"
+                        className={"md:text-2xl text-md"}
                     >
                         {t.ctaSubtitle}
-                    </HeaderText>
+                    </Text>
                     <HeaderText
                         px={0}
-                        topMargin={24}
+                        topMargin={16}
                         iconColor={"brown"}
                         withIcon={false}
                         inputclass={"xl:!text-4xl md:!text-3xl !text-2xl"}
