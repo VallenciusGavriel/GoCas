@@ -6,11 +6,11 @@
 
         <!-- SEO -->
         <title inertia>{{ $page['props']['meta']['title'] ?? 'GoCas - Sewa Powerbank Terbaik' }}</title>
-        <meta name="description" content="{{ $page['props']['meta']['description'] ?? 'GoCas menyediakan layanan sewa powerbank terbaik untuk kebutuhan Anda. Pengiriman cepat dan harga terjangkau.' }}">
+        <meta name="description" content="Sewa powerbank tanpa ribet di lokasi strategis! Deposit pasti kembali, jaminan aman, dan isi daya perangkat kapan saja. Temukan GoCas terdekat dan sewa sekarang!">
         <meta name="keywords" content="sewa powerbank, rental powerbank, powerbank murah, GoCas, powerbank Indonesia">
         <meta name="author" content="GoCas">
         <meta property="og:title" content="{{ $page['props']['meta']['title'] ?? 'GoCas - Sewa Powerbank Terbaik' }}">
-        <meta property="og:description" content="{{ $page['props']['meta']['description'] ?? 'GoCas menyediakan layanan sewa powerbank terbaik untuk kebutuhan Anda.' }}">
+        <meta property="og:description" content="Sewa powerbank tanpa ribet di lokasi strategis! Deposit pasti kembali, jaminan aman, dan isi daya perangkat kapan saja. Temukan GoCas terdekat dan sewa sekarang!">
         <meta property="og:image" content="{{ asset('images/navbar/gocas-logo.png') }}">
         <meta property="og:url" content="{{ url()->current() }}">
 
@@ -30,7 +30,7 @@
                         "https://www.linkedin.com/company/gocasindonesia/",
                         "https://www.facebook.com/profile.php?id=61567799393691&mibextid=ZbWKwL"
                     ],
-                    "description": "GoCas menyediakan layanan sewa powerbank terbaik di Indonesia. Pilihan ideal untuk acara, perjalanan, dan kebutuhan lainnya."
+                    "description": "Sewa powerbank tanpa ribet di lokasi strategis! Deposit pasti kembali, jaminan aman, dan isi daya perangkat kapan saja. Temukan GoCas terdekat dan sewa sekarang!"
                 }
             `}
         </script>
