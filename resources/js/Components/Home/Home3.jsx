@@ -23,11 +23,12 @@ const fadeInUp = {
 };
 
 const customIcon = new L.Icon({
-    iconUrl: '/images/location/person-standing.svg',
+    iconUrl: "/images/location/person-standing.svg",
     iconSize: [50, 50],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    shadowUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
     shadowSize: [50, 50],
 });
 
@@ -73,8 +74,8 @@ const Home3 = () => {
             whyChoose: "Why Choose GoCas?",
             findUs: "Find us easily",
             exploreLocations: "Explore all locations",
-            howToRentCustomer: "How to Rent for Customers",
-            howToReturn: "How to Return",
+            howToRentCustomer: "How to Rent a Powerbank",
+            howToReturn: "How to Return Power Bank",
             introText:
                 "Wherever you go, don't worry about running out of battery! You can find GoCas Stations in your favorite spots. Visit the nearest GoCas Station and start charging!",
         },
@@ -82,8 +83,8 @@ const Home3 = () => {
             whyChoose: "Kenapa memilih GoCas?",
             findUs: "Temukan kami dengan mudah",
             exploreLocations: "Telusuri semua lokasi",
-            howToRentCustomer: "Tata Cara Penyewaan Pelanggan",
-            howToReturn: "Tata Cara Pengembalian",
+            howToRentCustomer: "Cara Sewa Powerbank",
+            howToReturn: "Cara Pengembalian Powerbank",
             introText:
                 "Kemanapun kamu pergi, tidak perlu khawatir kehabisan baterai! Kamu bisa temukan GoCas Station di tempat-tempat favorit mu. Kunjungi GoCas Station terdekat dan mulai mengisi daya!",
         },
@@ -91,8 +92,8 @@ const Home3 = () => {
             whyChoose: "为什么选择 GoCas？",
             findUs: "轻松找到我们",
             exploreLocations: "探索所有位置",
-            howToRentCustomer: "客户租赁指南",
-            howToReturn: "归还指南",
+            howToRentCustomer: "如何租用移动电源",
+            howToReturn: "如何退回移动电源",
             introText:
                 "无论你走到哪里，都不必担心电量耗尽！你可以在你喜欢的地点找到 GoCas 站点。访问最近的 GoCas 站点并开始充电！",
         },
@@ -190,10 +191,10 @@ const Home3 = () => {
                     {
                         title:
                             language === "EN"
-                                ? "How to Rent for Customers"
+                                ? "How to Rent a Powerbank"
                                 : language === "CH"
-                                ? "如何租用给客户"
-                                : "Tata Cara Penyewaan Pelanggan",
+                                ? "如何租用移动电源"
+                                : "Cara Sewa Powerbank",
                         steps: stepsBorrowPelanggan[language],
                     },
                     // {
@@ -203,10 +204,10 @@ const Home3 = () => {
                     {
                         title:
                             language === "EN"
-                                ? "How to Return the Power Bank"
+                                ? "How to Return Power Bank"
                                 : language === "CH"
-                                ? "如何归还充电宝"
-                                : "Tata Cara Pengembalian Powerbank",
+                                ? "如何退回移动电源"
+                                : "Cara Pengembalian Powerbank",
                         steps: stepsReturn[language],
                     },
                 ].map((item, index) => (

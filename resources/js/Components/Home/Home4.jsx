@@ -56,7 +56,7 @@ const faqData = {
             answer: "Sangat mudah! Cukup buka aplikasi GoCas, cari lokasi GoCas Station terdekat, dan sewa/kembalikan powerbank hanya dengan beberapa ketukan.",
         },
         {
-            question: "Bagaimana cara menemukan stasiun penyewaan GO CAS?",
+            question: "Bagaimana cara menemukan stasiun penyewaan GoCas?",
             answer: "Buka aplikasi GoCas dan gunakan fitur pencarian untuk menemukan stasiun penyewaan GoCas terdekat dari lokasi Anda.",
         },
         {
