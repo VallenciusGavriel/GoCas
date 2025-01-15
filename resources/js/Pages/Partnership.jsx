@@ -45,7 +45,7 @@ const Partnership = () => {
                 spacing={0}
                 bgImage={BackgroundHero}
                 bgSize="cover"
-                bgPos="left"
+                bgPos="center"
                 justifyContent={"end"}
                 alignItems={"end"}
                 direction={{ base: "column-reverse", md: "row" }}
@@ -72,7 +72,7 @@ const Partnership = () => {
                         size={"large"}
                         withIcon={false}
                         className={
-                            "xl:mt-0 mt-2 md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent pl-2 pb-2 pt-4"
+                            "xl:mt-0 mt-2 pl-2 pb-2 pt-4"
                         }
                         inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
                     >
@@ -82,7 +82,7 @@ const Partnership = () => {
                         fontFamily="poppins"
                         mt={"24px"}
                         className={
-                            "md:text-xl text-xs md:from-transparent bg-gradient-to-r from-yellow-300 to-transparent pl-2 py-1"
+                            "md:text-xl text-xs pl-2 py-1"
                         }
                         color={"black"}
                     >
