@@ -35,15 +35,15 @@ const Footer = () => {
                         boxSize="120px"
                         objectFit="contain"
                     />
-                    <Text mb={0} fontFamily="poppins" fontWeight={"extrabold"}>
-                        PT Makmur Tech Indonesia
-                    </Text>
-                    <Text mb={0} fontFamily="poppins">
-                        Rukan Sedayu Square Blok N No 06,
-                    </Text>
-                    <Text mb={0} fontFamily="poppins">
-                        Cengkareng, Jakarta Barat
-                    </Text>
+                    {/*<Text mb={0} fontFamily="poppins" fontWeight={"extrabold"}>*/}
+                    {/*    PT Makmur Tech Indonesia*/}
+                    {/*</Text>*/}
+                    {/*<Text mb={0} fontFamily="poppins">*/}
+                    {/*    Rukan Sedayu Square Blok N No 06,*/}
+                    {/*</Text>*/}
+                    {/*<Text mb={0} fontFamily="poppins">*/}
+                    {/*    Cengkareng, Jakarta Barat*/}
+                    {/*</Text>*/}
                     <Text mb={4} fontFamily="poppins">
                         support@gocas.id
                     </Text>
