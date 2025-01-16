@@ -39,7 +39,7 @@ const faqData = {
         },
         {
             question: "How long can I rent a power bank?",
-            answer: "You can rent a power bank for as long as you need, as long as it is returned within the time specified in the rental terms.",
+            answer: "Rent according to your needs up to a maximum of 24 hours. Please note, GoCas power banks can only be recharged at GoCas Stations.",
         },
         {
             question: "What should I do if the power bank doesn't work?",
@@ -61,7 +61,7 @@ const faqData = {
         },
         {
             question: "Berapa lama saya bisa menyewa powerbank?",
-            answer: "Anda bisa menyewa powerbank selama yang Anda butuhkan, selama itu dikembalikan pada waktu yang ditentukan dalam ketentuan penyewaan.",
+            answer: "Sewa sesuai kebutuhan Anda hingga maksimal 24 jam. Perlu diingat, power bank GoCas hanya dapat diisi ulang di GoCas Station.",
         },
         {
             question:
@@ -84,7 +84,7 @@ const faqData = {
         },
         {
             question: "充电宝可以租用多久？",
-            answer: "您可以根据需要租用充电宝，只需在租赁条款规定的时间内归还即可。",
+            answer: "根据您的需要租期最长为 24 小时。请注意，GoCas 移动电源只能在 GoCas 充电站充电",
         },
         {
             question: "如果充电宝无法使用，我该怎么办？",

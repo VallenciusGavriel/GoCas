@@ -1,5 +1,6 @@
 import { useLanguage } from "@/Context/LanguageContext";
 import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
+import StyledDescription from "../StyleDescription";
 
 const cards = [
     {
@@ -9,7 +10,7 @@ const cards = [
             CH: "提升服务",
         },
         description: {
-            ID: "Hadirkan layanan sewa power bank di lokasi bisnis atau event Anda dan berikan solusi charging yang mudah dan cepat kepada pelanggan.",
+            ID: "Hadirkan layanan sewa power bank di lokasi bisnis atau *event* Anda dan berikan solusi *charging* yang mudah dan cepat kepada pelanggan.",
             EN: "Provide power bank rental services at your business or event location and offer customers a quick and easy charging solution.",
             CH: "在您的业务或活动地点提供充电宝租赁服务，为客户提供快速便捷的充电解决方案。",
         },
@@ -22,9 +23,9 @@ const cards = [
             CH: "先进技术支持",
         },
         description: {
-            ID: "GOCAS dilengkapi dengan mesin sewa power bank modern yang mudah diakses melalui aplikasi. Proses pengembalian pun sangat simpel.",
-            EN: "GOCAS features modern power bank rental machines easily accessible via the app. The return process is also very simple.",
-            CH: "GOCAS 配备了通过应用程序轻松访问的现代充电宝租赁机。归还过程也非常简单。",
+            ID: "GoCas dilengkapi dengan mesin sewa power bank modern yang mudah diakses melalui aplikasi. Proses pengembalian pun sangat simpel.",
+            EN: "GoCas features modern power bank rental machines easily accessible via the app. The return process is also very simple.",
+            CH: "GoCas 配备了通过应用程序轻松访问的现代充电宝租赁机。归还过程也非常简单。",
         },
         icon: "/images/partnership/teknologi.png",
     },
@@ -48,9 +49,9 @@ const cards = [
             CH: "扩大业务覆盖范围",
         },
         description: {
-            ID: "Dengan bermitra, lokasi bisnis Anda akan ditampilkan dalam aplikasi GOCAS, memperbesar potensi kunjungan dan engagement dari pengguna baru.",
-            EN: "By partnering, your business location will be featured in the GOCAS app, increasing the potential for visits and engagement from new users.",
-            CH: "通过合作，您的业务地点将显示在 GOCAS 应用程序中，增加来自新用户的访问和参与潜力。",
+            ID: "Dengan bermitra, lokasi bisnis Anda akan ditampilkan dalam aplikasi GoCas, memperbesar potensi kunjungan dan *engagement* dari pengguna baru.",
+            EN: "By partnering, your business location will be featured in the GoCas app, increasing the potential for visits and engagement from new users.",
+            CH: "通过合作，您的业务地点将显示在 GoCas 应用程序中，增加来自新用户的访问和参与潜力。",
         },
         icon: "/images/partnership/jaringan.png",
     },
@@ -94,9 +95,12 @@ const ScrollableCards = () => {
                             >
                                 {card.title[language]}
                             </Text>
-                            <Text fontSize="sm">
+                            {/* <Text fontSize="sm">
                                 {card.description[language]}
-                            </Text>
+                            </Text> */}
+                            <StyledDescription
+                                text={card.description[language]}
+                            />
                         </VStack>
                     </Box>
                 ))}

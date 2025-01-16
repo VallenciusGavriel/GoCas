@@ -50,19 +50,25 @@ export const stepsBorrowPelanggan = {
 
 export const stepsReturn = {
     EN: [
-        "Find the nearest GoCas station, if you are confused, you can use the location feature on the Website/App.",
-        "Insert the power bank carefully into the machine. Make sure the power bank is in good condition.",
-        "You have successfully returned the power bank and the remaining deposit will be refunded after deducting the rental fee. Thank you for using GoCas!",
+        "Find the nearest GoCas station. If you are confused, you can use the location feature on the Website/App.",
+        "Carefully insert the power bank into the machine. Ensure the X light faces outward.",
+        "Wait for the return to be successful and for the notification regarding your deposit refund.",
+        "You have successfully returned the GoCas power bank.",
+        "Thank you for using GoCas!",
     ],
     ID: [
         "Cari Stasiun GoCas terdekatmu, jika bingung kamu dapat menggunakan fitur lokasi di Website/Aplikasi.",
-        "Masukkan power bank ke dalam mesin dengan hati-hati. Pastikan power bank dalam kondisi baik.",
-        "Anda telah berhasil mengembalikan power bank dan sisa depositmu akan dikembalikan setelah dipotong biaya sewa. Terima kasih telah menggunakan GOCAS!",
+        "Masukkan power bank ke dalam mesin dengan hati-hati. Pastikan lampu X mengarah ke luar.",
+        "Tunggu pengembalian berhasil dan notifikasi refund deposit kamu.",
+        "Kamu sudah selesai mengembalikan power bank GoCas.",
+        "Terima kasih telah menggunakan GOCAS!",
     ],
     CH: [
         "找到最近的 GoCas 站点，如果您感到困惑，可以使用网站/应用程序中的定位功能。",
-        "小心地将充电宝插入机器。确保充电宝状态良好。",
-        "您已成功归还充电宝，剩余的押金将在扣除租赁费用后退还。感谢您使用 GoCas！",
+        "小心地将充电宝插入机器。确保 X 灯朝外。",
+        "等待归还成功并且接收到关于您的押金退款通知。",
+        "您已成功归还 GoCas 充电宝。",
+        "感谢您使用 GoCas！",
     ],
 };
 
@@ -75,9 +81,9 @@ export const features = [
             CH: "易于使用",
         },
         description: {
-            EN: "Easy to use for both new and experienced users",
-            ID: "Mudah digunakan untuk pengguna baru atau berpengalaman",
-            CH: "无论是新用户还是有经验的用户，都易于使用",
+            EN: "Just scan the QR at the GoCas station and pay, you can use the GoCas power bank",
+            ID: "Cukup scan QR pada GoCas station dan bayar, kamu sudah bisa gunakan power bank GoCas",
+            CH: "只需在GoCas站点扫描二维码并付款，即可使用GoCas充电宝",
         },
     },
     {
@@ -88,9 +94,9 @@ export const features = [
             CH: "灵活",
         },
         description: {
-            EN: "GoCas can be found at strategic locations that are easily accessible anytime and anywhere",
-            ID: "GoCas dapat ditemukan di lokasi-lokasi strategis yang mudah diakses kapan saja dan di mana saja",
-            CH: "GoCas 可在战略位置找到，随时随地都易于访问",
+            EN: "GoCas is available in strategic locations that are easy to access anytime and anywhere",
+            ID: "GoCas tersedia di lokasi strategis yang mudah diakses kapan saja dan di mana saja",
+            CH: "GoCas 位于战略位置，可随时随地轻松访问",
         },
     },
     {
@@ -101,9 +107,9 @@ export const features = [
             CH: "可退款",
         },
         description: {
-            EN: "Adjust the rental time according to your needs. Affordable prices and refund options are available if you change your mind",
-            ID: "Sesuaikan waktu sewa sesuai kebutuhan Anda. Harga terjangkau dan opsi refund tersedia jika Anda berubah pikiran",
-            CH: "根据您的需求调整租赁时间。如果您改变主意，可以享受实惠的价格和退款选项",
+            EN: "With affordable prices, you can refund the remaining deposit right away!",
+            ID: "Dengan harga yang terjangkau, sisa deposit dapat kamu refund saat itu juga!",
+            CH: "价格实惠，可立即退还剩余押金！",
         },
     },
     {

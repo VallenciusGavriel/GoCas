@@ -1,6 +1,7 @@
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
+import StyledDescription from "@/Components/StyleDescription";
 import {
     Box,
     Flex,
@@ -51,13 +52,13 @@ const About = () => {
             >
                 <MotionVStack
                     spacing={0}
-                    bgImage={{base: BackgroundPhone, md: Background}}
+                    bgImage={{ base: BackgroundPhone, md: Background }}
                     mb={2}
                     minH={"100vh"}
                     h={size.height}
                     w={size.width}
                     bgSize="cover"
-                    bgPos={{base: "left", md: "center"}}
+                    bgPos={{ base: "left", md: "center" }}
                     alignItems={"start"}
                     justifyContent={"end"}
                     px={"10%"}
@@ -76,7 +77,9 @@ const About = () => {
                             iconColor={"brown"}
                             size={"large"}
                             withIcon={false}
-                            inputclass={"xl:!text-6xl md:!text-5xl !text-3xl py-2"}
+                            inputclass={
+                                "xl:!text-6xl md:!text-5xl !text-3xl py-2"
+                            }
                         >
                             {t.header}
                         </HeaderText>
@@ -176,9 +179,7 @@ const About = () => {
                         >
                             {t.community.title}
                         </HeaderText>
-                        <Text fontFamily="poppins">
-                            {t.community.description}
-                        </Text>
+                        <StyledDescription text={t.community.description} />
                     </VStack>
                 </MotionFlex>
             </MotionVStack>
@@ -235,7 +236,7 @@ const About = () => {
                                     "xl:!text-3xl md:!text-3xl !text-2xl"
                                 }
                             >
-                                {t.services.title}
+                                {t.services.title2}
                             </HeaderText>
                             <Text fontFamily="poppins">
                                 {t.services.description}
