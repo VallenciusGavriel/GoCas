@@ -1,7 +1,7 @@
 export const aboutTranslations = {
     EN: {
         title: "About Us",
-        header: "UNLIMITED ACTIVITUES WITH GoCas",
+        header: "UNLIMITED ACTIVITUES WITH GOCAS",
         description: `Hi! We are GoCas Indonesia, the IoT-based power bank rental solution for those of you who are active and don't want the hassle. With advanced technology, GoCas ensures your gadget is always charged anytime and anywhere. Since its launch, we have provided flexible and practical power bank rental services.`,
         commitmentTitle: "Our Commitment to Society",
         commitmentDescription:
@@ -27,7 +27,7 @@ export const aboutTranslations = {
     },
     ID: {
         title: "Tentang Kami",
-        header: "AKTIVITAS TANPA BATAS DENGAN GoCas",
+        header: "AKTIVITAS TANPA BATAS DENGAN GOCAS",
         description: `Hai! Kami GoCas Indonesia, solusi sewa powerbank berbasis IoT untuk kamu yang aktif dan nggak mau ribet. Dengan teknologi canggih, GoCas memastikan gadget kamu selalu terisi kapan saja dan di mana saja. Sejak diluncurkan, kami telah menyediakan layanan sewa powerbank fleksibel dan praktis.`,
         commitmentTitle: "Komitmen Kami pada Masyarakat",
         commitmentDescription:
