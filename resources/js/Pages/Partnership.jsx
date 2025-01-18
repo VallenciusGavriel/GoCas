@@ -5,15 +5,20 @@ import ScrollableCards from "@/Components/Partnership/ScrollableCards.jsx";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 import { useLanguage } from "@/Context/LanguageContext";
 import { partnershipTranslations } from "@/Translates/partnershipTranslation";
-import { Box, Flex, Text, VStack } from "@chakra-ui/react";
-import { Head } from "@inertiajs/react";
+import {Box, Button, Flex, Image, Text, VStack} from "@chakra-ui/react";
+import {Head, Link} from "@inertiajs/react";
 import { motion } from "framer-motion";
 import BackgroundHero from "../../../public/images/partnership/bg.png";
+import FormImg from "../../../public/images/partnership/form.png";
+import Hand from "../../../public/images/partnership/hand.png";
+import React from "react";
+import languages from "@/Translates/languages.json";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
 const MotionVStack = motion(VStack);
+const MotionButton = motion(Button);
 
 // Animation Variants
 const fadeInUp = {
@@ -46,13 +51,11 @@ const Partnership = () => {
                 bgImage={BackgroundHero}
                 bgSize="cover"
                 bgPos="center"
-                justifyContent={"end"}
-                alignItems={"end"}
+                justifyContent={"center"}
+                alignItems={"center"}
                 direction={{ base: "column-reverse", md: "row" }}
-                px={"10%"}
+                p={"10%"}
                 mt={"60px"}
-                pt={"78px"}
-                pb={"10%"}
                 initial="hidden"
                 animate="visible"
                 variants={fadeInUp}
@@ -60,7 +63,7 @@ const Partnership = () => {
             >
                 <Box
                     h={"full"}
-                    w={{ base: "full", lg: "60%" }}
+                    w={{ base: "full", lg: "50%" }}
                     rounded={"xl"}
                     mt={{ base: "24px", xl: "64px" }}
                     px={{ base: "0px", xl: "64px" }}
@@ -78,17 +81,36 @@ const Partnership = () => {
                     >
                         {t.heroTitle}
                     </HeaderText>
-                    <Text
-                        fontFamily="poppins"
-                        mt={"24px"}
-                        className={
-                            "md:text-xl text-xs pl-2 py-1"
-                        }
-                        color={"black"}
-                    >
-                        {t.description}
-                    </Text>
+                    <Link href="/location">
+                        <MotionButton
+                            bgGradient="linear(to-r, #6EA93C, #25893C)"
+                            color="white"
+                            _hover={{
+                                bgGradient: "linear(to-r, green.500, teal.600)",
+                            }}
+                            borderRadius="full"
+                            fontSize="lg"
+                            fontFamily="poppins"
+                            fontWeight="bold"
+                            px={8}
+                            py={6}
+                            mt={{ base: 6, md: 12 }}
+                            mb={{ base: 10, md: 28 }}
+                            boxShadow="md"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <Text
+                                fontFamily="poppins"
+                                className={"md:text-lg text-xs"}
+                            >
+                                {languages[language]["button_text"]}{" "}
+                                {/* Temukan GoCas terdekat */}
+                            </Text>
+                        </MotionButton>
+                    </Link>
                 </Box>
+                <Image src={Hand} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize={{ base: "90%", xl: "50%"}} m={2} mt={10} mb={6} />
             </MotionFlex>
 
             {/* Partner Section */}
@@ -226,6 +248,7 @@ const Partnership = () => {
                     flexDir={{ base: "column", xl: "row" }}
                 >
                     <Box
+                        w={{ base: "full", xl: "50%" }}
                         me={{ base: "0px", xl: "12px" }}
                         mb={{ base: "12px", xl: "0px" }}
                     >
@@ -241,6 +264,7 @@ const Partnership = () => {
                             {t.applicationFormTitle}
                         </HeaderText>
                         <Text>{t.applicationFormDescription}</Text>
+                        <Image src={FormImg} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize="90%" m={2} mt={10} mb={6} />
                     </Box>
                     <Form />
                 </Flex>

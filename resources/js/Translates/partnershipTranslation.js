@@ -1,6 +1,6 @@
 export const partnershipTranslations = {
     EN: {
-        heroTitle: "Great Collaboration with GoCas!",
+        heroTitle: "EASY SOLUTION WITH GOCAS!",
         description:
             "Want to bring the power bank rental solution to your business or event? GoCas opens collaboration opportunities for partners looking to expand their network and provide more services to customers. Let's create a more practical and modern experience together!",
         partnerTitle: "Our Partners",
@@ -14,7 +14,7 @@ export const partnershipTranslations = {
             "No need to provide power outlets, earn additional revenue, and reach a wider audience with #MITRAGOCAS",
     },
     ID: {
-        heroTitle: "Kolaborasi Hebat dengan GoCas!",
+        heroTitle: "SOLUSI MUDAH DENGAN GOCAS!",
         description:
             "Ingin membawa solusi sewa power bank ke bisnis atau event kamu? GoCas membuka peluang kolaborasi bagi Mitra yang ingin memperluas jaringan dan memberikan layanan lebih bagi pelanggan. Mari bersama-sama ciptakan pengalaman yang lebih praktis dan modern!",
         partnerTitle: "Mitra Kami",
@@ -28,7 +28,7 @@ export const partnershipTranslations = {
             "Tidak perlu menyediakan stop kontak, dapatkan pendapatan tambahan, dan jangkau pengunjungmu lebih luas dengan #MITRAGOCAS",
     },
     CH: {
-        heroTitle: "与 GoCas 一起轻松解决方案！",
+        heroTitle: "GOCAS 的简单解决方案！",
         description:
             "想要将充电宝租赁解决方案带到您的业务或活动中吗？GoCas 为想要扩展网络并为客户提供更多服务的合作伙伴提供合作机会。让我们一起创造更实用、更现代的体验！",
         partnerTitle: "我们的合作伙伴",
