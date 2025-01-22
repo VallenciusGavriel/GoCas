@@ -11,6 +11,7 @@ import { Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import AppStore from "../../../../public/images/navbar/appstore.png";
 import GPlay from "../../../../public/images/navbar/gplay.png";
+import App from "../../../../public/images/home/app.png";
 import { useLanguage } from "../../Context/LanguageContext";
 import languages from "../../Translates/languages.json";
 import QRCode from "./../../../../public/images/home/qr-code.png";
@@ -50,7 +51,7 @@ const Home1 = () => {
             transition={{ duration: 1 }}
         >
             <Grid
-                templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+                templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
                 height="80%"
                 width="full"
                 zIndex="10"
@@ -59,9 +60,9 @@ const Home1 = () => {
                 <MotionBox
                     display="flex"
                     flexDirection="column"
-                    justifyContent={{ base: "center", md: "flex-end" }}
-                    alignItems={{ base: "center", md: "flex-start" }}
-                    textAlign={{ base: "center", md: "left" }}
+                    justifyContent={{ base: "center", xl: "flex-end" }}
+                    alignItems={{ base: "center", xl: "flex-start" }}
+                    textAlign={{ base: "center", xl: "left" }}
                     p="4"
                     height="100%"
                     zIndex="10"
@@ -123,10 +124,10 @@ const Home1 = () => {
                             fontWeight="bold"
                             px={8}
                             py={6}
-                            mt={{ base: 6, md: 12 }}
-                            mb={{ base: 10, md: 28 }}
+                            mt={{ base: 6, xl: 12 }}
+                            mb={{ base: 10, xl: 28 }}
                             boxShadow="md"
-                            w={{ base: 60, md: "full" }}
+                            w={{ base: 60, xl: "full" }}
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.3 }}
                         >
@@ -143,21 +144,30 @@ const Home1 = () => {
 
                 {/* Right Section */}
                 <MotionBox
-                    position={{ base: "relative", md: "absolute" }}
-                    right={{ md: "0" }}
-                    bottom={{ md: "0" }}
-                    p={{ base: "4", md: "28" }}
-                    width={{ base: "100%", md: "auto" }}
+                    position={{ base: "relative", xl: "absolute" }}
+                    right={{ xl: "0" }}
+                    bottom={{ xl: "0" }}
+                    p={{ base: "4", xl: "28" }}
+                    width={{ base: "100%", xl: "auto" }}
                     initial="hidden"
                     animate="visible"
                     variants={fadeInRight}
                     transition={{ duration: 1 }}
                 >
-                    <HStack
-                        justifyContent={{ base: "space-evenly", md: "flex-end" }}
+                    <VStack
+                        justifyContent={{ base: "space-evenly", xl: "flex-end" }}
                         spacing={4}
                     >
-                        <VStack>
+                        <MotionImage
+                            src={App}
+                            alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
+                            mb={2}
+                            h={"400px"}
+                            objectFit="contain"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                        />
+                        <HStack>
                             <Link
                                 href={
                                     "https://play.google.com/store/apps/details?id=so.dian.gocasid"
@@ -166,7 +176,6 @@ const Home1 = () => {
                                 <MotionImage
                                     src={GPlay}
                                     alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
-                                    mb={2}
                                     w={"200px"}
                                     objectFit="contain"
                                     whileHover={{ scale: 1.1 }}
@@ -187,16 +196,16 @@ const Home1 = () => {
                                     transition={{ duration: 0.3 }}
                                 />
                             </Link>
-                        </VStack>
-                        <MotionImage
-                            src={QRCode}
-                            alt="QR Code"
-                            boxSize={{ base: "100px", md: "150px" }}
-                            objectFit="contain"
-                            whileHover={{ rotate: 360 }}
-                            transition={{ duration: 0.5 }}
-                        />
-                    </HStack>
+                        </HStack>
+                        {/*<MotionImage*/}
+                        {/*    src={QRCode}*/}
+                        {/*    alt="QR Code"*/}
+                        {/*    boxSize={{ base: "100px", md: "150px" }}*/}
+                        {/*    objectFit="contain"*/}
+                        {/*    whileHover={{ rotate: 360 }}*/}
+                        {/*    transition={{ duration: 0.5 }}*/}
+                        {/*/>*/}
+                    </VStack>
                 </MotionBox>
             </Grid>
         </MotionBox>
