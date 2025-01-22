@@ -83,6 +83,7 @@ const LocationCard = ({
                                         w={"21px"}
                                         h={"21px"}
                                         alt="Status"
+                                        loading="lazy"
                                     />
                                     <Text>
                                         <b>{status}</b>
@@ -204,6 +205,7 @@ const LocationCard = ({
                             src={pin}
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                             w={8}
+                            loading="lazy"
                         />
                         <HeaderText
                             topMargin={10}
@@ -304,6 +306,7 @@ const LocationsGrid = ({ locations, startLat, startLong }) => {
                                         width={50}
                                         height={50}
                                         mr={2}
+                                        loading="lazy"
                                     />
                                     <HeaderText
                                         topMargin={8}

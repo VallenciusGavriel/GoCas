@@ -69,6 +69,7 @@ const HeaderText = ({
                     alt={`${iconColor} icon`}
                     width={width}
                     height={height}
+                    loading="lazy"
                     mr={2}
                 />
             )}

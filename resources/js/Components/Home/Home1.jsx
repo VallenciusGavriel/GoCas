@@ -163,6 +163,7 @@ const Home1 = () => {
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                             mb={2}
                             h={"400px"}
+                            loading="lazy"
                             objectFit="contain"
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.3 }}
@@ -177,6 +178,7 @@ const Home1 = () => {
                                     src={GPlay}
                                     alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                                     w={"200px"}
+                                    loading="lazy"
                                     objectFit="contain"
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
@@ -191,6 +193,7 @@ const Home1 = () => {
                                     src={AppStore}
                                     alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                                     w={"200px"}
+                                    loading="lazy"
                                     objectFit="contain"
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
@@ -202,6 +205,7 @@ const Home1 = () => {
                         {/*    alt="QR Code"*/}
                         {/*    boxSize={{ base: "100px", md: "150px" }}*/}
                         {/*    objectFit="contain"*/}
+                        {/*loading="lazy"*/}
                         {/*    whileHover={{ rotate: 360 }}*/}
                         {/*    transition={{ duration: 0.5 }}*/}
                         {/*/>*/}

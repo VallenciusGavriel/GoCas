@@ -135,6 +135,7 @@ const About = () => {
                             alt={t.ecoFriendly.alt}
                             w="100px"
                             objectFit="contain"
+                            loading="lazy"
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
                             viewport={{ once: true }}
@@ -164,6 +165,7 @@ const About = () => {
                             alt={t.community.alt}
                             w="100px"
                             objectFit="contain"
+                            loading="lazy"
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
                             viewport={{ once: true }}
@@ -224,6 +226,7 @@ const About = () => {
                             alt="Powerbank Sharing"
                             w="100px"
                             objectFit="contain"
+                            loading="lazy"
                         />
                         <VStack alignItems={"start"} justifyContent={"start"}>
                             <HeaderText

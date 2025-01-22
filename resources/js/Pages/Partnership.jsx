@@ -110,7 +110,7 @@ const Partnership = () => {
                         </MotionButton>
                     </Link>
                 </Box>
-                <Image src={Hand} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize={{ base: "90%", xl: "50%"}} m={2} mt={10} mb={6} />
+                <Image src={Hand} loading="lazy" alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize={{ base: "90%", xl: "50%"}} m={2} mt={10} mb={6} />
             </MotionFlex>
 
             {/* Partner Section */}
@@ -264,7 +264,7 @@ const Partnership = () => {
                             {t.applicationFormTitle}
                         </HeaderText>
                         <Text>{t.applicationFormDescription}</Text>
-                        <Image src={FormImg} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize="90%" m={2} mt={10} mb={6} />
+                        <Image loading="lazy" src={FormImg} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize="90%" m={2} mt={10} mb={6} />
                     </Box>
                     <Form />
                 </Flex>

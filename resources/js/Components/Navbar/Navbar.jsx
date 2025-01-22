@@ -89,6 +89,7 @@ const Navbar = () => {
                             boxSize={{ base: "60px", sm: "80px" }}
                             mr={4}
                             objectFit="contain"
+                            loading="lazy"
                         />
                     </Link>
                 </Flex>

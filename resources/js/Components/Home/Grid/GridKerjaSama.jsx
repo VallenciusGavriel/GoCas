@@ -25,6 +25,7 @@ const GridKerjaSama = ({ images, className, color }) => {
                         src={src}
                         alt={`Image ${index + 1}`}
                         objectFit="contain"
+                        loading="lazy"
                         w="100%"
                         h="100%"
                     />

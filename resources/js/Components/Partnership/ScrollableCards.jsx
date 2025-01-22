@@ -87,6 +87,7 @@ const ScrollableCards = () => {
                                 w={"50px"}
                                 h={"50px"}
                                 alt={card.title[language]}
+                                loading="lazy"
                             />
                             <Text
                                 fontWeight="bold"

@@ -16,7 +16,7 @@ const FeatureCard = ({ icon, title, description }) => {
             justifyContent="top"
             alignItems="center"
         >
-            <Image src={icon} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize="80px" m={2} mt={10} mb={6} />
+            <Image src={icon} loading="lazy" alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize="80px" m={2} mt={10} mb={6} />
             <VStack spacing={2} align="stretch" width="100%">
                 <Text
                     fontSize="lg"

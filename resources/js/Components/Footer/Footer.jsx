@@ -34,6 +34,7 @@ const Footer = () => {
                         mb={2}
                         boxSize="120px"
                         objectFit="contain"
+                        loading="lazy"
                     />
                     {/*<Text mb={0} fontFamily="poppins" fontWeight={"extrabold"}>*/}
                     {/*    PT Makmur Tech Indonesia*/}
@@ -111,6 +112,7 @@ const Footer = () => {
                             mb={2}
                             w={"200px"}
                             objectFit="contain"
+                            loading="lazy"
                         />
                     </Link>
                     <Link
@@ -123,6 +125,7 @@ const Footer = () => {
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                             w={"200px"}
                             objectFit="contain"
+                            loading="lazy"
                         />
                     </Link>
                 </Box>
@@ -165,6 +168,7 @@ const Footer = () => {
                                 w={8}
                                 h={8}
                                 objectFit="contain"
+                                loading="lazy"
                             />
                         </Link>
                         <Link
@@ -178,6 +182,7 @@ const Footer = () => {
                                 w={8}
                                 h={8}
                                 objectFit="contain"
+                                loading="lazy"
                             />
                         </Link>
                         <Link
@@ -191,6 +196,7 @@ const Footer = () => {
                                 w={8}
                                 h={8}
                                 objectFit="contain"
+                                loading="lazy"
                             />
                         </Link>
                         <Link
@@ -204,6 +210,7 @@ const Footer = () => {
                                 w={8}
                                 h={8}
                                 objectFit="contain"
+                                loading="lazy"
                             />
                         </Link>
                         <Link
@@ -217,6 +224,7 @@ const Footer = () => {
                                 w={8}
                                 h={8}
                                 objectFit="contain"
+                                loading="lazy"
                             />
                         </Link>
                         <Link href={"https://wa.me/6282188886665"}>

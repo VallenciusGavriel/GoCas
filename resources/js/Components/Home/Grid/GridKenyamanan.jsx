@@ -21,6 +21,7 @@ const GridKenyamanan = ({ kenyamanans, columnsMd = 3 }) => {
                         src={kenyamanan.imgSrc}
                         alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                         borderRadius="md"
+                        loading="lazy"
                     />
                     <HeaderText
                         size="small"
