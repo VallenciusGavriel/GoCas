@@ -127,7 +127,7 @@ const Home1 = () => {
                             mt={{ base: 6, xl: 12 }}
                             mb={{ base: 10, xl: 28 }}
                             boxShadow="md"
-                            w={{ base: 60, xl: "full" }}
+                            w={ "full" }
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.3 }}
                         >
