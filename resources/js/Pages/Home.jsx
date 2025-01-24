@@ -15,7 +15,7 @@ const Home = () => {
             <Helmet>
                 <title>Sewa Power Bank - Gocas</title>
                 <meta name="description" content="Sewa power bank murah dan praktis untuk kebutuhan Anda." />
-                <meta name="keywords" content="sewa powerbank, rental powerbank, powerbank murah" />
+                <meta name="keywords" content="sewa power bank, rental power bank, powerbank murah" />
             </Helmet>
             <VStack spacing={0}>
                 {" "}

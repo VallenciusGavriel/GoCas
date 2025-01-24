@@ -19,6 +19,7 @@ import EcoFriendly from "../../../public/images/about/ecofriendly.png";
 import PBShare from "../../../public/images/about/pbshare.png";
 import { useLanguage } from "../Context/LanguageContext";
 import { aboutTranslations } from "../Translates/aboutTranslation";
+import StyledHeader from "@/Components/StyleHeader.jsx";
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
@@ -171,16 +172,7 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 1 }}
                         />
-                        <HeaderText
-                            px={0}
-                            topMargin={12}
-                            iconColor={"black"}
-                            size={"normal"}
-                            inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"}
-                            withIcon={false}
-                        >
-                            {t.community.title}
-                        </HeaderText>
+                        <StyledHeader text={t.community.title}/>
                         <StyledDescription text={t.community.description} />
                     </VStack>
                 </MotionFlex>

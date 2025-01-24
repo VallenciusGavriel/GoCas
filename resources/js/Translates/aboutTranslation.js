@@ -9,7 +9,7 @@ export const aboutTranslations = {
         ecoFriendly: {
             title: "Eco-friendly Power banks",
             description:
-                "GoCas uses high-quality, long-lasting, and environmentally friendly powerbanks to support a more sustainable lifestyle.",
+                "GoCas uses high-quality, long-lasting, and environmentally friendly power banks to support a more sustainable lifestyle.",
             alt: "Eco Friendly",
         },
         community: {
@@ -22,13 +22,13 @@ export const aboutTranslations = {
             title: "Our Services",
             title2: "Our services",
             description:
-                "GoCas Powerbanks are the best solution to keep your smartphone, camera, or mobile device charged while on the go. With advanced technology and power bank sharing systems, you can easily rent powerbanks anytime and anywhere at the nearest GoCas Station!",
+                "GoCas Power banks are the best solution to keep your smartphone, camera, or mobile device charged while on the go. With advanced technology and power bank sharing systems, you can easily rent power banks anytime and anywhere at the nearest GoCas Station!",
         },
     },
     ID: {
         title: "Tentang Kami",
         header: "AKTIVITAS TANPA BATAS DENGAN GOCAS",
-        description: `Hai! Kami GoCas Indonesia, solusi sewa power bank berbasis IoT untuk kamu yang aktif dan nggak mau ribet. Dengan teknologi canggih, GoCas memastikan gadget kamu selalu terisi kapan saja dan di mana saja. Sejak diluncurkan, kami telah menyediakan layanan sewa powerbank fleksibel dan praktis.`,
+        description: `Hai! Kami GoCas Indonesia, solusi sewa power bank berbasis IoT untuk kamu yang aktif dan nggak mau ribet. Dengan teknologi canggih, GoCas memastikan gadget kamu selalu terisi kapan saja dan di mana saja. Sejak diluncurkan, kami telah menyediakan layanan sewa power bank fleksibel dan praktis.`,
         commitmentTitle: "Komitmen Kami pada Masyarakat",
         commitmentDescription:
             "Kami berkomitmen untuk memastikan Anda tetap terhubung tanpa gangguan. Dengan GoCas, *low battery* bukan lagi masalah!",
@@ -39,7 +39,7 @@ export const aboutTranslations = {
             alt: "Eco Friendly",
         },
         community: {
-            title: "Masyarakat terbebas dari low battery",
+            title: "Masyarakat terbebas dari *low battery*",
             description:
                 "Kami berkomitmen untuk memastikan Anda tetap terhubung tanpa gangguan. Dengan GoCas, *low battery* bukan lagi masalah!",
             alt: "Community",
@@ -48,7 +48,7 @@ export const aboutTranslations = {
             title: "Layanan Kami",
             title2: "Layanan kami",
             description:
-                "Powerbank GoCas adalah solusi terbaik untuk menjaga smartphone, kamera, atau perangkat seluler Anda agar tetap terisi daya saat bepergian. Dengan teknologi canggih dan sistem powerbank sharing, Anda bisa dengan mudah menyewa powerbank kapan saja dan di mana saja melalui GoCas Station terdekat!",
+                "Power bank GoCas adalah solusi terbaik untuk menjaga smartphone, kamera, atau perangkat seluler Anda agar tetap terisi daya saat bepergian. Dengan teknologi canggih dan sistem power bank sharing, Anda bisa dengan mudah menyewa power bank kapan saja dan di mana saja melalui GoCas Station terdekat!",
         },
     },
     CH: {
