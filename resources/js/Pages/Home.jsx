@@ -13,8 +13,8 @@ const Home = () => {
             <Navbar />
             <Head title="Home" />
             <Helmet>
-                <title>Sewa Powerbank - Gocas</title>
-                <meta name="description" content="Sewa powerbank murah dan praktis untuk kebutuhan Anda." />
+                <title>Sewa Power Bank - Gocas</title>
+                <meta name="description" content="Sewa power bank murah dan praktis untuk kebutuhan Anda." />
                 <meta name="keywords" content="sewa powerbank, rental powerbank, powerbank murah" />
             </Helmet>
             <VStack spacing={0}>

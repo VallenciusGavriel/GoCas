@@ -39,8 +39,8 @@ class MainController extends Controller
             'total_count' => Location::all()->count(),
             'station_count' => Location::all()->sum('total'),
             'meta' => [
-                'title' => 'GoCas - Sewa Powerbank Terbaik',
-                'description' => 'Lihat semua lokasi GoCas, menawarkan layanan sewa powerbank terbaik dengan pengiriman cepat dan harga terjangkau.',
+                'title' => 'GoCas - Sewa Power bank Terbaik',
+                'description' => 'Lihat semua lokasi GoCas, menawarkan layanan sewa power bank terbaik dengan pengiriman cepat dan harga terjangkau.',
             ],
         ]);
     }
@@ -77,8 +77,8 @@ class MainController extends Controller
     {
         return Inertia::render('About', [
             'meta' => [
-                'title' => 'GoCas - Sewa Powerbank Terbaik',
-                'description' => 'Tentang kami. GoCas menawarkan layanan sewa powerbank terbaik dengan pengiriman cepat dan harga terjangkau.',
+                'title' => 'GoCas - Sewa Power bank Terbaik',
+                'description' => 'Tentang kami. GoCas menawarkan layanan sewa power bank terbaik dengan pengiriman cepat dan harga terjangkau.',
             ],
         ]);
     }
@@ -87,8 +87,8 @@ class MainController extends Controller
     {
         return Inertia::render('Partnership', [
             'meta' => [
-                'title' => 'GoCas - Sewa Powerbank Terbaik',
-                'description' => 'Bekerja sama dengan GoCas, menawarkan layanan sewa powerbank terbaik dengan pengiriman cepat dan harga terjangkau.',
+                'title' => 'GoCas - Sewa Power bank Terbaik',
+                'description' => 'Bekerja sama dengan GoCas, menawarkan layanan sewa power bank terbaik dengan pengiriman cepat dan harga terjangkau.',
             ],
         ]);
     }
@@ -98,8 +98,8 @@ class MainController extends Controller
         $products = Product::all();
 
         $meta = [
-            'title' => 'GoCas - Sewa Powerbank dan Produk Lainnya',
-            'description' => 'Temukan berbagai pilihan powerbank untuk disewa di GoCas. Produk berkualitas dengan harga terjangkau.',
+            'title' => 'GoCas - Sewa Power bank dan Produk Lainnya',
+            'description' => 'Temukan berbagai pilihan power bank untuk disewa di GoCas. Produk berkualitas dengan harga terjangkau.',
         ];
 
         $schema = [

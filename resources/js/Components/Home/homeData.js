@@ -33,11 +33,11 @@ export const stepsBorrowPelanggan = {
         "Take the power bank from the machine and Ready GoCas!",
     ],
     ID: [
-        "Download Aplikasi GoCas pada Playstore untuk android dan Appstore untuk Ios, atau kamu bisa klik disini.",
-        "Daftar menggunakan nomor handphone kamu dan kode verifikasi.",
-        "Temukan stasiun GoCas terdekat dengan fitur “Temukan GoCas” pada Aplikasi.",
+        "Download aplikasi GoCas pada Play Store untuk pengguna Android dan App Store untuk pengguna iOS.",
+        "Daftar menggunakan nomor handphone kamu dan masukkan kode verifikasi.",
+        "Temukan stasiun GoCas terdekat dengan fitur “Toko Terdekat” pada aplikasi.",
         "Pilih menu ini dan scan QR code yang ada pada Stasiun GoCas dan Bayar.",
-        "Ambil Power bank dari Mesin dan Ready GoCas!",
+        "Ambil power bank dari mesin dan Ready GoCas!",
     ],
     CH: [
         "从安卓的 Playstore 或 iOS 的 Appstore 下载 GoCas 应用，或者点击这里。",
@@ -61,7 +61,7 @@ export const stepsReturn = {
         "Masukkan power bank ke dalam mesin dengan hati-hati. Pastikan lampu X mengarah ke luar.",
         "Tunggu pengembalian berhasil dan notifikasi refund deposit kamu.",
         "Kamu sudah selesai mengembalikan power bank GoCas.",
-        "Terima kasih telah menggunakan GOCAS!",
+        "Terima kasih telah menggunakan GoCas!",
     ],
     CH: [
         "找到最近的 GoCas 站点，如果您感到困惑，可以使用网站/应用程序中的定位功能。",
@@ -121,7 +121,7 @@ export const features = [
         },
         description: {
             EN: "Our customer service is available 24/7, always timely and reliable!",
-            ID: "Layanan pelanggan kami siap 24/7 membantu kapan pun tepat waktu dan selalu siap diandalkan!",
+            ID: "Layanan pelanggan kami siap membantu 24/7, selalu tepat waktu, dan dapat diandalkan kapan pun Anda membutuhkan!",
             CH: "我们的客户服务提供 24/7 支持，总是及时可靠！",
         },
     },

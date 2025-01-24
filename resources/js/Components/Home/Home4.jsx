@@ -49,24 +49,24 @@ const faqData = {
     ID: [
         {
             question: "Apa itu GoCas?",
-            answer: "GoCas adalah layanan penyewaan powerbank. Anda cukup membuka aplikasi GoCas, mencari GoCas Station terdekat, dan menyewa/mengembalikan powerbank hanya dengan beberapa ketukan.",
+            answer: "GoCas adalah layanan penyewaan power bank. Anda cukup membuka aplikasi GoCas, mencari GoCas Station terdekat, dan menyewa/mengembalikan power bank hanya dengan beberapa ketukan.",
         },
         {
-            question: "Bagaimana cara menyewa/mengembalikan powerbank?",
-            answer: "Sangat mudah! Cukup buka aplikasi GoCas, cari lokasi GoCas Station terdekat, dan sewa/kembalikan powerbank hanya dengan beberapa ketukan.",
+            question: "Bagaimana cara menyewa/mengembalikan power bank?",
+            answer: "Sangat mudah! Cukup buka aplikasi GoCas, cari lokasi GoCas Station terdekat, dan sewa/kembalikan power bank hanya dengan beberapa ketukan.",
         },
         {
             question: "Bagaimana cara menemukan stasiun penyewaan GoCas?",
             answer: "Buka aplikasi GoCas dan gunakan fitur pencarian untuk menemukan stasiun penyewaan GoCas terdekat dari lokasi Anda.",
         },
         {
-            question: "Berapa lama saya bisa menyewa powerbank?",
+            question: "Berapa lama saya bisa menyewa power bank?",
             answer: "Sewa sesuai kebutuhan Anda hingga maksimal 24 jam. Perlu diingat, power bank GoCas hanya dapat diisi ulang di GoCas Station.",
         },
         {
             question:
-                "Apa yang harus dilakukan jika powerbank tidak berfungsi?",
-            answer: "Jika powerbank yang Anda sewa tidak berfungsi, segera kembalikan ke stasiun GoCas dan lapor melalui aplikasi untuk mendapatkan bantuan lebih lanjut.",
+                "Apa yang harus dilakukan jika power bank tidak berfungsi?",
+            answer: "Jika power bank yang Anda sewa tidak berfungsi, segera kembalikan ke stasiun GoCas dan lapor melalui aplikasi untuk mendapatkan bantuan lebih lanjut.",
         },
     ],
     CH: [
@@ -160,14 +160,14 @@ const Home4 = () => {
                             ? "Can't find what you're looking for?"
                             : language === "CH"
                             ? "找不到您想要的？"
-                            : "Tidak dapat menemukan yang Anda cari?"}
+                            : "Tidak dapat menemukan pertanyaan Anda?"}
                     </Text>
                     <Text fontFamily="Poppins">
                         {language === "EN"
                             ? "We'd love to talk to you"
                             : language === "CH"
                             ? "我们很乐意与您交谈"
-                            : "Kami ingin berbicara dengan Anda"}
+                            : "Chat kami di bawah ini"}
                     </Text>
 
                     <a

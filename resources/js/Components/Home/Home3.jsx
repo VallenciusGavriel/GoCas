@@ -74,7 +74,7 @@ const Home3 = () => {
             whyChoose: "Why Choose GoCas?",
             findUs: "Find us easily",
             exploreLocations: "Explore all locations",
-            howToRentCustomer: "How to Rent a Powerbank",
+            howToRentCustomer: "How to Rent a Power Bank",
             howToReturn: "How to Return Power Bank",
             introText:
                 "Wherever you go, don't worry about running out of battery! You can find GoCas Stations in your favorite spots. Visit the nearest GoCas Station and start charging!",
@@ -83,8 +83,8 @@ const Home3 = () => {
             whyChoose: "Kenapa memilih GoCas?",
             findUs: "Temukan kami dengan mudah",
             exploreLocations: "Telusuri semua lokasi",
-            howToRentCustomer: "Cara Sewa Powerbank",
-            howToReturn: "Cara Pengembalian Powerbank",
+            howToRentCustomer: "Cara Sewa Power bank",
+            howToReturn: "Cara Pengembalian Power bank",
             introText:
                 "Kemanapun kamu pergi, tidak perlu khawatir kehabisan baterai! Kamu bisa temukan GoCas Station di tempat-tempat favorit mu. Kunjungi GoCas Station terdekat dan mulai mengisi daya!",
         },
@@ -191,10 +191,10 @@ const Home3 = () => {
                     {
                         title:
                             language === "EN"
-                                ? "How to Rent a Powerbank"
+                                ? "How to Rent a Power Bank"
                                 : language === "CH"
                                 ? "如何租用移动电源"
-                                : "Cara Sewa Powerbank",
+                                : "Cara Sewa Power Bank",
                         steps: stepsBorrowPelanggan[language],
                     },
                     // {
@@ -207,7 +207,7 @@ const Home3 = () => {
                                 ? "How to Return Power Bank"
                                 : language === "CH"
                                 ? "如何退回移动电源"
-                                : "Cara Pengembalian Powerbank",
+                                : "Cara Pengembalian Power Bank",
                         steps: stepsReturn[language],
                     },
                 ].map((item, index) => (

@@ -6,37 +6,37 @@ import "slick-carousel/slick/slick-theme.css";
 
 const testimonials = [
     {
-        text: "Gocas sangat memudahkan saya! Saat baterai ponsel hampir habis di tengah perjalanan, saya cukup membuka aplikasi Gocas dan menemukan mesin terdekat untuk menyewa powerbank. Prosesnya cepat dan mudah. Yang paling saya suka adalah uang saya dikembalikan sebagian jika powerbank masih memiliki sisa daya saat dikembalikan. Sangat praktis dan ekonomis!",
+        text: "Gocas sangat memudahkan saya! Saat baterai ponsel hampir habis di tengah perjalanan, saya cukup membuka aplikasi Gocas dan menemukan mesin terdekat untuk menyewa power bank. Prosesnya cepat dan mudah. Yang paling saya suka adalah uang saya dikembalikan sebagian jika power bank masih memiliki sisa daya saat dikembalikan. Sangat praktis dan ekonomis!",
         name: "Siti Rahmawati",
         position: "Karyawan Swasta",
         image: "https://example.com/siti.jpg", // Replace with actual image URL
     },
     {
-        text: "Sebagai pengemudi ojek online, Gocas sangat membantu aktivitas sehari-hari saya. Ketika baterai ponsel hampir habis, saya bisa dengan mudah menyewa powerbank melalui aplikasi. Pengembaliannya pun fleksibel, bisa di mesin mana saja. Sistem cashback jika powerbank tidak kosong saat dikembalikan benar-benar menguntungkan!",
+        text: "Sebagai pengemudi ojek online, Gocas sangat membantu aktivitas sehari-hari saya. Ketika baterai ponsel hampir habis, saya bisa dengan mudah menyewa power bank melalui aplikasi. Pengembaliannya pun fleksibel, bisa di mesin mana saja. Sistem cashback jika power bank tidak kosong saat dikembalikan benar-benar menguntungkan!",
         name: "Ahmad Fauzi",
         position: "Pengemudi Ojek Online",
         image: "https://example.com/ahmad.jpg", // Replace with actual image URL
     },
     {
-        text: "Gocas adalah solusi terbaik bagi saya yang sering lupa membawa charger. Aplikasinya user-friendly, dan saya bisa menyewa powerbank kapan saja dibutuhkan. Uang saya dikembalikan sebagian jika powerbank belum habis saat dikembalikan, jadi tidak merasa rugi. Terima kasih Gocas!",
+        text: "Gocas adalah solusi terbaik bagi saya yang sering lupa membawa charger. Aplikasinya user-friendly, dan saya bisa menyewa power bank kapan saja dibutuhkan. Uang saya dikembalikan sebagian jika power bank belum habis saat dikembalikan, jadi tidak merasa rugi. Terima kasih Gocas!",
         name: "Lina Kusuma",
         position: "Mahasiswa",
         image: "https://example.com/lina.jpg", // Replace with actual image URL
     },
     {
-        text: "Saat menghadiri konferensi bisnis, Gocas sangat membantu saya tetap terhubung. Menyewa dan mengembalikan powerbank sangat mudah melalui aplikasi. Sistem pengembalian uang jika powerbank masih memiliki sisa daya adalah fitur yang sangat adil dan transparan.",
+        text: "Saat menghadiri konferensi bisnis, Gocas sangat membantu saya tetap terhubung. Menyewa dan mengembalikan power bank sangat mudah melalui aplikasi. Sistem pengembalian uang jika power bank masih memiliki sisa daya adalah fitur yang sangat adil dan transparan.",
         name: "Budi Santoso",
         position: "Profesional Bisnis",
         image: "https://example.com/budi.jpg", // Replace with actual image URL
     },
     {
-        text: "Saya sangat terbantu dengan Gocas saat traveling. Bisa menyewa powerbank dengan cepat dan mengembalikannya di mesin mana saja. Cashback yang diberikan jika powerbank tidak kosong saat dikembalikan membuat layanan ini semakin menarik. Sangat direkomendasikan!",
+        text: "Saya sangat terbantu dengan Gocas saat traveling. Bisa menyewa power bank dengan cepat dan mengembalikannya di mesin mana saja. Cashback yang diberikan jika power bank tidak kosong saat dikembalikan membuat layanan ini semakin menarik. Sangat direkomendasikan!",
         name: "Maya Putri",
         position: "Traveler",
         image: "https://example.com/maya.jpg", // Replace with actual image URL
     },
     {
-        text: "Gocas menjadi penyelamat saat saya menghadiri konser musik. Baterai ponsel saya hampir habis, dan saya membutuhkan untuk mengambil foto dan berkomunikasi dengan teman-teman. Menyewa powerbank melalui aplikasi sangat mudah, dan saya senang mendapatkan sebagian uang kembali karena powerbank belum habis saat dikembalikan.",
+        text: "Gocas menjadi penyelamat saat saya menghadiri konser musik. Baterai ponsel saya hampir habis, dan saya membutuhkan untuk mengambil foto dan berkomunikasi dengan teman-teman. Menyewa power bank melalui aplikasi sangat mudah, dan saya senang mendapatkan sebagian uang kembali karena power bank belum habis saat dikembalikan.",
         name: "Rudi Hartono",
         position: "Penggemar Musik",
         image: "https://example.com/rudi.jpg", // Replace with actual image URL

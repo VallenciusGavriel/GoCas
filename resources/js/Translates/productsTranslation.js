@@ -1,10 +1,10 @@
 export const productsTranslations = {
     EN: {
-        heroTitle: "Powerbank & GoCas Station",
+        heroTitle: "Power Bank & GoCas Station",
         ctaTitle: "EASY SOLUTION WITH GOCAS!",
         ctaButton: "WORK WITH US",
         ctaSubtitle: "Any Other Questions? Please Contact Us",
-        helpCenter: "GOCAS Help Center",
+        helpCenter: "GoCas Help Center",
         email: "Email: support@gocas.id",
         contactPerson: "Contact Person: +6282188886665",
         socialMedia: "Social Media: @gocas.indonesia",
@@ -19,11 +19,11 @@ export const productsTranslations = {
         },
     },
     ID: {
-        heroTitle: "Powerbank & GoCas Station",
+        heroTitle: "Power Bank & GoCas Station",
         ctaTitle: "SOLUSI MUDAH BERSAMA DENGAN GOCAS!",
         ctaButton: "KERJA SAMA DENGAN KAMI",
         ctaSubtitle: "Ada Pertanyaan Lain? Tolong Hubungi Kami",
-        helpCenter: "GOCAS Help Center",
+        helpCenter: "GoCas Help Center",
         email: "Email: support@gocas.id",
         contactPerson: "Contact Person: +6282188886665",
         socialMedia: "Social Media: @gocas.indonesia",
