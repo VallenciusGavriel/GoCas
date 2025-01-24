@@ -36,7 +36,7 @@ export const stepsBorrowPelanggan = {
         "Download aplikasi GoCas pada Play Store untuk pengguna Android dan App Store untuk pengguna iOS.",
         "Daftar menggunakan nomor handphone kamu dan masukkan kode verifikasi.",
         "Temukan stasiun GoCas terdekat dengan fitur “Toko Terdekat” pada aplikasi.",
-        "Pilih menu ini dan scan QR code yang ada pada Stasiun GoCas dan Bayar.",
+        "Pilih menu ini dan scan QR code yang ada pada GoCas Station dan bayar (bisa menggunakan Gopay, QRIS, dan Dana).",
         "Ambil power bank dari mesin dan Ready GoCas!",
     ],
     CH: [
