@@ -12,4 +12,21 @@ class Partner extends Model
     protected $guarded = ['id'];
 
     protected $table = 'partners';
+
+    protected $fillable = ['name', 'image_url', 'category_id'];
+
+    public function category()
+    {
+        return $this->belongsTo(\App\Models\PartnerCategory::class, 'category_id');
+    }
+
+    public function getCategoryNameAttribute()
+    {
+        return $this->category ? $this->category->name : 'No Category';
+    }
+
+    public function getImageUrlAttribute($value)
+    {
+        return "/storage/{$value}";
+    }
 }
