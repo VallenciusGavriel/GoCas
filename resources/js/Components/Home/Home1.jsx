@@ -38,6 +38,10 @@ const fadeInRight = {
     visible: { opacity: 1, x: 0 },
 };
 
+const redirect = (url) => {
+    window.location.href=url
+}
+
 const Home1 = () => {
     const { language } = useLanguage();
     return (
@@ -169,10 +173,9 @@ const Home1 = () => {
                             transition={{ duration: 0.3 }}
                         />
                         <HStack>
-                            <Link
-                                href={
-                                    "https://play.google.com/store/apps/details?id=so.dian.gocasid"
-                                }
+                            <div
+                                className={"cursor-pointer"}
+                                onClick={() => redirect("https://play.google.com/store/apps/details?id=so.dian.gocasid")}
                             >
                                 <MotionImage
                                     src={GPlay}
@@ -183,11 +186,10 @@ const Home1 = () => {
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
                                 />
-                            </Link>
-                            <Link
-                                href={
-                                    "https://apps.apple.com/id/app/gocas/id6738688391?l=id"
-                                }
+                            </div>
+                            <div
+                                className={"cursor-pointer"}
+                                onClick={() => redirect("https://apps.apple.com/id/app/gocas/id6738688391?l=id")}
                             >
                                 <MotionImage
                                     src={AppStore}
@@ -198,7 +200,7 @@ const Home1 = () => {
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
                                 />
-                            </Link>
+                            </div>
                         </HStack>
                         {/*<MotionImage*/}
                         {/*    src={QRCode}*/}
