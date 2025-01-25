@@ -26,9 +26,7 @@ const Footer = () => {
                 alignItems={{ base: "left", md: "center" }}
                 maxW="1200px"
                 w={"full"}
-                gap={10}
                 mb={6}
-                px={2}
             >
                 <Box color={"white"}>
                     <Image
