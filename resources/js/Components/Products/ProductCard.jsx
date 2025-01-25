@@ -12,6 +12,7 @@ const ProductCard = ({ product }) => {
     return (
         <Box
             width="full"
+            height={"full"}
             maxWidth="800px"
             mx="auto"
             py={{ base: 8, md: 10 }}
