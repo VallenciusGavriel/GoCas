@@ -99,6 +99,8 @@ const Home4 = () => {
     return (
         <MotionBox
             p={6}
+            maxW={"1200px"}
+            mx={"auto"}
             rounded="xl"
             bg="white"
             boxShadow="base"

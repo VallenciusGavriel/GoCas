@@ -120,6 +120,8 @@ const Home3 = () => {
                     {/* Use the translation */}
                 </HeaderText>
                 <MotionGrid
+                    mx={"auto"}
+                    maxW={"1200px"}
                     templateColumns={{
                         base: "repeat(1, 1fr)",
                         md: "repeat(2, 1fr)",
@@ -176,7 +178,7 @@ const Home3 = () => {
                 gap={{ base: 20, md: 6 }}
                 justify="center"
                 align="end"
-                maxW="1500px"
+                maxW="1200px"
                 mx="auto"
                 my="auto"
                 mt={20}
@@ -262,23 +264,13 @@ const Home3 = () => {
                 variants={fadeInUp}
                 transition={{ duration: 1 }}
             >
-                <HeaderText
-                    iconColor="black"
-                    size="normal"
-                    textAlign="center"
-                    mx="auto"
-                    topMargin={32}
-                >
-                    {translations[language].findUs}{" "}
-                    {/* Use the translated text */}
-                </HeaderText>
                 <Flex
                     direction={{ base: "column", md: "row" }}
                     justify="center"
-                    p={10}
-                    px={{ base: 4, md: 20 }}
+                    py={10}
                     mt={8}
-                    maxW="1500px"
+                    mx={"auto"}
+                    maxW="1200px"
                     w="full"
                     gap={20}
                 >
@@ -315,16 +307,26 @@ const Home3 = () => {
                     <MotionBox
                         width={{ base: "100%", md: "60%" }}
                         textAlign={{ base: "center", md: "start" }}
-                        maxW="800px"
+                        maxW="1200px"
                         px={[4, 0]}
                         mt={4}
                         variants={fadeInRight}
                         transition={{ duration: 1 }}
                     >
+                        <HeaderText
+                            iconColor="black"
+                            size="normal"
+                            textAlign="center"
+                            mx="auto"
+                        >
+                            {translations[language].findUs}{" "}
+                            {/* Use the translated text */}
+                        </HeaderText>
                         <Text
                             color="black"
                             fontSize="md"
                             fontFamily="Poppins"
+                            mt={12}
                             mb={6}
                             textAlign={{ base: "center", md: "left" }}
                         >
