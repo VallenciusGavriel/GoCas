@@ -79,7 +79,7 @@ const About = () => {
                             size={"large"}
                             withIcon={false}
                             inputclass={
-                                "xl:!text-6xl md:!text-5xl !text-3xl py-2"
+                                "xl:!text-5xl md:!text-4xl !text-2xl py-2"
                             }
                         >
                             {t.header}

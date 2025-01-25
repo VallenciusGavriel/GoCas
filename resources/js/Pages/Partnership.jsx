@@ -63,10 +63,10 @@ const Partnership = ({ partners, meta }) => {
             >
                 <Box
                     h={"full"}
-                    w={{ base: "full", lg: "50%" }}
+                    w={"full"}
+                    maxW={"1200px"}
                     rounded={"xl"}
                     mt={{ base: "24px", xl: "64px" }}
-                    px={{ base: "0px", xl: "64px" }}
                     py={{ base: "24px", xl: "32px" }}
                 >
                     <HeaderText
@@ -112,7 +112,7 @@ const Partnership = ({ partners, meta }) => {
                     src={Hand}
                     loading="lazy"
                     alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
-                    boxSize={{ base: "90%", xl: "50%" }}
+                    boxSize={{ base: "90%", xl: "40%" }}
                     m={2}
                     mt={10}
                     mb={6}
