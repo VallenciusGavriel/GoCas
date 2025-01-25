@@ -5,8 +5,8 @@ import ScrollableCards from "@/Components/Partnership/ScrollableCards.jsx";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 import { useLanguage } from "@/Context/LanguageContext";
 import { partnershipTranslations } from "@/Translates/partnershipTranslation";
-import {Box, Button, Flex, Image, Text, VStack} from "@chakra-ui/react";
-import {Head, Link} from "@inertiajs/react";
+import { Box, Button, Flex, Grid, Image, Text, VStack } from "@chakra-ui/react";
+import { Head, Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import BackgroundHero from "../../../public/images/partnership/bg.png";
 import FormImg from "../../../public/images/partnership/form.png";
@@ -36,7 +36,7 @@ const fadeInRight = {
     visible: { opacity: 1, x: 0 },
 };
 
-const Partnership = () => {
+const Partnership = ({ partners, meta }) => {
     const { language } = useLanguage();
     const t = partnershipTranslations[language];
 
@@ -74,9 +74,7 @@ const Partnership = () => {
                         iconColor={"brown"}
                         size={"large"}
                         withIcon={false}
-                        className={
-                            "xl:mt-0 mt-2 pl-2 pb-2 pt-4"
-                        }
+                        className={"xl:mt-0 mt-2 pl-2 pb-2 pt-4"}
                         inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
                     >
                         {t.heroTitle}
@@ -110,7 +108,15 @@ const Partnership = () => {
                         </MotionButton>
                     </Link>
                 </Box>
-                <Image src={Hand} loading="lazy" alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize={{ base: "90%", xl: "50%"}} m={2} mt={10} mb={6} />
+                <Image
+                    src={Hand}
+                    loading="lazy"
+                    alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
+                    boxSize={{ base: "90%", xl: "50%" }}
+                    m={2}
+                    mt={10}
+                    mb={6}
+                />
             </MotionFlex>
 
             {/* Partner Section */}
@@ -138,27 +144,68 @@ const Partnership = () => {
                 >
                     {t.partnerTitle}
                 </HeaderText>
-                <Flex
-                    bgColor={"#F0F0F0"}
-                    w={"full"}
-                    mt={"24px"}
-                    py={"40px"}
-                    alignItems={"center"}
-                    flexDirection={"column"}
-                >
-                    <HeaderText
-                        px={0}
-                        size="large"
-                        withIcon={false}
-                        iconColor="black"
-                        className={"text-center"}
-                        topMargin={4}
-                        inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
+                {partners.length > 0 ? (
+                    <Box>
+                        <Grid
+                            templateColumns={{
+                                base: "repeat(2, 1fr)",
+                                md: "repeat(4, 1fr)",
+                                lg: "repeat(6, 1fr)",
+                                xl: "repeat(8, 1fr)",
+                            }}
+                            gap={4}
+                        >
+                            {partners.map((partner) => (
+                                <Box
+                                    key={partner.id}
+                                    p="5"
+                                    borderBottom="1px"
+                                    borderColor="gray.200"
+                                    gridColumn="span 1"
+                                >
+                                    {partner.image_url && (
+                                        <Image
+                                            src={partner.image_url}
+                                            alt={partner.name}
+                                            boxSize="100%"
+                                            objectFit="cover"
+                                            borderRadius="lg"
+                                        />
+                                    )}
+                                    <Text
+                                        fontSize="md"
+                                        fontWeight="bold"
+                                        textAlign="center"
+                                    >
+                                        {partner.name}
+                                    </Text>
+                                </Box>
+                            ))}
+                        </Grid>
+                    </Box>
+                ) : (
+                    <Flex
+                        bgColor="#F0F0F0"
+                        w="full"
+                        mt="24px"
+                        py="40px"
+                        alignItems="center"
+                        flexDirection="column"
                     >
-                        {t.comingSoon}
-                    </HeaderText>
-                    <Text mt={"24px"}>{t.partnerVisible}</Text>
-                </Flex>
+                        <HeaderText
+                            px={0}
+                            size="large"
+                            withIcon={false}
+                            iconColor="black"
+                            className="text-center"
+                            topMargin={4}
+                            inputclass="xl:!text-6xl md:!text-5xl !text-2xl"
+                        >
+                            {t.comingSoon}
+                        </HeaderText>
+                        <Text mt="24px">{t.partnerVisible}</Text>
+                    </Flex>
+                )}
             </MotionVStack>
 
             {/* Benefits Section */}
@@ -264,7 +311,15 @@ const Partnership = () => {
                             {t.applicationFormTitle}
                         </HeaderText>
                         <Text>{t.applicationFormDescription}</Text>
-                        <Image loading="lazy" src={FormImg} alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia" boxSize="90%" m={2} mt={10} mb={6} />
+                        <Image
+                            loading="lazy"
+                            src={FormImg}
+                            alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
+                            boxSize="90%"
+                            m={2}
+                            mt={10}
+                            mb={6}
+                        />
                     </Box>
                     <Form />
                 </Flex>

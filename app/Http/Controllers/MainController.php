@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Location;
 use App\Models\Product;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
@@ -85,7 +86,10 @@ class MainController extends Controller
 
     public function partnership()
     {
+        $partners = Partner::all();
+
         return Inertia::render('Partnership', [
+            'partners' => $partners,
             'meta' => [
                 'title' => 'GoCas - Sewa Power bank Terbaik',
                 'description' => 'Bekerja sama dengan GoCas, menawarkan layanan sewa power bank terbaik dengan pengiriman cepat dan harga terjangkau.',
@@ -123,4 +127,5 @@ class MainController extends Controller
 
         return Inertia::render('Products', compact('products', 'meta', 'schema'));
     }
+
 }
