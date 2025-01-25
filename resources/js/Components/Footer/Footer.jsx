@@ -13,8 +13,9 @@ import X from "./../../../../public/images/navbar/x.png";
 const Footer = () => {
     const { language } = useLanguage();
     return (
-        <Box
-            px={8}
+        <Flex
+            direction={"column"}
+            alignItems={"center"}
             py={4}
             bgGradient="linear(to-b, #e8a72f, #ee7425)"
             color="gray.700"
@@ -23,6 +24,8 @@ const Footer = () => {
                 direction={{ base: "column", md: "row" }}
                 justifyContent={{ base: "left", md: "space-between" }}
                 alignItems={{ base: "left", md: "center" }}
+                maxW="1200px"
+                w={"full"}
                 gap={10}
                 mb={6}
                 px={2}
@@ -136,6 +139,8 @@ const Footer = () => {
                 justify={"space-between"}
                 color={"white"}
                 borderTop={"1px"}
+                maxW="1200px"
+                w={"full"}
                 gap={10}
                 py={8}
                 px={2}
@@ -233,7 +238,7 @@ const Footer = () => {
                     </Flex>
                 </Flex>
             </Flex>
-        </Box>
+        </Flex>
     );
 };
 
