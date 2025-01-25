@@ -81,7 +81,7 @@ const Home1 = () => {
                         size="normal"
                         withIcon={false}
                         topMargin={40}
-                        inputclass={"xl:!text-5xl md:!text-3xl !text-lg"}
+                        inputclass={"xl:!text-4xl md:!text-3xl !text-lg"}
                         px="0px"
                     >
                         {languages[language]["headline_1"]}{" "}
