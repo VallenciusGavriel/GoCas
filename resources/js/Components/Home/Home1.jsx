@@ -1,6 +1,6 @@
 import {
     Box,
-    Button,
+    Button, Flex,
     Grid,
     HStack,
     Image,
@@ -46,6 +46,7 @@ const Home1 = () => {
     const { language } = useLanguage();
     return (
         <MotionBox
+            pt={{base: 0, xl: 12}}
             maxWidth="1200px"
             mx="auto"
             initial="hidden"
@@ -171,7 +172,7 @@ const Home1 = () => {
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.3 }}
                         />
-                        <HStack>
+                        <Flex direction={{base: "column", xl: "row"}} gap={2}>
                             <div
                                 className={"cursor-pointer"}
                                 onClick={() => redirect("https://play.google.com/store/apps/details?id=so.dian.gocasid")}
@@ -200,7 +201,7 @@ const Home1 = () => {
                                     transition={{ duration: 0.3 }}
                                 />
                             </div>
-                        </HStack>
+                        </Flex>
                         {/*<MotionImage*/}
                         {/*    src={QRCode}*/}
                         {/*    alt="QR Code"*/}

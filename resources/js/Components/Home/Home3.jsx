@@ -196,7 +196,7 @@ const Home3 = () => {
                                 ? "How to Rent a Power Bank"
                                 : language === "CH"
                                 ? "如何租用移动电源"
-                                : "Cara Sewa Power Bank",
+                                : "Cara Sewa\nPower Bank",
                         steps: stepsBorrowPelanggan[language],
                     },
                     // {
@@ -209,7 +209,7 @@ const Home3 = () => {
                                 ? "How to Return Power Bank"
                                 : language === "CH"
                                 ? "如何退回移动电源"
-                                : "Cara Pengembalian Power Bank",
+                                : "Cara Pengembalian\nPower Bank",
                         steps: stepsReturn[language],
                     },
                 ].map((item, index) => (
@@ -233,7 +233,7 @@ const Home3 = () => {
                             textAlign="center"
                             mx="auto"
                             inputclass={
-                                "xl:!text-5xl md:!text-4xl !text-3xl max-w-[550px]"
+                                "xl:!text-4xl md:!text-3xl !text-2xl max-w-[550px]"
                             }
                         >
                             {item.title} {/* Use the translated title */}
