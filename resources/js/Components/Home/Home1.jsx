@@ -46,7 +46,7 @@ const Home1 = () => {
     const { language } = useLanguage();
     return (
         <MotionBox
-            maxWidth="1500px"
+            maxWidth="1200px"
             mx="auto"
             initial="hidden"
             whileInView="visible"
@@ -148,10 +148,9 @@ const Home1 = () => {
 
                 {/* Right Section */}
                 <MotionBox
-                    position={{ base: "relative", xl: "absolute" }}
-                    right={{ xl: "0" }}
-                    bottom={{ xl: "0" }}
-                    p={{ base: "4", xl: "28" }}
+                    display={"flex"}
+                    justifyContent={{base: "center", xl: "end"}}
+                    py={{ base: "4", xl: "28" }}
                     width={{ base: "100%", xl: "auto" }}
                     initial="hidden"
                     animate="visible"
