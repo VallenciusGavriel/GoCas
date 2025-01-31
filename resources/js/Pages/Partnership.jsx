@@ -76,37 +76,43 @@ const Partnership = ({ partners, meta }) => {
                         withIcon={false}
                         className={"xl:mt-0 mt-2 pl-2 pb-2 pt-4"}
                         inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
+                        textAlign={{base: "center", xl: "start"}}
                     >
                         {t.heroTitle}
                     </HeaderText>
-                    <Link href="/location">
-                        <MotionButton
-                            bgGradient="linear(to-r, #6EA93C, #25893C)"
-                            color="white"
-                            _hover={{
-                                bgGradient: "linear(to-r, green.500, teal.600)",
-                            }}
-                            borderRadius="full"
-                            fontSize="lg"
-                            fontFamily="poppins"
-                            fontWeight="bold"
-                            px={8}
-                            py={6}
-                            mt={{ base: 6, md: 12 }}
-                            mb={{ base: 10, md: 28 }}
-                            boxShadow="md"
-                            whileHover={{ scale: 1.1 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <Text
+                    <Flex
+                        alignItems={"center"}
+                        justifyContent={{base: "center", xl: "start"}}
+                    >
+                        <Link href="/location">
+                            <MotionButton
+                                bgGradient="linear(to-r, #6EA93C, #25893C)"
+                                color="white"
+                                _hover={{
+                                    bgGradient: "linear(to-r, green.500, teal.600)",
+                                }}
+                                borderRadius="full"
+                                fontSize="lg"
                                 fontFamily="poppins"
-                                className={"md:text-lg text-xs"}
+                                fontWeight="bold"
+                                px={8}
+                                py={6}
+                                mt={{ base: 6, md: 12 }}
+                                mb={{ base: 10, md: 28 }}
+                                boxShadow="md"
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.3 }}
                             >
-                                {languages[language]["button_text"]}{" "}
-                                {/* Temukan GoCas terdekat */}
-                            </Text>
-                        </MotionButton>
-                    </Link>
+                                <Text
+                                    fontFamily="poppins"
+                                    className={"md:text-lg text-xs"}
+                                >
+                                    {languages[language]["button_text"]}{" "}
+                                    {/* Temukan GoCas terdekat */}
+                                </Text>
+                            </MotionButton>
+                        </Link>
+                    </Flex>
                 </Box>
                 <Image
                     src={Hand}
@@ -144,7 +150,7 @@ const Partnership = ({ partners, meta }) => {
                 >
                     {t.partnerTitle}
                 </HeaderText>
-                {partners.length > 0 ? (
+                {(partners && partners.length > 0) ? (
                     <Box>
                         <Grid
                             templateColumns={{

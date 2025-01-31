@@ -20,7 +20,7 @@ export const partnershipTranslations = {
         partnerTitle: "Mitra Kami",
         comingSoon: "Segera Hadir",
         partnerVisible: "Mitra akan terlihat di sini",
-        benefitsTitle: "Manfaat Kerja sama",
+        benefitsTitle: "Manfaat Kerja Sama",
         benefitsDescription:
             "Jangkau lebih banyak pengunjung dan dapatkan pendapatan tambahan dengan #MITRAGOCAS",
         applicationFormTitle: "Form Aplikasi Mitra",
