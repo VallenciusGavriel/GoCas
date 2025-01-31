@@ -46,7 +46,7 @@ const Home1 = () => {
     const { language } = useLanguage();
     return (
         <MotionBox
-            pt={{base: 0, xl: 12}}
+            pt={12}
             maxWidth="1200px"
             mx="auto"
             initial="hidden"
@@ -55,8 +55,8 @@ const Home1 = () => {
             variants={fadeInUp}
             transition={{ duration: 1 }}
         >
-            <Grid
-                templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
+            <Flex
+                direction={{base: "column-reverse", xl: "row"}}
                 height="80%"
                 width="full"
                 zIndex="10"
@@ -70,6 +70,7 @@ const Home1 = () => {
                     textAlign={{ base: "center", xl: "left" }}
                     p="4"
                     height="100%"
+                    w={{base: "full", xl: "50%"}}
                     zIndex="10"
                     initial="hidden"
                     animate="visible"
@@ -80,7 +81,7 @@ const Home1 = () => {
                         iconColor="brown"
                         size="normal"
                         withIcon={false}
-                        topMargin={40}
+                        topMargin={{base: 14, xl: 40}}
                         inputclass={"xl:!text-4xl md:!text-3xl !text-lg"}
                         px="0px"
                     >
@@ -152,7 +153,8 @@ const Home1 = () => {
                     display={"flex"}
                     justifyContent={{base: "center", xl: "end"}}
                     py={{ base: "4", xl: "28" }}
-                    width={{ base: "100%", xl: "auto" }}
+                    w={{base: "full", xl: "50%"}}
+                    mt={{base: 15, md: 20, xl: 0}}
                     initial="hidden"
                     animate="visible"
                     variants={fadeInRight}
@@ -166,7 +168,7 @@ const Home1 = () => {
                             src={App}
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                             mb={2}
-                            h={"400px"}
+                            h={{base: "300px", md: "400px"}}
                             loading="lazy"
                             objectFit="contain"
                             whileHover={{ scale: 1.1 }}
@@ -213,7 +215,7 @@ const Home1 = () => {
                         {/*/>*/}
                     </VStack>
                 </MotionBox>
-            </Grid>
+            </Flex>
         </MotionBox>
     );
 };

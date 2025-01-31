@@ -316,8 +316,8 @@ const Home3 = () => {
                         <HeaderText
                             iconColor="black"
                             size="normal"
-                            textAlign="center"
-                            mx="auto"
+                            textAlign="start"
+                            px={0}
                         >
                             {translations[language].findUs}{" "}
                             {/* Use the translated text */}
