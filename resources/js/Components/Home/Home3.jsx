@@ -316,7 +316,7 @@ const Home3 = () => {
                         <HeaderText
                             iconColor="black"
                             size="normal"
-                            textAlign="start"
+                            textAlign={{base: "center", md: "start"}}
                             px={0}
                         >
                             {translations[language].findUs}{" "}
