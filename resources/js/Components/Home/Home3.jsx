@@ -301,7 +301,7 @@ const Home3 = () => {
                                 </Marker>
                             </MapContainer>
                         ) : (
-                            <Text>Location not found, please refresh.</Text>
+                            <Text>Location not found, please allow access and refresh.</Text>
                         )}
                     </MotionBox>
                     <MotionBox
