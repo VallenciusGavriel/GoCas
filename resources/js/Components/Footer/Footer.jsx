@@ -16,7 +16,7 @@ const Footer = () => {
         <Flex
             direction={"column"}
             alignItems={"center"}
-            py={4}
+            p={4}
             bgGradient="linear(to-b, #e8a72f, #ee7425)"
             color="gray.700"
         >
@@ -94,7 +94,7 @@ const Footer = () => {
                         {/*<Link href={"/faq"}>FAQ</Link>*/}
                     </Grid>
                 </Box>
-                <Box color={"white"} fontWeight={"extrabold"}>
+                <Box mt={{base: 8, md: 2}} color={"white"} fontWeight={"extrabold"}>
                     <Text mb={3}>
                         {language === "EN"
                             ? "Download now on"

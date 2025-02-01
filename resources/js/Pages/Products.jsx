@@ -4,13 +4,17 @@ import ProductCard from "@/Components/Products/ProductCard";
 import HeaderText from "@/Components/Text/HeaderText.jsx";
 import { useLanguage } from "@/Context/LanguageContext"; // Importing the context hook
 import { productsTranslations } from "@/Translates/productsTranslation"; // Import translations
-import { Box, Button, Grid, Link, Text, VStack } from "@chakra-ui/react";
+import {Box, Button, Grid, Link, Text, HStack, VStack, Image, Flex} from "@chakra-ui/react";
 import { Head } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import Background from "../../../public/images/products/bg2.jpg";
+import BackgroundHero from "../../../public/images/partnership/bg.png";
+import Hand from "../../../public/images/partnership/hand.png";
+import React from "react";
 
 // Framer Motion wrappers
 const MotionBox = motion(Box);
+const MotionFlex = motion(Flex);
 const MotionVStack = motion(VStack);
 const MotionGrid = motion(Grid);
 
@@ -121,14 +125,15 @@ const Products = ({ products, meta, schema }) => {
                 </MotionVStack>
 
                 {/* Call to Action Section */}
-                <MotionVStack
+                <MotionFlex
                     spacing={0}
-                    bgColor={"#fbd40a"}
-                    minH={"60vh"}
+                    bgImage={BackgroundHero}
+                    direction={{base: "column-reverse", xl: "row"}}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    minH={{base: "full", xl: "100vh"}}
                     bgSize="cover"
                     bgPos="center"
-                    alignItems={"start"}
-                    justifyContent={"center"}
                     px={"10%"}
                     py={24}
                     initial="hidden"
@@ -137,84 +142,102 @@ const Products = ({ products, meta, schema }) => {
                     variants={fadeInUp}
                     transition={{ duration: 1 }}
                 >
-                    <HeaderText
-                        px={0}
-                        iconColor={"brown"}
-                        size={"large"}
-                        withIcon={false}
-                        inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}
+                    <VStack
+                        alignItems={"start"}
+                        justifyContent={"center"}
                     >
-                        {t.ctaTitle}
-                    </HeaderText>
-                    <Link href={"/partnership"}>
-                        <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            transition={{ duration: 0.3 }}
+                        <HeaderText
+                            px={0}
+                            iconColor={"brown"}
+                            size={"large"}
+                            withIcon={false}
+                            inputclass={"xl:!text-6xl md:!text-5xl !text-3xl"}
+                            textAlign={{base: "center", xl: "start"}}
                         >
-                            <Button
-                                bgGradient="linear(to-r, #6EA93C, #25893C)"
-                                color="white"
-                                _hover={{
-                                    bgGradient:
-                                        "linear(to-r, #25893C, #6EA93C)",
-                                }}
-                                borderRadius="full"
-                                fontSize="lg"
-                                fontFamily="poppins"
-                                fontWeight="bold"
-                                px={8}
-                                py={6}
-                                mt={{ base: 6, md: 12 }}
-                                mb={{ base: 10, md: 28 }}
-                                boxShadow="md"
-                                w={{ base: 48, md: "full" }}
-                            >
-                                <Text
-                                    fontFamily="poppins"
-                                    className={"md:text-lg text-xs"}
+                            {t.ctaTitle}
+                        </HeaderText>
+                        <Flex w={"full"}>
+                            <Link href={"/partnership"} mx={{base: "auto", xl: 0}}>
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ duration: 0.3 }}
                                 >
-                                    {t.ctaButton}
-                                </Text>
-                            </Button>
-                        </motion.div>
-                    </Link>
-                    <Text
-                        fontFamily="poppins"
-                        className={"md:text-2xl text-md"}
-                    >
-                        {t.ctaSubtitle}
-                    </Text>
-                    <HeaderText
-                        px={0}
-                        topMargin={16}
-                        iconColor={"brown"}
-                        withIcon={false}
-                        inputclass={"xl:!text-4xl md:!text-3xl !text-2xl"}
-                    >
-                        {t.helpCenter}
-                    </HeaderText>
-                    <Text
-                        fontFamily="poppins"
-                        mt={"36px"}
-                        className={"md:text-xl text-sm"}
-                    >
-                        {t.email}
-                    </Text>
-                    <Text
-                        fontFamily="poppins"
-                        mt={"24px"}
-                        className={"md:text-xl text-sm"}
-                    >
-                        {t.contactPerson}
-                    </Text>
-                    <Text
-                        fontFamily="poppins"
-                        mt={"24px"}
-                        className={"md:text-xl text-sm"}
-                    >
-                        {t.socialMedia}
-                    </Text>
-                </MotionVStack>
+                                    <Button
+                                        bgGradient="linear(to-r, #6EA93C, #25893C)"
+                                        color="white"
+                                        _hover={{
+                                            bgGradient:
+                                                "linear(to-r, #25893C, #6EA93C)",
+                                        }}
+                                        borderRadius="full"
+                                        fontSize="lg"
+                                        fontFamily="poppins"
+                                        fontWeight="bold"
+                                        px={8}
+                                        py={6}
+                                        mt={{ base: 6, md: 12 }}
+                                        mb={{ base: 10, md: 28 }}
+                                        mx={"auto"}
+                                        boxShadow="md"
+                                        w={{ base: 48, md: "full" }}
+                                    >
+                                        <Text
+                                            fontFamily="poppins"
+                                            className={"md:text-lg text-xs"}
+                                        >
+                                            {t.ctaButton}
+                                        </Text>
+                                    </Button>
+                                </motion.div>
+                            </Link>
+                        </Flex>
+                    </VStack>
+                    <Image
+                        src={Hand}
+                        loading="lazy"
+                        alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
+                        boxSize={{ base: "90%", xl: "40%" }}
+                        m={2}
+                        mt={{base: 0, xl: 10}}
+                        mb={{base: 20, xl: 6}}
+                    />
+                    {/*<Text*/}
+                    {/*    fontFamily="poppins"*/}
+                    {/*    className={"md:text-2xl text-md"}*/}
+                    {/*>*/}
+                    {/*    {t.ctaSubtitle}*/}
+                    {/*</Text>*/}
+                    {/*<HeaderText*/}
+                    {/*    px={0}*/}
+                    {/*    topMargin={16}*/}
+                    {/*    iconColor={"brown"}*/}
+                    {/*    withIcon={false}*/}
+                    {/*    inputclass={"xl:!text-4xl md:!text-3xl !text-2xl"}*/}
+                    {/*>*/}
+                    {/*    {t.helpCenter}*/}
+                    {/*</HeaderText>*/}
+                    {/*<Text*/}
+                    {/*    fontFamily="poppins"*/}
+                    {/*    mt={"36px"}*/}
+                    {/*    className={"md:text-xl text-sm"}*/}
+                    {/*>*/}
+                    {/*    {t.email}*/}
+                    {/*</Text>*/}
+                    {/*<Text*/}
+                    {/*    fontFamily="poppins"*/}
+                    {/*    mt={"24px"}*/}
+                    {/*    className={"md:text-xl text-sm"}*/}
+                    {/*>*/}
+                    {/*    {t.contactPerson}*/}
+                    {/*</Text>*/}
+                    {/*<Text*/}
+                    {/*    fontFamily="poppins"*/}
+                    {/*    mt={"24px"}*/}
+                    {/*    className={"md:text-xl text-sm"}*/}
+                    {/*>*/}
+                    {/*    {t.socialMedia}*/}
+                    {/*</Text>*/}
+                </MotionFlex>
             </Box>
             <Footer />
         </div>
