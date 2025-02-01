@@ -83,8 +83,8 @@ const Home3 = () => {
             whyChoose: "Kenapa memilih GoCas?",
             findUs: "Temukan kami dengan mudah",
             exploreLocations: "Telusuri semua lokasi",
-            howToRentCustomer: "Cara Sewa Power bank",
-            howToReturn: "Cara Pengembalian Power bank",
+            howToRentCustomer: "Cara Sewa\nPower bank",
+            howToReturn: "Cara Pengembalian\nPower bank",
             introText:
                 "Kemanapun kamu pergi, tidak perlu khawatir kehabisan baterai! Kamu bisa temukan GoCas Station di tempat-tempat favorit mu. Kunjungi GoCas Station terdekat dan mulai mengisi daya!",
         },
@@ -233,7 +233,7 @@ const Home3 = () => {
                             textAlign="center"
                             mx="auto"
                             inputclass={
-                                "xl:!text-4xl md:!text-3xl !text-2xl max-w-[550px]"
+                                "xl:!text-4xl !text-3xl max-w-[550px]"
                             }
                         >
                             {item.title} {/* Use the translated title */}

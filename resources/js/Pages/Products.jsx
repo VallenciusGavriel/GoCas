@@ -106,6 +106,7 @@ const Products = ({ products, meta, schema }) => {
                         templateColumns={{ base: "1fr", md: `repeat(2, 1fr)` }}
                         gap={10}
                         py={2}
+                        mx={"auto"}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
