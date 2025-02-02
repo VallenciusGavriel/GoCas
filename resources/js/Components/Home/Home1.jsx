@@ -1,6 +1,6 @@
 import {
     Box,
-    Button,
+    Button, Flex,
     Grid,
     HStack,
     Image,
@@ -38,11 +38,16 @@ const fadeInRight = {
     visible: { opacity: 1, x: 0 },
 };
 
+const redirect = (url) => {
+    window.location.href=url
+}
+
 const Home1 = () => {
     const { language } = useLanguage();
     return (
         <MotionBox
-            maxWidth="1500px"
+            pt={12}
+            maxWidth="1200px"
             mx="auto"
             initial="hidden"
             whileInView="visible"
@@ -50,8 +55,8 @@ const Home1 = () => {
             variants={fadeInUp}
             transition={{ duration: 1 }}
         >
-            <Grid
-                templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
+            <Flex
+                direction={{base: "column-reverse", xl: "row"}}
                 height="80%"
                 width="full"
                 zIndex="10"
@@ -65,6 +70,7 @@ const Home1 = () => {
                     textAlign={{ base: "center", xl: "left" }}
                     p="4"
                     height="100%"
+                    w={{base: "full", xl: "50%"}}
                     zIndex="10"
                     initial="hidden"
                     animate="visible"
@@ -75,8 +81,8 @@ const Home1 = () => {
                         iconColor="brown"
                         size="normal"
                         withIcon={false}
-                        topMargin={40}
-                        inputclass={"xl:!text-5xl md:!text-3xl !text-lg"}
+                        topMargin={{base: 14, xl: 40}}
+                        inputclass={"xl:!text-4xl md:!text-3xl !text-lg"}
                         px="0px"
                     >
                         {languages[language]["headline_1"]}{" "}
@@ -144,11 +150,11 @@ const Home1 = () => {
 
                 {/* Right Section */}
                 <MotionBox
-                    position={{ base: "relative", xl: "absolute" }}
-                    right={{ xl: "0" }}
-                    bottom={{ xl: "0" }}
-                    p={{ base: "4", xl: "28" }}
-                    width={{ base: "100%", xl: "auto" }}
+                    display={"flex"}
+                    justifyContent={{base: "center", xl: "end"}}
+                    py={{ base: "4", xl: "28" }}
+                    w={{base: "full", xl: "50%"}}
+                    mt={{base: 15, md: 20, xl: 0}}
                     initial="hidden"
                     animate="visible"
                     variants={fadeInRight}
@@ -162,17 +168,16 @@ const Home1 = () => {
                             src={App}
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                             mb={2}
-                            h={"400px"}
+                            h={{base: "300px", md: "400px"}}
                             loading="lazy"
                             objectFit="contain"
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.3 }}
                         />
-                        <HStack>
-                            <Link
-                                href={
-                                    "https://play.google.com/store/apps/details?id=so.dian.gocasid"
-                                }
+                        <Flex direction={{base: "column", xl: "row"}} gap={2}>
+                            <div
+                                className={"cursor-pointer"}
+                                onClick={() => redirect("https://play.google.com/store/apps/details?id=so.dian.gocasid")}
                             >
                                 <MotionImage
                                     src={GPlay}
@@ -183,11 +188,10 @@ const Home1 = () => {
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
                                 />
-                            </Link>
-                            <Link
-                                href={
-                                    "https://apps.apple.com/id/app/gocas/id6738688391?l=id"
-                                }
+                            </div>
+                            <div
+                                className={"cursor-pointer"}
+                                onClick={() => redirect("https://apps.apple.com/id/app/gocas/id6738688391?l=id")}
                             >
                                 <MotionImage
                                     src={AppStore}
@@ -198,8 +202,8 @@ const Home1 = () => {
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
                                 />
-                            </Link>
-                        </HStack>
+                            </div>
+                        </Flex>
                         {/*<MotionImage*/}
                         {/*    src={QRCode}*/}
                         {/*    alt="QR Code"*/}
@@ -211,7 +215,7 @@ const Home1 = () => {
                         {/*/>*/}
                     </VStack>
                 </MotionBox>
-            </Grid>
+            </Flex>
         </MotionBox>
     );
 };

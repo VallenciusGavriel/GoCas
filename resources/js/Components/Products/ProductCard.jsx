@@ -12,6 +12,7 @@ const ProductCard = ({ product }) => {
     return (
         <Box
             width="full"
+            height={"full"}
             maxWidth="800px"
             mx="auto"
             py={{ base: 8, md: 10 }}
@@ -25,13 +26,14 @@ const ProductCard = ({ product }) => {
                 mt={{ base: 0, md: 6 }}
                 flexDir={{ base: "column", md: "column" }}
                 maxWidth={"w-11/12"}
+                h={"full"}
             >
                 <img
                     src={product.image_url}
                     alt={product.name}
                     className={"mx-auto w-4/5 md:w-1/2 px-0 mb-10"}
                 />
-                <VStack alignItems={"start"} px={{ base: 6, md: 12 }}>
+                <VStack px={{ base: 6, md: 12 }} h={"full"}>
                     <HeaderText
                         px={0}
                         iconColor={"brown"}
@@ -42,6 +44,8 @@ const ProductCard = ({ product }) => {
                         {product.name}
                     </HeaderText>
                     <Grid
+                        mt={"auto"}
+                        mb={0}
                         templateColumns={{ base: "1fr", md: `repeat(2, 1fr)` }}
                         gap={8}
                         py={2}

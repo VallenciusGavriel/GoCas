@@ -83,8 +83,8 @@ const Home3 = () => {
             whyChoose: "Kenapa memilih GoCas?",
             findUs: "Temukan kami dengan mudah",
             exploreLocations: "Telusuri semua lokasi",
-            howToRentCustomer: "Cara Sewa Power bank",
-            howToReturn: "Cara Pengembalian Power bank",
+            howToRentCustomer: "Cara Sewa\nPower bank",
+            howToReturn: "Cara Pengembalian\nPower bank",
             introText:
                 "Kemanapun kamu pergi, tidak perlu khawatir kehabisan baterai! Kamu bisa temukan GoCas Station di tempat-tempat favorit mu. Kunjungi GoCas Station terdekat dan mulai mengisi daya!",
         },
@@ -120,6 +120,8 @@ const Home3 = () => {
                     {/* Use the translation */}
                 </HeaderText>
                 <MotionGrid
+                    mx={"auto"}
+                    maxW={"1200px"}
                     templateColumns={{
                         base: "repeat(1, 1fr)",
                         md: "repeat(2, 1fr)",
@@ -176,7 +178,7 @@ const Home3 = () => {
                 gap={{ base: 20, md: 6 }}
                 justify="center"
                 align="end"
-                maxW="1500px"
+                maxW="1200px"
                 mx="auto"
                 my="auto"
                 mt={20}
@@ -194,7 +196,7 @@ const Home3 = () => {
                                 ? "How to Rent a Power Bank"
                                 : language === "CH"
                                 ? "如何租用移动电源"
-                                : "Cara Sewa Power Bank",
+                                : "Cara Sewa\nPower Bank",
                         steps: stepsBorrowPelanggan[language],
                     },
                     // {
@@ -207,7 +209,7 @@ const Home3 = () => {
                                 ? "How to Return Power Bank"
                                 : language === "CH"
                                 ? "如何退回移动电源"
-                                : "Cara Pengembalian Power Bank",
+                                : "Cara Pengembalian\nPower Bank",
                         steps: stepsReturn[language],
                     },
                 ].map((item, index) => (
@@ -231,7 +233,7 @@ const Home3 = () => {
                             textAlign="center"
                             mx="auto"
                             inputclass={
-                                "xl:!text-5xl md:!text-4xl !text-3xl max-w-[550px]"
+                                "xl:!text-4xl !text-3xl max-w-[550px]"
                             }
                         >
                             {item.title} {/* Use the translated title */}
@@ -262,23 +264,13 @@ const Home3 = () => {
                 variants={fadeInUp}
                 transition={{ duration: 1 }}
             >
-                <HeaderText
-                    iconColor="black"
-                    size="normal"
-                    textAlign="center"
-                    mx="auto"
-                    topMargin={32}
-                >
-                    {translations[language].findUs}{" "}
-                    {/* Use the translated text */}
-                </HeaderText>
                 <Flex
                     direction={{ base: "column", md: "row" }}
                     justify="center"
-                    p={10}
-                    px={{ base: 4, md: 20 }}
+                    py={10}
                     mt={8}
-                    maxW="1500px"
+                    mx={"auto"}
+                    maxW="1200px"
                     w="full"
                     gap={20}
                 >
@@ -309,22 +301,32 @@ const Home3 = () => {
                                 </Marker>
                             </MapContainer>
                         ) : (
-                            <Text>Loading map...</Text>
+                            <Text>Location not found, please allow access and refresh.</Text>
                         )}
                     </MotionBox>
                     <MotionBox
                         width={{ base: "100%", md: "60%" }}
                         textAlign={{ base: "center", md: "start" }}
-                        maxW="800px"
+                        maxW="1200px"
                         px={[4, 0]}
                         mt={4}
                         variants={fadeInRight}
                         transition={{ duration: 1 }}
                     >
+                        <HeaderText
+                            iconColor="black"
+                            size="normal"
+                            textAlign={{base: "center", md: "start"}}
+                            px={0}
+                        >
+                            {translations[language].findUs}{" "}
+                            {/* Use the translated text */}
+                        </HeaderText>
                         <Text
                             color="black"
                             fontSize="md"
                             fontFamily="Poppins"
+                            mt={12}
                             mb={6}
                             textAlign={{ base: "center", md: "left" }}
                         >

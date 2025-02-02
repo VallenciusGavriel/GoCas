@@ -1,4 +1,5 @@
 import { Box, Text as ChakraText, Image } from "@chakra-ui/react";
+import React from 'react';
 
 const HeaderText = ({
     children,
@@ -56,6 +57,8 @@ const HeaderText = ({
             ? `/images/home/listrik-mini-${iconColor}.svg`
             : null;
 
+    const childrenAsString = React.Children.toArray(children).join('');
+
     return (
         <Box
             mt={topMargin}
@@ -85,7 +88,12 @@ const HeaderText = ({
                 mx={mx}
                 px={px}
             >
-                {children}
+                {childrenAsString.split('\n').map((line, index) => (
+                    <span key={index}>
+                        {line}
+                        <br />
+                    </span>
+                ))}
             </ChakraText>
         </Box>
     );

@@ -100,10 +100,10 @@ const Partnership = ({ partners, meta }) => {
             >
                 <Box
                     h={"full"}
-                    w={{ base: "full", lg: "50%" }}
+                    w={"full"}
+                    maxW={"1200px"}
                     rounded={"xl"}
                     mt={{ base: "24px", xl: "64px" }}
-                    px={{ base: "0px", xl: "64px" }}
                     py={{ base: "24px", xl: "32px" }}
                 >
                     <HeaderText
@@ -113,43 +113,50 @@ const Partnership = ({ partners, meta }) => {
                         withIcon={false}
                         className={"xl:mt-0 mt-2 pl-2 pb-2 pt-4"}
                         inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
+                        textAlign={{ base: "center", xl: "start" }}
                     >
                         {t.heroTitle}
                     </HeaderText>
-                    <Link href="/location">
-                        <MotionButton
-                            bgGradient="linear(to-r, #6EA93C, #25893C)"
-                            color="white"
-                            _hover={{
-                                bgGradient: "linear(to-r, green.500, teal.600)",
-                            }}
-                            borderRadius="full"
-                            fontSize="lg"
-                            fontFamily="poppins"
-                            fontWeight="bold"
-                            px={8}
-                            py={6}
-                            mt={{ base: 6, md: 12 }}
-                            mb={{ base: 10, md: 28 }}
-                            boxShadow="md"
-                            whileHover={{ scale: 1.1 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <Text
+                    <Flex
+                        alignItems={"center"}
+                        justifyContent={{ base: "center", xl: "start" }}
+                    >
+                        <Link href="/location">
+                            <MotionButton
+                                bgGradient="linear(to-r, #6EA93C, #25893C)"
+                                color="white"
+                                _hover={{
+                                    bgGradient:
+                                        "linear(to-r, green.500, teal.600)",
+                                }}
+                                borderRadius="full"
+                                fontSize="lg"
                                 fontFamily="poppins"
-                                className={"md:text-lg text-xs"}
+                                fontWeight="bold"
+                                px={8}
+                                py={6}
+                                mt={{ base: 6, md: 12 }}
+                                mb={{ base: 10, md: 28 }}
+                                boxShadow="md"
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.3 }}
                             >
-                                {languages[language]["button_text"]}{" "}
-                                {/* Temukan GoCas terdekat */}
-                            </Text>
-                        </MotionButton>
-                    </Link>
+                                <Text
+                                    fontFamily="poppins"
+                                    className={"md:text-lg text-xs"}
+                                >
+                                    {languages[language]["button_text"]}{" "}
+                                    {/* Temukan GoCas terdekat */}
+                                </Text>
+                            </MotionButton>
+                        </Link>
+                    </Flex>
                 </Box>
                 <Image
                     src={Hand}
                     loading="lazy"
                     alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
-                    boxSize={{ base: "90%", xl: "50%" }}
+                    boxSize={{ base: "90%", xl: "40%" }}
                     m={2}
                     mt={10}
                     mb={6}

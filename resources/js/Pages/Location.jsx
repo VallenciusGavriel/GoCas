@@ -145,7 +145,7 @@ const Location = ({
                 pt={"96px"}
                 pb={5}
                 w={"100%"}
-                alignItems={"start"}
+                alignItems={{base: "center", xl: "start"}}
                 position={"relative"}
                 initial="hidden"
                 animate="visible"
@@ -158,6 +158,7 @@ const Location = ({
                     size="normal"
                     iconColor="black"
                     inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}
+                    textAlign={{base: "center", xl: "start"}}
                 >
                     {t.header}
                 </HeaderText>

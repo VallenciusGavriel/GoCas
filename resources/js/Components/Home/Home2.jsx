@@ -37,7 +37,7 @@ const Home2 = () => {
             transition={{ duration: 1 }}
         >
             <MotionBox
-                maxWidth="1500px"
+                maxWidth="1200px"
                 mx="auto"
                 display="flex"
                 flexDirection={{ base: "column", lg: "row" }}
