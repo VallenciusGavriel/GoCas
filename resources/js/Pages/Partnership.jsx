@@ -13,6 +13,9 @@ import FormImg from "../../../public/images/partnership/form.png";
 import Hand from "../../../public/images/partnership/hand.png";
 import React from "react";
 import languages from "@/Translates/languages.json";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -34,6 +37,40 @@ const fadeInLeft = {
 const fadeInRight = {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0 },
+};
+
+const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true,
+            },
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2,
+            },
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            },
+        },
+    ],
 };
 
 const Partnership = ({ partners, meta }) => {
@@ -76,20 +113,21 @@ const Partnership = ({ partners, meta }) => {
                         withIcon={false}
                         className={"xl:mt-0 mt-2 pl-2 pb-2 pt-4"}
                         inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
-                        textAlign={{base: "center", xl: "start"}}
+                        textAlign={{ base: "center", xl: "start" }}
                     >
                         {t.heroTitle}
                     </HeaderText>
                     <Flex
                         alignItems={"center"}
-                        justifyContent={{base: "center", xl: "start"}}
+                        justifyContent={{ base: "center", xl: "start" }}
                     >
                         <Link href="/location">
                             <MotionButton
                                 bgGradient="linear(to-r, #6EA93C, #25893C)"
                                 color="white"
                                 _hover={{
-                                    bgGradient: "linear(to-r, green.500, teal.600)",
+                                    bgGradient:
+                                        "linear(to-r, green.500, teal.600)",
                                 }}
                                 borderRadius="full"
                                 fontSize="lg"
@@ -132,6 +170,8 @@ const Partnership = ({ partners, meta }) => {
                 justifyContent={"start"}
                 px={"10%"}
                 py={"30px"}
+                gap={4}
+                mx={2}
                 className={"rounded-b-3xl"}
                 initial="hidden"
                 whileInView="visible"
@@ -150,16 +190,18 @@ const Partnership = ({ partners, meta }) => {
                 >
                     {t.partnerTitle}
                 </HeaderText>
-                {(partners && partners.length > 0) ? (
-                    <Box>
-                        <Grid
-                            templateColumns={{
-                                base: "repeat(2, 1fr)",
-                                md: "repeat(4, 1fr)",
-                                lg: "repeat(6, 1fr)",
-                                xl: "repeat(8, 1fr)",
-                            }}
-                            gap={4}
+                {partners.length > 0 ? (
+                    <Box w="full">
+                        <Slider
+                            {...settings}
+                            slidesToShow={
+                                partners.length < 5 ? partners.length : 4
+                            } // untuk jumlah slidenya
+                            slidesToScroll={
+                                partners.length < 5 ? partners.length : 4
+                            } // untuk jumlah scrollnya
+                            autoplay={partners.length >= 5}
+                            autoplaySpeed={3000}
                         >
                             {partners.map((partner) => (
                                 <Box
@@ -167,27 +209,32 @@ const Partnership = ({ partners, meta }) => {
                                     p="5"
                                     borderBottom="1px"
                                     borderColor="gray.200"
-                                    gridColumn="span 1"
+                                    display="flex"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    height="200px"
                                 >
                                     {partner.image_url && (
                                         <Image
                                             src={partner.image_url}
                                             alt={partner.name}
                                             boxSize="100%"
-                                            objectFit="cover"
+                                            objectFit="contain"
                                             borderRadius="lg"
+                                            maxH="150px"
                                         />
                                     )}
                                     <Text
                                         fontSize="md"
                                         fontWeight="bold"
                                         textAlign="center"
+                                        mt={2}
                                     >
                                         {partner.name}
                                     </Text>
                                 </Box>
                             ))}
-                        </Grid>
+                        </Slider>
                     </Box>
                 ) : (
                     <Flex
