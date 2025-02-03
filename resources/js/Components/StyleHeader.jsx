@@ -13,6 +13,7 @@ const StyledHeader = ({ text }) => {
             size={"normal"}
             inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"}
             withIcon={false}
+            styled={true}
         >
             {parts.map((part, index) =>
                 part.startsWith("*") && part.endsWith("*") ? (

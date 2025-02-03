@@ -12,6 +12,7 @@ const HeaderText = ({
     textAlign = "start",
     mx = 0,
     px = { base: 10, md: 10 },
+    styled = false
 }) => {
     const fontSizeMapping = {
         large: "7xl",
@@ -88,7 +89,7 @@ const HeaderText = ({
                 mx={mx}
                 px={px}
             >
-                {childrenAsString.split('\n').map((line, index) => (
+                {styled ? children : childrenAsString.split('\n').map((line, index) => (
                     <span key={index}>
                         {line}
                         <br />

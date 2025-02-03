@@ -115,6 +115,7 @@ const Home3 = () => {
                     textAlign="center"
                     mx="auto"
                     topMargin={10}
+                    px={{base: 0, md: 10}}
                 >
                     {translations[language].whyChoose}{" "}
                     {/* Use the translation */}
