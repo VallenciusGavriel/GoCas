@@ -1,7 +1,4 @@
-import Footer from "@/Components/Footer/Footer";
-import Navbar from "@/Components/Navbar/Navbar";
-import HeaderText from "@/Components/Text/HeaderText.jsx";
-import StyledDescription from "@/Components/StyleDescription";
+import { Suspense, lazy } from 'react';
 import {
     Box,
     Flex,
@@ -12,14 +9,22 @@ import {
 } from "@chakra-ui/react";
 import { Head } from "@inertiajs/react";
 import { motion } from "framer-motion";
-import Background from "../../../public/images/about/bg1.png";
-import BackgroundPhone from "../../../public/images/about/bg2.png";
-import Community from "../../../public/images/about/community.png";
-import EcoFriendly from "../../../public/images/about/ecofriendly.png";
-import PBShare from "../../../public/images/about/pbshare.png";
 import { useLanguage } from "../Context/LanguageContext";
 import { aboutTranslations } from "../Translates/aboutTranslation";
-import StyledHeader from "@/Components/StyleHeader.jsx";
+
+// Lazy load heavy components
+const Navbar = lazy(() => import("@/Components/Navbar/Navbar"));
+const Footer = lazy(() => import("@/Components/Footer/Footer"));
+const HeaderText = lazy(() => import("@/Components/Text/HeaderText.jsx"));
+const StyledDescription = lazy(() => import("@/Components/StyleDescription"));
+const StyledHeader = lazy(() => import("@/Components/StyleHeader.jsx"));
+
+// Convert images to WebP format
+const Background = "/images/about/bg1.webp";
+const BackgroundPhone = "/images/about/bg2.webp";
+const Community = "/images/about/community.webp";
+const EcoFriendly = "/images/about/ecofriendly.webp";
+const PBShare = "/images/about/pbshare.webp";
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
@@ -38,11 +43,12 @@ const About = () => {
         base: { height: "100vh", width: "auto" },
         xl: { width: "full", height: "auto" },
     });
-    // console.log("Current language:", language);
 
     return (
         <div className={"overflow-x-hidden"}>
-            <Navbar />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Navbar />
+            </Suspense>
             <Head title={t.title} />
             <MotionBox
                 minH={"100vh"}
@@ -73,17 +79,19 @@ const About = () => {
                     transition={{ duration: 1 }}
                 >
                     <Box w={{ base: "full", lg: "50%" }}>
-                        <HeaderText
-                            px={2}
-                            iconColor={"brown"}
-                            size={"large"}
-                            withIcon={false}
-                            inputclass={
-                                "xl:!text-5xl md:!text-4xl !text-2xl py-2"
-                            }
-                        >
-                            {t.header}
-                        </HeaderText>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <HeaderText
+                                px={2}
+                                iconColor={"brown"}
+                                size={"large"}
+                                withIcon={false}
+                                inputclass={
+                                    "xl:!text-5xl md:!text-4xl !text-2xl py-2"
+                                }
+                            >
+                                {t.header}
+                            </HeaderText>
+                        </Suspense>
                         <Text
                             fontFamily="poppins"
                             mt={"24px"}
@@ -107,15 +115,17 @@ const About = () => {
                 variants={animationVariants}
                 transition={{ duration: 1 }}
             >
-                <HeaderText
-                    px={0}
-                    iconColor={"green"}
-                    size={"large"}
-                    inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
-                    withIcon={false}
-                >
-                    {t.commitmentTitle}
-                </HeaderText>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <HeaderText
+                        px={0}
+                        iconColor={"green"}
+                        size={"large"}
+                        inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
+                        withIcon={false}
+                    >
+                        {t.commitmentTitle}
+                    </HeaderText>
+                </Suspense>
                 <MotionFlex
                     mt={"48px"}
                     gap={8}
@@ -142,16 +152,18 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 1 }}
                         />
-                        <HeaderText
-                            px={0}
-                            topMargin={12}
-                            iconColor={"black"}
-                            size={"normal"}
-                            inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"}
-                            withIcon={false}
-                        >
-                            {t.ecoFriendly.title}
-                        </HeaderText>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <HeaderText
+                                px={0}
+                                topMargin={12}
+                                iconColor={"black"}
+                                size={"normal"}
+                                inputclass={"xl:!text-3xl md:!text-3xl !text-2xl"}
+                                withIcon={false}
+                            >
+                                {t.ecoFriendly.title}
+                            </HeaderText>
+                        </Suspense>
                         <Text fontFamily="poppins">
                             {t.ecoFriendly.description}
                         </Text>
@@ -172,8 +184,10 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 1 }}
                         />
-                        <StyledHeader text={t.community.title}/>
-                        <StyledDescription text={t.community.description} />
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <StyledHeader text={t.community.title} />
+                            <StyledDescription text={t.community.description} />
+                        </Suspense>
                     </VStack>
                 </MotionFlex>
             </MotionVStack>
@@ -189,15 +203,17 @@ const About = () => {
                 variants={animationVariants}
                 transition={{ duration: 1 }}
             >
-                <HeaderText
-                    px={0}
-                    iconColor={"black"}
-                    size={"large"}
-                    inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
-                    withIcon={false}
-                >
-                    {t.services.title}
-                </HeaderText>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <HeaderText
+                        px={0}
+                        iconColor={"black"}
+                        size={"large"}
+                        inputclass={"xl:!text-5xl md:!text-4xl !text-3xl"}
+                        withIcon={false}
+                    >
+                        {t.services.title}
+                    </HeaderText>
+                </Suspense>
                 <MotionBox
                     border="1px"
                     borderColor="gray.200"
@@ -221,18 +237,20 @@ const About = () => {
                             loading="lazy"
                         />
                         <VStack alignItems={"start"} justifyContent={"start"}>
-                            <HeaderText
-                                px={0}
-                                topMargin={10}
-                                iconColor={"black"}
-                                size={"normal"}
-                                withIcon={false}
-                                inputclass={
-                                    "xl:!text-3xl md:!text-3xl !text-2xl"
-                                }
-                            >
-                                {t.services.title2}
-                            </HeaderText>
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <HeaderText
+                                    px={0}
+                                    topMargin={10}
+                                    iconColor={"black"}
+                                    size={"normal"}
+                                    withIcon={false}
+                                    inputclass={
+                                        "xl:!text-3xl md:!text-3xl !text-2xl"
+                                    }
+                                >
+                                    {t.services.title2}
+                                </HeaderText>
+                            </Suspense>
                             <Text fontFamily="poppins">
                                 {t.services.description}
                             </Text>
@@ -240,7 +258,9 @@ const About = () => {
                     </Flex>
                 </MotionBox>
             </MotionVStack>
-            <Footer />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };
