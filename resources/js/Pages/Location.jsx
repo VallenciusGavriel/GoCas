@@ -1,8 +1,4 @@
-import Footer from "@/Components/Footer/Footer";
-import LocationsGrid from "@/Components/Location/LocationsGrid.jsx";
-import Maps from "@/Components/Location/Maps.jsx";
-import Navbar from "@/Components/Navbar/Navbar";
-import HeaderText from "@/Components/Text/HeaderText.jsx";
+import { Suspense, lazy, useState, useEffect } from "react";
 import {
     Box,
     Button,
@@ -16,9 +12,15 @@ import {
 import { Head } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import { SearchIcon } from "lucide-react";
-import { useEffect, useState } from "react";
 import { useLanguage } from "../Context/LanguageContext";
 import { locationTranslations } from "../Translates/locationTranslation";
+
+// Lazy load heavy components
+const Navbar = lazy(() => import("@/Components/Navbar/Navbar"));
+const Footer = lazy(() => import("@/Components/Footer/Footer"));
+const LocationsGrid = lazy(() => import("@/Components/Location/LocationsGrid.jsx"));
+const Maps = lazy(() => import("@/Components/Location/Maps.jsx"));
+const HeaderText = lazy(() => import("@/Components/Text/HeaderText.jsx"));
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -42,12 +44,12 @@ const fadeInRight = {
 };
 
 const Location = ({
-    locations: initialLocations,
-    center,
-    show_count,
-    total_count,
-    station_count,
-}) => {
+                      locations: initialLocations,
+                      center,
+                      show_count,
+                      total_count,
+                      station_count,
+                  }) => {
     const [query, setQuery] = useState("");
     const [lat, setLat] = useState(center[0]);
     const [long, setLong] = useState(center[1]);
@@ -57,7 +59,7 @@ const Location = ({
     const [locations, setLocations] = useState(initialLocations);
 
     // Get current language from context
-    const { language, setLanguage } = useLanguage();
+    const { language } = useLanguage();
     const t = locationTranslations[language]; // Get translations based on current language
 
     useEffect(() => {
@@ -140,33 +142,34 @@ const Location = ({
     return (
         <>
             <Head title={t.title} />
-            <Navbar />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Navbar />
+            </Suspense>
             <MotionVStack
                 pt={"96px"}
                 pb={5}
                 w={"100%"}
-                alignItems={{base: "center", xl: "start"}}
+                alignItems={{ base: "center", xl: "start" }}
                 position={"relative"}
                 initial="hidden"
                 animate="visible"
                 variants={fadeInUp}
                 transition={{ duration: 1 }}
             >
-                <HeaderText
-                    px={{ base: 10, md: 20 }}
-                    topMargin={20}
-                    size="normal"
-                    iconColor="black"
-                    inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}
-                    textAlign={{base: "center", xl: "start"}}
-                >
-                    {t.header}
-                </HeaderText>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <HeaderText
+                        px={{ base: 10, md: 20 }}
+                        topMargin={20}
+                        size="normal"
+                        iconColor="black"
+                        inputclass={"xl:!text-5xl md:!text-3xl !text-2xl"}
+                        textAlign={{ base: "center", xl: "start" }}
+                    >
+                        {t.header}
+                    </HeaderText>
+                </Suspense>
 
-                <Flex
-                    mx={"auto"}
-                    flexDir={{base: "column", sm: "row"}}
-                >
+                <Flex mx={"auto"} flexDir={{ base: "column", sm: "row" }}>
                     <MotionFlex
                         align="center"
                         maxW="md"
@@ -232,12 +235,14 @@ const Location = ({
                     variants={fadeInRight}
                     transition={{ duration: 1 }}
                 >
-                    <Maps
-                        key={`${ver}`}
-                        locations={locations}
-                        point={[lat, long]}
-                        searchLocation={hitSearchLocation}
-                    />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Maps
+                            key={`${ver}`}
+                            locations={locations}
+                            point={[lat, long]}
+                            searchLocation={hitSearchLocation}
+                        />
+                    </Suspense>
                 </MotionFlex>
             </MotionVStack>
 
@@ -254,15 +259,17 @@ const Location = ({
                     transition={{ duration: 1 }}
                 >
                     <VStack align="start" px={2} py={1} w="100%" mt={4}>
-                        <HeaderText
-                            px={0}
-                            size="normal"
-                            topMargin={8}
-                            iconColor="black"
-                            inputclass={"xl:!text-3xl md:!text-2xl !text-xl"}
-                        >
-                            {t.nearbyLocations}
-                        </HeaderText>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <HeaderText
+                                px={0}
+                                size="normal"
+                                topMargin={8}
+                                iconColor="black"
+                                inputclass={"xl:!text-3xl md:!text-2xl !text-xl"}
+                            >
+                                {t.nearbyLocations}
+                            </HeaderText>
+                        </Suspense>
                         <Box
                             borderTop={"1px"}
                             w={"100%"}
@@ -282,15 +289,19 @@ const Location = ({
                     </VStack>
 
                     <Flex align="center" px={2} py={1} w="100%" mt={4}>
-                        <LocationsGrid
-                            locations={locations}
-                            startLat={lat}
-                            startLong={long}
-                        />
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <LocationsGrid
+                                locations={locations}
+                                startLat={lat}
+                                startLong={long}
+                            />
+                        </Suspense>
                     </Flex>
                 </MotionBox>
             </Center>
-            <Footer />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Footer />
+            </Suspense>
         </>
     );
 };
