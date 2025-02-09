@@ -1,21 +1,32 @@
-import Footer from "@/Components/Footer/Footer";
-import Navbar from "@/Components/Navbar/Navbar";
-import Form from "@/Components/Partnership/Form.jsx";
-import ScrollableCards from "@/Components/Partnership/ScrollableCards.jsx";
-import HeaderText from "@/Components/Text/HeaderText.jsx";
-import { useLanguage } from "@/Context/LanguageContext";
-import { partnershipTranslations } from "@/Translates/partnershipTranslation";
-import { Box, Button, Flex, Grid, Image, Text, VStack } from "@chakra-ui/react";
+import { Suspense, lazy, useState, useEffect } from "react";
+import {
+    Box,
+    Button,
+    Flex,
+    Image,
+    Text,
+    VStack,
+} from "@chakra-ui/react";
 import { Head, Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
-import BackgroundHero from "../../../public/images/partnership/bg.png";
-import FormImg from "../../../public/images/partnership/form.png";
-import Hand from "../../../public/images/partnership/hand.png";
-import React from "react";
+import { useLanguage } from "@/Context/LanguageContext";
+import { partnershipTranslations } from "@/Translates/partnershipTranslation";
 import languages from "@/Translates/languages.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+// Lazy load heavy components
+const Navbar = lazy(() => import("@/Components/Navbar/Navbar"));
+const Footer = lazy(() => import("@/Components/Footer/Footer"));
+const Form = lazy(() => import("@/Components/Partnership/Form.jsx"));
+const ScrollableCards = lazy(() => import("@/Components/Partnership/ScrollableCards.jsx"));
+const HeaderText = lazy(() => import("@/Components/Text/HeaderText.jsx"));
+
+// Convert images to WebP format
+const BackgroundHero = "/images/partnership/bg.webp";
+const FormImg = "/images/partnership/form.webp";
+const Hand = "/images/partnership/hand.webp";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -27,16 +38,6 @@ const MotionButton = motion(Button);
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
-};
-
-const fadeInLeft = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-};
-
-const fadeInRight = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0 },
 };
 
 const settings = {
@@ -79,7 +80,9 @@ const Partnership = ({ partners, meta }) => {
 
     return (
         <div className={"overflow-x-hidden"}>
-            <Navbar />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Navbar />
+            </Suspense>
             <Head title="Partnership" />
 
             {/* Hero Section */}
@@ -106,17 +109,19 @@ const Partnership = ({ partners, meta }) => {
                     mt={{ base: "24px", xl: "64px" }}
                     py={{ base: "24px", xl: "32px" }}
                 >
-                    <HeaderText
-                        px={0}
-                        iconColor={"brown"}
-                        size={"large"}
-                        withIcon={false}
-                        className={"xl:mt-0 mt-2 pl-2 pb-2 pt-4"}
-                        inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
-                        textAlign={{ base: "center", xl: "start" }}
-                    >
-                        {t.heroTitle}
-                    </HeaderText>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <HeaderText
+                            px={0}
+                            iconColor={"brown"}
+                            size={"large"}
+                            withIcon={false}
+                            className={"xl:mt-0 mt-2 pl-2 pb-2 pt-4"}
+                            inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
+                            textAlign={{ base: "center", xl: "start" }}
+                        >
+                            {t.heroTitle}
+                        </HeaderText>
+                    </Suspense>
                     <Flex
                         alignItems={"center"}
                         justifyContent={{ base: "center", xl: "start" }}
@@ -145,8 +150,7 @@ const Partnership = ({ partners, meta }) => {
                                     fontFamily="poppins"
                                     className={"md:text-lg text-xs"}
                                 >
-                                    {languages[language]["button_text"]}{" "}
-                                    {/* Temukan GoCas terdekat */}
+                                    {languages[language]["button_text"]}
                                 </Text>
                             </MotionButton>
                         </Link>
@@ -179,17 +183,19 @@ const Partnership = ({ partners, meta }) => {
                 variants={fadeInUp}
                 transition={{ duration: 1 }}
             >
-                <HeaderText
-                    px={0}
-                    size="large"
-                    withIcon={false}
-                    iconColor="black"
-                    className={"text-center"}
-                    topMargin={4}
-                    inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
-                >
-                    {t.partnerTitle}
-                </HeaderText>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <HeaderText
+                        px={0}
+                        size="large"
+                        withIcon={false}
+                        iconColor="black"
+                        className={"text-center"}
+                        topMargin={4}
+                        inputclass={"xl:!text-6xl md:!text-5xl !text-2xl"}
+                    >
+                        {t.partnerTitle}
+                    </HeaderText>
+                </Suspense>
                 {partners.length > 0 ? (
                     <Box w="full">
                         <Slider
@@ -245,17 +251,19 @@ const Partnership = ({ partners, meta }) => {
                         alignItems="center"
                         flexDirection="column"
                     >
-                        <HeaderText
-                            px={0}
-                            size="large"
-                            withIcon={false}
-                            iconColor="black"
-                            className="text-center"
-                            topMargin={4}
-                            inputclass="xl:!text-6xl md:!text-5xl !text-2xl"
-                        >
-                            {t.comingSoon}
-                        </HeaderText>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <HeaderText
+                                px={0}
+                                size="large"
+                                withIcon={false}
+                                iconColor="black"
+                                className="text-center"
+                                topMargin={4}
+                                inputclass="xl:!text-6xl md:!text-5xl !text-2xl"
+                            >
+                                {t.comingSoon}
+                            </HeaderText>
+                        </Suspense>
                         <Text mt="24px">{t.partnerVisible}</Text>
                     </Flex>
                 )}
@@ -274,53 +282,23 @@ const Partnership = ({ partners, meta }) => {
                 variants={fadeInUp}
                 transition={{ duration: 1 }}
             >
-                <HeaderText
-                    px={0}
-                    size="small"
-                    withIcon={false}
-                    iconColor="black"
-                    className={"text-center"}
-                    topMargin={4}
-                    inputclass={"xl:!text-4xl md:!text-2xl !text-xl"}
-                >
-                    {t.benefitsTitle}
-                </HeaderText>
-                <ScrollableCards />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <HeaderText
+                        px={0}
+                        size="small"
+                        withIcon={false}
+                        iconColor="black"
+                        className={"text-center"}
+                        topMargin={4}
+                        inputclass={"xl:!text-4xl md:!text-2xl !text-xl"}
+                    >
+                        {t.benefitsTitle}
+                    </HeaderText>
+                </Suspense>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <ScrollableCards />
+                </Suspense>
             </MotionVStack>
-
-            {/* Testimonials Section */}
-            {/*<MotionVStack*/}
-            {/*    spacing={0}*/}
-            {/*    alignItems={"start"}*/}
-            {/*    justifyContent={"start"}*/}
-            {/*    px={"10%"}*/}
-            {/*    className={"rounded-3xl"}*/}
-            {/*    py={"64px"}*/}
-            {/*    initial="hidden"*/}
-            {/*    whileInView="visible"*/}
-            {/*    viewport={{ once: true }}*/}
-            {/*    variants={fadeInUp}*/}
-            {/*    transition={{ duration: 1 }}*/}
-            {/*>*/}
-            {/*    <HeaderText*/}
-            {/*        px={0}*/}
-            {/*        iconColor={"black"}*/}
-            {/*        size={"large"}*/}
-            {/*        withIcon={false}*/}
-            {/*        inputclass={"xl:!text-4xl md:!text-2xl !text-xl"}*/}
-            {/*    >*/}
-            {/*        Testimoni Partner*/}
-            {/*    </HeaderText>*/}
-            {/*    <Flex*/}
-            {/*        direction={"column"}*/}
-            {/*        my={"auto"}*/}
-            {/*        w={"full"}*/}
-            {/*        alignItems={"center"}*/}
-            {/*        justifyContent={"center"}*/}
-            {/*    >*/}
-            {/*        <Testimoni />*/}
-            {/*    </Flex>*/}
-            {/*</MotionVStack>*/}
 
             {/* Partner Application Form Section */}
             <MotionFlex
@@ -352,17 +330,19 @@ const Partnership = ({ partners, meta }) => {
                         me={{ base: "0px", xl: "12px" }}
                         mb={{ base: "12px", xl: "0px" }}
                     >
-                        <HeaderText
-                            px={0}
-                            iconColor={"black"}
-                            size={"large"}
-                            withIcon={false}
-                            inputclass={
-                                "xl:!text-4xl md:!text-2xl !text-xl mb-2"
-                            }
-                        >
-                            {t.applicationFormTitle}
-                        </HeaderText>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <HeaderText
+                                px={0}
+                                iconColor={"black"}
+                                size={"large"}
+                                withIcon={false}
+                                inputclass={
+                                    "xl:!text-4xl md:!text-2xl !text-xl mb-2"
+                                }
+                            >
+                                {t.applicationFormTitle}
+                            </HeaderText>
+                        </Suspense>
                         <Text>{t.applicationFormDescription}</Text>
                         <Image
                             loading="lazy"
@@ -374,11 +354,15 @@ const Partnership = ({ partners, meta }) => {
                             mb={6}
                         />
                     </Box>
-                    <Form />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Form />
+                    </Suspense>
                 </Flex>
             </MotionFlex>
 
-            <Footer />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };
