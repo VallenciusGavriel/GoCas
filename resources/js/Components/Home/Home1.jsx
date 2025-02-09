@@ -1,6 +1,8 @@
+import { Suspense, lazy } from "react";
 import {
     Box,
-    Button, Flex,
+    Button,
+    Flex,
     Grid,
     HStack,
     Image,
@@ -9,13 +11,17 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
-import AppStore from "../../../../public/images/navbar/appstore.png";
-import GPlay from "../../../../public/images/navbar/gplay.png";
-import App from "../../../../public/images/home/app.png";
 import { useLanguage } from "../../Context/LanguageContext";
 import languages from "../../Translates/languages.json";
-import QRCode from "./../../../../public/images/home/qr-code.png";
-import HeaderText from "./../Text/HeaderText";
+
+// Lazy load heavy components
+const HeaderText = lazy(() => import("./../Text/HeaderText"));
+
+// Convert images to WebP format
+const AppStore = "/images/navbar/appstore.png";
+const GPlay = "/images/navbar/gplay.png";
+const App = "/images/home/app.png";
+const QRCode = "/images/home/qr-code.png";
 
 // Framer Motion Wrappers
 const MotionBox = motion(Box);
@@ -39,11 +45,12 @@ const fadeInRight = {
 };
 
 const redirect = (url) => {
-    window.location.href=url
-}
+    window.location.href = url;
+};
 
 const Home1 = () => {
     const { language } = useLanguage();
+
     return (
         <MotionBox
             pt={12}
@@ -56,7 +63,7 @@ const Home1 = () => {
             transition={{ duration: 1 }}
         >
             <Flex
-                direction={{base: "column-reverse", xl: "row"}}
+                direction={{ base: "column-reverse", xl: "row" }}
                 height="80%"
                 width="full"
                 zIndex="10"
@@ -70,44 +77,46 @@ const Home1 = () => {
                     textAlign={{ base: "center", xl: "left" }}
                     p="4"
                     height="100%"
-                    w={{base: "full", xl: "50%"}}
+                    w={{ base: "full", xl: "50%" }}
                     zIndex="10"
                     initial="hidden"
                     animate="visible"
                     variants={fadeInLeft}
                     transition={{ duration: 1 }}
                 >
-                    <HeaderText
-                        iconColor="brown"
-                        size="normal"
-                        withIcon={false}
-                        topMargin={{base: 14, xl: 40}}
-                        inputclass={"xl:!text-4xl md:!text-3xl !text-lg"}
-                        px="0px"
-                    >
-                        {languages[language]["headline_1"]}{" "}
-                        {/* Isi daya tanpa ribet */}
-                    </HeaderText>
-                    <HeaderText
-                        iconColor="brown"
-                        size="large"
-                        withIcon={false}
-                        topMargin={6}
-                        inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
-                        px="0px"
-                    >
-                        {languages[language]["headline_2"]} {/* kapanpun */}
-                    </HeaderText>
-                    <HeaderText
-                        iconColor="brown"
-                        size="large"
-                        withIcon={false}
-                        topMargin={6}
-                        inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
-                        px="0px"
-                    >
-                        {languages[language]["headline_3"]} {/* dimanapun */}
-                    </HeaderText>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <HeaderText
+                            iconColor="brown"
+                            size="normal"
+                            withIcon={false}
+                            topMargin={{ base: 14, xl: 40 }}
+                            inputclass={"xl:!text-4xl md:!text-3xl !text-lg"}
+                            px="0px"
+                        >
+                            {languages[language]["headline_1"]}{" "}
+                            {/* Isi daya tanpa ribet */}
+                        </HeaderText>
+                        <HeaderText
+                            iconColor="brown"
+                            size="large"
+                            withIcon={false}
+                            topMargin={6}
+                            inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
+                            px="0px"
+                        >
+                            {languages[language]["headline_2"]} {/* kapanpun */}
+                        </HeaderText>
+                        <HeaderText
+                            iconColor="brown"
+                            size="large"
+                            withIcon={false}
+                            topMargin={6}
+                            inputclass={"xl:!text-7xl md:!text-5xl !text-3xl"}
+                            px="0px"
+                        >
+                            {languages[language]["headline_3"]} {/* dimanapun */}
+                        </HeaderText>
+                    </Suspense>
                     <Text
                         mt={6}
                         fontSize="lg"
@@ -133,7 +142,7 @@ const Home1 = () => {
                             mt={{ base: 6, xl: 12 }}
                             mb={{ base: 10, xl: 28 }}
                             boxShadow="md"
-                            w={ "full" }
+                            w={"full"}
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.3 }}
                         >
@@ -151,10 +160,10 @@ const Home1 = () => {
                 {/* Right Section */}
                 <MotionBox
                     display={"flex"}
-                    justifyContent={{base: "center", xl: "end"}}
+                    justifyContent={{ base: "center", xl: "end" }}
                     py={{ base: "4", xl: "28" }}
-                    w={{base: "full", xl: "50%"}}
-                    mt={{base: 15, md: 20, xl: 0}}
+                    w={{ base: "full", xl: "50%" }}
+                    mt={{ base: 15, md: 20, xl: 0 }}
                     initial="hidden"
                     animate="visible"
                     variants={fadeInRight}
@@ -168,16 +177,20 @@ const Home1 = () => {
                             src={App}
                             alt="GoCas - Sewa Powerbank Murah dan Cepat di Indonesia"
                             mb={2}
-                            h={{base: "300px", md: "400px"}}
+                            h={{ base: "300px", md: "400px" }}
                             loading="lazy"
                             objectFit="contain"
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.3 }}
                         />
-                        <Flex direction={{base: "column", xl: "row"}} gap={2}>
+                        <Flex direction={{ base: "column", xl: "row" }} gap={2}>
                             <div
                                 className={"cursor-pointer"}
-                                onClick={() => redirect("https://play.google.com/store/apps/details?id=so.dian.gocasid")}
+                                onClick={() =>
+                                    redirect(
+                                        "https://play.google.com/store/apps/details?id=so.dian.gocasid"
+                                    )
+                                }
                             >
                                 <MotionImage
                                     src={GPlay}
@@ -191,7 +204,11 @@ const Home1 = () => {
                             </div>
                             <div
                                 className={"cursor-pointer"}
-                                onClick={() => redirect("https://apps.apple.com/id/app/gocas/id6738688391?l=id")}
+                                onClick={() =>
+                                    redirect(
+                                        "https://apps.apple.com/id/app/gocas/id6738688391?l=id"
+                                    )
+                                }
                             >
                                 <MotionImage
                                     src={AppStore}
@@ -209,7 +226,7 @@ const Home1 = () => {
                         {/*    alt="QR Code"*/}
                         {/*    boxSize={{ base: "100px", md: "150px" }}*/}
                         {/*    objectFit="contain"*/}
-                        {/*loading="lazy"*/}
+                        {/*    loading="lazy"*/}
                         {/*    whileHover={{ rotate: 360 }}*/}
                         {/*    transition={{ duration: 0.5 }}*/}
                         {/*/>*/}
