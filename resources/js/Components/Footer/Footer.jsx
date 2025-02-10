@@ -148,7 +148,7 @@ const Footer = () => {
                     fontFamily="poppins"
                     fontWeight={"bold"}
                 >
-                    Copyrights ©2024 GoCas. All Rights Reserved
+                    Copyrights ©2025 GoCas. All Rights Reserved
                 </Text>
                 <Flex
                     gap={4}
