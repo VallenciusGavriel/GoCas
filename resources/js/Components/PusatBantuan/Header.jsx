@@ -26,9 +26,8 @@ function Header( { faqs, content } ) {
             bgSize="100px 25px"
             bgRepeat="none"
             py={100}
-            textAlign="center"
         >
-            <Heading as="h2" fontSize="4xl" fontWeight="bold" mb={6} mt={20}>
+            <Heading as="h2" fontSize="6xl" mb={6} mt={20} px="20%" fontFamily="Dela Gothic One">
                 PUSAT <br /> BANTUAN
             </Heading>
 
@@ -41,6 +40,7 @@ function Header( { faqs, content } ) {
                     px={8}
                     fontWeight="bold"
                     color="black"
+                    width="15%"
                     >
                     FAQ
                     </Button>
@@ -52,6 +52,7 @@ function Header( { faqs, content } ) {
                     borderColor={activeTab === "syarat" ? "green" : "gray"}
                     color="black"
                     fontWeight="bold"
+                    width="15%"
                     >
                     Syarat & Ketentuan
                     </Button>
@@ -62,6 +63,7 @@ function Header( { faqs, content } ) {
                     px={8}
                     color="black"
                     fontWeight="bold"
+                    width="15%"
                     >
                     Ketentuan pengembalian
                 </Button>

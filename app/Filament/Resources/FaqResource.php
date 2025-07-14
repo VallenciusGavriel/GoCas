@@ -30,9 +30,11 @@ class FaqResource extends Resource
                 TextInput::make('question')
                     ->required()
                     ->maxLength(255),
-                Textarea::make('answer')
+                RichEditor::make('answer')
                     ->required()
-                    ->rows(6),
+                    ->toolbarButtons([
+                    'bold', 'italic', 'underline', 'strike', 'undo', 'redo'
+                ]),
             ]);
     }
 
