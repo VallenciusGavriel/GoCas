@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SyaratKetentuan from './SyaratKetentuan';
 import Faq from './Faq';
-import { Box, Button, Heading, HStack, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, Text, Flex } from "@chakra-ui/react";
 
 function Header( { faqs, content } ) {
   const [activeTab, setActiveTab] = useState("faq");
@@ -32,6 +32,11 @@ function Header( { faqs, content } ) {
             </Heading>
 
             <HStack spacing={4} justify="center">
+                <Flex
+                    justify="center"
+                    flexWrap="wrap"
+                    gap={4} // space between buttons
+                >
                 <Button
                     onClick={() => setActiveTab("faq")}
                     colorScheme={activeTab === "faq" ? "green" : "gray"}
@@ -40,7 +45,7 @@ function Header( { faqs, content } ) {
                     px={8}
                     fontWeight="bold"
                     color="black"
-                    width="15%"
+                    w={{ base: "80%", md: "250px" }}
                     >
                     FAQ
                     </Button>
@@ -52,7 +57,7 @@ function Header( { faqs, content } ) {
                     borderColor={activeTab === "syarat" ? "green" : "gray"}
                     color="black"
                     fontWeight="bold"
-                    width="15%"
+                    w={{ base: "80%", md: "250px" }}
                     >
                     Syarat & Ketentuan
                     </Button>
@@ -63,10 +68,11 @@ function Header( { faqs, content } ) {
                     px={8}
                     color="black"
                     fontWeight="bold"
-                    width="15%"
+                    w={{ base: "80%", md: "250px" }}
                     >
                     Ketentuan pengembalian
                 </Button>
+                </Flex>
             </HStack>
         </Box>
 
