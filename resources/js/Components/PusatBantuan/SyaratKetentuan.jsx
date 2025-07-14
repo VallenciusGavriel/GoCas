@@ -8,7 +8,7 @@ function SyaratKetentuan({ content }) {
             bgImage={`url('/images/PusatBantuan/Body Background.png')`}
             bgSize="cover"
         >
-            <Heading as="h2" fontSize="6xl" fontWeight="bold" mb={6} mt={6} textAlign="center">
+            <Heading as="h2" fontSize="6xl" fontWeight="bold" mb={6} pt={6} textAlign="center">
                 Syarat & Ketentuan
             </Heading>
 
