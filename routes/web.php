@@ -13,6 +13,7 @@ Route::get('/location', [MainController::class, 'location']);
 Route::get('/location-search', [MainController::class, 'locationSearch']);
 Route::get('/partnership', [MainController::class, 'partnership']);
 Route::get('/products', [MainController::class, 'products']);
+Route::get('/pusat-bantuan', [MainController::class, 'pusatBantuan']);
 
 // Jangan lupa dihide kalau uda dijalanin
 // Route::get('/storage-link', function () {

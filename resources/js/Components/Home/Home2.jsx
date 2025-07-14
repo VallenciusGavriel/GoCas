@@ -1,4 +1,4 @@
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Box, Link, Text, Image, Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../Context/LanguageContext";
 import languages from "../../Translates/languages.json";
@@ -126,6 +126,52 @@ const Home2 = () => {
                     </MotionLink>
                 </MotionBox>
             </MotionBox>
+
+            {/* Bagian Bawah */}
+
+            <MotionBox
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+                textAlign="center"
+                mt={{ base: 10, md: 14 }}
+                >
+                <HeaderText
+                    iconColor="black"
+                    size="normal"
+                    inputclass={"xl:!text-5xl md:!text-5xl !text-3xl"}
+                    topMargin={{ base: 20 }}
+                    textStyle={{ base: "headline", md: "subheadline" }}
+                    px="0px"
+                >
+                    {languages[language]["coupon_1"]}
+                    {/* GoCas-in Gadgetmu */}
+                </HeaderText>
+
+                <HeaderText
+                    iconColor="black"
+                    size="normal"
+                    inputclass={"xl:!text-5xl md:!text-5xl !text-3xl"}
+                    topMargin={10}
+                    textStyle={{ base: "headline", md: "subheadline" }}
+                    px="0px"
+                >
+                    {languages[language]["coupon_2"]}
+                    {/* Tanpa Ribet! */}
+                </HeaderText>
+
+                <Image
+                    src="/images/home/Coupon.png"
+                    alt="GOCAS banner"
+                    w="50%"
+                    h="auto"
+                    maxW="100%"
+                    mt={{ base: 6, md: 10 }}
+                    mx="auto"
+                />
+            </MotionBox>
+
         </MotionBox>
     );
 };
