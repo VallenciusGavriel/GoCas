@@ -3,9 +3,14 @@
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Faq;
 
 Route::get('/', function () {
-    return Inertia::render('Home');
+    $faqs = Faq::all();
+
+    return Inertia::render('Home', [
+        'faqs' => $faqs,
+    ]);
 });
 
 Route::get('/about', [MainController::class, 'about']);
@@ -28,4 +33,3 @@ Route::get('/pusat-bantuan', [MainController::class, 'pusatBantuan']);
 Route::fallback(function () {
     return redirect('/');
 });
-    

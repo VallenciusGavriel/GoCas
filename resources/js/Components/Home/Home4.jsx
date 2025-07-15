@@ -93,7 +93,7 @@ const faqData = {
     ],
 };
 
-const Home4 = () => {
+const Home4 = ( { faqs } ) => {
     const { language } = useLanguage();
 
     return (
@@ -139,7 +139,15 @@ const Home4 = () => {
 
                 {/* FAQ Accordion */}
                 <Accordion allowToggle>
-                    {faqData[language].map((faq, index) => (
+                    {/* {faqData[language].map((faq, index) => (
+                        <FAQItem
+                            key={index}
+                            question={faq.question}
+                            answer={faq.answer}
+                        />
+                    ))} */}
+
+                    {faqs.map((faq, index) => (
                         <FAQItem
                             key={index}
                             question={faq.question}

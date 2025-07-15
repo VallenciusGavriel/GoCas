@@ -53,7 +53,7 @@ const Navbar = () => {
             label: languages[language]["help_center"],
             variant: "solid",
             id: "helpButton",
-            href: "https://wa.me/6282188886665",
+            href: "pusat-bantuan",
         },
         // { label: "Daftar", variant: "solid", id: "registerButton" },
     ];

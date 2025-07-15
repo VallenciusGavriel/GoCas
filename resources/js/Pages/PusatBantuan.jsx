@@ -1,7 +1,7 @@
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import React, { Suspense, lazy } from 'react'
-import { Head } from '@inertiajs/react'; 
+import { Head } from '@inertiajs/react';
 import SyaratKetentuan from "@/Components/PusatBantuan/SyaratKetentuan";
 import Faq from "@/Components/PusatBantuan/Faq";
 
@@ -16,12 +16,9 @@ function PusatBantuan({ faqs, sks }) {
     <Suspense fallback={<div>Loading...</div>}>
         <Header faqs={faqs} content={sks.content} />
     </Suspense>
-    {/* <Header faqs={faqs} content={sks.content} /> */}
-    {/* <Faq faqs={faqs} /> */}
-    {/* <SyaratKetentuan content={sks.content} /> */}
     <Footer />
     </>
-  ) 
+  )
 }
 
 export default PusatBantuan
