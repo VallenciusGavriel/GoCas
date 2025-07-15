@@ -37,7 +37,7 @@ const Home = ({ faqs }) => {
                         pt="64px"
                     >
                         {/* Pass faqs only to Home4 */}
-                        {index === 3 ? <Component faqs={faqData} /> : <Component />}
+                        {index === 3 ? <Component faqs={faqs} /> : <Component />}
                     </Box>
                 ))}
             </VStack>
