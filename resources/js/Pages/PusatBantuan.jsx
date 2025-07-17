@@ -8,13 +8,13 @@ import Faq from "@/Components/PusatBantuan/Faq";
 // Lazy load Header
 const Header = lazy(() => import("@/Components/PusatBantuan/Header"));
 
-function PusatBantuan({ faqs, sks }) {
+function PusatBantuan({ faqs, sks, kps }) {
   return (
     <>
     <Navbar />
     <Head title="Pusat Bantuan" />
     <Suspense fallback={<div>Loading...</div>}>
-        <Header faqs={faqs} content={sks.content} />
+        <Header faqs={faqs} content={sks.content} content2={kps.content}/>
     </Suspense>
     <Footer />
     </>

@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             ProductsSeeder::class,
             UsersSeeder::class,
             FaqSeeder::class,
-            SkSeeder::class
+            SkSeeder::class,
+            KpSeeder::class
         ]);
     }
 }

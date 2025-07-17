@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import SyaratKetentuan from './SyaratKetentuan';
 import Faq from './Faq';
+import KetentuanPengembalian from './KetentuanPengembalian';
 import { Box, Button, Heading, HStack, Text, Flex } from "@chakra-ui/react";
 
-function Header( { faqs, content } ) {
+function Header( { faqs, content, content2 } ) {
   const [activeTab, setActiveTab] = useState("faq");
 
   const renderContent = () => {
@@ -12,8 +13,8 @@ function Header( { faqs, content } ) {
                 return <Faq faqs={faqs} />;
             case "syarat":
                 return <SyaratKetentuan content={content} />;
-            // case "pengembalian":
-            //     return <KetentuanPengembalian />;
+            case "pengembalian":
+                return <KetentuanPengembalian content={content2}/>;
             default:
                 return null;
         }
@@ -62,8 +63,9 @@ function Header( { faqs, content } ) {
                     Syarat & Ketentuan
                     </Button>
                     <Button
-                    colorScheme='gray'
-                    borderColor="black"
+                    onClick={() => setActiveTab("pengembalian")}
+                    colorScheme={activeTab === "pengembalian" ? "green" : "gray"}
+                    borderColor={activeTab === "pengembalian" ? "green" : "gray"}
                     borderRadius="full"
                     px={8}
                     color="black"

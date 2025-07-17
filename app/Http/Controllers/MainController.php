@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Partner;
 use App\Models\Faq;
 use App\Models\Sk;
+use App\Models\Kp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
@@ -134,10 +135,12 @@ class MainController extends Controller
     {
         $faqs = Faq::all();
         $sks = Sk::first();
+        $kps = Kp::first();
 
         return Inertia::render('PusatBantuan', [
             'faqs' => $faqs,
             'sks' =>  $sks,
+            'kps' => $kps,
         ]);
     }
 
