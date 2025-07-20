@@ -19,7 +19,7 @@ function Faq({ faqs }) {
             py={50}
             px={50}        
         >
-            <Heading as="h2" fontSize="6xl" fontWeight="bold" mb={6} mt={1} textAlign="center" fontFamily="Dela Gothic One">
+            <Heading as="h2" fontSize={{ base: "4xl", md: "6xl" }} fontWeight="bold" mb={6} mt={1} textAlign="center" fontFamily="Dela Gothic One">
                 Frequenly Asked Questions
             </Heading>
 

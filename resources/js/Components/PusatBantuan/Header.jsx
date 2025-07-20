@@ -28,7 +28,7 @@ function Header( { faqs, content, content2 } ) {
             bgRepeat="none"
             py={100}
         >
-            <Heading as="h2" fontSize="6xl" mb={6} mt={20} px="20%" fontFamily="Dela Gothic One">
+            <Heading as="h2" fontSize={{ base: "4xl", md: "6xl" }} mb={6} mt={20} px={{ base: "10%", md: "20%" }} fontFamily="Dela Gothic One">
                 PUSAT <br /> BANTUAN
             </Heading>
 

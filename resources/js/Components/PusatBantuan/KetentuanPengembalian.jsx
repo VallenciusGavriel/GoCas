@@ -9,7 +9,7 @@ function KetentuanPengembalian({ content }) {
                 bgSize="cover"
             >
             <div className='flex justify-center'>
-                <Heading as="h2" fontSize="3xl" fontWeight="bold" mb={6} pt={10} maxW="75%" fontFamily="Dela Gothic One" textAlign="center">
+                <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" mb={6} pt={10} maxW="75%" fontFamily="Dela Gothic One" textAlign="center">
                     KETENTUAN PENGEMBALIAN POWER BANK & PENGEMBALIAN DANA (REFUND)
                 </Heading>
             </div>
