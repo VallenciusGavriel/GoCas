@@ -5,8 +5,6 @@ function SyaratKetentuan({ content }) {
   return (
     <>
         <Box
-            bgImage={`url('/images/PusatBantuan/Body Background.png')`}
-            bgSize="cover"
         >
             <Heading as="h2" fontSize="6xl" fontWeight="bold" mb={6} pt={6} textAlign="center" fontFamily="Dela Gothic One">
                 Syarat & Ketentuan

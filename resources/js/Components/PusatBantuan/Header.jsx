@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SyaratKetentuan from './SyaratKetentuan';
 import Faq from './Faq';
 import KetentuanPengembalian from './KetentuanPengembalian';
-import { Box, Button, Heading, HStack, Text, Flex } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, Stack, Text, Flex } from "@chakra-ui/react";
 
 function Header( { faqs, content, content2 } ) {
   const [activeTab, setActiveTab] = useState("faq");
@@ -32,53 +32,45 @@ function Header( { faqs, content, content2 } ) {
                 PUSAT <br /> BANTUAN
             </Heading>
 
-            <HStack spacing={4} justify="center">
-                <Flex
-                    justify="center"
-                    flexWrap="wrap"
-                    gap={4} // space between buttons
-                >
-                <Button
-                    onClick={() => setActiveTab("faq")}
-                    colorScheme={activeTab === "faq" ? "green" : "gray"}
-                    borderColor={activeTab === "faq" ? "green" : "gray"}
-                    borderRadius="full"
-                    px={8}
-                    fontWeight="bold"
-                    color="black"
-                    w={{ base: "80%", md: "250px" }}
-                    >
-                    FAQ
-                    </Button>
-                    <Button
-                    onClick={() => setActiveTab("syarat")}
-                    colorScheme={activeTab === "syarat" ? "green" : "gray"}
-                    borderRadius="full"
-                    px={8}
-                    borderColor={activeTab === "syarat" ? "green" : "gray"}
-                    color="black"
-                    fontWeight="bold"
-                    w={{ base: "80%", md: "250px" }}
-                    >
-                    Syarat & Ketentuan
-                    </Button>
-                    <Button
-                    onClick={() => setActiveTab("pengembalian")}
-                    colorScheme={activeTab === "pengembalian" ? "green" : "gray"}
-                    borderColor={activeTab === "pengembalian" ? "green" : "gray"}
-                    borderRadius="full"
-                    px={8}
-                    color="black"
-                    fontWeight="bold"
-                    w={{ base: "80%", md: "250px" }}
-                    >
-                    Ketentuan pengembalian
-                </Button>
-                </Flex>
-            </HStack>
         </Box>
 
-        <Box>{renderContent()}</Box>
+        <Box
+            bgImage={`url('/images/PusatBantuan/Body Background.png')`}
+            bgSize="cover"
+        >
+        <Stack
+            direction={{ base: "column", md: "row" }} // column on mobile, row on desktop
+            spacing={{ base: 4, md: 40 }} // spacing between items
+            justify="center"
+            align="center"
+            py={6}
+            >
+            {[
+                { key: "faq", label: "FAQ" },
+                { key: "syarat", label: "Syarat & Ketentuan" },
+                { key: "pengembalian", label: "Ketentuan Pengembalian" }
+            ].map((tab) => (
+                <Box
+                key={tab.key}
+                cursor="pointer"
+                pb={2}
+                borderBottom={activeTab === tab.key ? "12px solid #FFD700" : "4px solid transparent"}
+                onClick={() => setActiveTab(tab.key)}
+                w={{ base: "50%", md: "auto" }} // full width on mobile
+                textAlign="center"
+                >
+                <Text
+                    fontWeight={activeTab === tab.key ? "bold" : "normal"}
+                    color={activeTab === tab.key ? "black" : "gray.500"}
+                    fontFamily="Dela Gothic One"
+                    fontSize={{ base: "md", md: "md" }}
+                >
+                    {tab.label}
+                </Text>
+                </Box>
+            ))}
+        </Stack>
+        {renderContent()}</Box>
     </>
   )
 }

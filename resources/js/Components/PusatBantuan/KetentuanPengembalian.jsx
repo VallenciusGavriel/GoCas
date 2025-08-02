@@ -5,8 +5,6 @@ function KetentuanPengembalian({ content }) {
   return (
     <>
     <Box
-                bgImage={`url('/images/PusatBantuan/Body Background.png')`}
-                bgSize="cover"
             >
             <div className='flex justify-center'>
                 <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" mb={6} pt={10} maxW="75%" fontFamily="Dela Gothic One" textAlign="center">
