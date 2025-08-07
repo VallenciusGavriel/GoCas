@@ -5,7 +5,7 @@ import { Box, VStack } from "@chakra-ui/react";
 import { Head } from "@inertiajs/react";
 import {Helmet} from "react-helmet";
 
-const Home = () => {
+const Home = ({ faqs }) => {
     const homeComponents = [Home1, Home2, Home3, Home4];
 
     return (
@@ -36,7 +36,8 @@ const Home = () => {
                         overflow="hidden"
                         pt="64px"
                     >
-                        <Component />
+                        {/* Pass faqs only to Home4 */}
+                        {index === 3 ? <Component faqs={faqs} /> : <Component />}
                     </Box>
                 ))}
             </VStack>

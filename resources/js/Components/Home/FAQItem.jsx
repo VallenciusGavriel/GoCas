@@ -22,9 +22,9 @@ const FAQItem = ({ question, answer }) => {
                 </Box>
                 <AccordionIcon />
             </AccordionButton>
-            <AccordionPanel pb={4} fontSize="md" fontFamily="Poppins">
-                {answer}
-            </AccordionPanel>
+        <AccordionPanel pb={4} fontSize="md" fontFamily="Poppins">
+            <Box dangerouslySetInnerHTML={{ __html: answer }} />
+        </AccordionPanel>
         </AccordionItem>
     );
 };

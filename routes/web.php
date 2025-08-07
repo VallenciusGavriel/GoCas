@@ -3,9 +3,14 @@
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Faq;
 
 Route::get('/', function () {
-    return Inertia::render('Home');
+    $faqs = Faq::all();
+
+    return Inertia::render('Home', [
+        'faqs' => $faqs,
+    ]);
 });
 
 Route::get('/about', [MainController::class, 'about']);
@@ -13,6 +18,7 @@ Route::get('/location', [MainController::class, 'location']);
 Route::get('/location-search', [MainController::class, 'locationSearch']);
 Route::get('/partnership', [MainController::class, 'partnership']);
 Route::get('/products', [MainController::class, 'products']);
+Route::get('/pusat-bantuan', [MainController::class, 'pusatBantuan']);
 
 // Jangan lupa dihide kalau uda dijalanin
 // Route::get('/storage-link', function () {
@@ -27,4 +33,3 @@ Route::get('/products', [MainController::class, 'products']);
 Route::fallback(function () {
     return redirect('/');
 });
-    
